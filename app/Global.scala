@@ -40,8 +40,8 @@ object Global extends GlobalSettings {
     else lidraughts.mon.http.request.page()
     lidraughts.i18n.Env.current.subdomainKiller(req) orElse
       super.onRouteRequest(req).map {
-        case action: EssentialAction if HTTPRequest.isApiOrLocalApp(req) => EssentialAction { r =>
-          action(r) map { _.withHeaders(ResponseHeaders.headersForApiOrLocalApp(r): _*) }
+        case action: EssentialAction if HTTPRequest.isApiOrApp(req) => EssentialAction { r =>
+          action(r) map { _.withHeaders(ResponseHeaders.headersForApiOrApp(r): _*) }
         }
         case other => other
       }
