@@ -25,10 +25,11 @@ object HTTPRequest {
     !isSynchronousHttp(req) || isDraughtsnet(req) || isApi(req) || req.headers.get(HeaderNames.ACCEPT).exists(_ startsWith "application/vnd.lidraughts.v")
 
   private val appOrigins = Set(
+    "capacitor://localhost", // ios
     "ionic://localhost", // ios
     "http://localhost", // android
-    "http://localhost:8080",
-    "file://"
+    "http://localhost:8080", // local dev
+    "file://" // old app
   )
 
   def appOrigin(req: RequestHeader) = origin(req) filter appOrigins
