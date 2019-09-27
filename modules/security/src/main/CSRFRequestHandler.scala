@@ -11,14 +11,11 @@ final class CSRFRequestHandler(domain: String, enabled: Boolean) {
   def check(req: RequestHeader): Boolean = {
     if (isXhr(req)) true // cross origin xhr not allowed by browsers
     else if (isSafe(req) && !isSocket(req)) true
+    else if (appOrigin(req).isDefined) true
     else origin(req) match {
       case None =>
         lidraughts.mon.http.csrf.missingOrigin()
         logger.debug(print(req))
-        true
-      case Some("file://") =>
-        true
-      case Some(o) if o == localAppOrigin =>
         true
       case Some(o) if isSubdomain(o) =>
         true
