@@ -11,7 +11,7 @@ import views._
 object Timeline extends LidraughtsController {
 
   def home = Auth { implicit ctx => me =>
-    def nb = getInt("nb").fold(15)(_ min 50)
+    def nb = getInt("nb").fold(10)(_ atMost 30)
     lidraughts.mon.http.response.timeline.count()
     negotiate(
       html =
@@ -23,7 +23,7 @@ object Timeline extends LidraughtsController {
           Env.timeline.entryApi.moreUserEntries(me.id, nb)
             .logTimeIfGt(s"timeline site more entries ($nb) for ${me.id}", 10 seconds)
             .map { html.timeline.more(_) },
-      _ => Env.timeline.entryApi.moreUserEntries(me.id, nb)
+      _ => Env.timeline.entryApi.moreUserEntries(me.id, nb atMost 20)
         .logTimeIfGt(s"timeline mobile $nb for ${me.id}", 10 seconds)
         .map { es => Ok(Json.obj("entries" -> es)) }
     ).mon(_.http.response.timeline.time)
