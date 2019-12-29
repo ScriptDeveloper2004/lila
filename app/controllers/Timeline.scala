@@ -11,21 +11,23 @@ import views._
 object Timeline extends LidraughtsController {
 
   def home = Auth { implicit ctx => me =>
-    def nb = getInt("nb").fold(10)(_ atMost 30)
     lidraughts.mon.http.response.timeline.count()
     negotiate(
       html =
         if (HTTPRequest.isXhr(ctx.req))
           Env.timeline.entryApi.userEntries(me.id)
-          .logTimeIfGt(s"timeline site entries for ${me.id}", 10 seconds)
-          .map { html.timeline.entries(_) }
+            .logTimeIfGt(s"timeline site entries for ${me.id}", 10 seconds)
+            .map { html.timeline.entries(_) }
         else
-          Env.timeline.entryApi.moreUserEntries(me.id, nb)
-            .logTimeIfGt(s"timeline site more entries ($nb) for ${me.id}", 10 seconds)
+          Env.timeline.entryApi.moreUserEntries(me.id, 30)
+            .logTimeIfGt(s"timeline site more entries (30) for ${me.id}", 10 seconds)
             .map { html.timeline.more(_) },
-      _ => Env.timeline.entryApi.moreUserEntries(me.id, nb atMost 20)
-        .logTimeIfGt(s"timeline mobile $nb for ${me.id}", 10 seconds)
-        .map { es => Ok(Json.obj("entries" -> es)) }
+      _ => {
+        val nb = (getInt("nb") | 10) atMost 20
+        Env.timeline.entryApi.moreUserEntries(me.id, nb)
+          .logTimeIfGt(s"timeline mobile $nb for ${me.id}", 10 seconds)
+          .map { es => Ok(Json.obj("entries" -> es)) }
+      }
     ).mon(_.http.response.timeline.time)
   }
 
