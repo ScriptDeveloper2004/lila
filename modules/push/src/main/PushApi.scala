@@ -198,13 +198,13 @@ private final class PushApi(
   private type MonitorType = lidraughts.mon.push.send.type => (String => Unit)
 
   private def pushToAll(userId: User.ID, monitor: MonitorType, data: PushApi.Data): Funit =
-    webPush(userId)(data) >> oneSignalPush(userId) {
+    webPush(userId)(data) zip oneSignalPush(userId) {
       monitor(lidraughts.mon.push.send)("onesignal")
       data
-    } >> firebasePush(userId) {
+    } zip firebasePush(userId) {
       monitor(lidraughts.mon.push.send)("firebase")
       data
-    }
+    } void
 
   private def describeChallenge(c: Challenge) = {
     import lidraughts.challenge.Challenge.TimeControl._
