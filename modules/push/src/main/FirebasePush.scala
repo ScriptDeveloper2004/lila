@@ -12,7 +12,7 @@ import lidraughts.user.User
 
 private final class FirebasePush(
     credentialsOpt: Option[GoogleCredentials],
-    getDevices: User.ID => Fu[List[Device]],
+    deviceApi: DeviceApi,
     url: String
 )(implicit system: ActorSystem) {
 
@@ -24,7 +24,7 @@ private final class FirebasePush(
 
   def apply(userId: User.ID)(data: => PushApi.Data): Funit =
     credentialsOpt ?? { creds =>
-      getDevices(userId) flatMap {
+      deviceApi.findLastManyByUserId("firebase", 3)(userId) flatMap {
         case Nil => funit
         // access token has 1h lifetime and is requested only if expired
         case devices => sequencer {
@@ -62,6 +62,9 @@ private final class FirebasePush(
         )
       )) flatMap {
         case res if res.status == 200 => funit
+        case res if res.status == 404 =>
+          logger.info(s"Delete missing firebase device ${device}")
+          deviceApi delete device
         case res => fufail(s"[push] firebase: ${res.status} ${res.body}")
       }
 

@@ -58,7 +58,7 @@ final class Env(
 
   private lazy val firebasePush = new FirebasePush(
     googleCredentials,
-    deviceApi.findLastManyByUserId("firebase", 3) _,
+    deviceApi,
     url = FirebaseUrl
   )(system)
 
