@@ -4,7 +4,6 @@ import lidraughts.common.Lang
 
 object I18nDb {
 
-  // site arena emails learn activity coordinates study patron broadcast streamer tfa settings team perfStat lag swiss
   sealed trait Ref
   case object Site extends Ref
   case object Arena extends Ref
@@ -18,6 +17,7 @@ object I18nDb {
   case object Streamer extends Ref
   case object Tfa extends Ref
   case object Settings extends Ref
+  case object Preferences extends Ref
   case object Team extends Ref
   case object PerfStat extends Ref
   case object Lag extends Ref
@@ -35,6 +35,7 @@ object I18nDb {
   val streamer: Messages = lidraughts.i18n.db.streamer.Registry.load
   val tfa: Messages = lidraughts.i18n.db.tfa.Registry.load
   val settings: Messages = lidraughts.i18n.db.settings.Registry.load
+  val preferences: Messages = lidraughts.i18n.db.preferences.Registry.load
   val team: Messages = lidraughts.i18n.db.team.Registry.load
   val perfStat: Messages = lidraughts.i18n.db.perfStat.Registry.load
   val lag: Messages = lidraughts.i18n.db.lag.Registry.load
@@ -53,6 +54,7 @@ object I18nDb {
     case Streamer => streamer
     case Tfa => tfa
     case Settings => settings
+    case Preferences => preferences
     case Team => team
     case PerfStat => perfStat
     case Lag => lag
