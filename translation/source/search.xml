@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string name="search">Search</string>
+  <string name="advancedSearch">Advanced search</string>
+  <plurals name="searchInXGames">
+    <item quantity="one">Search in %s draughts game</item>
+    <item quantity="other">Search in %s draughts games</item>
+  </plurals>
+  <plurals name="searchInXGamesDescription">
+    <item quantity="one">Search in %s draughts game using advanced criteria</item>
+    <item quantity="other">Search in %s draughts games using advanced criteria</item>
+  </plurals>
+  <plurals name="xGamesFound">
+    <item quantity="one">One game found</item>
+    <item quantity="other">%s games found</item>
+  </plurals>
+  <string name="searchPlayersHelp">The name(s) of the player(s) you wish to search for</string>
+  <string name="searchRatingsHelp">The average rating of both players</string>
+  <string name="opponentName">Opponent name</string>
+  <string name="loser">Loser</string>
+  <string name="from">From</string>
+  <string name="to">To</string>
+  <string name="humanOrComputer">Whether the player's opponent was human or a computer</string>
+  <string name="aiLevel">A.I. level</string>
+  <string name="source">Source</string>
+  <string name="numberOfTurns">Number of turns</string>
+  <string name="searchNumberOfTurnsHelp">The number of turns played (both players moved)</string>  
+  <string name="result">Result</string>
+  <string name="winnerColor">Winner color</string>
+  <string name="date">Date</string>
+  <string name="sort">Sort</string>
+  <string name="by">By</string>
+  <string name="order">Order</string>
+  <string name="ascending">Ascending</string>
+  <string name="descending">Descending</string>
+  <string name="analysis">Analysis</string>
+  <string name="onlyAnalysed">Only games where a computer analysis is available</string>
+</resources>

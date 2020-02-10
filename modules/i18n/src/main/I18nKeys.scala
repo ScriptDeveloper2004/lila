@@ -1,7 +1,7 @@
 // Generated with bin/trans-dump.js
 package lidraughts.i18n
 
-import I18nDb.{ Site, Arena, Emails, Learn, Activity, Coordinates, Study, Patron, Broadcast, Streamer, Tfa, Settings, Preferences, Team, PerfStat, Lag, Swiss, Challenge }
+import I18nDb.{ Site, Arena, Emails, Learn, Activity, Coordinates, Study, Patron, Broadcast, Streamer, Tfa, Settings, Preferences, Team, PerfStat, Search, Lag, Swiss, Challenge }
 
 // format: OFF
 object I18nKeys {
@@ -258,13 +258,6 @@ val `takebackPropositionAccepted` = new Translated("takebackPropositionAccepted"
 val `takebackPropositionCanceled` = new Translated("takebackPropositionCanceled", Site)
 val `yourOpponentProposesATakeback` = new Translated("yourOpponentProposesATakeback", Site)
 val `bookmarkThisGame` = new Translated("bookmarkThisGame", Site)
-val `search` = new Translated("search", Site)
-val `advancedSearch` = new Translated("advancedSearch", Site)
-val `searchPlayersHelp` = new Translated("searchPlayersHelp", Site)
-val `searchRatingsHelp` = new Translated("searchRatingsHelp", Site)
-val `searchOpponentHelp` = new Translated("searchOpponentHelp", Site)
-val `searchNumberOfTurnsHelp` = new Translated("searchNumberOfTurnsHelp", Site)
-val `searchAnalysisHelp` = new Translated("searchAnalysisHelp", Site)
 val `tournament` = new Translated("tournament", Site)
 val `tournaments` = new Translated("tournaments", Site)
 val `xTournaments` = new Translated("xTournaments", Site)
@@ -335,23 +328,12 @@ val `memberSince` = new Translated("memberSince", Site)
 val `lastSeenActive` = new Translated("lastSeenActive", Site)
 val `player` = new Translated("player", Site)
 val `list` = new Translated("list", Site)
-val `sort` = new Translated("sort", Site)
-val `sortBy` = new Translated("sortBy", Site)
-val `from` = new Translated("from", Site)
-val `to` = new Translated("to", Site)
-val `ascending` = new Translated("ascending", Site)
-val `descending` = new Translated("descending", Site)
-val `source` = new Translated("source", Site)
 val `graph` = new Translated("graph", Site)
 val `required` = new Translated("required", Site)
 val `openTournaments` = new Translated("openTournaments", Site)
 val `duration` = new Translated("duration", Site)
 val `date` = new Translated("date", Site)
-val `numberOfTurns` = new Translated("numberOfTurns", Site)
 val `winner` = new Translated("winner", Site)
-val `loser` = new Translated("loser", Site)
-val `result` = new Translated("result", Site)
-val `winnerColor` = new Translated("winnerColor", Site)
 val `standing` = new Translated("standing", Site)
 val `createANewTournament` = new Translated("createANewTournament", Site)
 val `tournamentCalendar` = new Translated("tournamentCalendar", Site)
@@ -1467,6 +1449,35 @@ val `gamesInARow` = new Translated("gamesInARow", PerfStat)
 val `lessThanOneHour` = new Translated("lessThanOneHour", PerfStat)
 val `maxTimePlaying` = new Translated("maxTimePlaying", PerfStat)
 val `now` = new Translated("now", PerfStat)
+}
+
+object search {
+val `search` = new Translated("search", Search)
+val `advancedSearch` = new Translated("advancedSearch", Search)
+val `searchPlayersHelp` = new Translated("searchPlayersHelp", Search)
+val `searchRatingsHelp` = new Translated("searchRatingsHelp", Search)
+val `opponentName` = new Translated("opponentName", Search)
+val `loser` = new Translated("loser", Search)
+val `from` = new Translated("from", Search)
+val `to` = new Translated("to", Search)
+val `humanOrComputer` = new Translated("humanOrComputer", Search)
+val `aiLevel` = new Translated("aiLevel", Search)
+val `source` = new Translated("source", Search)
+val `numberOfTurns` = new Translated("numberOfTurns", Search)
+val `searchNumberOfTurnsHelp` = new Translated("searchNumberOfTurnsHelp", Search)
+val `result` = new Translated("result", Search)
+val `winnerColor` = new Translated("winnerColor", Search)
+val `date` = new Translated("date", Search)
+val `sort` = new Translated("sort", Search)
+val `by` = new Translated("by", Search)
+val `order` = new Translated("order", Search)
+val `ascending` = new Translated("ascending", Search)
+val `descending` = new Translated("descending", Search)
+val `analysis` = new Translated("analysis", Search)
+val `onlyAnalysed` = new Translated("onlyAnalysed", Search)
+val `searchInXGames` = new Translated("searchInXGames", Search)
+val `searchInXGamesDescription` = new Translated("searchInXGamesDescription", Search)
+val `xGamesFound` = new Translated("xGamesFound", Search)
 }
 
 object lag {
