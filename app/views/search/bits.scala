@@ -147,9 +147,9 @@ private object bits {
     )
 
     def sort = tr(
-      th(label(trans.search.sort())),
+      th(label(trans.search.sortBy())),
       td(
-        div(cls := "half")(sortBy(), " ", form3.select(form("sort")("field"), translatedSortFieldChoices)),
+        div(cls := "half wide")(form3.select(form("sort")("field"), translatedSortFieldChoices)),
         div(cls := "half wide")(form3.select(form("sort")("order"), translatedSortOrderChoices))
       )
     )
