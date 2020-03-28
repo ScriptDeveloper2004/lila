@@ -66,6 +66,10 @@ object Team extends LidraughtsController {
     }
   }
 
+  def legacyUsers(teamId: String) = Action {
+    MovedPermanently(routes.Team.users(teamId).url)
+  }
+
   def users(teamId: String) = Action.async { req =>
     import Api.limitedDefault
     api.team(teamId) flatMap {
