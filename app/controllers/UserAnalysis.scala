@@ -98,10 +98,13 @@ object UserAnalysis extends LidraughtsController with TheftPrevention {
         negotiate(
           html =
             if (game.replayable) Redirect(routes.Round.watcher(game.id, color)).fuccess
-            else for {
-              initialFen <- GameRepo initialFen game.id
-              data <- Env.api.roundApi.userAnalysisJson(pov, ctx.pref, initialFen, pov.color, owner = isMyPov(pov), me = ctx.me)
-            } yield NoCache(Ok(html.board.userAnalysis(data, pov))),
+            else {
+              val owner = isMyPov(pov)
+              for {
+                initialFen <- GameRepo initialFen game.id
+                data <- Env.api.roundApi.userAnalysisJson(pov, ctx.pref, initialFen, pov.color, owner = owner, me = ctx.me)
+              } yield NoCache(Ok(html.board.userAnalysis(data, pov, withForecast = owner && !pov.game.synthetic && pov.game.playable)))
+            },
           api = apiVersion => mobileAnalysis(pov, apiVersion)
         )
       }
