@@ -348,13 +348,26 @@ You received this because you are subscribed to messages of the team $url."""
   // API
 
   def apiAll(page: Int) = Action.async {
-    paginator popularTeams page map { pag =>
-      Ok(PaginatorJson(pag mapResults jsonView.teamWrites.writes)) as JSON
+    JsonFuOk {
+      paginator popularTeams page map { pag =>
+        PaginatorJson(pag mapResults jsonView.teamWrites.writes)
+      }
     }
   }
 
-  def apiShow(id: String) = Open { implicit ctx =>
+  def apiShow(id: String) = Action.async {
     JsonOptionOk(api team id map { _ map jsonView.teamWrites.writes })
+  }
+
+  def apiSearch(text: String, page: Int) = Action.async {
+    JsonFuOk {
+      val paginatorFu =
+        if (text.trim.isEmpty) paginator popularTeams page
+        else Env.teamSearch(text, page)
+      paginatorFu map { pag =>
+        PaginatorJson(pag mapResults jsonView.teamWrites.writes)
+      }
+    }
   }
 
   private val PmAllLimitPerUser = new lidraughts.memo.RateLimit[lidraughts.user.User.ID](

@@ -284,9 +284,10 @@ private[controllers] trait LidraughtsController
   }
   protected def JsonOk[A: Writes](a: A) = Ok(Json toJson a) as JSON
   protected def JsonOk(body: JsValue): Result = Ok(body) as JSON
+  protected def JsonFuOk[A: Writes](fua: Fu[A]): Fu[Result] = fua map { JsonOk(_) }
 
-  protected def JsonOptionOk[A: Writes](fua: Fu[Option[A]])(implicit ctx: Context) = fua flatMap {
-    _.fold(notFound(ctx))(a => fuccess(Ok(Json toJson a) as JSON))
+  protected def JsonOptionOk[A: Writes](fua: Fu[Option[A]]) = fua flatMap {
+    _.fold(notFoundJson())(a => fuccess(Ok(Json toJson a) as JSON))
   }
 
   protected def JsonOptionFuOk[A, B: Writes](fua: Fu[Option[A]])(op: A => Fu[B])(implicit ctx: Context) =
