@@ -9,6 +9,7 @@ import scala.concurrent.duration._
 import lidraughts.api.Context
 import lidraughts.app._
 import lidraughts.common.{ HTTPRequest, MaxPerSecond }
+import lidraughts.common.paginator.PaginatorJson
 import lidraughts.hub.lightTeam._
 import lidraughts.security.Granter
 import lidraughts.team.{ Joined, Motivate, Team => TeamModel, TeamRepo, MemberRepo }
@@ -19,10 +20,17 @@ object Team extends LidraughtsController {
 
   private def forms = Env.team.forms
   private def api = Env.team.api
+  private def jsonView = Env.team.jsonView
   private def paginator = Env.team.paginator
 
   def all(page: Int) = Open { implicit ctx =>
     paginator popularTeams page map { html.team.list.all(_) }
+  }
+
+  def apiAll(page: Int) = Action.async {
+    paginator popularTeams page map { pag =>
+      Ok(PaginatorJson(pag mapResults jsonView.teamWrites.writes)) as JSON
+    }
   }
 
   def home(page: Int) = Open { implicit ctx =>
