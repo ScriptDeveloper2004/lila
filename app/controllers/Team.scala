@@ -224,17 +224,30 @@ object Team extends LidraughtsController {
   }
 
   def join(id: String) = AuthOrScoped(_.Team.Write)(
-    auth = ctx => me => api.join(id, me) flatMap {
-      case Some(Joined(team)) => Redirect(routes.Team.show(team.id)).fuccess
-      case Some(Motivate(team)) => Redirect(routes.Team.requestForm(team.id)).fuccess
-      case _ => notFound(ctx)
-    },
+    auth = implicit ctx => me => negotiate(
+      html = api.join(id, me) flatMap {
+        case Some(Joined(team)) => Redirect(routes.Team.show(team.id)).fuccess
+        case Some(Motivate(team)) => Redirect(routes.Team.requestForm(team.id)).fuccess
+        case _ => notFound(ctx)
+      },
+      api = _ => api.join(id, me) flatMap {
+        case Some(Joined(_)) => jsonOkResult.fuccess
+        case Some(Motivate(_)) =>
+          BadRequest(
+            jsonError("This team requires confirmation.")
+          ).fuccess
+        case _ => notFoundJson("Team not found")
+      }
+    ),
     scoped = req => me => Env.oAuth.server.fetchAppAuthor(req) flatMap {
       _ ?? { api.joinApi(id, me, _) }
-    } map {
-      case Some(Joined(_)) => jsonOkResult
-      case Some(Motivate(_)) => Forbidden(jsonError("This team requires confirmation, and is not owned by the oAuth app owner."))
-      case _ => NotFound(jsonError("Team not found"))
+    } flatMap {
+      case Some(Joined(_)) => jsonOkResult.fuccess
+      case Some(Motivate(_)) =>
+        Forbidden(
+          jsonError("This team requires confirmation, and is not owned by the oAuth app owner.")
+        ).fuccess
+      case _ => notFoundJson("Team not found")
     }
   )
 
