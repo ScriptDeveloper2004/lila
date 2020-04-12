@@ -27,12 +27,6 @@ object Team extends LidraughtsController {
     paginator popularTeams page map { html.team.list.all(_) }
   }
 
-  def apiAll(page: Int) = Action.async {
-    paginator popularTeams page map { pag =>
-      Ok(PaginatorJson(pag mapResults jsonView.teamWrites.writes)) as JSON
-    }
-  }
-
   def home(page: Int) = Open { implicit ctx =>
     ctx.me.??(api.hasTeams) map {
       case true => Redirect(routes.Team.mine)
@@ -349,6 +343,18 @@ You received this because you are subscribed to messages of the team $url."""
           }
       )
     }
+  }
+
+  // API
+
+  def apiAll(page: Int) = Action.async {
+    paginator popularTeams page map { pag =>
+      Ok(PaginatorJson(pag mapResults jsonView.teamWrites.writes)) as JSON
+    }
+  }
+
+  def apiShow(id: String) = Open { implicit ctx =>
+    JsonOptionOk(api team id map { _ map jsonView.teamWrites.writes })
   }
 
   private val PmAllLimitPerUser = new lidraughts.memo.RateLimit[lidraughts.user.User.ID](
