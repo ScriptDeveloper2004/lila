@@ -13,7 +13,8 @@ final class JsonView(lightUserApi: LightUserApi) {
         "name" -> team.name,
         "description" -> team.description,
         "open" -> team.open,
-        "leader" -> lightUserApi.sync(team.createdBy)
+        "leader" -> lightUserApi.sync(team.createdBy),
+        "nbMembers" -> team.nbMembers
       )
       .add("location" -> team.location)
   }
