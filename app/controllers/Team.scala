@@ -362,8 +362,10 @@ You received this because you are subscribed to messages of the team $url."""
 
   def apiAll(page: Int) = Action.async {
     JsonFuOk {
-      paginator popularTeams page map { pag =>
-        PaginatorJson(pag mapResults jsonView.teamWrites.writes)
+      paginator popularTeams page flatMap { pag =>
+        Env.user.lightUserApi.preloadMany(pag.currentPageResults.map(_.createdBy)) inject {
+          PaginatorJson(pag mapResults jsonView.teamWrites.writes)
+        }
       }
     }
   }
@@ -379,6 +381,16 @@ You received this because you are subscribed to messages of the team $url."""
         else Env.teamSearch(text, page)
       paginatorFu map { pag =>
         PaginatorJson(pag mapResults jsonView.teamWrites.writes)
+      }
+    }
+  }
+
+  def apiTeamsOf(username: String) = Action.async {
+    JsonFuOk {
+      api teamsOf username flatMap { teams =>
+        Env.user.lightUserApi.preloadMany(teams.map(_.createdBy)) inject teams.map {
+          jsonView.teamWrites.writes
+        }
       }
     }
   }
