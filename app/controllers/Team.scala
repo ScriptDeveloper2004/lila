@@ -254,7 +254,7 @@ object Team extends LidraughtsController {
           newJsonFormError,
           msg =>
             Env.oAuth.server.fetchAppAuthor(req) flatMap {
-              _ ?? { api.joinApi(id, me, _, msg) }
+              api.joinApi(id, me, _, msg)
             } flatMap {
               case Some(Joined(_)) => jsonOkResult.fuccess
               case Some(Motivate(_)) =>
