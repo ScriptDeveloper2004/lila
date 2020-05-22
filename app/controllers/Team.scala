@@ -370,9 +370,18 @@ You received this because you are subscribed to messages of the team $url."""
     }
   }
 
-  def apiShow(id: String) = Action.async {
-    JsonOptionOk(api team id map { _ map jsonView.teamWrites.writes })
-  }
+  def apiShow(id: String) =
+    Open { ctx =>
+      JsonOptionOk {
+        api team id flatMap {
+          _ ?? { team =>
+            ctx.userId.?? { api.belongsTo(id, _) } map { joined =>
+              jsonView.teamWrites.writes(team) ++ Json.obj("joined" -> joined)
+            } dmap some
+          }
+        }
+      }
+    }
 
   def apiSearch(text: String, page: Int) = Action.async {
     JsonFuOk {
