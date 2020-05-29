@@ -223,31 +223,47 @@ object Team extends LidraughtsController {
     api mine me map { html.team.list.mine(_) }
   }
 
-  def join(id: String) = AuthOrScoped(_.Team.Write)(
+  def join(id: String) = AuthOrScopedBody(_.Team.Write)(
     auth = implicit ctx => me => negotiate(
-      html = api.join(id, me) flatMap {
+      html = api.join(id, me, none) flatMap {
         case Some(Joined(team)) => Redirect(routes.Team.show(team.id)).fuccess
         case Some(Motivate(team)) => Redirect(routes.Team.requestForm(team.id)).fuccess
         case _ => notFound(ctx)
       },
-      api = _ => api.join(id, me) flatMap {
-        case Some(Joined(_)) => jsonOkResult.fuccess
-        case Some(Motivate(_)) =>
-          BadRequest(
-            jsonError("This team requires confirmation.")
-          ).fuccess
-        case _ => notFoundJson("Team not found")
+      api = _ => {
+        implicit val body = ctx.body
+        forms.apiRequest.bindFromRequest
+          .fold(
+            newJsonFormError,
+            msg =>
+              api.join(id, me, msg) flatMap {
+                case Some(Joined(_)) => jsonOkResult.fuccess
+                case Some(Motivate(_)) =>
+                  BadRequest(
+                    jsonError("This team requires confirmation.")
+                  ).fuccess
+                case _ => notFoundJson("Team not found")
+              }
+          )
       }
     ),
-    scoped = req => me => Env.oAuth.server.fetchAppAuthor(req) flatMap {
-      _ ?? { api.joinApi(id, me, _) }
-    } flatMap {
-      case Some(Joined(_)) => jsonOkResult.fuccess
-      case Some(Motivate(_)) =>
-        Forbidden(
-          jsonError("This team requires confirmation, and is not owned by the oAuth app owner.")
-        ).fuccess
-      case _ => notFoundJson("Team not found")
+    scoped = implicit req => me => {
+      implicit val lang = reqLang
+      forms.apiRequest.bindFromRequest
+        .fold(
+          newJsonFormError,
+          msg =>
+            Env.oAuth.server.fetchAppAuthor(req) flatMap {
+              _ ?? { api.joinApi(id, me, _, msg) }
+            } flatMap {
+              case Some(Joined(_)) => jsonOkResult.fuccess
+              case Some(Motivate(_)) =>
+                Forbidden(
+                  jsonError("This team requires confirmation, and is not owned by the oAuth app owner.")
+                ).fuccess
+              case _ => notFoundJson("Team not found")
+            }
+        )
     }
   )
 
@@ -278,7 +294,7 @@ object Team extends LidraughtsController {
       implicit val req = ctx.body
       forms.request.bindFromRequest.fold(
         err => BadRequest(html.team.request.requestForm(team, err)).fuccess,
-        setup => api.createRequest(team, setup, me) inject Redirect(routes.Team.show(team.id))
+        setup => api.createRequest(team, me, setup.message) inject Redirect(routes.Team.show(team.id))
       )
     }
   }
