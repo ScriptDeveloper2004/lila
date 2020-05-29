@@ -391,9 +391,16 @@ You received this because you are subscribed to messages of the team $url."""
       JsonOptionOk {
         api team id flatMap {
           _ ?? { team =>
-            ctx.userId.?? { api.belongsTo(id, _) } map { joined =>
-              jsonView.teamWrites.writes(team) ++ Json.obj("joined" -> joined)
-            } dmap some
+            for {
+              joined <- ctx.userId.?? { api.belongsTo(id, _) }
+              requested <- ctx.userId.ifFalse(joined).?? { lidraughts.team.RequestRepo.exists(id, _) }
+            } yield {
+              jsonView.teamWrites.writes(team) ++ Json
+                .obj(
+                  "joined" -> joined,
+                  "requested" -> requested
+                )
+            }.some
           }
         }
       }
