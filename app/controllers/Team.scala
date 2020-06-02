@@ -316,9 +316,13 @@ object Team extends LidraughtsController {
   }
 
   def quit(id: String) = AuthOrScoped(_.Team.Write)(
-    auth = ctx => me => OptionResult(api.quit(id, me)) { team =>
-      Redirect(routes.Team.show(team.id))
-    }(ctx),
+    auth = implicit ctx => me =>
+      OptionFuResult(api.quit(id, me)) { team =>
+        negotiate(
+          html = Redirect(routes.Team.show(team.id)).fuccess,
+          api = _ => jsonOkResult.fuccess
+        )
+      }(ctx),
     scoped = req => me => api.quit(id, me) flatMap {
       _.fold(notFoundJson())(_ => jsonOkResult.fuccess)
     }
