@@ -117,26 +117,35 @@ object Tournament extends LidraughtsController {
             shieldOwner <- env.shieldApi currentOwner tour
           } yield Ok(html.tournament.show(tour, verdicts, json, chat, streamers, shieldOwner, tour.isWfd option Env.user.wfdUsername))).mon(_.http.response.tournament.show.website)
         }, api = _ => tourOption.fold(notFoundJson("No such tournament")) { tour =>
-          get("playerInfo").?? { env.api.playerInfo(tour, _) } zip
-            getBool("socketVersion").??(env version tour.id map some) flatMap {
-              case (playerInfoExt, socketVersion) =>
-                val partial = getBool("partial")
-                lidraughts.mon.tournament.apiShowPartial(partial)()
-                env.jsonView(
-                  tour = tour,
-                  page = page,
-                  me = ctx.me,
-                  getUserTeamIds = getUserTeamIds,
-                  getTeamName = Env.team.cached.name,
-                  playerInfoExt = playerInfoExt,
-                  socketVersion = socketVersion,
-                  partial = partial,
-                  lang = ctx.lang,
-                  pref = ctx.pref.some
-                )
-            } map { Ok(_) }
+          (for {
+            playerInfoExt <- get("playerInfo").?? { env.api.playerInfo(tour, _) }
+            socketVersion <- getBool("socketVersion").??(env version tour.id map some)
+            partial = getBool("partial")
+            _ = lidraughts.mon.tournament.apiShowPartial(partial)()
+            json <- env.jsonView(
+              tour = tour,
+              page = page,
+              me = ctx.me,
+              getUserTeamIds = getUserTeamIds,
+              getTeamName = Env.team.cached.name,
+              playerInfoExt = playerInfoExt,
+              socketVersion = socketVersion,
+              partial = partial,
+              lang = ctx.lang,
+              pref = ctx.pref.some
+            )
+            chatOpt <- canHaveChat(tour, json.some) ?? Env.chat.api.userChat.cached
+              .findMine(Chat.Id(tour.id), ctx.me)
+              .dmap(some)
+            _ <- chatOpt ?? { c =>
+              Env.user.lightUserApi.preloadMany(c.chat.userIds) >>-
+                tour.isWfd ?? Env.user.lightWfdUserApi.preloadMany(c.chat.userIds)
+            }
+          } yield Ok(json ++ chatOpt.fold(Json.obj()) { c =>
+            Json.obj("chat" -> lidraughts.chat.JsonView.mobile(chat = c.chat))
+          }))
         }.mon(_.http.response.tournament.show.mobile)
-      ) map NoCache
+      ) map { NoCache(_) }
     }
   }
 
