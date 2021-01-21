@@ -438,7 +438,6 @@ computer analysis, game chat and shareable URL.</string>
   <string name="more">More</string>
   <string name="memberSince">Member since</string>
   <string name="lastSeenActive">Active %s</string>
-  <string name="challengeToPlay">Challenge to a game</string>
   <string name="player">Player</string>
   <string name="list">List</string>
   <string name="sort">Sort</string>
@@ -903,16 +902,10 @@ One URL per line</string>
   <string name="mustNotContainATitleThatIsNotVerified">Must not contain a title that is not verified for your account</string>
   <string name="custom">Custom</string>
   <string name="notifications">Notifications</string>
-  <string name="challenges">Challenges</string>
   <string name="noChallenges">No challenges</string>
   <string name="challengeSomeone">Challenge someone</string>
   <string name="openChallenge">Open challenge</string>
   <string name="startsAtX">Starts at %s</string>
-  <string name="challengeDeclined">Challenge declined</string>
-  <string name="challengeAccepted">Challenge accepted!</string>
-  <string name="challengeCanceled">Challenge cancelled</string>
-  <string name="challengeAcceptedAndWaiting">Challenge accepted! Waiting for your opponent...</string>
-  <string name="youWillBeRedirectedToTheGame">You will be redirected to the game when both players have accepted the challenge.</string>
   <string name="perfRatingX">Rating: %s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="one">%s second to play the first move</item>
@@ -987,12 +980,6 @@ One URL per line</string>
   <string name="middlegame">Middlegame</string>
   <string name="endgame">Endgame</string>
   <string name="randomOpeningFromX">Random opening from %s</string>
-  <string name="registerToSendChallenges">Please register to send challenges.</string>
-  <string name="youCannotChallengeX">You cannot challenge %s.</string>
-  <string name="xDoesNotAcceptChallenges">%s does not accept challenges.</string>
-  <string name="yourXRatingIsTooFarFromY">Your %1$s rating is too far from %2$s.</string>
-  <string name="cannotChallengeDueToProvisionalXRating">Cannot challenge due to provisional %s rating.</string>
-  <string name="xOnlyAcceptsChallengesFromFriends">%s only accepts challenges from friends.</string>
   <string name="conditionalPremoves">Conditional premoves</string>
   <string name="addCurrentVariation">Add current variation</string>
   <string name="playVariationToCreateConditionalPremoves">Play a variation to create conditional premoves</string>

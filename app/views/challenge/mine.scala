@@ -26,7 +26,7 @@ object mine {
         main(cls := "page-small challenge-page box box-pad")(
           c.status match {
             case Status.Created | Status.External | Status.Offline => div(id := "ping-challenge")(
-              h1(trans.challengeToPlay()),
+              h1(trans.challenge.challengeToPlay()),
               bits.details(c),
               c.destUserId.map { destId =>
                 div(cls := "waiting")(
@@ -67,19 +67,19 @@ object mine {
               cancelForm
             )
             case Status.Declined => div(cls := "follow-up")(
-              h1(trans.challengeDeclined()),
+              h1(trans.challenge.challengeDeclined()),
               bits.details(c),
               a(cls := "button button-fat", href := routes.Lobby.home())(trans.newOpponent())
             )
             case Status.Accepted => div(cls := "follow-up")(
-              h1(trans.challengeAccepted()),
+              h1(trans.challenge.challengeAccepted()),
               bits.details(c),
               a(id := "challenge-redirect", href := routes.Round.watcher(c.id, "white"), cls := "button-fat")(
                 trans.joinTheGame()
               )
             )
             case Status.Canceled => div(cls := "follow-up")(
-              h1(trans.challengeCanceled()),
+              h1(trans.challenge.challengeCanceled()),
               bits.details(c),
               a(cls := "button button-fat", href := routes.Lobby.home())(trans.newOpponent())
             )

@@ -1,7 +1,7 @@
 // Generated with bin/trans-dump.js
 package lidraughts.i18n
 
-import I18nDb.{ Site, Arena, Emails, Learn, Activity, Coordinates, Study, Patron, Broadcast, Streamer, Tfa, Settings, Preferences, Team, PerfStat, Lag, Swiss }
+import I18nDb.{ Site, Arena, Emails, Learn, Activity, Coordinates, Study, Patron, Broadcast, Streamer, Tfa, Settings, Preferences, Team, PerfStat, Lag, Swiss, Challenge }
 
 // format: OFF
 object I18nKeys {
@@ -333,7 +333,6 @@ val `xStartedFollowingY` = new Translated("xStartedFollowingY", Site)
 val `more` = new Translated("more", Site)
 val `memberSince` = new Translated("memberSince", Site)
 val `lastSeenActive` = new Translated("lastSeenActive", Site)
-val `challengeToPlay` = new Translated("challengeToPlay", Site)
 val `player` = new Translated("player", Site)
 val `list` = new Translated("list", Site)
 val `sort` = new Translated("sort", Site)
@@ -765,16 +764,10 @@ val `mustNotContainLidraughts` = new Translated("mustNotContainLidraughts", Site
 val `mustNotContainATitleThatIsNotVerified` = new Translated("mustNotContainATitleThatIsNotVerified", Site)
 val `custom` = new Translated("custom", Site)
 val `notifications` = new Translated("notifications", Site)
-val `challenges` = new Translated("challenges", Site)
 val `noChallenges` = new Translated("noChallenges", Site)
 val `challengeSomeone` = new Translated("challengeSomeone", Site)
 val `openChallenge` = new Translated("openChallenge", Site)
 val `startsAtX` = new Translated("startsAtX", Site)
-val `challengeDeclined` = new Translated("challengeDeclined", Site)
-val `challengeAccepted` = new Translated("challengeAccepted", Site)
-val `challengeCanceled` = new Translated("challengeCanceled", Site)
-val `challengeAcceptedAndWaiting` = new Translated("challengeAcceptedAndWaiting", Site)
-val `youWillBeRedirectedToTheGame` = new Translated("youWillBeRedirectedToTheGame", Site)
 val `perfRatingX` = new Translated("perfRatingX", Site)
 val `practiceWithComputer` = new Translated("practiceWithComputer", Site)
 val `anotherWasX` = new Translated("anotherWasX", Site)
@@ -833,12 +826,6 @@ val `opening` = new Translated("opening", Site)
 val `middlegame` = new Translated("middlegame", Site)
 val `endgame` = new Translated("endgame", Site)
 val `randomOpeningFromX` = new Translated("randomOpeningFromX", Site)
-val `registerToSendChallenges` = new Translated("registerToSendChallenges", Site)
-val `youCannotChallengeX` = new Translated("youCannotChallengeX", Site)
-val `xDoesNotAcceptChallenges` = new Translated("xDoesNotAcceptChallenges", Site)
-val `yourXRatingIsTooFarFromY` = new Translated("yourXRatingIsTooFarFromY", Site)
-val `cannotChallengeDueToProvisionalXRating` = new Translated("cannotChallengeDueToProvisionalXRating", Site)
-val `xOnlyAcceptsChallengesFromFriends` = new Translated("xOnlyAcceptsChallengesFromFriends", Site)
 val `conditionalPremoves` = new Translated("conditionalPremoves", Site)
 val `addCurrentVariation` = new Translated("addCurrentVariation", Site)
 val `playVariationToCreateConditionalPremoves` = new Translated("playVariationToCreateConditionalPremoves", Site)
@@ -1514,6 +1501,24 @@ val `nextRound` = new Translated("nextRound", Swiss)
 val `numberOfRounds` = new Translated("numberOfRounds", Swiss)
 val `scheduleTheNextRound` = new Translated("scheduleTheNextRound", Swiss)
 val `nbRounds` = new Translated("nbRounds", Swiss)
+}
+
+object challenge {
+val `challenges` = new Translated("challenges", Challenge)
+val `challengeToPlay` = new Translated("challengeToPlay", Challenge)
+val `challengeDeclined` = new Translated("challengeDeclined", Challenge)
+val `challengeAccepted` = new Translated("challengeAccepted", Challenge)
+val `challengeCanceled` = new Translated("challengeCanceled", Challenge)
+val `challengeAcceptedAndWaiting` = new Translated("challengeAcceptedAndWaiting", Challenge)
+val `youWillBeRedirectedToTheGame` = new Translated("youWillBeRedirectedToTheGame", Challenge)
+val `registerToSendChallenges` = new Translated("registerToSendChallenges", Challenge)
+val `youCannotChallengeX` = new Translated("youCannotChallengeX", Challenge)
+val `xDoesNotAcceptChallenges` = new Translated("xDoesNotAcceptChallenges", Challenge)
+val `yourXRatingIsTooFarFromY` = new Translated("yourXRatingIsTooFarFromY", Challenge)
+val `cannotChallengeDueToProvisionalXRating` = new Translated("cannotChallengeDueToProvisionalXRating", Challenge)
+val `xOnlyAcceptsChallengesFromFriends` = new Translated("xOnlyAcceptsChallengesFromFriends", Challenge)
+val `declineGeneric` = new Translated("declineGeneric", Challenge)
+val `declineLater` = new Translated("declineLater", Challenge)
 }
 
 }
