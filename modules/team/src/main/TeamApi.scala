@@ -138,6 +138,13 @@ final class TeamApi(
       }
     }
 
+  def cancelRequest(teamId: Team.ID, user: User): Fu[Option[Team]] =
+    coll.team.byId[Team](teamId) flatMap {
+      _ ?? { team =>
+        RequestRepo.cancel(team.id, user) map (_ option team)
+      }
+    }
+
   def processRequest(team: Team, request: Request, accept: Boolean): Funit = for {
     _ ← coll.request.remove(request)
     _ = cached.nbRequests invalidate team.createdBy
