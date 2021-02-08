@@ -253,7 +253,7 @@ final class TournamentApi(
     }
   }
 
-  def verdicts(tour: Tournament, me: Option[User], getUserTeamIds: User => Fu[List[TeamId]]): Fu[Condition.All.WithVerdicts] = me match {
+  def getVerdicts(tour: Tournament, me: Option[User], getUserTeamIds: User => Fu[List[TeamId]]): Fu[Condition.All.WithVerdicts] = me match {
     case None => fuccess(tour.conditions.accepted)
     case Some(user) => {
       tour.isStarted ?? PlayerRepo.exists(tour.id, user.id)
@@ -269,47 +269,43 @@ final class TournamentApi(
     password: Option[String],
     withTeamId: Option[String],
     getUserTeamIds: User => Fu[List[TeamId]],
-    promise: Option[Promise[Boolean]]
+    promise: Option[Promise[Tournament.JoinResult]]
   ): Unit = Sequencing(tourId)(TournamentRepo.enterableById) { tour =>
-    val fuJoined =
-      PlayerRepo.exists(tour.id, me.id) flatMap { playerExists =>
-        if (tour.password == password || playerExists) {
-          verdicts(tour, me.some, getUserTeamIds) flatMap {
-            _.accepted ?? {
-              pause.canJoin(me.id, tour) ?? {
-                def proceedWithTeam(team: Option[String]) =
-                  PlayerRepo.join(tour.id, me, tour.perfLens, team) >> updateNbPlayers(tour.id) >>- {
+    PlayerRepo.exists(tour.id, me.id) flatMap { playerExists =>
+      import Tournament.JoinResult
+      val fuResult: Fu[JoinResult] =
+        if (!playerExists && tour.password.exists(p => !password.has(p))) fuccess(JoinResult.WrongPassword)
+        else
+          getVerdicts(tour, me.some, getUserTeamIds) flatMap { verdicts =>
+            if (!verdicts.accepted) fuccess(JoinResult.Verdicts)
+            else if (!pause.canJoin(me.id, tour)) fuccess(JoinResult.Paused)
+            else {
+              def proceedWithTeam(team: Option[String]): Fu[JoinResult] =
+                PlayerRepo.join(tour.id, me, tour.perfLens, team) >>
+                  updateNbPlayers(tour.id) >>- {
                     withdrawOtherTournaments(tour.id, me.id)
                     socketReload(tour.id)
                     publish()
-                  } inject true
-                withTeamId match {
-                  case None if !tour.isTeamBattle => proceedWithTeam(none)
-                  case None if tour.isTeamBattle =>
-                    PlayerRepo.exists(tour.id, me.id) flatMap {
-                      case true => proceedWithTeam(none)
-                      case false => fuccess(false)
+                  } inject JoinResult.Ok
+              withTeamId match {
+                case None if tour.isTeamBattle && playerExists => proceedWithTeam(none)
+                case None if tour.isTeamBattle => fuccess(JoinResult.MissingTeam)
+                case None => proceedWithTeam(none)
+                case Some(team) => tour.teamBattle match {
+                  case Some(battle) if battle.teams contains team =>
+                    getUserTeamIds(me) flatMap { myTeams =>
+                      if (myTeams has team) proceedWithTeam(team.some)
+                      else fuccess(JoinResult.MissingTeam)
                     }
-                  case Some(team) => tour.teamBattle match {
-                    case Some(battle) if battle.teams contains team =>
-                      getUserTeamIds(me) flatMap { myTeams =>
-                        if (myTeams has team) proceedWithTeam(team.some)
-                        // else proceedWithTeam(team.some) // listress
-                        else fuccess(false)
-                      }
-                    case _ => fuccess(false)
-                  }
+                  case _ => fuccess(JoinResult.Nope)
                 }
               }
             }
           }
-        } else {
-          socketReload(tour.id)
-          fuccess(false)
-        }
+      fuResult map { result =>
+        if (!result.ok) socketReload(tour.id)
+        promise.foreach(_ success result)
       }
-    fuJoined map {
-      joined => promise.foreach(_ success joined)
     }
   }
 
@@ -319,10 +315,10 @@ final class TournamentApi(
     password: Option[String],
     teamId: Option[String],
     getUserTeamIds: User => Fu[List[TeamId]]
-  ): Fu[Boolean] = {
-    val promise = Promise[Boolean]
+  ): Fu[Tournament.JoinResult] = {
+    val promise = Promise[Tournament.JoinResult]
     join(tourId, me, password, teamId, getUserTeamIds, promise.some)
-    promise.future.withTimeoutDefault(5.seconds, false)(system)
+    promise.future.withTimeoutDefault(5.seconds, Tournament.JoinResult.Nope)(system)
   }
 
   def pageOf(tour: Tournament, userId: User.ID): Fu[Option[Int]] =

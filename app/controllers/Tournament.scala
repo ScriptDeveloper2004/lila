@@ -99,7 +99,7 @@ object Tournament extends LidraughtsController {
       negotiate(
         html = tourOption.fold(tournamentNotFound.fuccess) { tour =>
           (for {
-            verdicts <- env.api.verdicts(tour, ctx.me, getUserTeamIds)
+            verdicts <- env.api.getVerdicts(tour, ctx.me, getUserTeamIds)
             version <- env.version(tour.id)
             json <- env.jsonView(
               tour = tour,
@@ -203,10 +203,17 @@ object Tournament extends LidraughtsController {
         val teamId = ctx.body.body.\("team").asOpt[String]
         env.api.joinWithResult(id, me, password, teamId, getUserTeamIds) flatMap { result =>
           negotiate(
-            html = Redirect(routes.Tournament.show(id)).fuccess,
+            html = fuccess {
+              result.error match {
+                case None => Redirect(routes.Tournament.show(id))
+                case Some(error) => BadRequest(error)
+              }
+            },
             api = _ => fuccess {
-              if (result) jsonOkResult
-              else BadRequest(Json.obj("joined" -> false))
+              result.error match {
+                case None => jsonOkResult
+                case Some(error) => BadRequest(Json.obj("joined" -> false, "error" -> error))
+              }
             }
           )
         }
