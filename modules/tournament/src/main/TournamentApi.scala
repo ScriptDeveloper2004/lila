@@ -89,7 +89,7 @@ final class TournamentApi(
     } inject tour
   }
 
-  def update(old: Tournament, data: TournamentSetup, me: User, myTeams: List[LightTeam]): Funit = {
+  def update(old: Tournament, data: TournamentSetup, me: User, myTeams: List[LightTeam]): Fu[Tournament] = {
     import data._
     val tour = old.copy(
       name = (DataForm.canPickName(me) ?? name) | old.name,
@@ -118,7 +118,7 @@ final class TournamentApi(
     if (old.isWfd != tour.isWfd)
       cached.wfdCache.invalidate(tour.id)
     sillyNameCheck(tour, me)
-    TournamentRepo update tour void
+    TournamentRepo update tour inject tour
   }
 
   private def sillyNameCheck(tour: Tournament, me: User): Unit =

@@ -314,11 +314,29 @@ object Tournament extends LidraughtsController {
       jsonFormErrorDefaultLang,
       setup => rateLimitCreation(me, setup.password.isDefined, req) {
         env.api.createTournament(setup, me, teams, getUserTeamIds, andJoin = false) flatMap { tour =>
-          val lang = lidraughts.i18n.I18nLangPicker(req, me.some)
-          env.jsonView(tour, none, none, getUserTeamIds, Env.team.cached.name, none, none, partial = false, lang, none)
+          env.jsonView(tour, none, none, getUserTeamIds, Env.team.cached.name, none, none, partial = false, reqLang, none)
         } map { Ok(_) }
       }
     )
+
+  def apiUpdate(id: String) =
+    ScopedBody(_.Tournament.Write) { implicit req => me =>
+      implicit def lang = reqLang
+      repo byId id flatMap {
+        _.filter(canEditTournament(_, me)) ?? { tour =>
+          teamsIBelongTo(me) flatMap { teams =>
+            env.forms.edit(me, tour).bindFromRequest()
+              .fold(
+                newJsonFormError,
+                data =>
+                  env.api.update(tour, data, me, teams) flatMap { tour =>
+                    env.jsonView(tour, none, none, getUserTeamIds, Env.team.cached.name, none, none, partial = false, reqLang, none) map { Ok(_) }
+                  }
+              )
+          }
+        }
+      }
+    }
 
   def teamBattleEdit(id: String) = Auth { implicit ctx => me =>
     repo byId id flatMap {
@@ -464,11 +482,14 @@ object Tournament extends LidraughtsController {
       }
     }
 
+  private def canEditTournament(t: Tour, me: UserModel) =
+    (t.createdBy == me.id && t.isCreated) || isGranted(_.ManageTournament, me)
+
   private def WithEditableTournament(id: String, me: UserModel)(
     f: Tour => Fu[Result]
   )(implicit ctx: Context): Fu[Result] =
     repo byId id flatMap {
-      case Some(t) if (t.createdBy == me.id && t.isCreated) || isGranted(_.ManageTournament) =>
+      case Some(t) if canEditTournament(t, me) =>
         f(t)
       case Some(t) => Redirect(routes.Tournament.show(t.id)).fuccess
       case _ => notFound
