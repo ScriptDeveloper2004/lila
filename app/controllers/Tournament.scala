@@ -338,6 +338,18 @@ object Tournament extends LidraughtsController {
       }
     }
 
+  def apiTerminate(id: String) =
+    ScopedBody(_.Tournament.Write) { implicit req => me =>
+      repo byId id map {
+        _ ?? {
+          case tour if tour.createdBy == me.id || isGranted(_.ManageTournament, me) =>
+            env.api.kill(tour)
+            jsonOkResult
+          case _ => BadRequest(jsonError("Can't terminate that tournament: Permission denied"))
+        }
+      }
+    }
+
   def teamBattleEdit(id: String) = Auth { implicit ctx => me =>
     repo byId id flatMap {
       _ ?? {
