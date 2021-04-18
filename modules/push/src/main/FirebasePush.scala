@@ -59,7 +59,14 @@ private final class FirebasePush(
             "body" -> data.body,
             "title" -> data.title
           )
-        )
+        ).add(
+            "apns" -> data.iosBadge.map(number =>
+              Json.obj(
+                "payload" -> Json.obj(
+                  "aps" -> Json.obj("badge" -> number)
+                )
+              ))
+          )
       )) flatMap {
         case res if res.status == 200 => funit
         case res if res.status == 404 =>

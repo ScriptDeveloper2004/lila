@@ -29,23 +29,30 @@ private final class PushApi(
     else game.userIds.map { userId =>
       Pov.ofUserId(game, userId) ?? { pov =>
         IfAway(pov) {
-          pushToAll(userId, _.finish, PushApi.Data(
-            title = pov.win match {
-              case Some(true) => "You won!"
-              case Some(false) => "You lost."
-              case _ => "It's a draw."
-            },
-            body = s"Your game with ${opponentName(pov)} is over.",
-            stacking = Stacking.GameFinish,
-            payload = Json.obj(
-              "userId" -> userId,
-              "userData" -> Json.obj(
-                "type" -> "gameFinish",
-                "gameId" -> game.id,
-                "fullId" -> pov.fullId
-              )
-            )
-          ))
+          lidraughts.user.UserRepo.byId(userId) flatMap {
+            _ ?? { user =>
+              gameProxy.urgentGames(user) flatMap { urgent =>
+                pushToAll(userId, _.finish, PushApi.Data(
+                  title = pov.win match {
+                    case Some(true) => "You won!"
+                    case Some(false) => "You lost."
+                    case _ => "It's a draw."
+                  },
+                  body = s"Your game with ${opponentName(pov)} is over.",
+                  stacking = Stacking.GameFinish,
+                  payload = Json.obj(
+                    "userId" -> userId,
+                    "userData" -> Json.obj(
+                      "type" -> "gameFinish",
+                      "gameId" -> game.id,
+                      "fullId" -> pov.fullId
+                    )
+                  ),
+                  iosBadge = Option(urgent.filter(_.isMyTurn).length)
+                ))
+              }
+            }
+          }
         }
       }
     }.sequenceFu.void
@@ -56,16 +63,23 @@ private final class PushApi(
         val pov = Pov(game, game.player.color)
         game.player.userId ?? { userId =>
           IfAway(pov) {
-            game.pdnMoves.lastOption ?? { sanMove =>
-              pushToAll(userId, _.move, PushApi.Data(
-                title = "It's your turn!",
-                body = s"${opponentName(pov)} played $sanMove",
-                stacking = Stacking.GameMove,
-                payload = Json.obj(
-                  "userId" -> userId,
-                  "userData" -> corresGameJson(pov, "gameMove")
-                )
-              ))
+            lidraughts.user.UserRepo.byId(userId) flatMap {
+              _ ?? { user =>
+                gameProxy.urgentGames(user) flatMap { urgent =>
+                  game.pdnMoves.lastOption ?? { sanMove =>
+                    pushToAll(userId, _.move, PushApi.Data(
+                      title = "It's your turn!",
+                      body = s"${opponentName(pov)} played $sanMove",
+                      stacking = Stacking.GameMove,
+                      payload = Json.obj(
+                        "userId" -> userId,
+                        "userData" -> corresGameJson(pov, "gameMove")
+                      ),
+                      iosBadge = Option(urgent.filter(_.isMyTurn).length)
+                    ))
+                  }
+                }
+              }
             }
           }
         }
@@ -244,6 +258,7 @@ private object PushApi {
       title: String,
       body: String,
       stacking: Stacking,
-      payload: JsObject
+      payload: JsObject,
+      iosBadge: Option[Int] = None
   )
 }
