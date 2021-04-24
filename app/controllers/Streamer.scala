@@ -29,9 +29,14 @@ object Streamer extends LidraughtsController {
         JsonOk {
           featured.live.streams.map { s =>
             Json.obj(
-              "url"               -> routes.Streamer.redirect(s.streamer.id.value).absoluteURL(),
-              "usernameWithTitle" -> featured.titleName(s),
-              "status"            -> s.status
+              "url"    -> routes.Streamer.redirect(s.streamer.id.value).absoluteURL(),
+              "status" -> s.status,
+              "user" -> Json
+                .obj(
+                  "id"   -> s.streamer.userId,
+                  "name" -> s.streamer.name.value
+                )
+                .add("title" -> featured.titles.get(s.streamer.userId))
             )
           }
         }
