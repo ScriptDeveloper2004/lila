@@ -21,31 +21,22 @@ object Streamer extends LidraughtsController {
     } yield Ok(html.streamer.index(live, pager, requests))
   }
 
-  def featured =
-    Open { implicit ctx =>
-      negotiate(
-        html = notFound,
-        api = _ =>
-          ctx.noKid ?? {
-            env.streamer.liveStreamApi.all
-              .map { streams =>
-                val max      = env.streamer.homepageMaxSetting.get()
-                val featured = streams.homepage(max, ctx.req, ctx.me) withTitles env.user.lightUserApi
-                Ok(
-                  Json.toJson(
-                    featured.live.streams.map(s =>
-                      Json.obj(
-                        "link"              -> routes.Streamer.redirect(s.streamer.id.value).absoluteURL(),
-                        "usernameWithTitle" -> featured.titleName(s),
-                        "status"            -> s.status
-                      )
-                    )
-                  )
-                )
-              }
+  def featured = Action.async { implicit req =>
+    env.streamer.liveStreamApi.all
+      .map { streams =>
+        val max      = env.streamer.homepageMaxSetting.get()
+        val featured = streams.homepage(max, req, none) withTitles env.user.lightUserApi
+        JsonOk {
+          featured.live.streams.map { s =>
+            Json.obj(
+              "url"               -> routes.Streamer.redirect(s.streamer.id.value).absoluteURL(),
+              "usernameWithTitle" -> featured.titleName(s),
+              "status"            -> s.status
+            )
           }
-      )
-    }
+        }
+      }
+  }
 
   def live = Api.ApiRequest { implicit ctx =>
     Env.user.lightUserApi asyncMany Env.streamer.liveStreamApi.userIds.toList dmap (_.flatten) map { users =>
