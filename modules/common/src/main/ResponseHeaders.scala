@@ -21,5 +21,5 @@ object ResponseHeaders {
       ))
   }
 
-  val allowMethods = List("OPTIONS", "GET", "POST") mkString ", "
+  val allowMethods = List("OPTIONS", "GET", "POST", "DELETE") mkString ", "
 }
