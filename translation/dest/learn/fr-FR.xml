@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="byPlaying">en jouant !</string>
+  <string name="menu">Menu</string>
   <string name="progressX">Progression : %s</string>
   <string name="resetMyProgress">Réinitialiser ma progression</string>
   <string name="youWillLoseAllYourProgress">Vous perdrez toute votre progression !</string>
