@@ -14,6 +14,7 @@ object mini {
   private val dataLive = attr("data-live")
   private val dataState = attr("data-state")
   private val dataTime = attr("data-time")
+  private val dataCorrespondence = attr("data-corr")
   private val dataUserId = attr("data-userid")
   private val cgWrap = span(cls := "cg-wrap")(cgWrapContent)
 
@@ -110,7 +111,8 @@ object mini {
       }
     span(
       cls := s"mini-game__clock mini-game__clock--${color.name}",
-      dataTime := s
+      dataTime := s,
+      dataCorrespondence := true
     )(time)
   }
 }

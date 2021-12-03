@@ -430,7 +430,8 @@ lidraughts.miniGame = (() => {
           $el.find('.mini-game__clock--' + color).each(function() {
             $(this).clock({
               time: parseInt(this.getAttribute('data-time')),
-              pause: color != turnColor
+              pause: color != turnColor,
+              corr: this.getAttribute('data-corr')
             });
           })
         );
@@ -453,8 +454,9 @@ lidraughts.miniGame = (() => {
         fen: data.fen,
         lastMove
       });
-      const turnColor = fenColor(data.fen);
-      if ((turnColor === 'white' ? data.bc : data.wc) >= 24 * 60 * 60) {
+      const turnColor = fenColor(data.fen),
+        correspondence = (turnColor === 'white' ? data.bc : data.wc) >= 24 * 60 * 60;
+      if (correspondence) {
         // correspondence clock is always full for other side, so copy translated opponent clock after move
         const $wc = $el.find('.mini-game__clock--white'), 
               $bc = $el.find('.mini-game__clock--black');
@@ -464,7 +466,8 @@ lidraughts.miniGame = (() => {
       const renderClock = (time, color) => {
         if (!isNaN(time)) $el.find('.mini-game__clock--' + color).clock('set', {
           time,
-          pause: color != turnColor
+          pause: color != turnColor,
+          corr: correspondence
         });
       };
       renderClock(data.wc, 'white');
@@ -489,7 +492,7 @@ lidraughts.miniGame = (() => {
 lidraughts.widget('clock', {
   _create: function() {
     this.target = this.options.time * 1000 + Date.now();
-    if (!this.options.pause && this.options.time < 6 * 60 * 60) this.interval = setInterval(this.render.bind(this), 1000);
+    if (!this.options.pause && !(this.options.corr && this.options.time >= 6 * 60 * 60)) this.interval = setInterval(this.render.bind(this), 1000);
     this.render();
   },
 
@@ -498,7 +501,7 @@ lidraughts.widget('clock', {
     this.target = this.options.time * 1000 + Date.now();
     this.render();
     clearInterval(this.interval);
-    if (!opts.pause && this.options.time < 6 * 60 * 60) this.interval = setInterval(this.render.bind(this), 1000);
+    if (!opts.pause && !(opts.corr && opts.time >= 6 * 60 * 60)) this.interval = setInterval(this.render.bind(this), 1000);
   },
 
   render: function() {
@@ -519,7 +522,7 @@ lidraughts.widget('clock', {
       hours = date.getUTCHours(),
       minutes = date.getUTCMinutes(),
       seconds = date.getUTCSeconds();
-    if (days !== 0 || hours >= 6) return undefined;
+    if (this.options.corr && (days !== 0 || hours >= 6)) return undefined;
     return hours > 0 ?
       hours + ':' + this.pad(minutes) + ':' + this.pad(seconds) :
       minutes + ':' + this.pad(seconds);
