@@ -96,6 +96,7 @@ object crud {
         half = true
       )
     ),
+    form3.group(form("drawLimit"), raw("No draw offers before move (optional, 0 disables draw offers)"))(form3.input(_, typ = "number")(min := 0, max := 99)),
     hr,
     h2("Conditions of entry"),
     tournament.form.condition(form, auto = false, Nil),

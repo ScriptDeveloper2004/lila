@@ -106,7 +106,7 @@ private[round] final class Finisher(
         winnerColor = winner,
         winnerId = winner flatMap (g.player(_).userId),
         status = prog.game.status,
-        keepHashes = g.isSimul && g.metadata.drawLimit.isDefined
+        keepHashes = g.isSimul && g.metadata.drawLimit.isDefined // keep hashes to preserve what rule caused draw
       ) >>
       UserRepo.pair(
         g.whitePlayer.userId,

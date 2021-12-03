@@ -40,7 +40,8 @@ final class AutoPairing(
       blackPlayer = GamePlayer.make(draughts.Black, user2.some, perfPicker),
       mode = tour.mode,
       source = Source.Tournament,
-      pdnImport = None
+      pdnImport = None,
+      drawLimit = tour.spotlight.flatMap(_.drawLimit)
     ).withId(pairing.gameId)
       .withTournamentId(tour.id, if (opening._1 == -1) none else opening._1.some)
       .start

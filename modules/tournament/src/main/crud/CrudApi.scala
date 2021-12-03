@@ -34,7 +34,8 @@ final class CrudApi {
     password = tour.password,
     berserkable = !tour.noBerserk,
     streakable = !tour.noStreak,
-    teamBattle = tour.isTeamBattle
+    teamBattle = tour.isTeamBattle,
+    drawLimit = ~tour.spotlight.flatMap(_.drawLimit).map(_.toString)
   )
 
   def update(old: Tournament, data: CrudForm.Data) =
@@ -99,7 +100,8 @@ final class CrudApi {
         description = description,
         homepageHours = homepageHours.some.filterNot(0 ==),
         iconFont = none,
-        iconImg = image.some.filter(_.nonEmpty)
+        iconImg = image.some.filter(_.nonEmpty),
+        drawLimit = parseIntOption(drawLimit)
       ).some,
       position = startingPosition,
       openingTable = openingTable,

@@ -78,6 +78,12 @@ object side {
           })
         }
       )),
+      tour.spotlight.flatMap(_.drawLimit).map { lim =>
+        div(cls := "text", dataIcon := "2")(
+          if (lim > 0) trans.drawOffersAfterX(lim)
+          else trans.drawOffersNotAllowed()
+        )
+      },
       tour.noBerserk option div(cls := "text", dataIcon := "`")(trans.noBerserkAllowed()),
       tour.noStreak option div(cls := "text", dataIcon := "Q")("No arena streaks"),
       !tour.isScheduled option frag(trans.by(userIdLink(tour.createdBy.some)), br),

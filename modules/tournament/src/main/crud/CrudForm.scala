@@ -35,29 +35,12 @@ object CrudForm {
     "password" -> optional(nonEmptyText),
     "berserkable" -> boolean,
     "streakable" -> boolean,
-    "teamBattle" -> boolean
+    "teamBattle" -> boolean,
+    "drawLimit" -> text(minLength = 0, maxLength = 2)
+      .verifying("Enter a value between 0 and 99, or leave empty", mvs => mvs.length == 0 || parseIntOption(mvs).??(m => m >= 0 && m <= 99))
   )(CrudForm.Data.apply)(CrudForm.Data.unapply)
     .verifying("Invalid clock", _.validClock)
-    .verifying("Increase tournament duration, or decrease game clock", _.validTiming)) fill CrudForm.Data(
-    name = "",
-    homepageHours = 0,
-    clockTime = clockTimeDefault,
-    clockIncrement = clockIncrementDefault,
-    minutes = minuteDefault,
-    variant = draughts.variant.Standard.id,
-    positionStandard = draughts.variant.Standard.initialFen.some,
-    positionRussian = draughts.variant.Russian.initialFen.some,
-    positionBrazilian = draughts.variant.Brazilian.initialFen.some,
-    date = DateTime.now plusDays 7,
-    image = "",
-    headline = "",
-    description = "",
-    conditions = Condition.DataForm.AllSetup.default,
-    password = None,
-    berserkable = true,
-    streakable = true,
-    teamBattle = false
-  )
+    .verifying("Increase tournament duration, or decrease game clock", _.validTiming)) fill empty
 
   case class Data(
       name: String,
@@ -77,7 +60,8 @@ object CrudForm {
       password: Option[String],
       berserkable: Boolean,
       streakable: Boolean,
-      teamBattle: Boolean
+      teamBattle: Boolean,
+      drawLimit: String
   ) {
 
     def realVariant = Variant orDefault variant
@@ -114,4 +98,26 @@ object CrudForm {
     "draughts64.logo.png" -> "Draughts 64"
   )
   val imageDefault = ""
+
+  val empty = CrudForm.Data(
+    name = "",
+    homepageHours = 0,
+    clockTime = clockTimeDefault,
+    clockIncrement = clockIncrementDefault,
+    minutes = minuteDefault,
+    variant = draughts.variant.Standard.id,
+    positionStandard = draughts.variant.Standard.initialFen.some,
+    positionRussian = draughts.variant.Russian.initialFen.some,
+    positionBrazilian = draughts.variant.Brazilian.initialFen.some,
+    date = DateTime.now plusDays 7,
+    image = "",
+    headline = "",
+    description = "",
+    conditions = Condition.DataForm.AllSetup.default,
+    password = None,
+    berserkable = true,
+    streakable = true,
+    teamBattle = false,
+    drawLimit = ""
+  )
 }
