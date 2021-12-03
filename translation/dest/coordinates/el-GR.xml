@@ -4,5 +4,10 @@
   <string name="coordinateTraining">Εξάσκηση στις συντεταγμένες</string>
   <string name="averageScoreAsWhiteX">Μέση βαθμολογία ως λευκά: %s</string>
   <string name="averageScoreAsBlackX">Μέση βαθμολογία ως μαύρα: %s</string>
+  <string name="knowingTheDraughtsBoard">Γνωρίζοντας τις συντεταγμένες της σκακιέρας ντάμας είναι μία πολύ σημαντική δεξιότητα:</string>
+  <string name="mostDraughtsCourses">Τα περισσότερα μαθήματα και ασκήσεις στη ντάμα χρησιμοποιούν την σημειογραφία αριθμού πεδίου εκτενώς.</string>
+  <string name="talkToYourDraughtsFriends">Καθίσταται ευκολότερο να επικοινωνήσετε με τους φίλους σας στη ντάμα, δεδομένου ότι και οι δύο καταλαβαίνετε τη γλώσσα της ντάμας.</string>
+  <string name="youCanAnalyseAGameMoreEffectively">Μπορείτε να αναλύσετε ένα παιχνίδι αποτελεσματικότερα εάν δεν χρειάζεται να αναζητάτε που είναι τα τετράγωνα.</string>
+  <string name="aSquareNameAppears">Ένα όνομα τετραγώνου εμφανίζεται στη σκακιέρα και πρέπει να πατήσετε το σωστό τετράγωνο. Έχετε 30 δευτερόλεπτα για να αναγνωρίσετε όσο το δυνατόν περισσότερα τετράγωνα!</string>
   <string name="startTraining">Έναρξη εξάσκησης</string>
 </resources>

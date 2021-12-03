@@ -4,6 +4,9 @@
   <string name="coordinateTraining">Entrenar coordenadas</string>
   <string name="averageScoreAsWhiteX">Puntuación media con blancas: %s</string>
   <string name="averageScoreAsBlackX">Puntuación media con negras: %s</string>
+  <string name="knowingTheDraughtsBoard">Conocer las coordenadas utilizadas en la notación algebraica es una habilidad muy importante:</string>
+  <string name="mostDraughtsCourses">La mayoría de los cursos y ejercicios del juego de Damas utilizan el sistema de notación algebraica extensamente.</string>
+  <string name="talkToYourDraughtsFriends">Facilita la comunicación con tus compañeros de juego, ya que ambos entienden el \"lenguaje del tablero\".</string>
   <string name="youCanAnalyseAGameMoreEffectively">Puedes analizar partidas de forma más eficiente si no tienes que andar buscando los nombres de los escaques.</string>
   <string name="aSquareNameAppears">El nombre de un escaque aparece en la pantalla y debes hacer clic en el escaque correcto. ¡Tienes 30 segundos para identificar tantos escaques como puedas!</string>
   <string name="startTraining">Comenzar entrenamiento</string>

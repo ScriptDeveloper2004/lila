@@ -6,11 +6,13 @@
   <string name="becomePatron">Υποστηρίξτε το Lidraughts</string>
   <string name="xBecamePatron">%s έγινε Δωρητής του Lidraughts</string>
   <string name="newPatrons">Νέοι Υποστηρικτές</string>
+  <string name="freeDraughts">Δωρεάν ντάμα για όλους, για πάντα!</string>
   <string name="noAdsNoSubs">Χωρίς διαφημίσεις, χωρίς συνδρομές, αλλά με ανοιχτό κώδικα και πάθος.</string>
   <string name="thankYou">Σας ευχαριστούμε για την δωρεά!</string>
   <string name="youHaveLifetime">Έχετε έναν εφ όρου ζωής λογαριασμό Δωρητή. Αυτό είναι φανταστικό!</string>
   <string name="patronUntil">Έχετε έναν λογαριασμό Δωρητή μέχρι %s.</string>
   <string name="ifNotRenewed">Εάν δεν ανανεώσετε, θα υποβαθμιστείτε σε ελεύθερο.</string>
+  <string name="weAreVolunteers">Είμαστε μια μικρή ομάδα εθελοντών που πιστεύει ότι όλοι πρέπει να έχουν πρόσβαση σε μια δωρεάν, παγκόσμιας κλάσης πλατφόρμα για ντάμα.</string>
   <string name="weRelyOnSupport">Βασιζόμαστε στην υποστήριξη από ανθρώπους σαν εσάς για να το πραγματοποιήσουμε. Αν νιώθετε ευχαρίστηση να χρησιμοποιείτε το Lidraughts, παρακαλώ σκεφτείτε να μας υποστηρίξετε με δωρεά και να γίνεται Δωρητής!</string>
   <string name="lifetime">Εφ\' όρου ζωής</string>
   <string name="payLifetimeOnce">Πληρώστε %s μια φορά. Γίνετε Lidraughts Δωρητής για πάντα!</string>
@@ -23,11 +25,19 @@
   <string name="otherAmount">Άλλο</string>
   <string name="pleaseEnterAmount">Παρακαλώ εισάγετε ένα ποσό σε EUR</string>
   <string name="withCreditCard">Πιστωτική Κάρτα</string>
+  <string name="withPaypal">Δωρεά μέσω PayPal</string>
+  <string name="donatingPubliclyAs">Δημόσια δωρεά ως %s</string>
   <string name="weAreSmallTeam">Είμαστε μια μικρή ομάδα, επομένως η υποστήριξή σας κάνει μεγάλη διαφορά!</string>
   <string name="celebratedPatrons">Οι διάσημοι Δωρητές που έκαναν το Lidraughts πραγματικότητα</string>
   <string name="whereMoneyGoes">Που πηγαίνουν τα χρήματα;</string>
+  <string name="serversAndExpenses">Οι διακομιστές που τρέχουν το lidraughts και την ανάλυση της μηχανής Scan.
+Άλλα λειτουργικά έξοδα, όπως το mailgun και φιλοξενία.</string>
   <string name="changeMonthlySupport">Μπορώ να αλλάξω/ακυρώσω την μηνιαία υποστήριξη μου;</string>
+  <string name="changeOrContact">Ναι, ανά πάσα στιγμή. Συνδεθείτε στο λογαριασμό σας στο PayPal και πηγαίνετε στις αυτόματες πληρωμές.
+Ή μπορείτε %s.</string>
+  <string name="contactSupport">επικοινωνήστε με την εξυπηρέτηση του Lidraughts</string>
   <string name="otherMethods">Άλλοι τρόποι δωρεάς;</string>
+  <string name="bankTransfers">Δεχόμαστε επίσης τραπεζικές μεταφορές. Παρακαλούμε στείλτε ένα email στο %s για λεπτομέρειες.</string>
   <string name="bitcoin">Και εδώ είναι η bitcoin διεύθυνσή μας: %s</string>
   <string name="patronFeatures">Υπάρχουν κάποιες δυνατότητες μόνο για Δωρητές;</string>
   <string name="noPatronFeatures">Όχι, επειδή το Lidraughts είναι δωρεάν, εφ όρου ζωής, και για όλους. Αυτό είναι υπόσχεση.
@@ -57,6 +67,8 @@
   <string name="amount">Ποσό</string>
   <string name="transactionCompleted">Η συναλλαγή σας ολοκληρώθηκε, και μια απόδειξη για την δωρεά σας έχει αποσταλεί στην ηλ. διεύθυνσή σας.</string>
   <string name="permanentPatron">Πλέον έχετε έναν μόνιμο λογαριασμό Δωρητή.</string>
+  <string name="paypalRenew">Σε ένα μήνα, το PayPal θα ανανεώσει αυτόματα την πληρωμή σας.
+Για να ακυρώσετε τη μηνιαία σας υποστήριξη, συνδεθείτε στο λογαριασμό σας PayPal και πηγαίνετε στις αυτόματες πληρωμές.</string>
   <string name="checkOutProfile">Ελέγξτε την σελίδα του προφίλ σας!</string>
   <string name="nowLifetime">Είστε πλέον ένας εφ όρου ζωής Lidraughts Δωρητής!</string>
   <string name="nowOneMonth">Πλέον είστε Lidraughts Δωρητής για ένα μήνα!</string>

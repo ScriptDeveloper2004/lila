@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="swissTournaments">Ελβετικά Πρωταθλήματα</string>
+  <string name="bye">Bye</string>
+  <string name="byes">Byes</string>
+  <string name="absent">Απών</string>
+  <string name="absences">Απόντες</string>
+  <string name="late">Καθυστερημένοι</string>
+  <string name="tieBreak">Τάι μπρέικ</string>
+  <plurals name="nbRounds">
+    <item quantity="one">%s γύρος</item>
+    <item quantity="other">%s γύροι</item>
+  </plurals>
+  <string name="nextRound">Επόμενος γύρος</string>
+  <string name="numberOfRounds">Αριθμός γύρων</string>
+  <string name="scheduleTheNextRound">Προγραμματισμός του επόμενου γύρου</string>
 </resources>

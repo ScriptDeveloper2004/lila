@@ -1,2 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+  <string name="donate">Donate</string>
+  <string name="lidraughtsPatron">Lidraughts Patron</string>
+  <string name="freeAccount">Free Account</string>
+  <string name="becomePatron">Become a Lidraughts Patron</string>
+  <string name="xBecamePatron">%s became a Lidraughts Patron</string>
+  <string name="newPatrons">New Patrons</string>
+  <string name="freeDraughts">Free draughts for everyone, forever!</string>
+  <string name="noAdsNoSubs">No ads, no subscriptions; but open-source and passion.</string>
+  <string name="thankYou">Thank you for your donation!</string>
+  <string name="youHaveLifetime">You have a Lifetime Patron account. That\'s pretty awesome!</string>
+  <string name="patronUntil">You have a Patron account until %s.</string>
+  <string name="ifNotRenewed">If not renewed, you will then be downgraded to free.</string>
+  <string name="weAreVolunteers">We are a small team of volunteers who believe everyone should have access to a free, world-class draughts platform.</string>
+  <string name="weRelyOnSupport">We rely on support from people like you to make it possible. If you enjoy using Lidraughts, please consider supporting us by donating and becoming a Patron!</string>
+  <string name="lifetime">Lifetime</string>
+  <string name="payLifetimeOnce">Pay %s once. Be a Lidraughts Patron forever!</string>
+  <string name="lifetimePatron">Lifetime Lidraughts Patron</string>
+  <string name="makeExtraDonation">Make an extra donation?</string>
+  <string name="monthly">Monthly</string>
+  <string name="recurringBilling">Recurring billing, renewing your Patron wings every month.</string>
+  <string name="onetime">One-time</string>
+  <string name="singleDonation">A single donation that grants you the Patron wings for one month.</string>
+  <string name="otherAmount">Other</string>
+  <string name="pleaseEnterAmount">Please enter an amount in EUR</string>
+  <string name="withCreditCard">Credit Card</string>
+  <string name="withPaypal">Donate with PayPal</string>
+  <string name="donatingPubliclyAs">Donating publicly as %s</string>
+  <string name="weAreSmallTeam">We are a small team, so your support makes a huge difference!</string>
+</resources>

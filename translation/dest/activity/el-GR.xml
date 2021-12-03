@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="activity">Δραστηριότητα</string>
-  <string name="hostedALiveStream">Μεταδίδει ζωντανά</string>
+  <string name="hostedALiveStream">Μετέδωσε ζωντανά</string>
   <plurals name="supportedNbMonths">
     <item quantity="one">Υποστήριξε το lidraughts.org για %1$s μήνα ως %2$s</item>
     <item quantity="other">Υποστήριξε το lidraughts.org για %1$s μήνες ως %2$s</item>
@@ -14,6 +14,10 @@
     <item quantity="one">Έλυσε %s τακτικό γρίφο</item>
     <item quantity="other">Έλυσε %s τακτικούς γρίφους</item>
   </plurals>
+  <plurals name="solvedNbVariantPuzzles">
+    <item quantity="one">Έλυσε %1$s %2$s γρίφο τακτικής</item>
+    <item quantity="other">Έλυσε %1$s %2$s γρίφους τακτικής</item>
+  </plurals>
   <plurals name="playedNbGames">
     <item quantity="one">Έπαιξε %1$s παρτίδα %2$s</item>
     <item quantity="other">Έπαιξε %1$s παρτίδες %2$s</item>
@@ -23,8 +27,8 @@
     <item quantity="other">Δημοσίευσε %1$s μηνύματα στο %2$s</item>
   </plurals>
   <plurals name="playedNbMoves">
-    <item quantity="one">Έπαιξε %1$s κίνηση</item>
-    <item quantity="other">Έπαιξε %1$s κινήσεις</item>
+    <item quantity="one">Έπαιξε τη κίνηση %1$s</item>
+    <item quantity="other">Έπαιξε τις κινήσεις %1$s</item>
   </plurals>
   <plurals name="inNbCorrespondenceGames">
     <item quantity="one">σε %1$s παρτίδα αλληλογραφίας</item>

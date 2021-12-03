@@ -51,6 +51,7 @@
   <string name="allSyncMembersRemainOnTheSamePosition">Όλα τα συγχρονισμένα μέλη παραμένουν στην ίδια θέση</string>
   <string name="shareChanges">Διαμοιρασμός στους θεατές των αλλαγών και αποθήκευση τους στο σέρβερ</string>
   <string name="playing">Παίζονται</string>
+  <string name="onlyOngoingGames">Μόνο παιχνίδια σε εξέλιξη</string>
   <string name="first">Πρώτη</string>
   <string name="previous">Προηγούμενη</string>
   <string name="next">Επόμενη</string>
@@ -61,8 +62,11 @@
   <string name="chapterPdn">PDN του κεφαλαίου</string>
   <string name="studyUrl">URL μελέτης</string>
   <string name="currentChapterUrl">Τρέχον κεφάλαιο URL</string>
+  <string name="youCanPasteThisInTheForumToEmbedTheChapter">Μπορείτε να επικολλήσετε αυτό στο φόρουμ για να ενσωματώσετε το κεφάλαιο</string>
   <string name="startAtInitialPosition">Ξεκινάει από αρχική θέση</string>
   <string name="startAtX">Ξεκινάει με %s</string>
+  <string name="embedThisChapter">Ενσωματώστε αυτό το κεφάλαιο στην ιστοσελίδα ή το blog σας</string>
+  <string name="readMoreAboutEmbeddingAStudyChapter">Διαβάστε περισσότερα για την ενσωμάτωση ενός κεφαλαίου μελέτης</string>
   <string name="onlyPublicStudiesCanBeEmbedded">Μόνο δημόσιες μελέτες μπορούν να ενσωματωθούν!</string>
   <string name="open">Άνοιξε</string>
   <string name="xBroughtToYouByY">%1$s, δημιουργήθηκε από %2$s</string>
@@ -91,6 +95,10 @@
   <string name="loadAPositionFromFen">Φόρτωση θέσης από FEN</string>
   <string name="loadAGameFromPdn">Φόρτωσε μια παρτίδα από PDN</string>
   <string name="automatic">Αυτόματο</string>
+  <plurals name="pasteYourPdnTextHereUpToNbGames">
+    <item quantity="one">Επικολλήστε το κείμενο PDN σας εδώ, μέχρι %s παιχνίδι, το καθένα χωρίσμένο από μια κενή γραμμή</item>
+    <item quantity="other">Επικολλήστε το κείμενο PDN σας εδώ, μέχρι %s παιχνίδια, το καθένα χωρίσμένο από μια κενή γραμμή</item>
+  </plurals>
   <string name="urlOfTheGame">URL παρτίδων, ένα ανά γραμμή</string>
   <string name="loadAGameFromXOrY">Φόρτωση παρτίδων από %1$s ή %2$s</string>
   <string name="createChapter">Δημιουργία κεφαλαίου</string>

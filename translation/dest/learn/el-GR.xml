@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <string name="learnDraughts">Μάθετε ντάμα</string>
   <string name="byPlaying">παίζοντας!</string>
   <string name="menu">Μενού</string>
   <string name="progressX">Πρόοδος: %s</string>
   <string name="resetMyProgress">Μηδενισμός προόδου</string>
   <string name="youWillLoseAllYourProgress">Θα χάσετε όλη την πρόοδο σας!</string>
   <string name="play">παίξτε!</string>
+  <string name="draughtsPieces">Κομμάτια ντάμας</string>
+  <string name="theMen">Τα πιόνια</string>
   <string name="theKing">Ο βασιλιάς</string>
   <string name="fundamentals">Βασικές αρχές</string>
   <string name="capture">Αιχμαλώτιση</string>
@@ -13,6 +16,7 @@
   <string name="takeTheBlackPieces">Πάρτε τα μαύρα πιόνια!</string>
   <string name="takeTheBlackPiecesAndDontLoseYours">Πάρτε τα μαύρα πιόνια!
 Και προστατεύστε τα δικά σας.</string>
+  <string name="captureComplete">Συγχαρητήρια! Ξέρετε πώς να αιχμαλωτίσετε με πιόνια της ντάμας!</string>
   <string name="protection">Προστασία</string>
   <string name="keepYourPiecesSafe">Κρατήστε τα πιόνια σας ασφαλή</string>
   <string name="protectionIntro">Βρείτε τα πιόνια που επιτίθεται ο αντίπαλος και προστατεύστε τα!</string>
@@ -26,17 +30,32 @@
   <string name="combat">Μάχη</string>
   <string name="captureAndDefendPieces">Αιχμαλωτίστε και υπερασπιστείτε πιόνια</string>
   <string name="combatIntro">Ο καλός παίκτης γνωρίζει τόσο την επίθεση όσο και την άμυνα!</string>
+  <string name="combatComplete">Συγχαρητήρια! Ξέρετε πως να μάχεστε με τα πιόνια της ντάμας!</string>
   <string name="intermediate">Ενδιάμεσο στάδιο</string>
+  <string name="boardSetup">Στήσιμο σκακιέρας</string>
   <string name="howTheGameStarts">Πώς αρχίζει το παιχνίδι</string>
   <string name="boardSetupIntro">Οι δύο στρατοί αντιμετωπίζουν ο ένας τον άλλον, έτοιμοι για τη μάχη.</string>
+  <string name="thisIsTheInitialPosition">Αυτή είναι η αρχική θέση
+κάθε παρτίδας στο σκάκι!
+Κάντε οποιαδήποτε κίνηση για να συνεχείσουμε.</string>
+  <string name="boardSetupComplete">Συγχαρητήρια! Ξέρετε πως να στήνετε την σκακιέρα ντάμας.</string>
   <string name="theGameIsADraw">Η παρτίδα είναι ισόπαλη</string>
   <string name="advanced">Προχωρημένο στάδιο</string>
   <string name="whatNext">Τι υπάρχει στη συνέχεια;</string>
+  <string name="youKnowHowToPlayDraughts">Γνωρίζετε πως να παίζετε ντάμα, συγχαρητήρια! Θέλετε να γίνετε ισχυρότερος παίχτης;</string>
   <string name="register">Εγγραφείτε</string>
   <string name="getAFreeLidraughtsAccount">Αποκτήστε δωρεάν λογαριασμό Lidraughts</string>
   <string name="practice">Εξάσκηση</string>
+  <string name="makesYourDraughtsPerfect">κάνετε τη ντάμα σας τέλεια</string>
+  <string name="learnCommonDraughtsPositions">Μάθετε κοινές θέσεις ντάμας</string>
+  <string name="signUpToSaveYourProgress">Κάνε εγγραφή για να αποθηκεύσεις την πρόοδο σου</string>
+  <string name="goToNextExercise">Πηγαίνετε στην επόμενη άσκηση</string>
+  <string name="loadNextExerciseImmediately">Φόρτωση της επόμενης άσκησης αμέσως</string>
+  <string name="practiceList">Λίστα εξάσκησης</string>
+  <string name="backToPracticeMenu">Πίσω στο μενού εξάσκησης</string>
   <string name="exerciseYourTacticalSkills">Εξασκήστε τις τακτικές σας ικανότητες</string>
   <string name="videos">Βίντεο</string>
+  <string name="watchInstructiveDraughtsVideos">Παρακολουθήστε διδακτικά βίντεο</string>
   <string name="playPeople">Παίξτε με ανθρώπους</string>
   <string name="opponentsFromAroundTheWorld">Αντίπαλοι από όλο τον κόσμο</string>
   <string name="playMachine">Παίξτε με τον υπολογιστή</string>
@@ -60,4 +79,26 @@
   <string name="backToMenu">Επιστροφή στο μενού</string>
   <string name="puzzleFailed">Αποτύχατε τον γρίφο!</string>
   <string name="retry">Ξαναδοκιμάστε</string>
+  <string name="clickToRetry">Κάντε κλικ εδώ, για να προσπαθήσετε ξανά</string>
+  <string name="winTheGame">Κερδίστε το παιχνίδι</string>
+  <plurals name="winTheGameInX">
+    <item quantity="one">Κερδίστε το παιχνίδι σε %s κίνηση</item>
+    <item quantity="other">Κερδίστε το παιχνίδι σε %s κινήσεις</item>
+  </plurals>
+  <plurals name="holdTheDrawForX">
+    <item quantity="one">Κρατήστε την ισοπαλία για %s ακόμα κίνηση</item>
+    <item quantity="other">Κρατήστε την ισοπαλία για %s ακόμα κινήσεις</item>
+  </plurals>
+  <plurals name="equalizeInX">
+    <item quantity="one">Ισοφαρίστε σε %s κίνηση</item>
+    <item quantity="other">Ισοφαρίστε σε %s κινήσεις</item>
+  </plurals>
+  <plurals name="defendForX">
+    <item quantity="one">Υπερασπίσου για %s κίνηση</item>
+    <item quantity="other">Υπερασπίσου για %s κινήσεις</item>
+  </plurals>
+  <plurals name="getAWinningPositionInX">
+    <item quantity="one">Αποκτήστε μία κερδισμένη θέση σε %s κίνηση</item>
+    <item quantity="other">Αποκτήστε μία κερδισμένη θέση σε %s κινήσεις</item>
+  </plurals>
 </resources>

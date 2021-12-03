@@ -15,6 +15,7 @@
   <string name="anyoneCanJoin">Ανοιχτό σε όλα τα μέλη</string>
   <string name="aConfirmationIsRequiredToJoin">Απαιτείται επιβεβαίωση για να εγγραφείτε</string>
   <string name="joiningPolicy">Πολιτική εγγραφής</string>
+  <string name="teamLeader">Αρχηγός ομάδας</string>
   <plurals name="teamLeaders">
     <item quantity="one">Αρχηγός ομάδας</item>
     <item quantity="other">Αρχηγοί ομάδας</item>
@@ -23,6 +24,9 @@
   <string name="teamRecentMembers">Πρόσφατα μέλη ομάδας</string>
   <string name="kickSomeone">Απομάκρυνση κάποιου από την ομάδα</string>
   <string name="whoToKick">Ποιον επιθυμείτε να απομακρύνετε από την ομάδα;</string>
+  <string name="deleteTeamWarning">Διαγράφει την ομάδα και τα μέλη της. Δεν μπορεί να επαναφερθεί!</string>
+  <string name="appointOwner">Ορίστε άλλον ιδιοκτήτη ομάδας</string>
+  <string name="changeOwner">Ποιον επιθυμείτε να ορίσετε ιδιοκτήτη της ομάδας;</string>
   <plurals name="xJoinRequests">
     <item quantity="one">%s αίτημα σύνδεσης</item>
     <item quantity="other">%s αιτήματα σύνδεσης</item>
@@ -33,6 +37,9 @@
   <string name="teamBattleOverview">Μια μάχη μεταξύ πολλών ομάδων που ο κάθε παίκτης κερδίζει πόντους για την ομάδα του</string>
   <string name="teamTournament">Τουρνουά ομάδας</string>
   <string name="teamTournamentOverview">Ένα Αρένα τουρνουά στο οποίο μπορούν να συμμετέχουν μόνο παίκτες της ομάδας σου</string>
+  <string name="swissTournament">Ελβετικό Πρωτάθλημα</string>
+  <string name="swissTournamentOverview">Ένα Ελβετικό τουρνουά στο οποίο μόνο μέλη της ομάδας σας μπορούν να συμμετέχουν</string>
+  <string name="subscribeToTeamMessages">Εγγραφείτε στα μηνύματα της ομάδας</string>
   <string name="messageAllMembers">Στείλτε μήνυμα σε όλα τα μέλη</string>
   <string name="messageAllMembersOverview">Στείλτε προσωπικό μήνυμα σε κάθε μέλος της ομάδας</string>
   <string name="messageAllMembersLongDescription">Στείλτε ένα προσωπικό μήνυμα σε όλα τα μέλη της ομάδας σας.
@@ -42,4 +49,5 @@
   <string name="youMayWantToLinkOneOfTheseTournaments">Μήπως θα θέλατε να στείλετε τον σύνδεσμο του επερχόμενου τουρνουά;</string>
   <string name="usersWhoCanManageThisTeam">Χρήστες που μπορούν να διαχειριστούν αυτή την ομάδα</string>
   <string name="leadersChat">Chat αρχηγών</string>
+  <string name="enableMembersChat">Ενεργοποίηση chatbox (μόνο για μέλη)</string>
 </resources>
