@@ -245,6 +245,8 @@
   <string name="thisGameIsRated">Το παιχνίδι βαθμολογείται</string>
   <string name="rematch">Ξαναπαίξτε</string>
   <string name="rematchOfferSent">Πρόταση επανάληψης εστάλη</string>
+  <string name="rematchOfferSentWhite">Ο Λευκός προσφέρει ρεβάνς</string>
+  <string name="rematchOfferSentBlack">Ο Μαύρος προσφέρει ρεβάνς</string>
   <string name="rematchOfferAccepted">Πρόταση επανάληψης αποδεκτή</string>
   <string name="rematchOfferCanceled">Πρόταση επανάληψης ακυρώθηκε</string>
   <string name="rematchOfferDeclined">Πρόταση επανάληψης απερρίφθη</string>
@@ -262,6 +264,7 @@
   <string name="recipient">Παραλήπτης</string>
   <string name="send">Αποστολή</string>
   <string name="incrementInSeconds">Προσαύξηση σε δευτερόλεπτα</string>
+  <string name="freeOnlineDraughts">Δωρεάν Online Ντάμα</string>
   <string name="spectators">Θεατές:</string>
   <plurals name="nbRated">
     <item quantity="one">%s βαθμολογημένο</item>
@@ -290,6 +293,7 @@
     <item quantity="other">Προσθέστε %s δευτερόλεπτα</item>
   </plurals>
   <string name="giveMoreTime">Προσθέστε περισσότερο χρόνο</string>
+  <string name="thisPlayerUsesDraughtsComputerAssistance">Ο παίκτης χρησιμοποιεί υποβοήθηση υπολογιστή</string>
   <string name="thisPlayerArtificiallyIncreasesTheirRating">Ο παίκτης αυξάνει/μειώνει τεχνητά την βαθμολογία</string>
   <string name="openingExplorerAndTablebase">Εξερευνητής ανοιγμάτων &amp; τελειωμάτων</string>
   <string name="takeback">Ανάκληση κίνησης</string>
@@ -302,8 +306,13 @@
   <string name="bookmarkThisGame">Προσθέστε σελιδοδείκτη για αυτό το παιχνίδι</string>
   <string name="search">Αναζήτηση</string>
   <string name="advancedSearch">Προχωρημένη αναζήτηση</string>
+  <string name="searchRatingsHelp">Η μέση βαθμολογία και των δύο παικτών</string>
+  <string name="searchOpponentHelp">Αν ο αντίπαλος του παίκτη ήταν άνθρωπος ή υπολογιστής</string>
+  <string name="searchAnalysisHelp">Συμπερίληψη μόνο παιχνιδιών με ανάλυση από υπολογιστή</string>
   <string name="tournament">Πρωτάθλημα</string>
   <string name="tournaments">Πρωταθλήματα</string>
+  <string name="createdTournaments">Δημιουργήθηκε</string>
+  <string name="bestResults">Καλύτερα αποτελέσματα</string>
   <string name="tournamentPoints">Πόντοι από πρωταθλήματα</string>
   <plurals name="nbTournamentPoints">
     <item quantity="one">%s πόντος πρωταθλήματος</item>
@@ -505,6 +514,7 @@
   <string name="pleaseVotePuzzle">Βελτιώστε το lidraughts με την ψήφο σας, πατώντας το πάνω ή κάτω βελάκι:</string>
   <string name="thankYou">Ευχαριστούμε!</string>
   <string name="ratingX">Βαθμολογία: %s</string>
+  <string name="hidden">κρυμμένο</string>
   <plurals name="playedXTimes">
     <item quantity="one">Παίχτηκε %s φορά</item>
     <item quantity="other">Παίχτηκε %s φορές</item>
@@ -582,6 +592,8 @@
   <string name="tenthsOfSeconds">Δέκατα του δευτερολέπτου</string>
   <string name="never">Ποτέ</string>
   <string name="whenTimeRemainingLessThanTenSeconds">Όταν απομένουν &lt; 10 δευτερόλεπτα</string>
+  <string name="stepByStep">Βήμα βήμα</string>
+  <string name="allAtOnce">Όλα με μιας</string>
   <string name="horizontalGreenProgressBars">Οριζόντιες πράσινες γραμμές προόδου</string>
   <string name="soundWhenTimeGetsCritical">Ηχητική ειδοποίηση όταν ο χρόνος γίνεται κρίσιμος</string>
   <string name="gameBehavior">Συμπεριφορά παιχνιδιού</string>
@@ -602,6 +614,8 @@
   <string name="fast">Γρήγορη</string>
   <string name="normal">Κανονική</string>
   <string name="slow">Αργή</string>
+  <string name="insideTheBoard">Μέσα στη σκακιέρα</string>
+  <string name="outsideTheBoard">Εκτός της σκακιέρας</string>
   <string name="onSlowGames">Σε αργά παιχνίδια</string>
   <string name="always">Πάντα</string>
   <string name="inCasualGamesOnly">Μόνο σε φιλικά παιχνίδια</string>
@@ -702,6 +716,8 @@
   <string name="hostColorX">Χρώμα διοργανωτή: %s</string>
   <string name="createdSimuls">Πρόσφατα δημιουργημένες εκθέσεις</string>
   <string name="hostANewSimul">Διοργάνωση νέας έκθεσης</string>
+  <string name="succeeded">πέτυχε!</string>
+  <string name="failed">απέτυχε</string>
   <string name="noSimulFound">Έκθεση δεν ευρέθη</string>
   <string name="noSimulExplanation">Αυτή η ταυτόχρονη έκθεση δεν υπάρχει.</string>
   <string name="returnToSimulHomepage">Επιστροφή στην αρχική σελίδα ταυτοχρόνων εκθέσεων</string>
@@ -718,10 +734,14 @@
   <string name="simulHostExtraTime">Παροχή επιπλέον χρόνου στο ρολόι</string>
   <string name="simulHostColor">Χρώμα διοργανωτή σε κάθε παιχνίδι</string>
   <string name="everyone">Οποιοσδήποτε</string>
+  <string name="spectatorsOnly">Μόνο θεατές</string>
+  <string name="participantsOnly">Συμμετέχοντες μόνο</string>
+  <string name="invalidTargetPercentage">Εισάγετε μια τιμή μεταξύ 50 και 100, ή αφήστε κενό</string>
   <string name="lidraughtsTournaments">Πρωταθλήματα lidraughts</string>
   <string name="tournamentFAQ">Τεκμηρίωση πρωταθλημάτων τύπου αρένας</string>
   <string name="tournamentOfficial">Επίσημο</string>
   <string name="timeBeforeTournamentStarts">Χρόνος προτού ξεκινήσει το πρωτάθλημα</string>
+  <string name="averageCentipieceLoss">Μέση απώλεια εκατοστοπιονιού</string>
   <string name="keyboardShortcuts">Συντομεύσεις πληκτρολογίου</string>
   <string name="keyMoveBackwardOrForward">μετακίνηση προς τα πίσω / προς τα εμπρός</string>
   <string name="keyGoToStartOrEnd">πηγαίνετε στην έναρξη / λήξη</string>
@@ -829,10 +849,16 @@
   <string name="error.max">Πρέπει να είναι μικρότερος ή ίσος με %s</string>
   <string name="error.unknown">Σφάλμα</string>
   <string name="error.pattern">Περιέχει μη έγκυρους χαρακτήρες</string>
+  <string name="mustNotContainLidraughts">Δεν πρέπει να περιέχει το \"lidraughts\"</string>
   <string name="custom">Προσαρμογή</string>
   <string name="notifications">Ειδοποιήσεις</string>
   <string name="challenges">Προκλήσεις</string>
   <string name="openChallenge">Ανοιχτή πρόκληση</string>
+  <string name="startsAtX">Ξεκινάει στις %s</string>
+  <string name="challengeDeclined">Η πρόκληση απορρίφθηκε</string>
+  <string name="challengeAccepted">Η πρόκληση έγινε δεκτή!</string>
+  <string name="challengeCanceled">Η πρόκληση ακυρώθηκε</string>
+  <string name="challengeAcceptedAndWaiting">Η πρόκληση έγινε δεκτή! Αναμονή για τον αντίπαλό σας...</string>
   <string name="perfRatingX">Βαθμολογία: %s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="one">%s δευτερόλεπτο για την πρώτη κίνηση</item>
@@ -855,6 +881,7 @@
   <string name="learnFromThisMistake">Μάθετε από αυτό το λάθος</string>
   <string name="skipThisMove">Παραλείψτε αυτό το βήμα</string>
   <string name="next">Επόμενο</string>
+  <string name="back">Πίσω</string>
   <string name="xWasPlayed">%s παίχτηκε</string>
   <string name="findBetterMoveForWhite">Βρείτε μια καλύτερη κίνηση για τα λευκά</string>
   <string name="findBetterMoveForBlack">Βρείτε μια καλύτερη κίνηση για τα μαύρα</string>
@@ -871,6 +898,7 @@
   <string name="doItAgain">Κάντε το ξανά</string>
   <string name="reviewWhiteMistakes">Ανασκόπηση λαθών λευκών</string>
   <string name="reviewBlackMistakes">Ανασκόπηση λαθών μαύρων</string>
+  <string name="explainWhyThisMoveIsWrong">Εξηγήστε γιατί αυτή η κίνηση είναι λάθος σε ένα σχόλιο.</string>
   <string name="whatWouldYouPlay">Τι θα παίζατε σε αυτή τη θέση;</string>
   <string name="lessonCompleted">Συγχαρητήρια! Ολοκληρώσατε αυτό το μάθημα.</string>
   <string name="nextChapter">Επόμενο κεφάλαιο</string>
@@ -907,6 +935,7 @@
   <string name="weHadToTimeYouOutForAWhile">Πρέπει να σας αποκλείσουμε για λίγο.</string>
   <string name="timeoutExpires">Ο αποκλεισμός λήγει σε %s.</string>
   <string name="why">Γιατί;</string>
+  <string name="pleasantDraughtsExperience">Ο σκοπός μας είναι να προσφέρουμε μια ευχάριστη ατμόσφαιρα ντάμας για όλους.</string>
   <string name="goodPractice">Για να πραγματοποιηθεί αυτό, πρέπει να βεβαιωθούμε ότι όλοι οι παίκτες ακολουθούν τους κανόνες.</string>
   <string name="potentialProblem">Όταν ανιχνευτεί ένα πιθανό πρόβλημα, εμφανίζεται αυτό το μήνυμα.</string>
   <string name="howToAvoidThis">Πώς να το αποφύγετε αυτό;</string>

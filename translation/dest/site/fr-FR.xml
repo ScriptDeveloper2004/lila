@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <string name="playInATournament">Jouez dans un tournoi</string>
   <string name="playWithAFriend">Jouer avec un(e) ami(e)</string>
   <string name="playWithTheMachine">Jouer contre l\'ordinateur</string>
   <string name="toInviteSomeoneToPlayGiveThisUrl">Pour inviter quelqu\'un à jouer, donnez-lui ce lien</string>
   <string name="gameOver">Partie terminée</string>
   <string name="waitingForOpponent">En attente d\'un adversaire</string>
+  <string name="waitingForPlayer">En attente d\'un joueur</string>
   <string name="waiting">En attente</string>
   <string name="yourTurn">À votre tour</string>
   <string name="aiNameLevelAiLevel">%1$s niveau %2$s</string>
@@ -16,6 +18,11 @@
   <string name="white">Blancs</string>
   <string name="black">Noirs</string>
   <string name="randomColor">Couleur aléatoire</string>
+  <string name="microMatch">Micro-match</string>
+  <string name="microMatchChallenge">Ce défi est un micro-match !</string>
+  <string name="microMatchExplanation">Une revanche avec changement de couleur sera jouée immédiatement après cette partie.</string>
+  <string name="microMatchRematchStarted">Début de la seconde partie du micro-match</string>
+  <string name="microMatchRematchAwaiting">En attente de la seconde partie du micro-match</string>
   <string name="createAGame">Créer une partie</string>
   <string name="whiteIsVictorious">Victoire des Blancs</string>
   <string name="blackIsVictorious">Victoire des Noirs</string>
