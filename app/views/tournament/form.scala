@@ -50,6 +50,7 @@ object form {
                 condition(form, auto = true, teams = if (isTeamBattle) Nil else teams),
                 fields.berserkableHack,
                 fields.streakableHack,
+                fields.hasChatHack,
                 fields.startDate()
               )
             ),
@@ -97,7 +98,8 @@ object form {
                 !isTeamBattle option fields.password,
                 views.html.tournament.form.condition(form, auto = true, teams = if (isTeamBattle) Nil else teams),
                 fields.berserkableHack,
-                fields.streakableHack
+                fields.streakableHack,
+                fields.hasChatHack
               )
             ),
             isTeamBattle option form3.hidden(form("teamBattleByTeam")),
@@ -120,33 +122,6 @@ object form {
   )
 
   def condition(form: Form[_], auto: Boolean, teams: List[lidraughts.hub.lightTeam.LightTeam])(implicit ctx: Context) = frag(
-    form3.split(
-      form3.group(form("conditions.nbRatedGame.nb"), raw("Minimum rated games"), half = true)(form3.select(_, Condition.DataForm.nbRatedGameChoices)),
-      autoField(auto, form("conditions.nbRatedGame.perf")) { field =>
-        form3.group(field, raw("In variant"), half = true)(form3.select(_, ("", "Any") :: Condition.DataForm.perfChoices))
-      }
-    ),
-    form3.split(
-      form3.group(form("conditions.minRating.rating"), raw("Minimum rating"), half = true)(form3.select(_, Condition.DataForm.minRatingChoices)),
-      autoField(auto, form("conditions.minRating.perf")) { field =>
-        form3.group(field, raw("In variant"), half = true)(form3.select(_, Condition.DataForm.perfChoices))
-      }
-    ),
-    form3.split(
-      form3.group(form("conditions.maxRating.rating"), raw("Maximum weekly rating"), half = true)(form3.select(_, Condition.DataForm.maxRatingChoices)),
-      autoField(auto, form("conditions.maxRating.perf")) { field =>
-        form3.group(field, raw("In variant"), half = true)(form3.select(_, Condition.DataForm.perfChoices))
-      }
-    ),
-    form3.split(
-      form3.checkbox(form("berserkable"), raw("Allow berserk"), help = raw("Let players halve their clock time to gain an extra point").some, half = true),
-      form3.checkbox(form("streakable"), raw("Arena streaks"), help = raw("After 2 wins, consecutive wins grant 4 points instead of 2").some, half = true)
-    ),
-    form3.split(
-      (ctx.me.exists(_.hasTitle) || isGranted(_.ManageTournament)) ?? {
-        form3.checkbox(form("conditions.titled"), raw("Only titled players"), help = raw("Require an official title to join the tournament").some, half = true)
-      }
-    ),
     (auto && teams.nonEmpty) option {
       val baseField = form("conditions.teamMember.teamId")
       val field = ctx.req.queryString get "team" flatMap (_.headOption) match {
@@ -156,7 +131,37 @@ object form {
       form3.group(field, trans.onlyMembersOfTeam())(
         form3.select(_, List(("", trans.noRestriction.txt())) ::: teams.map(_.pair))
       )
-    }
+    },
+    form3.split(
+      form3.group(form("conditions.nbRatedGame.nb"), frag("Minimum rated games"), half = true)(form3.select(_, Condition.DataForm.nbRatedGameChoices)),
+      autoField(auto, form("conditions.nbRatedGame.perf")) { field =>
+        form3.group(field, frag("In variant"), half = true)(form3.select(_, ("", "Any") :: Condition.DataForm.perfChoices))
+      }
+    ),
+    form3.split(
+      form3.group(form("conditions.minRating.rating"), frag("Minimum rating"), half = true)(form3.select(_, Condition.DataForm.minRatingChoices)),
+      autoField(auto, form("conditions.minRating.perf")) { field =>
+        form3.group(field, frag("In variant"), half = true)(form3.select(_, Condition.DataForm.perfChoices))
+      }
+    ),
+    form3.split(
+      form3.group(form("conditions.maxRating.rating"), frag("Maximum weekly rating"), half = true)(form3.select(_, Condition.DataForm.maxRatingChoices)),
+      autoField(auto, form("conditions.maxRating.perf")) { field =>
+        form3.group(field, frag("In variant"), half = true)(form3.select(_, Condition.DataForm.perfChoices))
+      }
+    ),
+    form3.split(
+      (ctx.me.exists(_.hasTitle) || isGranted(_.ManageTournament)) ?? {
+        form3.checkbox(form("conditions.titled"), frag("Only titled players"), help = frag("Require an official title to join the tournament").some, half = true)
+      }
+    ),
+    form3.split(
+      form3.checkbox(form("berserkable"), frag("Allow berserk"), help = frag("Let players halve their clock time to gain an extra point").some, half = true),
+      form3.checkbox(form("streakable"), frag("Arena streaks"), help = frag("After 2 wins, consecutive wins grant 4 points instead of 2").some, half = true)
+    ),
+    form3.split(
+      form3.checkbox(form("hasChat"), trans.chatRoom(), help = frag("Let players discuss in a chat room").some, half = true)
+    )
   )
 
   def startingPosition(field: Field, variant: Variant)(implicit ctx: Context) = st.select(
@@ -237,14 +242,16 @@ final private class TourFields(me: User, form: Form[_])(implicit ctx: Context) {
       form3.input(_)(autocomplete := "off")
     )
   def berserkableHack =
-    input(tpe := "hidden", st.name := form("berserkable").name, value := "false") // hack allow disabling berserk
+    input(tpe := "hidden", st.name := form("berserkable").name, value := "false") // hack tp allow disabling berserk
   def streakableHack =
-    input(tpe := "hidden", st.name := form("streakable").name, value := "false") // hack allow disabling streaks
+    input(tpe := "hidden", st.name := form("streakable").name, value := "false") // hack to allow disabling streaks
+  def hasChatHack =
+    input(tpe := "hidden", st.name := form("hasChat").name, value := "false") // hack to allow disabling chat
   def startDate(withHelp: Boolean = true) =
     form3.group(
       form("startDate"),
-      raw("Custom start date"),
-      help = withHelp option raw("""This overrides the "Time before tournament starts" setting""")
+      frag("Custom start date"),
+      help = withHelp option frag("""This overrides the "Time before tournament starts" setting""")
     )(form3.flatpickr(_))
   def advancedSettings = frag(
     legend(trans.advancedSettings()),

@@ -36,7 +36,8 @@ final class DataForm {
     teamBattleByTeam = teamBattleId,
     berserkable = true.some,
     streakable = true.some,
-    description = none
+    description = none,
+    hasChat = true.some
   )
 
   def edit(user: User, tour: Tournament, teamBattleId: Option[TeamId] = None) = form(user) fill TournamentSetup(
@@ -57,7 +58,8 @@ final class DataForm {
     teamBattleByTeam = teamBattleId,
     berserkable = tour.berserkable.some,
     streakable = tour.streakable.some,
-    description = tour.description
+    description = tour.description,
+    hasChat = tour.hasChat.some
   )
 
   private val nameType = eventName(2, 30).verifying(
@@ -88,7 +90,8 @@ final class DataForm {
     "teamBattleByTeam" -> optional(nonEmptyText),
     "berserkable" -> optional(boolean),
     "streakable" -> optional(boolean),
-    "description" -> optional(cleanNonEmptyText(maxLength = 800))
+    "description" -> optional(cleanNonEmptyText(maxLength = 800)),
+    "hasChat" -> optional(boolean)
   )(TournamentSetup.apply)(TournamentSetup.unapply)
     .verifying("Invalid clock", _.validClock)
     .verifying("15s variant games cannot be rated", _.validRatedUltraBulletVariant)
@@ -149,7 +152,8 @@ private[tournament] case class TournamentSetup(
     teamBattleByTeam: Option[String],
     berserkable: Option[Boolean],
     streakable: Option[Boolean],
-    description: Option[String]
+    description: Option[String],
+    hasChat: Option[Boolean]
 ) {
 
   def validClock = (clockTime + clockIncrement) > 0

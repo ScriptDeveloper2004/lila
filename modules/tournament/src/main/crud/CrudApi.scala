@@ -34,6 +34,7 @@ final class CrudApi {
     password = tour.password,
     berserkable = !tour.noBerserk,
     streakable = !tour.noStreak,
+    hasChat = tour.hasChat,
     teamBattle = tour.isTeamBattle,
     drawLimit = ~tour.spotlight.flatMap(_.drawLimit).map(_.toString)
   )
@@ -76,7 +77,8 @@ final class CrudApi {
     berserkable = true,
     streakable = true,
     teamBattle = none,
-    description = none
+    description = none,
+    hasChat = true
   )
 
   private def updateTour(tour: Tournament, data: CrudForm.Data) = {
@@ -108,7 +110,8 @@ final class CrudApi {
       noBerserk = !data.berserkable,
       noStreak = !data.streakable,
       teamBattle = data.teamBattle option (tour.teamBattle | TeamBattle(Set.empty, 10)),
-      password = password
+      password = password,
+      hasChat = data.hasChat
     ) |> { tour =>
         tour.perfType.fold(tour) { perfType =>
           tour.copy(conditions = data.conditions.convert(perfType, Map.empty)) // the CRUD form doesn't support team restrictions so Map.empty is fine

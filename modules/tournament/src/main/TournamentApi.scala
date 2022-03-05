@@ -71,7 +71,8 @@ final class TournamentApi(
       berserkable = setup.berserkable | true,
       streakable = setup.streakable | true,
       teamBattle = setup.teamBattleByTeam map TeamBattle.init,
-      description = setup.description
+      description = setup.description,
+      hasChat = setup.hasChat | true
     ) |> { tour =>
         tour.perfType.fold(tour) { perfType =>
           tour.copy(conditions = setup.conditions.convert(perfType, myTeams.map(_.pair)(collection.breakOut)))
@@ -98,7 +99,8 @@ final class TournamentApi(
       openingTable = openingTable,
       noBerserk = !(~berserkable),
       noStreak = !(~streakable),
-      description = description
+      description = description,
+      hasChat = data.hasChat | true
     ) |> { tour =>
       tour.perfType.fold(tour) { perfType =>
         tour.copy(conditions = conditions.convert(perfType, myTeams.map(_.pair)(collection.breakOut)))

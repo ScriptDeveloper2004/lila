@@ -35,6 +35,7 @@ object CrudForm {
     "password" -> optional(nonEmptyText),
     "berserkable" -> boolean,
     "streakable" -> boolean,
+    "hasChat" -> boolean,
     "teamBattle" -> boolean,
     "drawLimit" -> text(minLength = 0, maxLength = 2)
       .verifying("Enter a value between 0 and 99, or leave empty", mvs => mvs.length == 0 || parseIntOption(mvs).??(m => m >= 0 && m <= 99))
@@ -60,6 +61,7 @@ object CrudForm {
       password: Option[String],
       berserkable: Boolean,
       streakable: Boolean,
+      hasChat: Boolean,
       teamBattle: Boolean,
       drawLimit: String
   ) {
@@ -117,6 +119,7 @@ object CrudForm {
     password = None,
     berserkable = true,
     streakable = true,
+    hasChat = true,
     teamBattle = false,
     drawLimit = ""
   )
