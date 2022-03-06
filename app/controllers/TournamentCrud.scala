@@ -7,6 +7,7 @@ object TournamentCrud extends LidraughtsController {
 
   private def env = Env.tournament
   private def crud = env.crudApi
+  private def teamApi = Env.team.api
 
   def index(page: Int) = Secure(_.ManageTournament) { implicit ctx => me =>
     crud.paginator(page) map { paginator =>
@@ -25,7 +26,11 @@ object TournamentCrud extends LidraughtsController {
       implicit val req = ctx.body
       crud.editForm(tour).bindFromRequest.fold(
         err => BadRequest(html.tournament.crud.edit(tour, err)).fuccess,
-        data => crud.update(tour, data) inject Redirect(routes.TournamentCrud.edit(id))
+        data => {
+          teamsFromConditions(data) flatMap { teams =>
+            crud.update(tour, data, teams) inject Redirect(routes.TournamentCrud.edit(id))
+          }
+        }
       )
     }
   }
@@ -38,10 +43,14 @@ object TournamentCrud extends LidraughtsController {
     implicit val req = ctx.body
     crud.createForm.bindFromRequest.fold(
       err => BadRequest(html.tournament.crud.create(err)).fuccess,
-      data => crud.create(data, me) map { tour =>
-        Redirect {
-          if (tour.isTeamBattle) routes.Tournament.teamBattleEdit(tour.id)
-          else routes.TournamentCrud.edit(tour.id)
+      data => {
+        teamsFromConditions(data) flatMap { teams =>
+          crud.create(data, me, teams) map { tour =>
+            Redirect {
+              if (tour.isTeamBattle) routes.Tournament.teamBattleEdit(tour.id)
+              else routes.TournamentCrud.edit(tour.id)
+            }
+          }
         }
       }
     )
@@ -54,4 +63,6 @@ object TournamentCrud extends LidraughtsController {
     }
   }
 
+  private def teamsFromConditions(data: lidraughts.tournament.crud.CrudForm.Data): Fu[List[lidraughts.hub.lightTeam.LightTeam]] =
+    data.conditions.teamMember.flatMap(_.teamId).??(teamApi.light).map(team => ~team.map(List(_)))
 }

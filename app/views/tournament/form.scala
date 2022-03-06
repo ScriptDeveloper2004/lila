@@ -47,7 +47,7 @@ object form {
               fields.advancedSettings,
               div(cls := "form")(
                 !isTeamBattle option fields.password,
-                condition(form, auto = true, teams = if (isTeamBattle) Nil else teams),
+                condition(form, crud = false, teams = if (isTeamBattle) Nil else teams),
                 fields.berserkableHack,
                 fields.streakableHack,
                 fields.hasChatHack,
@@ -96,7 +96,7 @@ object form {
               fields.advancedSettings,
               div(cls := "form")(
                 !isTeamBattle option fields.password,
-                views.html.tournament.form.condition(form, auto = true, teams = if (isTeamBattle) Nil else teams),
+                views.html.tournament.form.condition(form, crud = false, teams = if (isTeamBattle) Nil else teams),
                 fields.berserkableHack,
                 fields.streakableHack,
                 fields.hasChatHack
@@ -121,48 +121,54 @@ object form {
     if (auto) form3.hidden(field) else visible(field)
   )
 
-  def condition(form: Form[_], auto: Boolean, teams: List[lidraughts.hub.lightTeam.LightTeam])(implicit ctx: Context) = frag(
-    (auto && teams.nonEmpty) option {
-      val baseField = form("conditions.teamMember.teamId")
-      val field = ctx.req.queryString get "team" flatMap (_.headOption) match {
-        case None => baseField
-        case Some(team) => baseField.copy(value = team.some)
-      }
-      form3.group(field, trans.onlyMembersOfTeam())(
-        form3.select(_, List(("", trans.noRestriction.txt())) ::: teams.map(_.pair))
+  def condition(form: Form[_], crud: Boolean, teams: List[lidraughts.hub.lightTeam.LightTeam])(implicit ctx: Context) = {
+    val auto = !crud
+    val teamField = form("conditions.teamMember.teamId")
+    frag(
+      (!crud && teams.nonEmpty) option {
+        val field = ctx.req.queryString get "team" flatMap (_.headOption) match {
+          case None => teamField
+          case Some(team) => teamField.copy(value = team.some)
+        }
+        form3.group(field, trans.onlyMembersOfTeam())(
+          form3.select(_, List(("", trans.noRestriction.txt())) ::: teams.map(_.pair))
+        )
+      },
+      crud option {
+        form3.group(teamField, trans.onlyMembersOfTeam(), half = true)(form3.input(_))
+      },
+      form3.split(
+        form3.group(form("conditions.nbRatedGame.nb"), frag("Minimum rated games"), half = true)(form3.select(_, Condition.DataForm.nbRatedGameChoices)),
+        autoField(auto, form("conditions.nbRatedGame.perf")) { field =>
+          form3.group(field, frag("In variant"), half = true)(form3.select(_, ("", "Any") :: Condition.DataForm.perfChoices))
+        }
+      ),
+      form3.split(
+        form3.group(form("conditions.minRating.rating"), frag("Minimum rating"), half = true)(form3.select(_, Condition.DataForm.minRatingChoices)),
+        autoField(auto, form("conditions.minRating.perf")) { field =>
+          form3.group(field, frag("In variant"), half = true)(form3.select(_, Condition.DataForm.perfChoices))
+        }
+      ),
+      form3.split(
+        form3.group(form("conditions.maxRating.rating"), frag("Maximum weekly rating"), half = true)(form3.select(_, Condition.DataForm.maxRatingChoices)),
+        autoField(auto, form("conditions.maxRating.perf")) { field =>
+          form3.group(field, frag("In variant"), half = true)(form3.select(_, Condition.DataForm.perfChoices))
+        }
+      ),
+      form3.split(
+        (ctx.me.exists(_.hasTitle) || isGranted(_.ManageTournament)) ?? {
+          form3.checkbox(form("conditions.titled"), frag("Only titled players"), help = frag("Require an official title to join the tournament").some, half = true)
+        }
+      ),
+      form3.split(
+        form3.checkbox(form("berserkable"), frag("Allow berserk"), help = frag("Let players halve their clock time to gain an extra point").some, half = true),
+        form3.checkbox(form("streakable"), frag("Arena streaks"), help = frag("After 2 wins, consecutive wins grant 4 points instead of 2").some, half = true)
+      ),
+      form3.split(
+        form3.checkbox(form("hasChat"), trans.chatRoom(), help = frag("Let players discuss in a chat room").some, half = true)
       )
-    },
-    form3.split(
-      form3.group(form("conditions.nbRatedGame.nb"), frag("Minimum rated games"), half = true)(form3.select(_, Condition.DataForm.nbRatedGameChoices)),
-      autoField(auto, form("conditions.nbRatedGame.perf")) { field =>
-        form3.group(field, frag("In variant"), half = true)(form3.select(_, ("", "Any") :: Condition.DataForm.perfChoices))
-      }
-    ),
-    form3.split(
-      form3.group(form("conditions.minRating.rating"), frag("Minimum rating"), half = true)(form3.select(_, Condition.DataForm.minRatingChoices)),
-      autoField(auto, form("conditions.minRating.perf")) { field =>
-        form3.group(field, frag("In variant"), half = true)(form3.select(_, Condition.DataForm.perfChoices))
-      }
-    ),
-    form3.split(
-      form3.group(form("conditions.maxRating.rating"), frag("Maximum weekly rating"), half = true)(form3.select(_, Condition.DataForm.maxRatingChoices)),
-      autoField(auto, form("conditions.maxRating.perf")) { field =>
-        form3.group(field, frag("In variant"), half = true)(form3.select(_, Condition.DataForm.perfChoices))
-      }
-    ),
-    form3.split(
-      (ctx.me.exists(_.hasTitle) || isGranted(_.ManageTournament)) ?? {
-        form3.checkbox(form("conditions.titled"), frag("Only titled players"), help = frag("Require an official title to join the tournament").some, half = true)
-      }
-    ),
-    form3.split(
-      form3.checkbox(form("berserkable"), frag("Allow berserk"), help = frag("Let players halve their clock time to gain an extra point").some, half = true),
-      form3.checkbox(form("streakable"), frag("Arena streaks"), help = frag("After 2 wins, consecutive wins grant 4 points instead of 2").some, half = true)
-    ),
-    form3.split(
-      form3.checkbox(form("hasChat"), trans.chatRoom(), help = frag("Let players discuss in a chat room").some, half = true)
     )
-  )
+  }
 
   def startingPosition(field: Field, variant: Variant)(implicit ctx: Context) = st.select(
     id := form3.id(field),

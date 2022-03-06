@@ -8,6 +8,7 @@ import draughts.variant.{ Brazilian, Russian, Standard }
 import lidraughts.common.paginator.Paginator
 import lidraughts.db.dsl._
 import lidraughts.db.paginator.Adapter
+import lidraughts.hub.lightTeam._
 import lidraughts.user.User
 
 final class CrudApi {
@@ -39,13 +40,13 @@ final class CrudApi {
     drawLimit = ~tour.spotlight.flatMap(_.drawLimit).map(_.toString)
   )
 
-  def update(old: Tournament, data: CrudForm.Data) =
-    TournamentRepo update updateTour(old, data) void
+  def update(old: Tournament, data: CrudForm.Data, teams: List[LightTeam]) =
+    TournamentRepo update updateTour(old, data, teams) void
 
   def createForm = CrudForm.apply
 
-  def create(data: CrudForm.Data, owner: User): Fu[Tournament] = {
-    val tour = updateTour(empty, data).copy(createdBy = owner.id)
+  def create(data: CrudForm.Data, owner: User, teams: List[LightTeam]): Fu[Tournament] = {
+    val tour = updateTour(empty, data, teams).copy(createdBy = owner.id)
     TournamentRepo insert tour inject tour
   }
 
@@ -81,7 +82,7 @@ final class CrudApi {
     hasChat = true
   )
 
-  private def updateTour(tour: Tournament, data: CrudForm.Data) = {
+  private def updateTour(tour: Tournament, data: CrudForm.Data, teams: List[LightTeam]) = {
     import data._
     val clock = draughts.Clock.Config((clockTime * 60).toInt, clockIncrement)
     tour.copy(
@@ -114,7 +115,7 @@ final class CrudApi {
       hasChat = data.hasChat
     ) |> { tour =>
         tour.perfType.fold(tour) { perfType =>
-          tour.copy(conditions = data.conditions.convert(perfType, Map.empty)) // the CRUD form doesn't support team restrictions so Map.empty is fine
+          tour.copy(conditions = data.conditions.convert(perfType, teams.map(_.pair)(collection.breakOut)))
         }
       }
   }
