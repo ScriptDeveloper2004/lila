@@ -31,17 +31,17 @@ object crud {
         )
       }
 
-  def create(form: Form[lidraughts.simul.crud.CrudForm.Data], teams: List[lidraughts.hub.lightTeam.LightTeam])(implicit ctx: Context) = layout(
+  def create(form: Form[lidraughts.simul.crud.CrudForm.Data])(implicit ctx: Context) = layout(
     title = "New simul",
     css = "mod.form"
   ) {
     div(cls := "crud page-menu__content box box-pad")(
       h1("New simul"),
-      postForm(cls := "form3", action := routes.SimulCrud.create)(inForm(form, teams, false))
+      postForm(cls := "form3", action := routes.SimulCrud.create)(inForm(form, false))
     )
   }
 
-  def edit(simul: Simul, form: Form[lidraughts.simul.crud.CrudForm.Data], teams: List[lidraughts.hub.lightTeam.LightTeam])(implicit ctx: Context) = layout(
+  def edit(simul: Simul, form: Form[lidraughts.simul.crud.CrudForm.Data])(implicit ctx: Context) = layout(
     title = simul.fullName,
     css = "mod.form",
     evenMoreJs = jsTag("simul-allow.js")
@@ -53,7 +53,7 @@ object crud {
           " ",
           span("Created on ", showDate(simul.createdAt))
         ),
-        postForm(cls := "form3", action := routes.SimulCrud.update(simul.id))(inForm(form, teams, limitedEdit)),
+        postForm(cls := "form3", action := routes.SimulCrud.update(simul.id))(inForm(form, limitedEdit)),
         allowedPlayers(simul)
       )
     }
@@ -86,7 +86,7 @@ object crud {
     )
   )
 
-  private def inForm(form: Form[lidraughts.simul.crud.CrudForm.Data], teams: List[lidraughts.hub.lightTeam.LightTeam], limitedEdit: Boolean)(implicit ctx: Context) = {
+  private def inForm(form: Form[lidraughts.simul.crud.CrudForm.Data], limitedEdit: Boolean)(implicit ctx: Context) = {
     import SimulForm._
     frag(
       form3.split(
@@ -136,11 +136,7 @@ object crud {
         form3.group(form("clockExtra"), raw("Host extra time"), half = true)(form3.select(_, clockExtraChoices, disabled = limitedEdit))
       ),
       form3.group(form("percentage"), raw("Target winning percentage (optional, min. 50%)"))(form3.input(_, typ = "number")(min := 50, max := 100)),
-      teams.nonEmpty ?? {
-        form3.group(form("team"), trans.onlyMembersOfTeam())(
-          form3.select(_, List(("", trans.noRestriction.txt())) ::: teams.map(_.pair))
-        )
-      },
+      form3.group(form("team"), trans.onlyMembersOfTeam())(form3.input(_)),
       form3.group(form("drawLimit"), raw("No draw offers before move (optional, 0 disables draw offers)"))(form3.input(_, typ = "number")(min := 0, max := 99)),
       form3.split(
         form3.group(form("chat"), raw("Chat is available for"), half = true)(form3.select(_, chatChoices)),
