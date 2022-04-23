@@ -7,7 +7,7 @@
   <string name="challengeCanceled">Challenge cancelled.</string>
   <string name="challengeAcceptedAndWaiting">Challenge accepted! Waiting for your opponent...</string>
   <string name="youWillBeRedirectedToTheGame">You will be redirected to the game when both players have accepted the challenge.</string>
-  <string name="registerToSendChallenges">Please register to send challenges.</string>
+  <string name="registerToSendChallenges">Please register to send challenges to this user.</string>
   <string name="youCannotChallengeX">You cannot challenge %s.</string>
   <string name="xDoesNotAcceptChallenges">%s does not accept challenges.</string>
   <string name="yourXRatingIsTooFarFromY">Your %1$s rating is too far from %2$s.</string>
