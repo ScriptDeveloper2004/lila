@@ -133,7 +133,7 @@ private object I18nQuantity {
 
     case (lang, _) => lang.language -> (lang.language match {
 
-      case "fr" | "ff" | "kab" => french _
+      case "fr" | "ff" | "kab" | "co" => french _
 
       case "cs" | "sk" => czech _
 

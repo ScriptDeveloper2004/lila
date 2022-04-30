@@ -4,7 +4,7 @@ import lidraughts.common.Lang
 
 object JsQuantity {
   private def body(lang: Lang): String = lang.language match {
-    case "fr" | "ff" | "kab" => // french
+    case "fr" | "ff" | "kab" | "co" => // french
       """
 return c < 2 ? 'one' : 'other';"""
     case "cs" | "sk" => // czech
