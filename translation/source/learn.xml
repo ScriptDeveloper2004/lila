@@ -85,6 +85,11 @@ Make any move to continue.</string>
     <item quantity="one">Win the game in %s move</item>
     <item quantity="other">Win the game in %s moves</item>
   </plurals>
+  <string name="promoteAKing">Promote to a king</string>
+  <plurals name="promoteAKingInX">
+    <item quantity="one">Promote to a king in %s move</item>
+    <item quantity="other">Promote to a king in %s moves</item>
+  </plurals>
   <plurals name="holdTheDrawForX">
     <item quantity="one">Hold the draw for %s more move</item>
     <item quantity="other">Hold the draw for %s more moves</item>

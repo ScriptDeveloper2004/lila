@@ -31,7 +31,6 @@ export function render(ctrl: AnalyseCtrl): VNode {
 export function promote(ground: CgApi, key: Key, role: cg.Role) {
   const pieces = {};
   const piece = ground.state.pieces[key];
-  //if (piece && piece.role == 'pawn') {
   if (piece && piece.role == 'man') {
     pieces[key] = {
       color: piece.color,

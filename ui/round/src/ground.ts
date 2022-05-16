@@ -80,7 +80,6 @@ export function reload(ctrl: RoundController) {
 
 export function promote(ground: CgApi, key: cg.Key, role: cg.Role) {
   const piece = ground.state.pieces[key];
-  //if (piece && piece.role === 'pawn') {
   if (piece && piece.role === 'man') {
     const pieces: cg.Pieces = {};
     pieces[key] = {

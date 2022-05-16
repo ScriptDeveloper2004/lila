@@ -1,6 +1,7 @@
 import AnalyseCtrl from '../../ctrl';
 import { Goal } from './interfaces';
 import { Comment } from '../../practice/practiceCtrl';
+import { read as fenRead, countGhosts, countKings } from 'draughtsground/fen';
 
 // returns null if not deep enough to know
 function isDrawish(node: Tree.Node, v: VariantKey): boolean | null {
@@ -49,9 +50,28 @@ function isTheirWin(root: AnalyseCtrl) {
   return isWin(root) && root.turnColor() === root.bottomColor();
 }
 
+function isMyPromotion(root: AnalyseCtrl, node: Tree.Node) {
+  if (countGhosts(node.fen) || !node.uci || root.nodeList.length < 2) return false;
+  const color = root.bottomColor(), 
+    kings = countKings(node.fen);
+  if (!kings || root.turnColor() === color) return false;
+  const pieces = fenRead(node.fen),
+    field = node.uci.slice(-2),
+    piece = field in pieces && pieces[field];
+  console.log('isMyPromotion(): field=' + field, piece);
+  if (piece && piece.role == 'king' && piece.color === color) {
+    const prevNode = root.nodeList[root.nodeList.length - 2],
+      prevKings = countKings(prevNode.fen);
+    console.log('isMyPromotion(): kings=' + kings + '; prevKings=' + prevKings, node)
+    return kings === prevKings + 1;
+  }
+  return false;
+}
+
 function hasBlundered(comment: Comment | null) {
   return comment && (comment.verdict === 'mistake' || comment.verdict === 'blunder');
 }
+
 
 // returns null = ongoing, true = win, false = fail
 export default function(root: AnalyseCtrl, goal: Goal, nbMoves: number): boolean | null {
@@ -87,6 +107,13 @@ export default function(root: AnalyseCtrl, goal: Goal, nbMoves: number): boolean
       break;
     case 'win':
       if (isDraw(root, node)) return false;
+      break;
+    case 'promote':
+      if (isMyPromotion(root, node)) return true;
+      break;
+    case 'promoteIn':
+      if (isMyPromotion(root, node)) return true;
+      if (nbMoves >= goal.moves!) return false;
       break;
   }
   return null;

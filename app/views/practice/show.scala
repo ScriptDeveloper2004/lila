@@ -49,6 +49,8 @@ object show {
     trans.learn.success,
     trans.learn.winTheGame,
     trans.learn.winTheGameInX,
+    trans.learn.promoteAKing,
+    trans.learn.promoteAKingInX,
     trans.learn.holdTheDrawForX,
     trans.learn.equalizeInX,
     trans.learn.getAWinningPositionInX,

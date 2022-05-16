@@ -34,8 +34,12 @@ function renderGoal(practice: StudyPracticeCtrl, trans: Trans, inMoves: number) 
   switch (goal.result) {
     case 'win':
       return trans.noarg('winTheGame');
+    case 'promote':
+      return trans.noarg('promoteAKing');
     case 'winIn':
       return trans.plural('winTheGameInX', inMoves);
+    case 'promoteIn':
+      return trans.plural('promoteAKingInX', inMoves);
     case 'drawIn':
     case 'autoDrawIn':
       return trans.plural('holdTheDrawForX', inMoves);

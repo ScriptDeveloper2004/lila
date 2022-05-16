@@ -148,8 +148,7 @@ export function toggleCoordinates(fen: cg.FEN, algebraic: boolean, fields?: numb
 }
 
 export function countGhosts(fen: cg.FEN): number {
-  if (!fen) return 0;
-  if (fen === 'start') fen = initial;
+  if (!fen || fen === 'start') return 0;
   let ghosts = 0;
   for (let fenPart of fen.split(':')) {
     if (fenPart.length <= 1) continue;
@@ -164,6 +163,24 @@ export function countGhosts(fen: cg.FEN): number {
     }
   }
   return ghosts;
+}
+
+export function countKings(fen: cg.FEN): number {
+  if (!fen || fen === 'start' || !fen.includes('K')) return 0;
+  let kings = 0;
+  for (let fenPart of fen.split(':')) {
+    if (fenPart.length <= 1) continue;
+    let first = fenPart.slice(0, 1);
+    if (first === 'W' || first === 'B') {
+      const fenPieces = fenPart.slice(1).split(',');
+      for (let fenPiece of fenPieces) {
+        first = fenPiece.slice(0, 1);
+        if (first === 'K')
+          kings++;
+      }
+    }
+  }
+  return kings;
 }
 
 export function readKingMoves(fen: cg.FEN): cg.KingMoves | undefined {
