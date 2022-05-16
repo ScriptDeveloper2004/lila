@@ -312,7 +312,7 @@ export default class AnalyseCtrl {
   }
 
   fullCapture(): boolean {
-    return this.data.pref.fullCapture && !this.isCapturePractice();
+    return this.data.pref.fullCapture && !(this.opts.practice && this.data.practiceGoal);
   }
 
   private showGround(noCaptSequences: boolean = false, ignoreDests: boolean = false): void {

@@ -165,18 +165,21 @@ export function countGhosts(fen: cg.FEN): number {
   return ghosts;
 }
 
-export function countKings(fen: cg.FEN): number {
+export function countKings(fen: cg.FEN, side?: cg.Color): number {
   if (!fen || fen === 'start' || !fen.includes('K')) return 0;
-  let kings = 0;
+  let kings = 0, sideStr;
+  if (side == 'white') sideStr = 'W'
+  else if (side === 'black') sideStr = 'B'
+  else sideStr = ''
   for (let fenPart of fen.split(':')) {
     if (fenPart.length <= 1) continue;
-    let first = fenPart.slice(0, 1);
-    if (first === 'W' || first === 'B') {
+    let color = fenPart.slice(0, 1);
+    if ((color === 'W' || color === 'B') && (!sideStr || sideStr === color)) {
       const fenPieces = fenPart.slice(1).split(',');
       for (let fenPiece of fenPieces) {
-        first = fenPiece.slice(0, 1);
-        if (first === 'K')
+        if (fenPiece.slice(0, 1) === 'K') {
           kings++;
+        }
       }
     }
   }

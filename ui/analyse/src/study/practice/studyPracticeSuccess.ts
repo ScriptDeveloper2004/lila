@@ -53,7 +53,7 @@ function isMyPromotion(root: AnalyseCtrl, node: Tree.Node) {
   if (countGhosts(node.fen) || !node.uci || root.nodeList.length < 2) return false;
   
   const color = root.bottomColor(), 
-    kings = countKings(node.fen);
+    kings = countKings(node.fen, color);
   if (!kings || root.turnColor() === color) return false;
   
   const pieces = fenRead(node.fen),
@@ -61,7 +61,7 @@ function isMyPromotion(root: AnalyseCtrl, node: Tree.Node) {
     piece = field in pieces && pieces[field];
   if (piece && piece.role == 'king' && piece.color === color) {
     const prevNode = root.nodeList[root.nodeList.length - 2],
-      prevKings = countKings(prevNode.fen);
+      prevKings = countKings(prevNode.fen, color);
     return kings === prevKings + 1;
   }
   return false;
