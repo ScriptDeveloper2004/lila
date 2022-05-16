@@ -80,6 +80,8 @@ Make any move to continue.</string>
   <string name="puzzleFailed">Puzzle failed!</string>
   <string name="retry">Retry</string>
   <string name="clickToRetry">Click to retry</string>
+  <string name="playALegalCapture">Play a legal capture</string>
+  <string name="playAllLegalCaptures">Play all legal captures</string>
   <string name="winTheGame">Win the game</string>
   <plurals name="winTheGameInX">
     <item quantity="one">Win the game in %s move</item>

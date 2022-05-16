@@ -80,6 +80,8 @@ En verlies je eigen niet.</string>
   <string name="puzzleFailed">Puzzel mislukt!</string>
   <string name="retry">Opnieuw proberen</string>
   <string name="clickToRetry">Klik om het opnieuw te proberen</string>
+  <string name="playALegalCapture">Speel een geldige slagzet</string>
+  <string name="playAllLegalCaptures">Speel alle geldige slagzetten</string>
   <string name="winTheGame">Win de partij</string>
   <plurals name="winTheGameInX">
     <item quantity="one">Win de partij in %s zet</item>

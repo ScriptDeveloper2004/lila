@@ -59,7 +59,7 @@ export function makeConfig(ctrl: AnalyseCtrl): CgConfig {
       free: false,
       color: opts.movable!.color,
       dests: opts.movable!.dests,
-      showDests: pref.destination,
+      showDests: pref.destination && !ctrl.isCapturePractice(),
       variant: d.game.variant.key,
     },
     events: {
@@ -70,7 +70,7 @@ export function makeConfig(ctrl: AnalyseCtrl): CgConfig {
     },
     premovable: {
       enabled: opts.premovable!.enabled,
-      showDests: pref.destination,
+      showDests: pref.destination && !ctrl.isCapturePractice(),
       variant: d.game.variant.key,
       events: {
         set: ctrl.onPremoveSet

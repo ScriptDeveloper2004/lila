@@ -6,6 +6,8 @@ object PracticeGoal {
 
   case object Win extends PracticeGoal
   case object Promote extends PracticeGoal
+  case object Capture extends PracticeGoal
+  case object CaptureAll extends PracticeGoal
   case class WinIn(nbMoves: Int) extends PracticeGoal
   case class PromoteIn(nbMoves: Int) extends PracticeGoal
   case class DrawIn(nbMoves: Int) extends PracticeGoal
@@ -15,6 +17,8 @@ object PracticeGoal {
 
   private val WinR = """(?i)win""".r
   private val PromoteR = """(?i)promote""".r
+  private val CaptureR = """(?i)capture""".r
+  private val CaptureAllR = """(?i)capture all""".r
   private val WinInR = """(?i)win in (\d++)""".r
   private val PromoteInR = """(?i)promote in (\d++)""".r
   private val DrawInR = """(?i)draw in (\d++)""".r
@@ -26,6 +30,8 @@ object PracticeGoal {
 
   def apply(chapter: lidraughts.study.Chapter): PracticeGoal =
     chapter.tags(_.Termination).map(v => MultiSpaceR.replaceAllIn(v.trim, " ")).flatMap {
+      case CaptureR() => Capture.some
+      case CaptureAllR() => CaptureAll.some
       case WinR() => Win.some
       case WinInR(movesStr) => parseIntOption(movesStr) map WinIn.apply
       case PromoteR() => Promote.some

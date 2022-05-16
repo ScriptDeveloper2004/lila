@@ -47,6 +47,8 @@ object show {
     trans.learn.backToPracticeMenu,
     trans.learn.clickToRetry,
     trans.learn.success,
+    trans.learn.playALegalCapture,
+    trans.learn.playAllLegalCaptures,
     trans.learn.winTheGame,
     trans.learn.winTheGameInX,
     trans.learn.promoteAKing,

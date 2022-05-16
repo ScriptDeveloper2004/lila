@@ -36,6 +36,10 @@ function renderGoal(practice: StudyPracticeCtrl, trans: Trans, inMoves: number) 
       return trans.noarg('winTheGame');
     case 'promote':
       return trans.noarg('promoteAKing');
+    case 'capture':
+      return trans.noarg('playALegalCapture');
+    case 'captureAll':
+      return trans.noarg('playAllLegalCaptures');
     case 'winIn':
       return trans.plural('winTheGameInX', inMoves);
     case 'promoteIn':

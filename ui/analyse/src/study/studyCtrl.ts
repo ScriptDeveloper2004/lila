@@ -331,7 +331,7 @@ export default function (data: StudyData, ctrl: AnalyseCtrl, tagTypes: TagTypes,
       }
       const newPath = ctrl.tree.addNode(node, position.path, false, ctrl.coordSystem());
       if (!newPath) return xhrReload();
-      const dests = (ctrl.data.pref.fullCapture && d.f) ? d.f : d.d;
+      const dests = (ctrl.fullCapture() && d.f) ? d.f : d.d;
       ctrl.tree.addDests(dests, newPath, d.o, undefined, d.u);
       if (sticky) data.position.path = newPath;
       if ((sticky && vm.mode.sticky) || (

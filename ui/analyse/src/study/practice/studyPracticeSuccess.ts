@@ -6,7 +6,6 @@ import { read as fenRead, countGhosts, countKings } from 'draughtsground/fen';
 // returns null if not deep enough to know
 function isDrawish(node: Tree.Node, v: VariantKey): boolean | null {
   if (!hasSolidEval(node, v)) return null;
-  console.log(node.ceval!.cp!);
   return !node.ceval!.win && Math.abs(node.ceval!.cp!) < 85;
 }
 // returns null if not deep enough to know
@@ -52,17 +51,17 @@ function isTheirWin(root: AnalyseCtrl) {
 
 function isMyPromotion(root: AnalyseCtrl, node: Tree.Node) {
   if (countGhosts(node.fen) || !node.uci || root.nodeList.length < 2) return false;
+  
   const color = root.bottomColor(), 
     kings = countKings(node.fen);
   if (!kings || root.turnColor() === color) return false;
+  
   const pieces = fenRead(node.fen),
     field = node.uci.slice(-2),
     piece = field in pieces && pieces[field];
-  console.log('isMyPromotion(): field=' + field, piece);
   if (piece && piece.role == 'king' && piece.color === color) {
     const prevNode = root.nodeList[root.nodeList.length - 2],
       prevKings = countKings(prevNode.fen);
-    console.log('isMyPromotion(): kings=' + kings + '; prevKings=' + prevKings, node)
     return kings === prevKings + 1;
   }
   return false;
@@ -114,6 +113,11 @@ export default function(root: AnalyseCtrl, goal: Goal, nbMoves: number): boolean
     case 'promoteIn':
       if (isMyPromotion(root, node)) return true;
       if (nbMoves >= goal.moves!) return false;
+      break;
+    case 'capture':
+      if (!countGhosts(node.fen) && root.turnColor() !== root.bottomColor() && node.san) {
+        return node.san.includes('x');
+      }
       break;
   }
   return null;

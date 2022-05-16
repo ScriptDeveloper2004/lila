@@ -299,12 +299,20 @@ export default class AnalyseCtrl {
     else return draughtsUtil.decomposeUci(uci);
   };
 
-  private missingFullCaptureDests(): Boolean {
-    return (this.node.captLen && this.node.captLen > 1 && this.data.pref.fullCapture && !defined(this.node.destsUci))
+  private missingFullCaptureDests(): boolean {
+    return defined(this.node.captLen) && this.node.captLen > 1 && this.fullCapture() && !defined(this.node.destsUci)
   }
 
-  private missingDests(): Boolean {
+  private missingDests(): boolean {
     return !defined(this.node.dests) || this.missingFullCaptureDests();
+  }
+
+  isCapturePractice(): boolean {
+    return !!this.opts.practice && this.data.practiceGoal?.result === 'capture';
+  }
+
+  fullCapture(): boolean {
+    return this.data.pref.fullCapture && !this.isCapturePractice();
   }
 
   private showGround(noCaptSequences: boolean = false, ignoreDests: boolean = false): void {
@@ -339,7 +347,7 @@ export default class AnalyseCtrl {
         fen: this.node.fen,
         path: this.path
       }
-      if (this.data.pref.fullCapture) dests.fullCapture = true;
+      if (this.data.pref.fullCapture) dests.fullCapture = this.fullCapture();
       this.socket.sendAnaDests(dests, this.data.puzzleEditor);
       this.node.destreq = (this.node.destreq || 0) + 1;
       this.initDests = true;
@@ -367,7 +375,7 @@ export default class AnalyseCtrl {
         } : {
             color: movableColor,
             dests: (movableColor === color ? (dests || {}) : {}) as DgDests,
-            captureUci: (this.data.pref.fullCapture && this.node.destsUci && this.node.destsUci.length) ? this.node.destsUci : undefined
+            captureUci: (this.fullCapture() && this.node.destsUci && this.node.destsUci.length) ? this.node.destsUci : undefined
           },
         lastMove: this.uciToLastMove(node.uci),
       };
@@ -536,7 +544,7 @@ export default class AnalyseCtrl {
   userMove = (orig: Key, dest: Key, capture?: JustCaptured): void => {
     this.justDropped = undefined;
     this.sound[capture ? 'capture' : 'move']();
-    if (!this.embed && this.data.pref.fullCapture && this.node.destsUci) {
+    if (!this.embed && this.fullCapture() && this.node.destsUci) {
       const uci = this.node.destsUci.find(u => u.slice(0, 2) === orig && u.slice(-2) === dest)
       if (uci) {
         this.justPlayed = uci.substr(uci.length - 4, 2);
@@ -634,7 +642,7 @@ export default class AnalyseCtrl {
     if (this.embed && this.gamebookPlay()) {
       this.gamebookMove(orig, dest, capture);
     } else {
-      if (this.data.pref.fullCapture) move.fullCapture = true;
+      if (this.data.pref.fullCapture) move.fullCapture = this.fullCapture();
       this.socket.sendAnaMove(move, this.data.puzzleEditor);
       this.preparePremoving();
     }
