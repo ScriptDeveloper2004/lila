@@ -5,7 +5,7 @@ object Dependencies {
 
   object Resolvers {
 
-    val typesafe = "typesafe.com" at "http://repo.typesafe.com/typesafe/releases/"
+    val typesafe = "typesafe.com" at "https://repo.typesafe.com/typesafe/maven-releases/"
     val sonatype = "sonatype" at "https://oss.sonatype.org/content/repositories/releases"
     val sonatypeS = "sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
     val awesomepom = "awesomepom" at "https://raw.githubusercontent.com/jibs/maven-repo-scala/master"
