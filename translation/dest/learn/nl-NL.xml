@@ -81,7 +81,10 @@ En verlies je eigen niet.</string>
   <string name="retry">Opnieuw proberen</string>
   <string name="clickToRetry">Klik om het opnieuw te proberen</string>
   <string name="playALegalCapture">Speel een geldige slagzet</string>
-  <string name="playAllLegalCaptures">Speel alle geldige slagzetten</string>
+  <plurals name="playAllLegalCapturesXRemaining">
+    <item quantity="one">Speel alle geldige slagzetten. Nog één te gaan!</item>
+    <item quantity="other">Speel alle geldige slagzetten. Nog %s te gaan!</item>
+  </plurals>
   <string name="winTheGame">Win de partij</string>
   <plurals name="winTheGameInX">
     <item quantity="one">Win de partij in %s zet</item>

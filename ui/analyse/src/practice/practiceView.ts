@@ -30,7 +30,7 @@ function renderOffTrack(root: AnalyseCtrl, ctrl: PracticeCtrl): VNode {
     h('div.instruction', [
       h('strong', root.trans.noarg('youBrowsedAway')),
       h('div.choices', [
-        h('a', { hook: bind('click', ctrl.resume, ctrl.redraw) }, root.trans.noarg('resumePractice'))
+        h('a', { hook: bind('click', () => ctrl.resume(root.isCaptureAllPractice()), ctrl.redraw) }, root.trans.noarg('resumePractice'))
       ])
     ])
   ]);
@@ -65,10 +65,14 @@ function renderRunning(root: AnalyseCtrl, ctrl: PracticeCtrl): VNode {
   return h('div.player.running', [
     h('div.no-square', h('piece.king.' + root.turnColor())),
     h('div.instruction',
-      (ctrl.isMyTurn() ? [h('strong', root.trans.noarg('yourTurn'))] : [
-        h('strong', root.trans.noarg('computerThinking')),
-        renderEvalProgress(ctrl.currentNode(), ctrl.playableDepth())
-      ]).concat(h('div.choices', [
+      (ctrl.isMyTurn() ? [h('strong', root.trans.noarg('yourTurn'))] : (
+        root.isCaptureAllPractice() ? [
+          h('strong', root.trans.noarg('goodMove'))
+        ] : [
+          h('strong', root.trans.noarg('computerThinking')),
+          renderEvalProgress(ctrl.currentNode(), ctrl.playableDepth())
+        ]
+      )).concat(h('div.choices', [
         ctrl.isMyTurn() ? h('a', {
           hook: bind('click', () => root.practice!.hint(), ctrl.redraw)
         }, root.trans.noarg(hint ? (hint.mode === 'piece' ? 'seeBestMove' : 'hideBestMove') : 'getAHint')) : ''
@@ -85,7 +89,7 @@ export default function(root: AnalyseCtrl): VNode | undefined {
   return h('div.practice-box.training-box.sub-box.' + (comment ? comment.verdict : 'no-verdict'), [
     h('div.title', root.trans.noarg('practiceWithComputer')),
     h('div.feedback', !running ? renderOffTrack(root, ctrl) : (end ? renderEnd(root, end) : renderRunning(root, ctrl))),
-    running ? h('div.comment', comment ? ([
+    running ? h('div.comment', root.isCaptureAllPractice() ? [null] : comment ? ([
       h('span.verdict', root.trans.noarg(comment.verdict)),
       ' '
     ] as MaybeVNodes).concat(commentBest(comment, root, ctrl)) : [ctrl.isMyTurn() || end ? '' : h('span.wait', root.trans.noarg('evaluatingYourMove'))]) : (

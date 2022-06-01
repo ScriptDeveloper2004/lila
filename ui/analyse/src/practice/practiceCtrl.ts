@@ -48,11 +48,11 @@ export interface PracticeCtrl {
 export function make(root: AnalyseCtrl, playableDepth: () => number): PracticeCtrl {
 
   const variant = root.data.game.variant.key,
-  running = prop(true),
-  comment = prop<Comment | null>(null),
-  hovering = prop<any>(null),
-  hinting = prop<Hinting | null>(null),
-  played = prop(false);
+    running = prop(true),
+    comment = prop<Comment | null>(null),
+    hovering = prop<any>(null),
+    hinting = prop<Hinting | null>(null),
+    played = prop(false);
 
   function ensureCevalRunning() {
     if (!root.showComputer()) root.toggleComputer();
@@ -65,6 +65,7 @@ export function make(root: AnalyseCtrl, playableDepth: () => number): PracticeCt
     const ceval = node.ceval,
       depth = v === 'antidraughts' ? 7 : 15,
       minDepth = v === 'antidraughts' ? 6 : 13;
+    if (root.isCapturePractice() && ceval) return true;
     return ceval ? ((ceval.depth + bonus) >= depth || (ceval.depth >= minDepth && ceval.millis > 3000)) : false;
   }
 
@@ -103,14 +104,18 @@ export function make(root: AnalyseCtrl, playableDepth: () => number): PracticeCt
       const prevEval: Eval = tbhitToEval(prev.tbhit) || prev.ceval!;
       const shift = -winningChances.povDiff(root.bottomColor(), nodeEval, prevEval);
 
-      best = nodeBestUci(prev)!;
-      if (best === node.uci) best = null;
+      if (root.isCapturePractice()) {
+        verdict = 'goodMove'
+      } else {
+        best = nodeBestUci(prev)!;
+        if (best === node.uci) best = null;
 
-      if (!best) verdict = 'goodMove';
-      else if (shift < 0.025) verdict = 'goodMove';
-      else if (shift < 0.06) verdict = 'inaccuracy';
-      else if (shift < 0.14) verdict = 'mistake';
-      else verdict = 'blunder';
+        if (!best) verdict = 'goodMove';
+        else if (shift < 0.025) verdict = 'goodMove';
+        else if (shift < 0.06) verdict = 'inaccuracy';
+        else if (shift < 0.14) verdict = 'mistake';
+        else verdict = 'blunder';
+      }
     }
     
     return {
@@ -144,11 +149,10 @@ export function make(root: AnalyseCtrl, playableDepth: () => number): PracticeCt
         root.setAutoShapes();
       }
     } else {
-      const v = root.data.game.variant.key;
       comment(null);
-      if (node.san && commentable(node, v)) {
+      if (node.san && commentable(node, variant)) {
         const parentNode = root.tree.parentNode(root.path);
-        if (commentable(parentNode, v, +1)) comment(makeComment(parentNode, node, root.path));
+        if (commentable(parentNode, variant, +1)) comment(makeComment(parentNode, node, root.path));
         else {
           /*
            * Looks like the parent node didn't get enough analysis time
@@ -158,11 +162,13 @@ export function make(root: AnalyseCtrl, playableDepth: () => number): PracticeCt
            * Since computer moves are supposed to preserve eval anyway.
            */
           const olderNode = root.tree.parentNode(treePath.init(root.path));
-          if (commentable(olderNode, v, +1)) comment(makeComment(olderNode, node, root.path));
+          if (commentable(olderNode, variant, +1)) comment(makeComment(olderNode, node, root.path));
         }
       }
-      if (!played() && playable(node, v)) {
-        root.playUci(nodeBestUci(node)!);
+      if (!played() && playable(node, variant)) {
+        if (!root.isCaptureAllPractice()) {
+          root.playUci(nodeBestUci(node)!);
+        }
         played(true);
       } else root.redraw();
     }
@@ -179,9 +185,14 @@ export function make(root: AnalyseCtrl, playableDepth: () => number): PracticeCt
     else checkCeval();
   }
 
-  function resume() {
+  function resume(reset?: boolean) {
     running(true);
-    checkCevalOrTablebase();
+    if (reset) {
+      comment(null);
+      root.jump('');
+    } else {
+      checkCevalOrTablebase();
+    }
   }
 
   window.lidraughts.requestIdleCallback(checkCevalOrTablebase);
@@ -233,7 +244,7 @@ export function make(root: AnalyseCtrl, playableDepth: () => number): PracticeCt
     },
     hint() {
       const best = root.node.ceval ? scan2uci(root.node.ceval.pvs[0].moves[0]) : null,
-      prev = hinting();
+        prev = hinting();
       if (!best || (prev && prev.mode === 'move')) hinting(null);
       else hinting({
         mode: prev ? 'move' : 'piece',

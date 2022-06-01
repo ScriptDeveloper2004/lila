@@ -22,7 +22,7 @@ object JsonView {
     case Win => Json.obj("result" -> "win")
     case Promote => Json.obj("result" -> "promote")
     case Capture => Json.obj("result" -> "capture")
-    case CaptureAll => Json.obj("result" -> "captureAll")
+    case CaptureAll(moves) => Json.obj("result" -> "captureAll", "moves" -> moves)
     case WinIn(moves) => Json.obj("result" -> "winIn", "moves" -> moves)
     case PromoteIn(moves) => Json.obj("result" -> "promoteIn", "moves" -> moves)
     case DrawIn(moves) => Json.obj("result" -> "drawIn", "moves" -> moves)

@@ -36,10 +36,12 @@ export interface StudyPracticeCtrl {
   onLoad(): void;
   onJump(): void;
   onCeval(): void;
+  onUserMove(): void;
   data: StudyPracticeData;
   goal: Prop<Goal>;
   success: Prop<boolean | null>;
   nbMoves: Prop<number>;
+  captureProgress(): string[];
   reset(): void;
   isWhite(): boolean;
   analysisUrl: Prop<string>;

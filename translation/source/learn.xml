@@ -81,7 +81,10 @@ Make any move to continue.</string>
   <string name="retry">Retry</string>
   <string name="clickToRetry">Click to retry</string>
   <string name="playALegalCapture">Play a legal capture</string>
-  <string name="playAllLegalCaptures">Play all legal captures</string>
+  <plurals name="playAllLegalCapturesXRemaining">
+    <item quantity="one">Play all legal captures. One more to go!</item>
+    <item quantity="other">Play all legal captures. %s more to go!</item>
+  </plurals>
   <string name="winTheGame">Win the game</string>
   <plurals name="winTheGameInX">
     <item quantity="one">Win the game in %s move</item>

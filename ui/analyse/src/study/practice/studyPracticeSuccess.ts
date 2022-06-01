@@ -50,7 +50,7 @@ function isTheirWin(root: AnalyseCtrl) {
 }
 
 function isMyPromotion(root: AnalyseCtrl, node: Tree.Node) {
-  if (countGhosts(node.fen) || !node.uci || root.nodeList.length < 2) return false;
+  if (!node.uci || root.nodeList.length < 2) return false;
   
   const color = root.bottomColor(), 
     kings = countKings(node.fen, color);
@@ -76,6 +76,7 @@ function hasBlundered(comment: Comment | null) {
 export default function(root: AnalyseCtrl, goal: Goal, nbMoves: number): boolean | null {
   const node = root.node;
   if (!node.uci) return null;
+  if (countGhosts(node.fen)) return null;
   if (isTheirWin(root)) return false;
   if (isMyWin(root)) return true;
   if (hasBlundered(root.practice!.comment())) return false;
@@ -115,9 +116,14 @@ export default function(root: AnalyseCtrl, goal: Goal, nbMoves: number): boolean
       if (nbMoves >= goal.moves!) return false;
       break;
     case 'capture':
-      if (!countGhosts(node.fen) && root.turnColor() !== root.bottomColor() && node.san) {
+      if (root.turnColor() !== root.bottomColor() && node.san) {
         return node.san.includes('x');
       }
+      break;
+    case 'captureAll':
+      const rootNode = root.tree.root,
+        progress = rootNode.children.filter(c => c.uci && c.ply === rootNode.ply + 1);
+      if (progress.length >= goal.moves!) return true;
       break;
   }
   return null;

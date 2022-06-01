@@ -300,7 +300,8 @@ export default class AnalyseCtrl {
   };
 
   private missingFullCaptureDests(): boolean {
-    return defined(this.node.captLen) && this.node.captLen > 1 && this.fullCapture() && !defined(this.node.destsUci)
+    const isCapture = defined(this.node.captLen) && this.node.captLen > 1;
+    return isCapture && !defined(this.node.destsUci) && this.fullCapture();
   }
 
   private missingDests(): boolean {
@@ -308,7 +309,13 @@ export default class AnalyseCtrl {
   }
 
   isCapturePractice(): boolean {
-    return !!this.opts.practice && this.data.practiceGoal?.result === 'capture';
+    const goal = this.data.practiceGoal;
+    return !!this.opts.practice && defined(goal) && 
+           (goal.result === 'capture' || goal.result === 'captureAll');
+  }
+
+  isCaptureAllPractice(): boolean {
+    return !!this.opts.practice && this.data.practiceGoal?.result === 'captureAll';
   }
 
   fullCapture(): boolean {
@@ -639,6 +646,7 @@ export default class AnalyseCtrl {
     if (capture) this.justCaptured = capture;
     if (uci) move.uci = uci;
     if (this.practice) this.practice.onUserMove();
+    if (this.studyPractice) this.studyPractice.onUserMove();
     if (this.embed && this.gamebookPlay()) {
       this.gamebookMove(orig, dest, capture);
     } else {
@@ -734,6 +742,7 @@ export default class AnalyseCtrl {
     if (treePath.contains(this.path, path)) this.userJump(treePath.init(path));
     else this.jump(this.path);
     if (this.study) this.study.deleteNode(path);
+    if (this.studyPractice) this.studyPractice.onCeval(); // force progress redraw
   }
 
   generatePuzzleJson(): string {

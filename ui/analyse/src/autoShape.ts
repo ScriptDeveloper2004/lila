@@ -2,6 +2,7 @@ import { winningChances, scan2uci} from 'ceval';
 import { decomposeUci } from 'draughts';
 import { opposite } from 'draughtsground/util';
 import { DrawShape } from 'draughtsground/draw';
+import { Key } from 'draughtsground/types';
 import AnalyseCtrl from './ctrl';
 
 export function makeShapesFromUci(uci: Uci, brush: string, modifiers?: any, brushFirst?: any): DrawShape[] {
@@ -34,6 +35,15 @@ export function compute(ctrl: AnalyseCtrl): DrawShape[] {
         orig: hint.uci[1] === '@' ? hint.uci.slice(2, 4) : hint.uci.slice(0, 2),
         brush: 'paleBlue'
       }];
+    }
+    if (ctrl.studyPractice) {
+      const progress = ctrl.studyPractice.captureProgress();
+      if (progress) {
+        return progress.map(v => ({
+          orig: v.slice(0, 2) as Key,
+          brush: 'green'
+        }))
+      }
     }
     return [];
   }

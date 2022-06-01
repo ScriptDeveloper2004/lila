@@ -16,6 +16,7 @@ function make(file) {
 export default function() {
   return {
     success: make('other/energy3'),
-    failure: make('other/failure2')
+    failure: make('other/failure2'),
+    progress: make('other/ping'),
   };
 }
