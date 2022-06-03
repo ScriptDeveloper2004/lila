@@ -75,11 +75,12 @@ function hasBlundered(comment: Comment | null) {
 // returns null = ongoing, true = win, false = fail
 export default function(root: AnalyseCtrl, goal: Goal, nbMoves: number): boolean | null {
   const node = root.node;
-  if (!node.uci) return null;
-  if (countGhosts(node.fen)) return null;
-  if (isTheirWin(root)) return false;
-  if (isMyWin(root)) return true;
-  if (hasBlundered(root.practice!.comment())) return false;
+  if (!node.uci || countGhosts(node.fen)) return null;
+  if (!root.isCapturePractice()) {
+    if (isTheirWin(root)) return false;
+    if (isMyWin(root)) return true;
+    if (hasBlundered(root.practice!.comment())) return false;
+  }
   const v = root.data.game.variant.key;
   switch (goal.result) {
     case 'autoDrawIn':

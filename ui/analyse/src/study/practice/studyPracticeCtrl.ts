@@ -30,6 +30,11 @@ export default function(root: AnalyseCtrl, studyData: StudyData, data: StudyPrac
     const chapter = studyData.chapter;
     history.replaceState(null, chapter.name, data.url + '/' + chapter.id);
     analysisUrl('/analysis/' + root.data.game.variant.key + '/' + root.node.fen.replace(/ /g, '_') + '?color=' + root.bottomColor());
+
+    // mark chapters withonly info as completed when opened
+    if (!studyData.chapter.practice && !studyData.chapter.gamebook) {
+      saveNbMoves(studyData.chapter.id);
+    }
   }
   onLoad();
 
@@ -66,12 +71,18 @@ export default function(root: AnalyseCtrl, studyData: StudyData, data: StudyPrac
   function onVictory(): void {
     saveNbMoves();
     sound.success();
-    if (autoNext()) setTimeout(goToNext, 1000);
+    if (autoNext()) {
+      // no autonext if gamebookplay ends with a comment
+      const gamebook = getStudy().gamebookPlay();
+      if (!gamebook?.state.comment) {
+        setTimeout(goToNext, 1000);
+      }
+    }
   }
 
-  function saveNbMoves(): void {
-    const chapterId = getStudy().currentChapter().id,
-    former = data.completion[chapterId];
+  function saveNbMoves(id?: string): void {
+    const chapterId = id || getStudy().currentChapter().id,
+      former = data.completion[chapterId];
     if (typeof former === 'undefined' || nbMoves() < former) {
       data.completion[chapterId] = nbMoves();
       xhr.practiceComplete(chapterId, nbMoves());

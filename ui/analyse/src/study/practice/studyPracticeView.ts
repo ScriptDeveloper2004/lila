@@ -60,25 +60,29 @@ export function underboard(ctrl: StudyCtrl): MaybeVNodes {
   if (ctrl.vm.loading) return [h('div.feedback', spinner())];
   const p = ctrl.practice!,
     gb = ctrl.gamebookPlay(),
+    next = ctrl.nextChapter(),
     pinned = ctrl.data.chapter.description,
     noarg = ctrl.trans.noarg;
-  if (gb) return pinned ? [h('div.feedback.ongoing', [
-    h('div.comment', { hook: richHTML(pinned) })
-  ])] : [];
+  const feedbackSuccess = () => [
+    h('a.feedback.win', next ? {
+      hook: bind('click', p.goToNext)
+    } : {
+      attrs: { href: '/practice' }
+    }, [
+      h('span', noarg('success')),
+      next ? noarg('goToNextExercise') : noarg('backToPracticeMenu')
+    ])
+  ];
+  if (gb) {
+    if (gb.state.feedback === 'end') return feedbackSuccess();
+    else return pinned ? [h('div.feedback.ongoing', [
+      h('div.comment', { hook: richHTML(pinned) })
+    ])] : [];
+  }
   else if (!ctrl.data.chapter.practice) return [descView(ctrl, true)];
   switch (p.success()) {
     case true:
-      const next = ctrl.nextChapter();
-      return [
-        h('a.feedback.win', next ? {
-          hook: bind('click', p.goToNext)
-        } : {
-          attrs: { href: '/practice' }
-        }, [
-          h('span', noarg('success')),
-          ctrl.nextChapter() ? noarg('goToNextExercise') : noarg('backToPracticeMenu')
-        ])
-      ];
+      return feedbackSuccess();
     case false:
       return [
         h('a.feedback.fail', {
