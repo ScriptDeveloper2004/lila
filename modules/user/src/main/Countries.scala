@@ -283,6 +283,7 @@ object Countries {
       C("_pirate", "Pirate"),
       C("_rainbow", "Rainbow"),
       C("_russia-wbw", "Russia White-blue-white"),
+      C("_transgender", "Transgender"),
       C("_united-nations", "United Nations")
     )
 
