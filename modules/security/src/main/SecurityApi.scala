@@ -28,17 +28,20 @@ final class SecurityApi(
 
   val AccessUri = "access_uri"
 
+  private val usernameOrEmailMapping =
+    lidraughts.common.Form.cleanText(minLength = 2, maxLength = EmailAddress.maxLength)
+
   lazy val usernameOrEmailForm = Form(single(
-    "username" -> lidraughts.common.Form.cleanText(minLength = 2, maxLength = EmailAddress.maxLength)
+    "username" -> usernameOrEmailMapping
   ))
 
   lazy val loginForm = Form(tuple(
-    "username" -> nonEmptyText, // can also be an email
+    "username" -> usernameOrEmailMapping, // can also be an email
     "password" -> nonEmptyText
   ))
 
   private def loadedLoginForm(candidate: Option[LoginCandidate]) = Form(mapping(
-    "username" -> nonEmptyText, // can also be an email
+    "username" -> usernameOrEmailMapping, // can also be an email
     "password" -> nonEmptyText,
     "token" -> optional(nonEmptyText)
   )(authenticateCandidate(candidate)) {
