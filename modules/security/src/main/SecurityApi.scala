@@ -29,7 +29,7 @@ final class SecurityApi(
   val AccessUri = "access_uri"
 
   lazy val usernameOrEmailForm = Form(single(
-    "username" -> nonEmptyText
+    "username" -> lidraughts.common.Form.cleanText(minLength = 2, maxLength = EmailAddress.maxLength)
   ))
 
   lazy val loginForm = Form(tuple(
