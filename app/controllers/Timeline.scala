@@ -25,7 +25,8 @@ object Timeline extends LidraughtsController {
           _ <- Env.user.lightUserApi.preloadMany(entries.flatMap(_.userIds))
         } yield { html.timeline.more(entries) },
       _ => {
-        val nb = (getInt("nb") | 10) atMost 20
+        val defaultNb = if (v >= 4) 10 else 0 // Older versions vulnerable to XSS
+        val nb = (getInt("nb") | defaultNb) atMost 20
         for {
           entries <- Env.timeline.entryApi.moreUserEntries(me.id, nb)
             .logTimeIfGt(s"timeline mobile $nb for ${me.id}", 10 seconds)
