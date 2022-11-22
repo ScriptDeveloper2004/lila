@@ -30,9 +30,9 @@ object Mobile {
         unsupportedAt: DateTime
     )
 
-    val currentVersion = ApiVersion(4)
+    val currentVersion = ApiVersion(3)
 
-    val acceptedVersions: Set[ApiVersion] = Set(1, 2, 3, 4) map ApiVersion.apply
+    val acceptedVersions: Set[ApiVersion] = Set(1, 2, 3) map ApiVersion.apply
 
     val oldVersions: List[Old] = List( // Old( // old ping API
     //   version = ApiVersion(2),
