@@ -15,4 +15,5 @@
   <string name="xOnlyAcceptsChallengesFromFriends">%s only accepts challenges from friends.</string>
   <string name="declineGeneric">I'm not accepting challenges at the moment.</string>
   <string name="declineLater">I'm not accepting challenges right now, please ask again later.</string>
+  <string name="inviteLidraughtsUser">Or invite a Lidraughts user:</string>
 </resources>
