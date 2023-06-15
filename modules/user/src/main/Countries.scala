@@ -22,6 +22,7 @@ object Countries {
     C("AI", "Anguilla"),
     C("AL", "Albania"),
     C("AM", "Armenia"),
+    C("AM-RA", "Artsakh"),
     C("AO", "Angola"),
     C("AQ", "Antarctica"),
     C("AR", "Argentina"),
