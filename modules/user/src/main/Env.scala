@@ -33,6 +33,8 @@ final class Env(
 
   val lightUserApi = new LightUserApi(userColl)(system)
 
+  val wfdProfileApi = new WfdProfileApi(userColl)(system)
+
   val onlineUserIdMemo = new lidraughts.memo.ExpireSetMemo(ttl = OnlineTtl)
   val recentTitledUserIdMemo = new lidraughts.memo.ExpireSetMemo(ttl = 3 hours)
 
@@ -50,6 +52,8 @@ final class Env(
   def lightUserSync(id: User.ID): Option[lidraughts.common.LightUser] = lightUserApi sync id
 
   def uncacheLightUser(id: User.ID): Unit = lightUserApi invalidate id
+
+  def wfdProfileSync(id: User.ID): Option[ProfileWFD] = wfdProfileApi sync id
 
   system.scheduler.schedule(1 minute, 1 minute) {
     lightUserApi.monitorCache

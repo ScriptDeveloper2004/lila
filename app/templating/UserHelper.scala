@@ -8,7 +8,7 @@ import lidraughts.app.ui.ScalatagsTemplate._
 import lidraughts.common.{ LightUser, Lang }
 import lidraughts.i18n.{ I18nKeys => trans }
 import lidraughts.rating.{ PerfType, Perf }
-import lidraughts.user.{ User, Title }
+import lidraughts.user.{ ProfileWFD, User, Title }
 
 trait UserHelper { self: I18nHelper with StringHelper with NumberHelper =>
 
@@ -52,6 +52,9 @@ trait UserHelper { self: I18nHelper with StringHelper with NumberHelper =>
 
   def lightUser(userId: String): Option[LightUser] = Env.user lightUserSync userId
   def lightUser(userId: Option[String]): Option[LightUser] = userId flatMap lightUser
+
+  def wfdProfile(userId: String): Option[ProfileWFD] = Env.user wfdProfileSync userId
+  def wfdProfile(userId: Option[String]): Option[ProfileWFD] = userId flatMap wfdProfile
 
   // def lightUserSync: LightUser.SyncGetter(userId: String): Option[LightUser] = Env.user lightUserSync userId
 

@@ -17,6 +17,7 @@ case class User(
     enabled: Boolean,
     roles: List[String],
     profile: Option[Profile] = None,
+    profileWFD: Option[ProfileWFD] = None,
     engine: Boolean = false,
     booster: Boolean = false,
     toints: Int = 0,
@@ -219,6 +220,7 @@ object User {
     val enabled = "enabled"
     val roles = "roles"
     val profile = "profile"
+    val profileWFD = "profileWFD"
     val engine = "engine"
     val booster = "booster"
     val toints = "toints"
@@ -255,6 +257,7 @@ object User {
     import reactivemongo.bson.BSONDocument
     private implicit def countHandler = Count.countBSONHandler
     private implicit def profileHandler = Profile.profileBSONHandler
+    private implicit def profileWFDHandler = ProfileWFD.profileWFDBSONHandler
     private implicit def perfsHandler = Perfs.perfsBSONHandler
     private implicit def planHandler = Plan.planBSONHandler
     private implicit def totpSecretHandler = TotpSecret.totpSecretBSONHandler
@@ -269,6 +272,7 @@ object User {
       enabled = r bool enabled,
       roles = ~r.getO[List[String]](roles),
       profile = r.getO[Profile](profile),
+      profileWFD = r.getO[ProfileWFD](profileWFD),
       engine = r boolD engine,
       booster = r boolD booster,
       toints = r nIntD toints,
@@ -294,6 +298,7 @@ object User {
       enabled -> o.enabled,
       roles -> o.roles.some.filter(_.nonEmpty),
       profile -> o.profile,
+      profileWFD -> o.profileWFD,
       engine -> w.boolO(o.engine),
       booster -> w.boolO(o.booster),
       toints -> w.intO(o.toints),

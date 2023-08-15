@@ -99,9 +99,18 @@ trait GameHelper { self: I18nHelper with UserHelper with AiHelper with StringHel
     case Mode.Rated => trans.rated.literalTxtTo(enLang)
   }
 
-  def playerUsername(player: Player, withRating: Boolean = true, withTitle: Boolean = true): Frag =
+  def playerUsername(player: Player, withRating: Boolean = true, withTitle: Boolean = true, isWFD: Boolean = false): Frag =
     player.aiLevel.fold[Frag](
-      player.userId.flatMap(lightUser).fold[Frag](lidraughts.user.User.anonymous) { user =>
+      if (isWFD) {
+        player.userId.flatMap(wfdProfile).flatMap(_.nonEmptyRealName).fold(
+          player.userId.flatMap(lightUser).map(_.name)
+        )(_.some).fold[Frag](lidraughts.user.User.anonymous) { userName =>
+            frag(
+              if (withRating) s"$userName (${lidraughts.game.Namer ratingString player})"
+              else userName
+            )
+          }
+      } else player.userId.flatMap(lightUser).fold[Frag](lidraughts.user.User.anonymous) { user =>
         val title = user.title ifTrue withTitle map { t =>
           val title64 = t.endsWith("-64")
           frag(

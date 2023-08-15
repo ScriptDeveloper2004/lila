@@ -23,6 +23,7 @@ final class Env(
     hub: lidraughts.hub.Env,
     roundMap: DuctMap[_],
     lightUserApi: lidraughts.user.LightUserApi,
+    wfdProfileApi: lidraughts.user.WfdProfileApi,
     isOnline: User.ID => Boolean,
     onStart: String => Unit,
     historyApi: lidraughts.history.HistoryApi,
@@ -122,7 +123,7 @@ final class Env(
     flood = flood
   )
 
-  lazy val jsonView = new JsonView(lightUserApi, cached, statsApi, shieldApi, asyncCache, proxyGame, verify, duelStore, pause, startedSinceSeconds)
+  lazy val jsonView = new JsonView(lightUserApi, wfdProfileApi, cached, statsApi, shieldApi, asyncCache, proxyGame, verify, duelStore, pause, startedSinceSeconds)
 
   lazy val apiJsonView = new ApiJsonView(lightUserApi.async)
 
@@ -216,6 +217,7 @@ object Env {
     hub = lidraughts.hub.Env.current,
     roundMap = lidraughts.round.Env.current.roundMap,
     lightUserApi = lidraughts.user.Env.current.lightUserApi,
+    wfdProfileApi = lidraughts.user.Env.current.wfdProfileApi,
     isOnline = lidraughts.user.Env.current.isOnline,
     onStart = lidraughts.round.Env.current.onStart,
     historyApi = lidraughts.history.Env.current.api,
