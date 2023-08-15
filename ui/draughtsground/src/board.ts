@@ -1,8 +1,7 @@
 import { State } from './state'
-import { pos2key, key2pos, opposite, containsX, allKeys } from './util'
+import { pos2key, key2pos, opposite, containsX, allKeys, decomposeUci } from './util'
 import premove from './premove'
 import * as cg from './types'
-import * as draughtsUtil from 'draughts';
 
 export type Callback = (...args: any[]) => void;
 
@@ -184,11 +183,11 @@ export function baseMove(state: State, orig: cg.Key, dest: cg.Key, finishCapture
 
   if (state.lastMove && state.lastMove.length && isCapture && state.lastMove[state.lastMove.length - 1] === orig) {
     state.animateFrom = state.lastMove.length - 1;
-    if (captureUci) state.lastMove = state.lastMove.concat(draughtsUtil.decomposeUci(captureUci.slice(2)));
+    if (captureUci) state.lastMove = state.lastMove.concat(decomposeUci(captureUci.slice(2)));
     else state.lastMove.push(dest);
   } else {
     state.animateFrom = 0;
-    if (captureUci) state.lastMove = draughtsUtil.decomposeUci(captureUci);
+    if (captureUci) state.lastMove = decomposeUci(captureUci);
     else state.lastMove = [orig, dest];
   }
 
