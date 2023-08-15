@@ -19,6 +19,7 @@ export default function(root: AnalyseCtrl, studyData: StudyData, data: StudyPrac
     sound = makeSound(),
     analysisUrl = prop(''),
     autoNext = storedProp('practice-auto-next', true);
+  let timeoutNext: number | undefined;
 
   function onLoad() {
     root.showAutoShapes = readOnlyProp(true);
@@ -71,11 +72,11 @@ export default function(root: AnalyseCtrl, studyData: StudyData, data: StudyPrac
   function onVictory(): void {
     saveNbMoves();
     sound.success();
-    if (autoNext()) {
+    if (autoNext() && !timeoutNext) {
       // no autonext if gamebookplay ends with a comment
       const gamebook = getStudy().gamebookPlay();
       if (!gamebook?.state.comment) {
-        setTimeout(goToNext, 1000);
+        timeoutNext = setTimeout(goToNext, 1000);
       }
     }
   }
@@ -92,6 +93,7 @@ export default function(root: AnalyseCtrl, studyData: StudyData, data: StudyPrac
   function goToNext() {
     const next = getStudy().nextChapter();
     if (next) getStudy().setChapter(next.id);
+    timeoutNext = undefined;
   }
 
   function onFailure(): void {

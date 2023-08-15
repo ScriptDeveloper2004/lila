@@ -47,8 +47,7 @@ export default class GamebookPlayCtrl {
     if (!this.root.onMainline && !this.root.tree.pathIsMainline(parPath)) return;
     if (this.root.onMainline && !node.children[0]) {
       state.feedback = 'end';
-    }
-    else if (this.isMyMove()) {
+    } else if (this.isMyMove()) {
       state.feedback = 'play';
       state.hint = (node.gamebook || {}).hint;
     } else if (this.root.onMainline) {
@@ -107,7 +106,7 @@ export default class GamebookPlayCtrl {
         break;
       case 'end':
         const s = this.root.study!,
-        c = s.nextChapter();
+          c = s.nextChapter();
         if (c) s.setChapter(c.id);
         break;
       default:
