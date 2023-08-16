@@ -27,7 +27,7 @@ final class TeamApi(
 
   def team(id: Team.ID) = coll.team.byId[Team](id)
 
-  def light(id: Team.ID) = coll.team.byId[LightTeam](id, $doc("name" -> true))
+  def light(id: Team.ID) = coll.team.byId[LightTeam](id, $doc("name" -> true, "wfd" -> true))
 
   def request(id: Team.ID) = coll.request.byId[Request](id)
 

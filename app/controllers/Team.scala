@@ -12,7 +12,7 @@ import lidraughts.common.{ HTTPRequest, MaxPerSecond }
 import lidraughts.hub.lightTeam._
 import lidraughts.security.Granter
 import lidraughts.team.{ Joined, Motivate, Team => TeamModel, TeamRepo, MemberRepo }
-import lidraughts.user.{ User => UserModel }
+import lidraughts.user.{ User => UserModel, UserRepo }
 import views._
 
 object Team extends LidraughtsController {
@@ -94,6 +94,39 @@ object Team extends LidraughtsController {
   def edit(id: String) = Auth { implicit ctx => me =>
     WithOwnedTeam(id) { team =>
       fuccess(html.team.form.edit(team, forms edit team))
+    }
+  }
+
+  def wfd(id: String) = Auth { implicit ctx => me =>
+    WithOwnedWfdTeam(id) { team =>
+      MemberRepo userIdsByTeam team.id flatMap UserRepo.byIds map { users =>
+        html.team.wfd.profiles(team, users)
+      }
+    }
+  }
+
+  def wfdProfileForm(id: String, userId: String) = Auth { implicit ctx => me =>
+    WithOwnedWfdTeam(id) { team =>
+      OptionFuOk(UserRepo byId userId) { user =>
+        fuccess(html.team.wfd.profileForm(team, user, Env.user.forms profileWFDOrProfileOf user))
+      }
+    }
+  }
+
+  def wfdProfileApply(id: String, userId: String) = AuthBody { implicit ctx => me =>
+    WithOwnedWfdTeam(id) { _ =>
+      implicit val req: Request[_] = ctx.body
+      Env.user.forms.profileWFD.bindFromRequest.fold(
+        jsonFormError,
+        profile => {
+          UserRepo.setProfileWFD(userId, profile) inject Ok(
+            Json.obj(
+              "ok" -> true,
+              "fullName" -> ~profile.nonEmptyRealName
+            )
+          )
+        }
+      )
     }
   }
 
@@ -324,6 +357,14 @@ You received this because you are subscribed to messages of the team $url."""
       else renderTeam(team) map { Forbidden(_) }
     }
 
+  private def WithOwnedWfdTeam(teamId: String)(f: TeamModel => Fu[Result])(implicit ctx: Context): Fu[Result] =
+    OptionFuResult(api team teamId) { team =>
+      if (team.isWFD && (ctx.userId.exists(team.isCreator) || isGranted(_.ManageTeam))) f(team)
+      else renderTeam(team) map {
+        Forbidden(_)
+      }
+    }
+
   private[controllers] def teamsIBelongTo(me: lidraughts.user.User): Fu[List[LightTeam]] =
-    api mine me map { _.map(_.light) }
+    api mine me map { _.filter(t => !t.isWFD || t.isCreator(me.id)).map(_.light) }
 }

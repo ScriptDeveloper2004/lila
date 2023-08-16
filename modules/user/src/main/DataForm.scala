@@ -34,7 +34,14 @@ final class DataForm(authenticator: Authenticator) {
     "links" -> optional(cleanNonEmptyText(maxLength = 3000))
   )(Profile.apply)(Profile.unapply))
 
+  val profileWFD = Form(mapping(
+    "firstName" -> nameField,
+    "lastName" -> nameField
+  )(ProfileWFD.apply)(ProfileWFD.unapply))
+
   def profileOf(user: User) = profile fill user.profileOrDefault
+  def profileWFDOf(user: User) = profileWFD fill user.profileWFDOrDefault
+  def profileWFDOrProfileOf(user: User) = profileWFD fill user.profileWFDOrProfile
 
   private def nameField = optional(cleanText(minLength = 2, maxLength = 20))
 

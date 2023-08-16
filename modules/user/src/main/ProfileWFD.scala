@@ -17,6 +17,11 @@ object ProfileWFD {
 
   val default = ProfileWFD()
 
+  def fromProfile(profile: Option[Profile]): Option[ProfileWFD] =
+    profile.map { p =>
+      ProfileWFD(p.firstName, p.lastName)
+    }
+
   import reactivemongo.bson.Macros
   private[user] val profileWFDBSONHandler = Macros.handler[ProfileWFD]
 }

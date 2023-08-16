@@ -117,6 +117,10 @@ final class CrudApi {
         tour.perfType.fold(tour) { perfType =>
           tour.copy(conditions = data.conditions.convert(perfType, teams.map(_.pair)(collection.breakOut)))
         }
+      } |> { tour =>
+        tour.copy(isWFD = tour.conditions.teamMember.exists { team =>
+          teams.exists(t => t.isWFD && t.id == team.teamId)
+        })
       }
   }
 }

@@ -133,7 +133,9 @@ object show {
                   )
                 ),
                 (info.createdByMe || isGranted(_.Admin)) option
-                  a(href := routes.Team.edit(t.id), cls := "button button-empty text", dataIcon := "%")(trans.settings())
+                  a(href := routes.Team.edit(t.id), cls := "button button-empty text", dataIcon := "%")(trans.settings()),
+                (t.isWFD && (info.createdByMe || isGranted(_.Admin))) option
+                  a(href := routes.Team.wfd(t.id), cls := "button button-empty text", dataIcon := "%")(s"WFD profiles")
               ),
               div(cls := "team-show__members")(
                 st.section(cls := "recent-members")(

@@ -77,6 +77,10 @@ final class TournamentApi(
         tour.perfType.fold(tour) { perfType =>
           tour.copy(conditions = setup.conditions.convert(perfType, myTeams.map(_.pair)(collection.breakOut)))
         }
+      } |> { tour =>
+        tour.copy(isWFD = tour.conditions.teamMember.exists { team =>
+          myTeams.exists(t => t.isWFD && t.id == team.teamId)
+        })
       }
     sillyNameCheck(tour, me)
     logger.info(s"Create $tour")
@@ -105,6 +109,10 @@ final class TournamentApi(
       tour.perfType.fold(tour) { perfType =>
         tour.copy(conditions = conditions.convert(perfType, myTeams.map(_.pair)(collection.breakOut)))
       }
+    } |> { tour =>
+      tour.copy(isWFD = tour.conditions.teamMember.exists { team =>
+        myTeams.exists(t => t.isWFD && t.id == team.teamId)
+      })
     }
     sillyNameCheck(tour, me)
     TournamentRepo update tour void

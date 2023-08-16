@@ -68,6 +68,8 @@ case class User(
   }
 
   def profileOrDefault = profile | Profile.default
+  def profileWFDOrDefault = profileWFD | ProfileWFD.default
+  def profileWFDOrProfile = profileWFD | (ProfileWFD.fromProfile(profile) | ProfileWFD.default)
 
   def hasGames = count.game > 0
 
