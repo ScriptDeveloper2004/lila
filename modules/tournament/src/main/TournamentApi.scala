@@ -78,8 +78,8 @@ final class TournamentApi(
           tour.copy(conditions = setup.conditions.convert(perfType, myTeams.map(_.pair)(collection.breakOut)))
         }
       } |> { tour =>
-        tour.copy(isWFD = tour.conditions.teamMember.exists { team =>
-          myTeams.exists(t => t.isWFD && t.id == team.teamId)
+        tour.copy(isWfd = tour.conditions.teamMember.exists { team =>
+          myTeams.exists(t => t.isWfd && t.id == team.teamId)
         })
       }
     sillyNameCheck(tour, me)
@@ -110,11 +110,11 @@ final class TournamentApi(
         tour.copy(conditions = conditions.convert(perfType, myTeams.map(_.pair)(collection.breakOut)))
       }
     } |> { tour =>
-      tour.copy(isWFD = tour.conditions.teamMember.exists { team =>
-        myTeams.exists(t => t.isWFD && t.id == team.teamId)
+      tour.copy(isWfd = tour.conditions.teamMember.exists { team =>
+        myTeams.exists(t => t.isWfd && t.id == team.teamId)
       })
     }
-    if (old.isWFD != tour.isWFD)
+    if (old.isWfd != tour.isWfd)
       cached.wfdCache.invalidate(tour.id)
     sillyNameCheck(tour, me)
     TournamentRepo update tour void

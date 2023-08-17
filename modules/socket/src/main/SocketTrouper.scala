@@ -155,7 +155,7 @@ abstract class SocketTrouper[M <: SocketMember](
 
   protected def showSpectators(
     lightUser: LightUser.Getter,
-    lightUserWfd: Option[LightWfdUser.Getter] = None
+    lightWfdUser: Option[LightWfdUser.Getter] = None
   )(watchers: Iterable[SocketMember]): Fu[Option[JsValue]] = watchers.size match {
     case 0 => fuccess(none)
     case s if s > maxSpectatorUsers => fuccess(Json.obj("nb" -> s).some)
@@ -166,7 +166,7 @@ abstract class SocketTrouper[M <: SocketMember](
 
       val total = anons + userIds.size
 
-      val usersJson = lightUserWfd.fold(userIds.map(lightUser).sequenceFu.map { users =>
+      val usersJson = lightWfdUser.fold(userIds.map(lightUser).sequenceFu.map { users =>
         Json.obj("users" -> users.flatten.map(_.titleName))
       }) { lightWfd =>
         userIds.map(lightWfd).sequenceFu.map { users =>

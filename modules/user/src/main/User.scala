@@ -17,7 +17,7 @@ case class User(
     enabled: Boolean,
     roles: List[String],
     profile: Option[Profile] = None,
-    profileWFD: Option[ProfileWFD] = None,
+    profileWfd: Option[ProfileWfd] = None,
     engine: Boolean = false,
     booster: Boolean = false,
     toints: Int = 0,
@@ -68,8 +68,8 @@ case class User(
   }
 
   def profileOrDefault = profile | Profile.default
-  def profileWFDOrDefault = profileWFD | ProfileWFD.default
-  def profileWFDOrProfile = profileWFD | (ProfileWFD.fromProfile(profile) | ProfileWFD.default)
+  def profileWfdOrDefault = profileWfd | ProfileWfd.default
+  def profileWfdOrProfile = profileWfd | (ProfileWfd.fromProfile(profile) | ProfileWfd.default)
 
   def hasGames = count.game > 0
 
@@ -222,7 +222,7 @@ object User {
     val enabled = "enabled"
     val roles = "roles"
     val profile = "profile"
-    val profileWFD = "profileWFD"
+    val profileWfd = "profileWfd"
     val engine = "engine"
     val booster = "booster"
     val toints = "toints"
@@ -259,7 +259,7 @@ object User {
     import reactivemongo.bson.BSONDocument
     private implicit def countHandler = Count.countBSONHandler
     private implicit def profileHandler = Profile.profileBSONHandler
-    private implicit def profileWFDHandler = ProfileWFD.profileWFDBSONHandler
+    private implicit def profileWfdHandler = ProfileWfd.profileWfdBSONHandler
     private implicit def perfsHandler = Perfs.perfsBSONHandler
     private implicit def planHandler = Plan.planBSONHandler
     private implicit def totpSecretHandler = TotpSecret.totpSecretBSONHandler
@@ -274,7 +274,7 @@ object User {
       enabled = r bool enabled,
       roles = ~r.getO[List[String]](roles),
       profile = r.getO[Profile](profile),
-      profileWFD = r.getO[ProfileWFD](profileWFD),
+      profileWfd = r.getO[ProfileWfd](profileWfd),
       engine = r boolD engine,
       booster = r boolD booster,
       toints = r nIntD toints,
@@ -300,7 +300,7 @@ object User {
       enabled -> o.enabled,
       roles -> o.roles.some.filter(_.nonEmpty),
       profile -> o.profile,
-      profileWFD -> o.profileWFD,
+      profileWfd -> o.profileWfd,
       engine -> w.boolO(o.engine),
       booster -> w.boolO(o.booster),
       toints -> w.intO(o.toints),

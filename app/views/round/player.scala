@@ -22,7 +22,8 @@ object player {
     cross: Option[lidraughts.game.Crosstable.WithMatchup],
     playing: List[Pov],
     chatOption: Option[lidraughts.chat.Chat.GameOrEvent],
-    bookmarked: Boolean
+    bookmarked: Boolean,
+    pimpChat: Option[String => Option[String]]
   )(implicit ctx: Context) = {
 
     val chatJson = chatOption.map(_.either).map {
@@ -36,7 +37,7 @@ object player {
         palantir = ctx.me.exists(_.canPalantir)
       )
       case Right((c, res)) => chat.json(
-        c.chat,
+        c.chat.pimp(pimpChat),
         name = trans.chatRoom.txt(),
         timeout = c.timeout,
         public = true,
@@ -71,7 +72,7 @@ LidraughtsRound.boot(${
           ),
           bits.roundAppPreload(pov, true),
           div(cls := "round__underboard")(
-            bits.crosstable(cross, pov.game),
+            bits.crosstable(cross, pov.game, isWfd = pov.game.isWfd || ~tour.map(_.tour.isWfd)),
             (playing.nonEmpty || simul.nonEmpty) option
               div(cls := List(
                 "round__now-playing" -> true,

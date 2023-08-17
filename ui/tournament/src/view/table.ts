@@ -96,6 +96,6 @@ export default function(ctrl: TournamentController): VNode {
       hook: bind('click', _ => !ctrl.disableClicks)
     }, [
       h('h2', 'Top games')
-    ].concat(ctrl.data.duels.map(renderDuel(ctrl.data.teamBattle, ctrl.data.duelTeams, ctrl.data.isWFD)))) : null
+    ].concat(ctrl.data.duels.map(renderDuel(ctrl.data.teamBattle, ctrl.data.duelTeams, ctrl.data.isWfd)))) : null
   ]);
 };

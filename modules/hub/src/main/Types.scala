@@ -6,6 +6,6 @@ package object lightTeam {
   case class LightTeam(_id: TeamId, name: TeamName, wfd: Option[Boolean]) {
     def id = _id
     def pair = id -> name
-    def isWFD = ~wfd
+    def isWfd = ~wfd
   }
 }

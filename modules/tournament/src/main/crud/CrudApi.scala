@@ -118,11 +118,11 @@ final class CrudApi(cached: Cached) {
           tour.copy(conditions = data.conditions.convert(perfType, teams.map(_.pair)(collection.breakOut)))
         }
       } |> { tour =>
-        tour.copy(isWFD = tour.conditions.teamMember.exists { team =>
-          teams.exists(t => t.isWFD && t.id == team.teamId)
+        tour.copy(isWfd = tour.conditions.teamMember.exists { team =>
+          teams.exists(t => t.isWfd && t.id == team.teamId)
         })
       }
-    if (tour.isWFD != newTour.isWFD)
+    if (tour.isWfd != newTour.isWfd)
       cached.wfdCache.invalidate(tour.id)
     newTour
   }

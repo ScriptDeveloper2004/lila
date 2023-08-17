@@ -145,7 +145,7 @@ final class Env(
       history = new History(ttl = HistoryMessageTtl),
       jsonView = jsonView,
       lightUser = userEnv.lightUser,
-      lightUserWfd = userEnv.lightWfdUser,
+      lightWfdUser = userEnv.lightWfdUser,
       toWfdName = userEnv.wfdUsername,
       isWfdTournament = cached.isWfd,
       uidTtl = UidTimeout,

@@ -69,7 +69,7 @@ final class Env(
       teamId = teamId,
       history = new History(ttl = HistoryMessageTtl),
       lightUser = userEnv.lightUser,
-      lightUserWfd = userEnv.lightWfdUser,
+      lightWfdUser = userEnv.lightWfdUser,
       toWfdName = userEnv.wfdUsername,
       isWfdTeam = cached.isWfd,
       uidTtl = UidTimeout,

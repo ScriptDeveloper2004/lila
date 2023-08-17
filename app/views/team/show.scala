@@ -20,8 +20,9 @@ object show {
     t: Team,
     members: Paginator[Either[lidraughts.common.LightUser, lidraughts.common.LightWfdUser]],
     info: TeamInfo,
-    chatOption: Option[lidraughts.chat.Chat.Mine],
-    socketVersion: Option[lidraughts.socket.Socket.SocketVersion]
+    chatOption: Option[lidraughts.chat.UserChat.Mine],
+    socketVersion: Option[lidraughts.socket.Socket.SocketVersion],
+    pimpChat: Option[String => Option[String]]
   )(implicit ctx: Context) =
     bits.layout(
       title = t.name,
@@ -42,7 +43,7 @@ object show {
                 "id" -> t.id,
                 "socketVersion" -> v.value,
                 "chat" -> views.html.chat.json(
-                  chat.chat,
+                  chat.chat.pimp(pimpChat),
                   name = trans.chatRoom.txt(),
                   timeout = chat.timeout,
                   public = true,
@@ -67,7 +68,7 @@ object show {
           (info.mine || t.enabled) option div(cls := "team-show__content")(
             div(cls := "team-show__content__col1")(
               st.section(cls := "team-show__meta")(
-                p(teamLeader(), ": ", userIdLink(t.createdBy.some, isWFD = t.isWFD))
+                p(teamLeader(), ": ", userIdLink(t.createdBy.some, isWfd = t.isWfd))
               ),
               chatOption.isDefined option frag(
                 views.html.chat.frag,
@@ -134,7 +135,7 @@ object show {
                 ),
                 (info.createdByMe || isGranted(_.Admin)) option
                   a(href := routes.Team.edit(t.id), cls := "button button-empty text", dataIcon := "%")(trans.settings()),
-                (t.isWFD && (info.createdByMe || isGranted(_.Admin))) option
+                (t.isWfd && (info.createdByMe || isGranted(_.Admin))) option
                   a(href := routes.Team.wfd(t.id), cls := "button button-empty text", dataIcon := "%")(s"WFD profiles")
               ),
               div(cls := "team-show__members")(

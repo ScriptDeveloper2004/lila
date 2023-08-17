@@ -1,6 +1,6 @@
 package lidraughts.user
 
-case class ProfileWFD(
+case class ProfileWfd(
     firstName: Option[String] = None,
     lastName: Option[String] = None
 ) {
@@ -13,15 +13,15 @@ case class ProfileWFD(
   private def ne(str: Option[String]) = str.filter(_.nonEmpty)
 }
 
-object ProfileWFD {
+object ProfileWfd {
 
-  val default = ProfileWFD()
+  val default = ProfileWfd()
 
-  def fromProfile(profile: Option[Profile]): Option[ProfileWFD] =
+  def fromProfile(profile: Option[Profile]): Option[ProfileWfd] =
     profile.map { p =>
-      ProfileWFD(p.firstName, p.lastName)
+      ProfileWfd(p.firstName, p.lastName)
     }
 
   import reactivemongo.bson.Macros
-  private[user] val profileWFDBSONHandler = Macros.handler[ProfileWFD]
+  private[user] val profileWfdBSONHandler = Macros.handler[ProfileWfd]
 }

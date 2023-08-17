@@ -51,10 +51,9 @@ object Team extends LidraughtsController {
         .dmap(some)
       userIds = info.userIds ::: chat.??(_.chat.userIds)
       _ <- Env.user.lightUserApi preloadMany userIds
-      _ <- team.isWFD ?? Env.user.lightWfdUserApi.preloadMany(userIds)
+      _ <- team.isWfd ?? Env.user.lightWfdUserApi.preloadMany(userIds)
       version <- hasChat ?? Env.team.version(team.id).dmap(some)
-      pimpedChat = chat.map(_.any(team.isWFD option Env.user.wfdUsername))
-    } yield html.team.show(team, members, info, pimpedChat, version)
+    } yield html.team.show(team, members, info, chat, version, team.isWfd option Env.user.wfdUsername)
 
   private def canHaveChat(team: TeamModel, info: lidraughts.app.mashup.TeamInfo)(implicit ctx: Context): Boolean =
     team.chat && {
@@ -109,7 +108,7 @@ object Team extends LidraughtsController {
   def wfdProfileForm(id: String, userId: String) = Auth { implicit ctx => me =>
     WithOwnedWfdTeam(id) { team =>
       OptionFuOk(UserRepo byId userId) { user =>
-        fuccess(html.team.wfd.profileForm(team, user, Env.user.forms profileWFDOrProfileOf user))
+        fuccess(html.team.wfd.profileForm(team, user, Env.user.forms profileWfdOrProfileOf user))
       }
     }
   }
@@ -117,10 +116,10 @@ object Team extends LidraughtsController {
   def wfdProfileApply(id: String, userId: String) = AuthBody { implicit ctx => me =>
     WithOwnedWfdTeam(id) { _ =>
       implicit val req: Request[_] = ctx.body
-      Env.user.forms.profileWFD.bindFromRequest.fold(
+      Env.user.forms.profileWfd.bindFromRequest.fold(
         jsonFormError,
         profile => {
-          UserRepo.setProfileWFD(userId, profile) >>-
+          UserRepo.setProfileWfd(userId, profile) >>-
             Env.user.lightWfdUserApi.invalidate(userId) inject Ok(
               Json.obj(
                 "ok" -> true,
@@ -361,12 +360,12 @@ You received this because you are subscribed to messages of the team $url."""
 
   private def WithOwnedWfdTeam(teamId: String)(f: TeamModel => Fu[Result])(implicit ctx: Context): Fu[Result] =
     OptionFuResult(api team teamId) { team =>
-      if (team.isWFD && (ctx.userId.exists(team.isCreator) || isGranted(_.ManageTeam))) f(team)
+      if (team.isWfd && (ctx.userId.exists(team.isCreator) || isGranted(_.ManageTeam))) f(team)
       else renderTeam(team) map {
         Forbidden(_)
       }
     }
 
   private[controllers] def teamsIBelongTo(me: lidraughts.user.User): Fu[List[LightTeam]] =
-    api mine me map { _.filter(t => !t.isWFD || t.isCreator(me.id)).map(_.light) }
+    api mine me map { _.filter(t => !t.isWfd || t.isCreator(me.id)).map(_.light) }
 }

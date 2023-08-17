@@ -78,7 +78,8 @@ object Round extends LidraughtsController with TheftPrevention {
                   cross = crosstable,
                   playing = playing,
                   chatOption = chatOption,
-                  bookmarked = bookmarked))
+                  bookmarked = bookmarked,
+                  pimpChat = (pov.game.isWfd || ~tour.map(_.tour.isWfd)) option Env.user.wfdUsername))
             }
         }
       }
@@ -219,7 +220,7 @@ object Round extends LidraughtsController with TheftPrevention {
                     lidraughts.api.Mobile.Api.currentVersion,
                     tv = userTv.map { u => lidraughts.round.OnUserTv(u.id, userTvGameId) }
                   ) map { data =>
-                      Ok(html.round.watcher(pov, data, tour.map(_.tourAndTeamVs), simul, crosstable, userTv = userTv, chatOption = chat, bookmarked = bookmarked))
+                      Ok(html.round.watcher(pov, data, tour.map(_.tourAndTeamVs), simul, crosstable, userTv = userTv, chatOption = chat, bookmarked = bookmarked, pimpChat = (pov.game.isWfd || ~tour.map(_.tour.isWfd)) option Env.user.wfdUsername))
                     }
               }
           else for { // web crawlers don't need the full thing
@@ -331,13 +332,13 @@ object Round extends LidraughtsController with TheftPrevention {
 
   def mini(gameId: String, color: String) = Open { implicit ctx =>
     OptionOk(draughts.Color(color).??(env.proxy.povIfPresent(gameId, _)) orElse GameRepo.pov(gameId, color))(
-      html.game.mini(_, withUserId = ~getBoolOpt("userid", ctx.req), isWFD = ~getBoolOpt("wfd", ctx.req))
+      html.game.mini(_, withUserId = ~getBoolOpt("userid", ctx.req), isWfd = ~getBoolOpt("wfd", ctx.req))
     )
   }
 
   def miniFullId(fullId: String) = Open { implicit ctx =>
     OptionOk(env.proxy.povIfPresent(fullId) orElse GameRepo.pov(fullId))(
-      html.game.mini(_, withUserId = ~getBoolOpt("userid", ctx.req), isWFD = ~getBoolOpt("wfd", ctx.req))
+      html.game.mini(_, withUserId = ~getBoolOpt("userid", ctx.req), isWfd = ~getBoolOpt("wfd", ctx.req))
     )
   }
 }

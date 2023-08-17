@@ -29,7 +29,7 @@ case class Team(
 
   def light = lidraughts.hub.lightTeam.LightTeam(_id, name, wfd)
 
-  def isWFD = ~wfd
+  def isWfd = ~wfd
 }
 
 object Team {

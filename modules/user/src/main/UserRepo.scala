@@ -198,10 +198,10 @@ object UserRepo {
       $set(F.profile -> Profile.profileBSONHandler.write(profile))
     ).void
 
-  def setProfileWFD(id: ID, profile: ProfileWFD): Funit =
+  def setProfileWfd(id: ID, profile: ProfileWfd): Funit =
     coll.update(
       $id(id),
-      $set(F.profileWFD -> ProfileWFD.profileWFDBSONHandler.write(profile))
+      $set(F.profileWfd -> ProfileWfd.profileWfdBSONHandler.write(profile))
     ).void
 
   def setUsernameCased(id: ID, username: String): Funit = {

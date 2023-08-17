@@ -36,7 +36,7 @@ case class Tournament(
     spotlight: Option[Spotlight] = None,
     description: Option[String] = None,
     hasChat: Boolean = true,
-    isWFD: Boolean = false
+    isWfd: Boolean = false
 ) {
 
   def isCreated = status == Status.Created

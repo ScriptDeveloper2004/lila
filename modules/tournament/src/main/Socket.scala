@@ -19,7 +19,7 @@ private[tournament] final class TournamentSocket(
     protected val history: History[Messadata],
     jsonView: JsonView,
     lightUser: lidraughts.common.LightUser.Getter,
-    lightUserWfd: lidraughts.common.LightWfdUser.Getter,
+    lightWfdUser: lidraughts.common.LightWfdUser.Getter,
     toWfdName: String => Option[String],
     isWfdTournament: String => Boolean,
     uidTtl: Duration,
@@ -80,7 +80,7 @@ private[tournament] final class TournamentSocket(
 
     case NotifyCrowd =>
       delayedCrowdNotification = false
-      showSpectators(lightUser, isWfdTournament(tournamentId) option lightUserWfd)(members.values) foreach {
+      showSpectators(lightUser, isWfdTournament(tournamentId) option lightWfdUser)(members.values) foreach {
         notifyAll("crowd", _)
       }
 

@@ -129,7 +129,7 @@ object TournamentRepo {
     coll.primitiveOne[draughts.Clock.Config]($id(id), "clock")
 
   def isWfd(id: Tournament.ID): Fu[Boolean] =
-    byId(id).dmap(t => ~t.map(_.isWFD))
+    byId(id).dmap(t => ~t.map(_.isWfd))
 
   // all team-only tournament
   // and team battles

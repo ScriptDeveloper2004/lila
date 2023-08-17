@@ -129,7 +129,7 @@ final class JsonView(
         })
         .add("description" -> tour.description)
         .add("draughtsResult" -> pref.flatMap(_.draughtsResult option true))
-        .add("isWFD" -> tour.isWFD.option(true))
+        .add("isWfd" -> tour.isWfd.option(true))
     }
 
   def standing(tour: Tournament, page: Int): Fu[JsObject] =
@@ -167,7 +167,7 @@ final class JsonView(
     sheet <- cached.sheet(tour, info.user.id)
   } yield info match {
     case PlayerInfoExt(user, player, povs) =>
-      val displayName = (tour.isWFD ?? user.profileWFD.flatMap(_.nonEmptyRealName)).getOrElse(user.username)
+      val displayName = (tour.isWfd ?? user.profileWfd.flatMap(_.nonEmptyRealName)).getOrElse(user.username)
       val isPlaying = povs.headOption.??(_.game.playable)
       val povScores: List[(LightPov, Option[Score])] = povs zip {
         (isPlaying ?? List(none[Score])) ::: sheet.scores.map(some)
@@ -275,18 +275,19 @@ final class JsonView(
   )
 
   private def playerNameJson(tour: Option[Tournament], userId: User.ID) =
-    if (tour.exists(_.isWFD)) lightWfdUserApi.sync(userId).map(_.name).fold(
-      Json.obj("name" -> lightUserApi.sync(userId).fold(userId)(_.name))
-    ) { wfd =>
+    tour.exists(_.isWfd) ?? {
+      lightWfdUserApi.sync(userId).map { lightWfd =>
         Json.obj(
-          "name" -> wfd,
+          "name" -> lightWfd.name,
           "id" -> userId
-        )
+        ).add("title" -> lightWfd.title)
       }
-    else lightUserApi.sync(userId).fold(Json.obj("name" -> userId)) { light =>
-      Json.obj(
-        "name" -> light.name
-      ).add("title" -> light.title)
+    } getOrElse {
+      lightUserApi.sync(userId).fold(Json.obj("name" -> userId)) { light =>
+        Json.obj(
+          "name" -> light.name
+        ).add("title" -> light.title)
+      }
     }
 
   private def featuredJson(tour: Option[Tournament], featured: FeaturedGame) = {
@@ -362,24 +363,18 @@ final class JsonView(
     ).add("provisional" -> p.provisional)
       .add("withdraw" -> p.withdraw)
       .add("team" -> p.team)
-    val playerName = if (tour.isWFD) lightWfdUserApi async p.userId flatMap {
-      _.map(_.name).fold(
-        lightUserApi async p.userId map { light =>
-          Json.obj("name" -> light.fold(p.userId)(_.name))
-        }
-      ) { wfd =>
-          fuccess(Json.obj(
-            "name" -> wfd,
-            "id" -> p.userId
-          ))
-        }
-    }
-    else lightUserApi async p.userId map { light =>
-      Json.obj(
-        "name" -> light.fold(p.userId)(_.name)
-      ).add("title" -> light.flatMap(_.title))
-    }
-    playerName.map(json => basePlayer ++ json)
+    tour.isWfd ?? { lightWfdUserApi async p.userId } flatMap {
+      _.fold(lightUserApi async p.userId map { light =>
+        Json.obj(
+          "name" -> light.fold(p.userId)(_.name)
+        ).add("title" -> light.flatMap(_.title))
+      }) { lightWfd =>
+        fuccess(Json.obj(
+          "name" -> lightWfd.name,
+          "id" -> p.userId
+        ).add("title" -> lightWfd.title))
+      }
+    } map { json => basePlayer ++ json }
   }
 
   private val podiumJsonCache = asyncCache.multi[Tournament.ID, Option[JsArray]](
@@ -407,24 +402,20 @@ final class JsonView(
       "r" -> p.rating.value,
       "k" -> p.rank.value
     )
-    val playerName = if (t.exists(_.isWFD)) lightWfdUserApi async userId flatMap {
-      _.map(_.name).fold(
-        lightUserApi async userId map { light =>
-          Json.obj("n" -> light.fold(p.name.value)(_.name))
-        }
-      ) { wfd =>
-          fuccess(Json.obj(
-            "n" -> wfd,
-            "i" -> userId
-          ))
-        }
-    }
-    else lightUserApi async userId map { light =>
-      Json.obj(
-        "n" -> light.fold(p.name.value)(_.name)
-      ).add("t" -> light.flatMap(_.title))
-    }
-    playerName.map(json => basePlayer ++ json)
+    t.exists(_.isWfd) ?? {
+      lightWfdUserApi async userId
+    } flatMap {
+      _.fold(lightUserApi async userId map { light =>
+        Json.obj(
+          "n" -> light.fold(p.name.value)(_.name)
+        ).add("t" -> light.flatMap(_.title))
+      }) { lightWfd =>
+        fuccess(Json.obj(
+          "n" -> lightWfd.name,
+          "i" -> userId
+        ).add("t" -> lightWfd.title))
+      }
+    } map { json => basePlayer ++ json }
   }
 
   private def duelJson(t: Option[Tournament], d: Duel): Fu[JsObject] = for {

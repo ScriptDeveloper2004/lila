@@ -15,7 +15,7 @@ object wfd {
   import trans.team._
 
   def profiles(t: Team, members: Iterable[User])(implicit ctx: Context) = {
-    val (unnamed, named) = members.toList.sortBy(_.id).partition(_.profileWFD.flatMap(_.nonEmptyRealName).isEmpty)
+    val (unnamed, named) = members.toList.sortBy(_.id).partition(_.profileWfd.flatMap(_.nonEmptyRealName).isEmpty)
     val pageTitle = s"Edit ${t.name} profiles"
     bits.layout(
       title = pageTitle,
@@ -38,7 +38,7 @@ object wfd {
                 (unnamed ::: named).map { u =>
                   tr(cls := "small")(
                     td(userLink(u, withOnline = false)),
-                    td(u.profileWFD.flatMap(_.nonEmptyRealName)),
+                    td(u.profileWfd.flatMap(_.nonEmptyRealName)),
                     td(a(href := routes.Team.wfdProfileForm(t.id, u.id), dataIcon := "%", title := "Edit WFD profile"))
                   )
                 }

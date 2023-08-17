@@ -39,12 +39,12 @@ private object LightWfdUserApi {
 
   implicit val lightUserBSONReader = new BSONDocumentReader[LightWfdUser] {
 
-    private implicit def profileWFDHandler = ProfileWFD.profileWFDBSONHandler
+    private implicit def profileWfdHandler = ProfileWfd.profileWfdBSONHandler
 
     def read(doc: BSONDocument) = {
       val username = doc.getAs[String](F.username) err "LightUser username missing"
       LightWfdUser(
-        name = doc.getAs[ProfileWFD](F.profileWFD).flatMap(_.nonEmptyRealName) getOrElse username,
+        name = doc.getAs[ProfileWfd](F.profileWfd).flatMap(_.nonEmptyRealName) getOrElse username,
         username = username,
         title = doc.getAs[String](F.title),
         isPatron = ~doc.getAs[Bdoc](F.plan).flatMap(_.getAs[Boolean]("active"))
@@ -52,5 +52,5 @@ private object LightWfdUserApi {
     }
   }
 
-  val projection = $doc(F.username -> true, F.title -> true, s"${F.plan}.active" -> true, F.profileWFD -> true)
+  val projection = $doc(F.username -> true, F.title -> true, s"${F.plan}.active" -> true, F.profileWfd -> true)
 }

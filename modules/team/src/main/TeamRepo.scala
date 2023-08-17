@@ -38,7 +38,7 @@ object TeamRepo {
     coll.exists($id(teamId) ++ $doc("createdBy" -> userId))
 
   def isWfd(teamId: Team.ID): Fu[Boolean] =
-    enabled(teamId).dmap(t => ~t.map(_.isWFD))
+    enabled(teamId).dmap(t => ~t.map(_.isWfd))
 
   def name(id: Team.ID): Fu[Option[String]] =
     coll.primitiveOne[String]($id(id), "name")

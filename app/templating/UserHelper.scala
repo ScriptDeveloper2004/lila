@@ -8,7 +8,7 @@ import lidraughts.app.ui.ScalatagsTemplate._
 import lidraughts.common.{ LightUser, LightWfdUser, Lang }
 import lidraughts.i18n.{ I18nKeys => trans }
 import lidraughts.rating.{ PerfType, Perf }
-import lidraughts.user.{ ProfileWFD, User, Title }
+import lidraughts.user.{ ProfileWfd, User, Title }
 
 trait UserHelper { self: I18nHelper with StringHelper with NumberHelper =>
 
@@ -73,9 +73,9 @@ trait UserHelper { self: I18nHelper with StringHelper with NumberHelper =>
     truncate: Option[Int] = None,
     params: String = "",
     modIcon: Boolean = false,
-    isWFD: Boolean = false
+    isWfd: Boolean = false
   )(implicit lang: Lang): Frag =
-    if (isWFD) userIdOption.flatMap(lightWfdUser).fold[Frag](User.anonymous) { user =>
+    if (isWfd) userIdOption.flatMap(lightWfdUser).fold[Frag](User.anonymous) { user =>
       userIdNameLink(
         userId = user.id,
         username = user.username,

@@ -49,18 +49,16 @@ case class UserChat(
 
   def truncate(max: Int) = copy(lines = lines.drop((lines.size - max) atLeast 0))
 
-  def pimp(pimpUser: String => Option[String]) =
-    PimpedUserChat(id, lines.map(_.pimp(pimpUser)))
+  def pimp(maybePimp: Option[String => Option[String]]): AnyChat =
+    maybePimp.fold[AnyChat](this) { pimpUser =>
+      PimpedUserChat(id, lines.map(_.pimp(pimpUser)))
+    }
 }
 
 object UserChat {
   case class Mine(chat: UserChat, timeout: Boolean) {
-    def truncate(max: Int) = copy(chat = chat truncate max)
 
-    def any(maybePimp: Option[String => Option[String]]) =
-      maybePimp.fold(Chat.Mine(chat, timeout)) { pimpUser =>
-        Chat.Mine(chat.pimp(pimpUser), timeout)
-      }
+    def truncate(max: Int) = copy(chat = chat truncate max)
   }
 }
 
@@ -113,8 +111,6 @@ object Chat {
   case class Id(value: String) extends AnyVal with StringValue
 
   case class ResourceId(value: String) extends AnyVal with StringValue
-
-  case class Mine(chat: AnyChat, timeout: Boolean)
 
   case class Setup(id: Id, publicSource: PublicSource)
 

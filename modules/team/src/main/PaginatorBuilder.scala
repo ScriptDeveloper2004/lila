@@ -46,7 +46,7 @@ private[team] final class PaginatorBuilder(
           .list[Bdoc](length)
         userIds = docs.flatMap(_.getAs[String]("user"))
         users <- {
-          if (!team.isWFD) lightUserApi asyncMany userIds map { _.flatten.map(Left(_)) }
+          if (!team.isWfd) lightUserApi asyncMany userIds map { _.flatten.map(Left(_)) }
           else lightWfdUserApi asyncMany userIds map { _.flatten.map(Right(_)) }
         }
       } yield users
