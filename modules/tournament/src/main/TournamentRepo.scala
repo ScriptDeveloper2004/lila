@@ -128,6 +128,9 @@ object TournamentRepo {
   def clockById(id: Tournament.ID): Fu[Option[draughts.Clock.Config]] =
     coll.primitiveOne[draughts.Clock.Config]($id(id), "clock")
 
+  def isWfd(id: Tournament.ID): Fu[Boolean] =
+    byId(id).dmap(t => ~t.map(_.isWFD))
+
   // all team-only tournament
   // and team battles
   // this query is carefully crafted so that it hits both indexes

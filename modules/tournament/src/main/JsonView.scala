@@ -13,11 +13,11 @@ import lidraughts.pref.Pref
 import lidraughts.quote.Quote.quoteWriter
 import lidraughts.rating.PerfType
 import lidraughts.socket.Socket.SocketVersion
-import lidraughts.user.{ LightUserApi, User, WfdProfileApi }
+import lidraughts.user.{ LightUserApi, User, LightWfdUserApi }
 
 final class JsonView(
     lightUserApi: LightUserApi,
-    wfdProfileApi: WfdProfileApi,
+    lightWfdUserApi: LightWfdUserApi,
     cached: Cached,
     statsApi: TournamentStatsApi,
     shieldApi: TournamentShieldApi,
@@ -275,7 +275,7 @@ final class JsonView(
   )
 
   private def playerNameJson(tour: Option[Tournament], userId: User.ID) =
-    if (tour.exists(_.isWFD)) wfdProfileApi.sync(userId).flatMap(_.nonEmptyRealName).fold(
+    if (tour.exists(_.isWFD)) lightWfdUserApi.sync(userId).map(_.name).fold(
       Json.obj("name" -> lightUserApi.sync(userId).fold(userId)(_.name))
     ) { wfd =>
         Json.obj(
@@ -362,8 +362,8 @@ final class JsonView(
     ).add("provisional" -> p.provisional)
       .add("withdraw" -> p.withdraw)
       .add("team" -> p.team)
-    val playerName = if (tour.isWFD) wfdProfileApi async p.userId flatMap {
-      _.flatMap(_.nonEmptyRealName).fold(
+    val playerName = if (tour.isWFD) lightWfdUserApi async p.userId flatMap {
+      _.map(_.name).fold(
         lightUserApi async p.userId map { light =>
           Json.obj("name" -> light.fold(p.userId)(_.name))
         }
@@ -407,8 +407,8 @@ final class JsonView(
       "r" -> p.rating.value,
       "k" -> p.rank.value
     )
-    val playerName = if (t.exists(_.isWFD)) wfdProfileApi async userId flatMap {
-      _.flatMap(_.nonEmptyRealName).fold(
+    val playerName = if (t.exists(_.isWFD)) lightWfdUserApi async userId flatMap {
+      _.map(_.name).fold(
         lightUserApi async userId map { light =>
           Json.obj("n" -> light.fold(p.name.value)(_.name))
         }

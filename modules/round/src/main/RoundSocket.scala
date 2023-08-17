@@ -234,6 +234,7 @@ private[round] final class RoundSocket(
 
     case lidraughts.chat.actorApi.ChatLine(chatId, line) => notify(List(line match {
       case l: lidraughts.chat.UserLine => Event.UserMessage(l, chatId == chatIds.pub)
+      case l: lidraughts.chat.PimpedUserLine => Event.UserMessage(l.toUserLine, chatId == chatIds.pub)
       case l: lidraughts.chat.PlayerLine => Event.PlayerMessage(l)
     }))
 

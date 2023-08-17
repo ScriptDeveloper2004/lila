@@ -48,12 +48,13 @@ object Team extends LidraughtsController {
       hasChat = canHaveChat(team, info)
       chat <- hasChat ?? Env.chat.api.userChat.cached
         .findMine(lidraughts.chat.Chat.Id(team.id), ctx.me)
-        .map(some)
-      _ <- Env.user.lightUserApi preloadMany {
-        info.userIds ::: chat.??(_.chat.userIds)
-      }
+        .dmap(some)
+      userIds = info.userIds ::: chat.??(_.chat.userIds)
+      _ <- Env.user.lightUserApi preloadMany userIds
+      _ <- team.isWFD ?? Env.user.lightWfdUserApi.preloadMany(userIds)
       version <- hasChat ?? Env.team.version(team.id).dmap(some)
-    } yield html.team.show(team, members, info, chat, version)
+      pimpedChat = chat.map(_.any(team.isWFD option Env.user.wfdUsername))
+    } yield html.team.show(team, members, info, pimpedChat, version)
 
   private def canHaveChat(team: TeamModel, info: lidraughts.app.mashup.TeamInfo)(implicit ctx: Context): Boolean =
     team.chat && {
@@ -119,12 +120,13 @@ object Team extends LidraughtsController {
       Env.user.forms.profileWFD.bindFromRequest.fold(
         jsonFormError,
         profile => {
-          UserRepo.setProfileWFD(userId, profile) inject Ok(
-            Json.obj(
-              "ok" -> true,
-              "fullName" -> ~profile.nonEmptyRealName
+          UserRepo.setProfileWFD(userId, profile) >>-
+            Env.user.lightWfdUserApi.invalidate(userId) inject Ok(
+              Json.obj(
+                "ok" -> true,
+                "fullName" -> ~profile.nonEmptyRealName
+              )
             )
-          )
         }
       )
     }

@@ -18,9 +18,9 @@ object show {
 
   def apply(
     t: Team,
-    members: Paginator[lidraughts.common.LightUser],
+    members: Paginator[Either[lidraughts.common.LightUser, lidraughts.common.LightWfdUser]],
     info: TeamInfo,
-    chatOption: Option[lidraughts.chat.UserChat.Mine],
+    chatOption: Option[lidraughts.chat.Chat.Mine],
     socketVersion: Option[lidraughts.socket.Socket.SocketVersion]
   )(implicit ctx: Context) =
     bits.layout(
@@ -67,7 +67,7 @@ object show {
           (info.mine || t.enabled) option div(cls := "team-show__content")(
             div(cls := "team-show__content__col1")(
               st.section(cls := "team-show__meta")(
-                p(teamLeader(), ": ", userIdLink(t.createdBy.some))
+                p(teamLeader(), ": ", userIdLink(t.createdBy.some, isWFD = t.isWFD))
               ),
               chatOption.isDefined option frag(
                 views.html.chat.frag,
@@ -142,8 +142,9 @@ object show {
                   h2(teamRecentMembers()),
                   div(cls := "userlist infinitescroll")(
                     pagerNext(members, np => routes.Team.show(t.id, np).url),
-                    members.currentPageResults.map { member =>
-                      div(cls := "paginated")(lightUserLink(member))
+                    members.currentPageResults.map {
+                      case Left(member) => div(cls := "paginated")(lightUserLink(member))
+                      case Right(wfdMember) => div(cls := "paginated")(lightWfdUserLink(wfdMember))
                     }
                   )
                 )

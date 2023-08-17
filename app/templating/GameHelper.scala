@@ -102,7 +102,7 @@ trait GameHelper { self: I18nHelper with UserHelper with AiHelper with StringHel
   def playerUsername(player: Player, withRating: Boolean = true, withTitle: Boolean = true, isWFD: Boolean = false): Frag =
     player.aiLevel.fold[Frag](
       if (isWFD) {
-        player.userId.flatMap(wfdProfile).flatMap(_.nonEmptyRealName).fold(
+        player.userId.flatMap(lightWfdUser).map(_.name).fold(
           player.userId.flatMap(lightUser).map(_.name)
         )(_.some).fold[Frag](lidraughts.user.User.anonymous) { userName =>
             frag(

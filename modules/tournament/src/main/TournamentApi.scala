@@ -114,6 +114,8 @@ final class TournamentApi(
         myTeams.exists(t => t.isWFD && t.id == team.teamId)
       })
     }
+    if (old.isWFD != tour.isWFD)
+      cached.wfdCache.invalidate(tour.id)
     sillyNameCheck(tour, me)
     TournamentRepo update tour void
   }

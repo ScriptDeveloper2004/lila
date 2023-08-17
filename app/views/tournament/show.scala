@@ -17,7 +17,7 @@ object show {
     tour: Tournament,
     verdicts: lidraughts.tournament.Condition.All.WithVerdicts,
     data: play.api.libs.json.JsObject,
-    chatOption: Option[lidraughts.chat.UserChat.Mine],
+    chatOption: Option[lidraughts.chat.Chat.Mine],
     streamers: List[lidraughts.user.User.ID],
     shieldOwner: Option[lidraughts.tournament.TournamentShield.OwnerId]
   )(implicit ctx: Context) = views.html.base.layout(
