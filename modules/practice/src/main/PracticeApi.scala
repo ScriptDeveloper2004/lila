@@ -17,7 +17,7 @@ final class PracticeApi(
   import BSONHandlers._
 
   def get(user: Option[User]): Fu[UserPractice] = for {
-    struct <- structure.get
+    struct <- structure.getLang(user.flatMap(_.lang))
     prog <- user.fold(fuccess(PracticeProgress.anon))(progress.get)
   } yield UserPractice(struct, prog)
 
@@ -57,18 +57,34 @@ final class PracticeApi(
   }
 
   object structure {
-    private val cache = asyncCache.single[PracticeStructure](
-      "practice.structure",
+
+    private val cacheAll = asyncCache.single[PracticeStructure](
+      "practice.structure.all",
       f = for {
         conf <- config.get
         chapters <- studyApi.chapterIdNames(conf.studyIds)
-      } yield PracticeStructure.make(conf, chapters),
+      } yield PracticeStructure.make(conf, chapters, none),
       expireAfter = _.ExpireAfterAccess(3.hours)
     )
 
-    def get = cache.get
-    def clear = cache.refresh
-    def onSave(study: Study) = get foreach { structure =>
+    private val cacheLang = asyncCache.clearable[String, PracticeStructure](
+      "practice.structure.lang",
+      f = lang => for {
+        conf <- config.get
+        chapters <- studyApi.chapterIdNames(conf.studyIds)
+      } yield PracticeStructure.make(conf, chapters, lang.some),
+      expireAfter = _.ExpireAfterAccess(3.hours)
+    )
+
+    def getAll = cacheAll.get
+    def getLang(lang: Option[String]) = cacheLang.get(lang.getOrElse(PracticeStructure.defaultLang))
+
+    def clear = {
+      cacheAll.refresh
+      cacheLang.invalidateAll
+    }
+
+    def onSave(study: Study) = getAll foreach { structure =>
       if (structure.hasStudy(study.id)) clear
     }
   }

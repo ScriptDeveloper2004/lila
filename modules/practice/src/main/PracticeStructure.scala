@@ -44,6 +44,8 @@ case class PracticeSection(
     }(breakOut)
 
   def study(id: Study.Id): Option[PracticeStudy] = studiesByIds get id
+
+  def hasSlug(slug: String) = studies.exists(_.slug == slug)
 }
 
 case class PracticeStudy(
@@ -60,11 +62,16 @@ case class PracticeStudy(
 
 object PracticeStructure {
 
+  val defaultLang = "en-GB"
+
   def isChapterNameCommented(name: Chapter.Name) = name.value.startsWith("//")
 
-  def make(conf: PracticeConfig, chapters: Map[Study.Id, Vector[Chapter.IdName]]) =
+  def make(conf: PracticeConfig, chapters: Map[Study.Id, Vector[Chapter.IdName]], langOpt: Option[String]) = {
+    val sections = langOpt.fold(conf.sections)(_ => conf.sections.filter(_.lang.isEmpty))
+    val lang = langOpt.filterNot(defaultLang ==)
     PracticeStructure(
-      sections = conf.sections.map { sec =>
+      sections = sections.map { defaultSec =>
+        val sec = lang.flatMap(conf.sectionTrans(defaultSec.id, _)).getOrElse(defaultSec)
         PracticeSection(
           id = sec.id,
           name = sec.name,
@@ -82,4 +89,5 @@ object PracticeStructure {
         )
       }
     )
+  }
 }

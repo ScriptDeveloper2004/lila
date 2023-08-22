@@ -7,6 +7,8 @@ case class PracticeConfig(
 ) {
 
   def studyIds = sections.flatMap(_.studies.map(_.id)) map Study.Id.apply
+
+  def sectionTrans(id: String, lang: String) = sections.find(s => s.id == id && s.lang.contains(lang))
 }
 
 object PracticeConfig {
@@ -15,6 +17,7 @@ object PracticeConfig {
 
 case class PracticeConfigSection(
     id: String,
+    lang: Option[String],
     name: String,
     studies: List[PracticeConfigStudy]
 )
