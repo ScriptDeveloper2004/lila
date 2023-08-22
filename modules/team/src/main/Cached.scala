@@ -20,7 +20,6 @@ private[team] final class Cached(
 
   def preloadSet = nameCache preloadSet _
 
-  // TODO: invalidate on update
   val wfdCache = new Syncache[String, Boolean](
     name = "team.wfd",
     compute = TeamRepo.isWfd,

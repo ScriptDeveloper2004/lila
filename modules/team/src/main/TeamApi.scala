@@ -194,6 +194,9 @@ final class TeamApi(
   def disable(team: Team): Funit =
     TeamRepo.disable(team).void >>- (indexer ! RemoveTeam(team.id))
 
+  def setWfd(team: Team): Funit =
+    TeamRepo.setWfd(team).void >>- cached.wfdCache.invalidate(team.id)
+
   // delete for ever, with members but not forums
   def delete(team: Team): Funit =
     coll.team.remove($id(team.id)) >>

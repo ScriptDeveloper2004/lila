@@ -98,7 +98,7 @@ object Team extends LidraughtsController {
   }
 
   def wfd(id: String) = Auth { implicit ctx => me =>
-    WithOwnedWfdTeam(id) { team =>
+    WithWfdTeam(id) { team =>
       MemberRepo userIdsByTeam team.id flatMap UserRepo.byIds map { users =>
         html.team.wfd.profiles(team, users)
       }
@@ -106,7 +106,7 @@ object Team extends LidraughtsController {
   }
 
   def wfdProfileForm(id: String, userId: String) = Auth { implicit ctx => me =>
-    WithOwnedWfdTeam(id) { team =>
+    WithWfdTeam(id) { team =>
       OptionFuOk(UserRepo byId userId) { user =>
         fuccess(html.team.wfd.profileForm(team, user, Env.user.forms profileWfdOrProfileOf user))
       }
@@ -114,7 +114,7 @@ object Team extends LidraughtsController {
   }
 
   def wfdProfileApply(id: String, userId: String) = AuthBody { implicit ctx => me =>
-    WithOwnedWfdTeam(id) { _ =>
+    WithWfdTeam(id) { _ =>
       implicit val req: Request[_] = ctx.body
       Env.user.forms.profileWfd.bindFromRequest.fold(
         jsonFormError,
@@ -358,9 +358,9 @@ You received this because you are subscribed to messages of the team $url."""
       else renderTeam(team) map { Forbidden(_) }
     }
 
-  private def WithOwnedWfdTeam(teamId: String)(f: TeamModel => Fu[Result])(implicit ctx: Context): Fu[Result] =
+  private def WithWfdTeam(teamId: String)(f: TeamModel => Fu[Result])(implicit ctx: Context): Fu[Result] =
     OptionFuResult(api team teamId) { team =>
-      if (team.isWfd && (ctx.userId.exists(team.isCreator) || isGranted(_.ManageTeam))) f(team)
+      if (team.isWfd && (ctx.userId.exists(team.isCreator) || isGranted(_.ManageWfd))) f(team)
       else renderTeam(team) map {
         Forbidden(_)
       }

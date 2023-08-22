@@ -59,7 +59,10 @@ object show {
           data("socket-version") := v.value
         })(
           div(cls := "box__top")(
-            h1(cls := "text", dataIcon := "f")(t.name),
+            h1(cls := "text", dataIcon := "f")(
+              t.name,
+              t.isWfd option a(cls := "official-wfd", title := "Official WFD team")("E")
+            ),
             div(
               if (t.disabled) span(cls := "staff")("CLOSED")
               else nbMembers.plural(t.nbMembers, strong(t.nbMembers.localize))
@@ -135,7 +138,7 @@ object show {
                 ),
                 (info.createdByMe || isGranted(_.Admin)) option
                   a(href := routes.Team.edit(t.id), cls := "button button-empty text", dataIcon := "%")(trans.settings()),
-                (t.isWfd && (info.createdByMe || isGranted(_.Admin))) option
+                (t.isWfd && (info.createdByMe || isGranted(_.ManageWfd))) option
                   a(href := routes.Team.wfd(t.id), cls := "button button-empty text", dataIcon := "%")(s"WFD profiles")
               ),
               div(cls := "team-show__members")(

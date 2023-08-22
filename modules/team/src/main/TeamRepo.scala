@@ -62,6 +62,8 @@ object TeamRepo {
 
   def disable(team: Team) = coll.updateField($id(team.id), "enabled", false)
 
+  def setWfd(team: Team) = coll.updateField($id(team.id), "wfd", true)
+
   def addRequest(teamId: Team.ID, request: Request): Funit =
     coll.update(
       $id(teamId) ++ $doc("requests.user" $ne request.user),
