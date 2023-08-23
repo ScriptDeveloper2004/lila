@@ -22,7 +22,7 @@ if (confirm('${trans.learn.youWillLoseAllYourProgress.txt()}')) this.parentNode.
       url = s"$netBaseUrl${routes.Practice.index}"
     ).some
   ) {
-      val variant = data.structure.variant
+      val variant = data.structure.variant | draughts.variant.Standard
       main(cls := "page-menu")(
         st.aside(cls := "page-menu__menu practice-side")(
           div(cls := "practice-side__variant")(
@@ -33,14 +33,14 @@ if (confirm('${trans.learn.youWillLoseAllYourProgress.txt()}')) this.parentNode.
                 a(
                   dataIcon := iconByVariant(v),
                   cls := (variant == v).option("current"),
-                  href := routes.Puzzle.showOrVariant(v.key)
+                  href := routes.Practice.showSectionOrVariant(v.key)
                 )(trans.variantPractice(v.name))
               }
             )
           ),
           div(cls := "practice-side__main")(
             i(cls := "fat"),
-            h1(trans.learn.practice()),
+            h1(trans.practice()),
             h2(trans.learn.makesYourDraughtsPerfect()),
             div(cls := "progress")(
               div(cls := "text")(trans.learn.progressX(s"${data.progressPercent}%")),
