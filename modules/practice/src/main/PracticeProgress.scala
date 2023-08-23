@@ -35,6 +35,13 @@ case class PracticeProgress(
     } orElse metas.find { c =>
       !PracticeStructure.isChapterNameCommented(c.name)
     }
+
+  def mapChapters(f: Chapter.Id => Option[Chapter.Id]) = copy(
+    chapters = chapters.map {
+      case (id, nbMoves) => f(id).getOrElse(id) -> nbMoves
+    }
+  )
+
 }
 
 object PracticeProgress {
