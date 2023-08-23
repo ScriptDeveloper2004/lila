@@ -1,8 +1,8 @@
 package lidraughts.practice
 
-import scala.collection.breakOut
 import scala.concurrent.duration._
 
+import draughts.variant.Variant
 import lidraughts.db.dsl._
 import lidraughts.study.{ Chapter, Study }
 import lidraughts.user.User

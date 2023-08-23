@@ -2,10 +2,12 @@ package lidraughts.practice
 
 import scala.collection.breakOut
 
+import draughts.variant.Variant
 import lidraughts.study.{ Study, Chapter }
 
 case class PracticeStructure(
-    sections: List[PracticeSection]
+    sections: List[PracticeSection],
+    variant: Variant
 ) {
 
   def study(id: Study.Id): Option[PracticeStudy] =
@@ -89,6 +91,7 @@ object PracticeStructure {
     val sections = langOpt.fold(conf.sections)(_ => conf.sections.filter(_.lang.isEmpty))
     val lang = langOpt.filterNot(defaultLang ==)
     PracticeStructure(
+      variant = draughts.variant.Frisian,
       sections = sections.map { defaultSec =>
         val sec = lang.flatMap(conf.translatedSection(defaultSec.id, _)) | defaultSec
         PracticeSection(

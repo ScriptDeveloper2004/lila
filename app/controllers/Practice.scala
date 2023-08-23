@@ -1,11 +1,14 @@
 package controllers
 
 import play.api.libs.json._
+import play.api.mvc._
 
+import draughts.variant.Variant
 import lidraughts.api.Context
 import lidraughts.app._
 import lidraughts.practice.JsonView._
 import lidraughts.practice.{ UserStudy, PracticeSection, PracticeStudy }
+import lidraughts.pref.Pref.practiceVariants
 import lidraughts.study.Study.WithChapter
 import lidraughts.study.{ Chapter, Study => StudyModel }
 import lidraughts.tree.Node.partitionTreeJsonWriter
@@ -18,10 +21,25 @@ object Practice extends LidraughtsController {
 
   def index = Secure(_.Beta) { implicit ctx => _ =>
     pageHit
-    env.api.get(ctx.me) flatMap { up =>
-      NoCache(Ok(html.practice.index(up))).fuccess
+    renderIndex(ctx.pref.practiceVariant, none)
+  }
+
+  def indexVariant(key: String) = Secure(_.Beta) { implicit ctx => _ =>
+    Variant(key) match {
+      case Some(variant) if practiceVariants.contains(variant) =>
+        if (ctx.pref.practiceVariant != variant)
+          controllers.Pref.save("practiceVariant")(variant.key, ctx) flatMap {
+            cookie => renderIndex(variant, cookie.some)
+          }
+        else renderIndex(variant, none)
+      case _ => notFound
     }
   }
+
+  def renderIndex(variant: Variant, cookie: Option[Cookie])(implicit ctx: Context) =
+    env.api.get(ctx.me) map { html.practice.index(_) } map { h =>
+      cookie.fold(Ok(h))(c => Ok(h).withCookies(c))
+    } map NoCache
 
   def show(sectionId: String, studySlug: String, studyId: String) = Secure(_.Beta) { implicit ctx => _ =>
     pageHit

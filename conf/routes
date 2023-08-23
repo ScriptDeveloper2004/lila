@@ -178,6 +178,7 @@ GET   /features                        controllers.Plan.features
 
 # Practice
 GET   /practice                                   controllers.Practice.index
+GET   /practice/:variant                          controllers.Practice.indexVariant(variant: String)
 GET   /practice/load/:studyId/:chapterId          controllers.Practice.chapter(studyId: String, chapterId: String)
 GET   /practice/config                            controllers.Practice.config
 POST  /practice/config                            controllers.Practice.configSave
