@@ -157,7 +157,14 @@ final class PracticeApi(
         }
       }
 
-    def reset(user: User) =
-      coll.remove($id(user.id)).void
+    def reset(user: User, variant: Option[Variant]) =
+      variant match {
+        case Some(v) => for {
+          prog <- getRaw(user)
+          struct <- structure.getAll
+          studies = struct.sections.filter(s => s.variant == v && s.lang == PracticeStructure.defaultLang).flatMap(_.studies)
+        } yield save(prog.clearChapters(studies.flatMap(_.chapterIds)))
+        case _ => coll.remove($id(user.id)).void
+      }
   }
 }

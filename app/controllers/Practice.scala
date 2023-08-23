@@ -114,7 +114,11 @@ object Practice extends LidraughtsController {
   }
 
   def reset = AuthBody { implicit ctx => me =>
-    env.api.progress.reset(me) inject Redirect(routes.Practice.index)
+    Variant(~get("v")) match {
+      case Some(v) if practiceVariants.contains(v) =>
+        env.api.progress.reset(me, v.some) inject Redirect(routes.Practice.index)
+      case _ => notFound
+    }
   }
 
   def config = Secure(_.PracticeConfig) { implicit ctx => me =>

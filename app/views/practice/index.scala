@@ -46,7 +46,7 @@ if (confirm('${trans.learn.youWillLoseAllYourProgress.txt()}')) this.parentNode.
               div(cls := "text")(trans.learn.progressX(s"${data.progressPercent}%")),
               div(cls := "bar", style := s"width: ${data.progressPercent}%")
             ),
-            postForm(action := routes.Practice.reset)(
+            postForm(action := s"${routes.Practice.reset}?v=${variant.key}")(
               if (ctx.isAuth) (data.nbDoneChapters > 0) option a(cls := "do-reset")(trans.learn.resetMyProgress())
               else a(href := routes.Auth.signup)(trans.learn.signUpToSaveYourProgress())
             )
