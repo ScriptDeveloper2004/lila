@@ -1,5 +1,6 @@
 package lidraughts.practice
 
+import scala.collection.breakOut
 import scala.concurrent.duration._
 
 import lidraughts.db.dsl._
@@ -17,8 +18,8 @@ final class PracticeApi(
   import BSONHandlers._
 
   def get(user: Option[User]): Fu[UserPractice] = for {
-    struct <- structure.get
-    prog <- user.fold(fuccess(PracticeProgress.anon))(progress.get)
+    struct <- structure.getLang(user.flatMap(_.lang))
+    prog <- user.fold(fuccess(PracticeProgress.anon))(progress.getTranslated)
   } yield UserPractice(struct, prog)
 
   def getStudyWithFirstOngoingChapter(user: Option[User], studyId: Study.Id): Fu[Option[UserStudy]] = for {
@@ -53,22 +54,61 @@ final class PracticeApi(
   object config {
     def get = configStore.get map (_ | PracticeConfig.empty)
     def set = configStore.set _
-    def form = configStore.makeForm
+    def form = configStore.makeForm(Some(PracticeConfig.validate))
   }
 
   object structure {
-    private val cache = asyncCache.single[PracticeStructure](
-      "practice.structure",
+
+    private val cacheAll = asyncCache.single[PracticeStructure](
+      "practice.structure.all",
       f = for {
         conf <- config.get
         chapters <- studyApi.chapterIdNames(conf.studyIds)
-      } yield PracticeStructure.make(conf, chapters),
+      } yield PracticeStructure.make(conf, chapters, none),
       expireAfter = _.ExpireAfterAccess(3.hours)
     )
 
-    def get = cache.get
-    def clear = cache.refresh
-    def onSave(study: Study) = get foreach { structure =>
+    private val cacheLang = asyncCache.clearable[String, PracticeStructure](
+      "practice.structure.lang",
+      f = lang => for {
+        conf <- config.get
+        chapters <- studyApi.chapterIdNames(conf.studyIds)
+      } yield PracticeStructure.make(conf, chapters, lang.some),
+      expireAfter = _.ExpireAfterAccess(3.hours)
+    )
+
+    def getAll = cacheAll.get
+    def getLang(lang: Option[String]) = cacheLang.get(lang.getOrElse(PracticeStructure.defaultLang))
+
+    private val chaptersFromLangs = asyncCache.single[Map[Chapter.Id, Chapter.Id]](
+      "practice.structure.chapters.fromLangs",
+      f = for {
+        conf <- config.get
+        chapters <- studyApi.chapterIdNames(conf.studyIds)
+      } yield PracticeStructure.chaptersFromLangs(conf, chapters),
+      expireAfter = _.ExpireAfterAccess(3.hours)
+    )
+
+    private val chaptersToLang = asyncCache.clearable[String, Option[Map[Chapter.Id, Chapter.Id]]](
+      "practice.structure.chapters.toLang",
+      f = lang => for {
+        conf <- config.get
+        chapters <- studyApi.chapterIdNames(conf.studyIds)
+      } yield PracticeStructure.chaptersToLang(conf, chapters, lang),
+      expireAfter = _.ExpireAfterAccess(3.hours)
+    )
+
+    def getChaptersFromLangs = chaptersFromLangs.get
+    def getChaptersToLang(lang: Option[String]) = lang ?? chaptersToLang.get
+
+    def clear = {
+      cacheAll.refresh
+      cacheLang.invalidateAll
+      chaptersFromLangs.refresh
+      chaptersToLang.invalidateAll
+    }
+
+    def onSave(study: Study) = getAll foreach { structure =>
       if (structure.hasStudy(study.id)) clear
     }
   }
@@ -77,21 +117,35 @@ final class PracticeApi(
 
     import PracticeProgress.NbMoves
 
-    def get(user: User): Fu[PracticeProgress] =
-      coll.uno[PracticeProgress]($id(user.id)) map { _ | PracticeProgress.empty(PracticeProgress.Id(user.id)) }
+    def getTranslated(user: User): Fu[PracticeProgress] =
+      getRaw(user) flatMap { prog =>
+        structure.getChaptersToLang(user.lang).map {
+          _.fold(prog) { chaptersToLang =>
+            prog.mapChapters(chaptersToLang.get)
+          }
+        }
+      }
+
+    private def getRaw(user: User): Fu[PracticeProgress] =
+      coll.uno[PracticeProgress]($id(user.id)) map {
+        _ | PracticeProgress.empty(PracticeProgress.Id(user.id))
+      }
 
     private def save(p: PracticeProgress): Funit =
       coll.update($id(p.id), p, upsert = true).void
 
-    def setNbMoves(user: User, chapterId: Chapter.Id, score: NbMoves) = {
-      get(user) flatMap { prog =>
-        save(prog.withNbMoves(chapterId, score))
+    def setNbMoves(user: User, fromChapterId: Chapter.Id, score: NbMoves) =
+      structure.getChaptersFromLangs.map { _.getOrElse(fromChapterId, fromChapterId) } flatMap { chapterId =>
+        {
+          getRaw(user) flatMap { prog =>
+            save(prog.withNbMoves(chapterId, score))
+          }
+        } >>- studyApi.studyIdOf(chapterId).foreach {
+          _ ?? { studyId =>
+            bus.publish(PracticeProgress.OnComplete(user.id, studyId, chapterId), 'finishPractice)
+          }
+        }
       }
-    } >>- studyApi.studyIdOf(chapterId).foreach {
-      _ ?? { studyId =>
-        bus.publish(PracticeProgress.OnComplete(user.id, studyId, chapterId), 'finishPractice)
-      }
-    }
 
     def reset(user: User) =
       coll.remove($id(user.id)).void

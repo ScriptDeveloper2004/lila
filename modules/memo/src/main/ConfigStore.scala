@@ -42,14 +42,19 @@ final class ConfigStore[A: Configs](coll: Coll, id: String, logger: lidraughts.l
       cache.put((), fuccess(a.some))
   }
 
-  def makeForm: Fu[Form[String]] = {
+  def makeForm(validate: Option[A => List[String]]): Fu[Form[String]] = {
     import play.api.data.Forms._
     import play.api.data.validation._
     val form = Form(single(
       "text" -> text.verifying(Constraint[String]("constraint.text_parsable") { t =>
         parse(t) match {
           case Left(errs) => Invalid(ValidationError(errs mkString ","))
-          case _ => Valid
+          case Right(v) => validate.fold[ValidationResult](Valid) {
+            _(v) match {
+              case Nil => Valid
+              case errs @ _ => Invalid(ValidationError(errs mkString ","))
+            }
+          }
         }
       })
     ))

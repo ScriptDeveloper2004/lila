@@ -28,7 +28,7 @@ final class ActivityReadApi(
       .gather[Activity, Vector](nb)
     activities = allActivities.filterNot(_.isEmpty)
     practiceStructure <- activities.exists(_.practice.isDefined) ?? {
-      practiceApi.structure.get map some
+      practiceApi.structure.getAll map some
     }
     views <- activities.map { one(u, practiceStructure) _ }.sequenceFu
   } yield addSignup(u.createdAt, views)
@@ -41,7 +41,7 @@ final class ActivityReadApi(
       p <- a.practice
       struct <- practiceStructure
     } yield p.value flatMap {
-      case (studyId, nb) => struct study studyId map (_ -> nb)
+      case (studyId, nb) => struct.translatedStudy(studyId, u.lang) map (_ -> nb)
     } toMap)
     postView = posts.map { p =>
       p.groupBy(_.topic).mapValues { posts =>

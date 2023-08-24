@@ -34,14 +34,14 @@ object Practice extends LidraughtsController {
   }
 
   def showSection(sectionId: String) =
-    redirectTo(sectionId)(_.studies.headOption)
+    redirectTo(sectionId, none)(_.studies.headOption)
 
   def showStudySlug(sectionId: String, studySlug: String) =
-    redirectTo(sectionId)(_.studies.find(_.slug == studySlug))
+    redirectTo(sectionId, studySlug.some)(_.studies.find(_.slug == studySlug))
 
-  private def redirectTo(sectionId: String)(select: PracticeSection => Option[PracticeStudy]) = Secure(_.Beta) { implicit ctx => _ =>
-    env.api.structure.get.flatMap { struct =>
-      struct.sections.find(_.id == sectionId).fold(notFound) { section =>
+  private def redirectTo(sectionId: String, withSlug: Option[String])(select: PracticeSection => Option[PracticeStudy]) = Secure(_.Beta) { implicit ctx => _ =>
+    env.api.structure.getAll.flatMap { struct =>
+      struct.sections.find(sec => sec.id == sectionId && withSlug.fold(true)(sec.hasSlug)).fold(notFound) { section =>
         select(section) ?? { study =>
           Redirect(routes.Practice.show(section.id, study.slug, study.id.value)).fuccess
         }
@@ -96,7 +96,7 @@ object Practice extends LidraughtsController {
 
   def config = Secure(_.Beta) { implicit ctx => me =>
     for {
-      struct <- env.api.structure.get
+      struct <- env.api.structure.getAll
       form <- env.api.config.form
     } yield Ok(html.practice.config(struct, form))
   }
@@ -105,7 +105,7 @@ object Practice extends LidraughtsController {
     implicit val req = ctx.body
     env.api.config.form.flatMap { form =>
       FormFuResult(form) { err =>
-        env.api.structure.get map { html.practice.config(_, err) }
+        env.api.structure.getAll map { html.practice.config(_, err) }
       } { text =>
         ~env.api.config.set(text).right.toOption >>-
           env.api.structure.clear >>
