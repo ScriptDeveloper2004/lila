@@ -22,8 +22,8 @@ object player {
     cross: Option[lidraughts.game.Crosstable.WithMatchup],
     playing: List[Pov],
     chatOption: Option[lidraughts.chat.Chat.GameOrEvent],
-    bookmarked: Boolean,
-    pimpChat: Option[String => Option[String]]
+    pimpChat: Option[String => Option[String]],
+    bookmarked: Boolean
   )(implicit ctx: Context) = {
 
     val chatJson = chatOption.map(_.either).map {

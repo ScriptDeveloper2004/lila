@@ -78,8 +78,8 @@ object Round extends LidraughtsController with TheftPrevention {
                   cross = crosstable,
                   playing = playing,
                   chatOption = chatOption,
-                  bookmarked = bookmarked,
-                  pimpChat = (pov.game.isWfd || ~tour.map(_.tour.isWfd)) option Env.user.wfdUsername))
+                  pimpChat = (pov.game.isWfd || ~tour.map(_.tour.isWfd)) option Env.user.wfdUsername,
+                  bookmarked = bookmarked))
             }
         }
       }
@@ -220,7 +220,14 @@ object Round extends LidraughtsController with TheftPrevention {
                     lidraughts.api.Mobile.Api.currentVersion,
                     tv = userTv.map { u => lidraughts.round.OnUserTv(u.id, userTvGameId) }
                   ) map { data =>
-                      Ok(html.round.watcher(pov, data, tour.map(_.tourAndTeamVs), simul, crosstable, userTv = userTv, chatOption = chat, bookmarked = bookmarked, pimpChat = (pov.game.isWfd || ~tour.map(_.tour.isWfd)) option Env.user.wfdUsername))
+                      Ok(html.round.watcher(pov, data,
+                        tour = tour.map(_.tourAndTeamVs),
+                        simul = simul,
+                        cross = crosstable,
+                        userTv = userTv,
+                        chatOption = chat,
+                        pimpChat = (pov.game.isWfd || ~tour.map(_.tour.isWfd)) option Env.user.wfdUsername,
+                        bookmarked = bookmarked))
                     }
               }
           else for { // web crawlers don't need the full thing

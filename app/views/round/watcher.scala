@@ -22,8 +22,8 @@ object watcher {
     cross: Option[lidraughts.game.Crosstable.WithMatchup],
     userTv: Option[lidraughts.user.User] = None,
     chatOption: Option[lidraughts.chat.UserChat.Mine],
-    bookmarked: Boolean,
-    pimpChat: Option[String => Option[String]]
+    pimpChat: Option[String => Option[String]],
+    bookmarked: Boolean
   )(implicit ctx: Context) = {
 
     val chatJson = chatOption map { c =>
