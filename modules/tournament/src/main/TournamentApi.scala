@@ -78,7 +78,7 @@ final class TournamentApi(
           tour.copy(conditions = setup.conditions.convert(perfType, myTeams.map(_.pair)(collection.breakOut)))
         }
       } |> { tour =>
-        tour.copy(isWfd = tour.conditions.teamMember.exists { team =>
+        tour.copy(isWfd = !tour.isTeamBattle && tour.conditions.teamMember.exists { team =>
           myTeams.exists(t => t.isWfd && t.id == team.teamId)
         })
       }
@@ -110,7 +110,7 @@ final class TournamentApi(
         tour.copy(conditions = conditions.convert(perfType, myTeams.map(_.pair)(collection.breakOut)))
       }
     } |> { tour =>
-      tour.copy(isWfd = tour.conditions.teamMember.exists { team =>
+      tour.copy(isWfd = !tour.isTeamBattle && tour.conditions.teamMember.exists { team =>
         myTeams.exists(t => t.isWfd && t.id == team.teamId)
       })
     }

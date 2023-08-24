@@ -118,7 +118,7 @@ final class CrudApi(cached: Cached) {
           tour.copy(conditions = data.conditions.convert(perfType, teams.map(_.pair)(collection.breakOut)))
         }
       } |> { tour =>
-        tour.copy(isWfd = tour.conditions.teamMember.exists { team =>
+        tour.copy(isWfd = !tour.isTeamBattle && tour.conditions.teamMember.exists { team =>
           teams.exists(t => t.isWfd && t.id == team.teamId)
         })
       }
