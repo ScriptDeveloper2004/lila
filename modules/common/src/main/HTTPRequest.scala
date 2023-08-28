@@ -32,10 +32,11 @@ object HTTPRequest {
   )
 
   def appOrigin(req: RequestHeader): Option[String] =
-    origin(req) filter { reqOrigin =>
-      appOrigins exists { appOrigin =>
-        reqOrigin == appOrigin || reqOrigin.startsWith(s"$appOrigin:")
-      }
+    origin(req) filter isAppOrigin
+
+  def isAppOrigin(reqOrigin: String): Boolean =
+    appOrigins exists { appOrigin =>
+      reqOrigin == appOrigin || reqOrigin.startsWith(s"$appOrigin:")
     }
 
   def isApi(req: RequestHeader) = req.path startsWith "/api/"

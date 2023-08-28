@@ -119,7 +119,7 @@ final class SecurityApi(
   val sessionIdKey = "sessionId"
 
   private def isMobileAppWS(req: RequestHeader) =
-    HTTPRequest.isSocket(req) && HTTPRequest.origin(req).fold(true)("file://" ==)
+    HTTPRequest.isSocket(req) && HTTPRequest.origin(req).fold(true)(HTTPRequest.isAppOrigin)
 
   def reqSessionId(req: RequestHeader): Option[String] =
     req.session.get(sessionIdKey) orElse
