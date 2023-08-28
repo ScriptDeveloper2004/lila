@@ -36,7 +36,7 @@ object Global extends GlobalSettings {
     if (HTTPRequest isXhr req) lidraughts.mon.http.request.xhr()
     else if (HTTPRequest isSocket req) lidraughts.mon.http.request.ws()
     else if (HTTPRequest isDraughtsnet req) lidraughts.mon.http.request.draughtsnet()
-    else if (HTTPRequest isBot req) lidraughts.mon.http.request.bot()
+    else if (HTTPRequest isCrawler req) lidraughts.mon.http.request.bot()
     else lidraughts.mon.http.request.page()
     lidraughts.i18n.Env.current.subdomainKiller(req) orElse
       super.onRouteRequest(req).map {
