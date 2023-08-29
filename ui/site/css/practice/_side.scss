@@ -17,6 +17,11 @@
     h2 {
       font-size: 1.3em;
       margin-bottom: 1em;
+      @include breakpoint($mq-small) {
+        max-width: 16rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
     @keyframes fat-glide {
       50%{
