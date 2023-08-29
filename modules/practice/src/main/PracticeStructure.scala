@@ -1,11 +1,13 @@
 package lidraughts.practice
 
 import scala.collection.breakOut
-
-import lidraughts.study.{ Study, Chapter }
+import draughts.variant.Variant
+import lidraughts.practice.PracticeStructure.defaultLang
+import lidraughts.study.{ Chapter, Study }
 
 case class PracticeStructure(
-    sections: List[PracticeSection]
+    sections: List[PracticeSection],
+    variant: Option[Variant]
 ) {
 
   def study(id: Study.Id): Option[PracticeStudy] =
@@ -32,27 +34,36 @@ case class PracticeStructure(
   def hasStudy(id: Study.Id) = studiesByIds contains id
 
   def translatedSection(sectionId: String, lang: String): Option[PracticeSection] =
-    sections.find(s => s.id == sectionId && s.lang.contains(lang))
+    sections.find(s => s.id == sectionId && s.lang == lang) match {
+      case sec @ Some(_) => sec
+      case _ => sections.find(s => s.id == sectionId && s.lang == defaultLang)
+    }
 
-  def translatedStudy(id: Study.Id, langOpt: Option[String]) =
-    langOpt flatMap { lang =>
-      findSection(id) flatMap { baseSection =>
-        translatedSection(baseSection.id, lang) flatMap { transSection =>
-          baseSection.studies zip transSection.studies flatMap {
-            case (baseStudy, transStudy) if baseStudy.id == id || transStudy.id == id => transStudy.some
-            case _ => none[PracticeStudy]
-          } headOption
-        }
+  def translatedStudy(id: Study.Id, langOpt: Option[String]) = {
+    val lang = langOpt | defaultLang
+    findSection(id) flatMap { baseSection =>
+      translatedSection(baseSection.id, lang) flatMap { transSection =>
+        baseSection.studies zip transSection.studies flatMap {
+          case (baseStudy, transStudy) if baseStudy.id == id || transStudy.id == id => transStudy.some
+          case _ => none[PracticeStudy]
+        } headOption
       }
     } match {
       case s @ Some(_) => s
       case _ => study(id)
     }
+  }
+
+  def withVariant(v: Variant) = PracticeStructure(
+    sections = sections.filter(_.variant == v),
+    variant = v.some
+  )
 }
 
 case class PracticeSection(
     id: String,
-    lang: Option[String],
+    lang: String,
+    variant: Variant,
     name: String,
     studies: List[PracticeStudy]
 ) {
@@ -93,7 +104,8 @@ object PracticeStructure {
         val sec = lang.flatMap(conf.translatedSection(defaultSec.id, _)) | defaultSec
         PracticeSection(
           id = sec.id,
-          lang = sec.lang,
+          lang = sec.lang | defaultLang,
+          variant = sec.getVariant,
           name = sec.name,
           studies = sec.studies.map { stu =>
             val id = Study.Id(stu.id)
@@ -107,7 +119,8 @@ object PracticeStructure {
             )
           }
         )
-      }
+      },
+      variant = None
     )
   }
 
