@@ -96,11 +96,13 @@ object PracticeStructure {
 
   def isChapterNameCommented(name: Chapter.Name) = name.value.startsWith("//")
 
+  private def isBetaSection(sec: PracticeConfigSection) = sec.id.toLowerCase.startsWith("beta-")
+
   def make(conf: PracticeConfig, chapters: Map[Study.Id, Vector[Chapter.IdName]], langOpt: Option[String]) = {
     val sections = langOpt.fold(conf.sections)(_ => conf.sections.filter(_.lang.isEmpty))
     val lang = langOpt.filterNot(defaultLang ==)
     PracticeStructure(
-      sections = sections.map { defaultSec =>
+      sections = sections.filterNot(isBetaSection).map { defaultSec =>
         val sec = lang.flatMap(conf.translatedSection(defaultSec.id, _)) | defaultSec
         PracticeSection(
           id = sec.id,

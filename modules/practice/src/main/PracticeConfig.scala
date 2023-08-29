@@ -20,6 +20,8 @@ object PracticeConfig {
     val baseErrors = config.sections.flatMap { sec =>
       if (Variant(sec.id).isDefined)
         Some(s"Cannot use variant key ${sec.id} as section-id")
+      else if (config.sections.exists(s => s.id == sec.id && s.variant != sec.variant))
+        Some(s"Cannot use section-id ${sec.id} for different variants")
       else if (config.sections.count(s => s.id == sec.id && s.lang == sec.lang) > 1)
         Some(s"Duplicate section-id ${sec.id}")
       else None
