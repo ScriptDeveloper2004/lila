@@ -37,12 +37,12 @@ final class ActivityReadApi(
     posts <- a.posts ?? { p =>
       postApi.liteViewsByIds(p.value.map(_.value)) dmap some
     }
-    practice = (for {
+    practice = for {
       p <- a.practice
       struct <- practiceStructure
     } yield p.value flatMap {
       case (studyId, nb) => struct.translatedStudy(studyId, u.lang) map (_ -> nb)
-    } toMap)
+    }
     postView = posts.map { p =>
       p.groupBy(_.topic).mapValues { posts =>
         posts.map(_.post).sortBy(_.createdAt)
