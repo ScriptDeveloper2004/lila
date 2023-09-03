@@ -22,18 +22,17 @@ object Streamer extends LidraughtsController {
   }
 
   def featured = Action.async { implicit req =>
-    env.streamer.liveStreamApi.all
+    Env.streamer.liveStreamApi.all
       .map { streams =>
-        val max      = env.streamer.homepageMaxSetting.get()
-        val featured = streams.homepage(max, req, none) withTitles env.user.lightUserApi
+        val featured = streams.autoFeatured withTitles Env.user.lightUserApi
         JsonOk {
           featured.live.streams.map { s =>
             Json.obj(
-              "url"    -> routes.Streamer.redirect(s.streamer.id.value).absoluteURL(),
+              "url" -> routes.Streamer.show(s.streamer.userId).absoluteURL(),
               "status" -> s.status,
               "user" -> Json
                 .obj(
-                  "id"   -> s.streamer.userId,
+                  "id" -> s.streamer.userId,
                   "name" -> s.streamer.name.value
                 )
                 .add("title" -> featured.titles.get(s.streamer.userId))
