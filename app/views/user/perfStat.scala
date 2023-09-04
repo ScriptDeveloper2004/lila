@@ -96,7 +96,7 @@ object perfStat {
       ". ",
       ratingDeviation(
         strong(
-          title := ratingDeviationHelp.txt(lidraughts.rating.Glicko.provisionalDeviation)
+          title := ratingDeviationHelp.txt(lidraughts.rating.Glicko.provisionalDeviation, lidraughts.rating.Glicko.rankableDeviation)
         )(decimal(perf.glicko.deviation).toString)
       )
     )

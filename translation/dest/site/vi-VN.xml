@@ -457,7 +457,7 @@ phân tích bằng máy tính, trò chuyện tong ván đấu và URL có thể 
   <string name="blackWins">Đen thắng</string>
   <string name="draws">Hoà</string>
   <string name="nextXTournament">Giải đấu %s tiếp theo:</string>
-  <string name="averageOpponent">Xếp hạng trung bình của đối thủ</string>
+  <string name="averageOpponent" comment="Is followed by the average opponent rating (in e.g. a tournament).">Xếp hạng trung bình của đối thủ</string>
   <string name="membersOnly">Chỉ có thành viên</string>
   <string name="boardEditor">Chỉnh sửa bàn cờ</string>
   <string name="setTheBoard">Thiết lập bàn cờ</string>
@@ -522,7 +522,7 @@ Một đường dẫn mỗi dòng</string>
   <string name="butYouCanKeepTrying">Nhưng bạn có thể thử lại.</string>
   <string name="success">Thành công</string>
   <string name="wasThisPuzzleAnyGood">Câu đố này có thú vị không?</string>
-  <string name="pleaseVotePuzzle">Giúp lidraughts cải thiện bằng cách bình chọn, dùng mũi tên lên hoặc xuống:</string>
+  <string name="pleaseVotePuzzle">Giúp Lidraughts cải thiện bằng cách bình chọn, dùng mũi tên lên hoặc xuống:</string>
   <string name="thankYou">Cảm ơn!</string>
   <string name="ratingX">Hệ số: %s</string>
   <string name="hidden">ẩn</string>
