@@ -329,7 +329,7 @@ object Tournament extends LidraughtsController {
               .fold(
                 newJsonFormError,
                 data =>
-                  env.api.update(tour, data, me, teams) flatMap { tour =>
+                  env.api.update(tour, data, me, teams, api = true) flatMap { tour =>
                     env.jsonView(tour, none, none, getUserTeamIds, Env.team.cached.name, none, none, partial = false, reqLang, none) map { Ok(_) }
                   }
               )
@@ -467,7 +467,7 @@ object Tournament extends LidraughtsController {
         env.forms.edit(me, tour).bindFromRequest
           .fold(
             err => BadRequest(html.tournament.form.edit(tour, err, env.forms, me, teams)).fuccess,
-            data => env.api.update(tour, data, me, teams) inject Redirect(routes.Tournament.show(id))
+            data => env.api.update(tour, data, me, teams, api = false) inject Redirect(routes.Tournament.show(id))
           )
       }
     }
