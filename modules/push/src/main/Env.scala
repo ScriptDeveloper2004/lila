@@ -7,13 +7,15 @@ import com.typesafe.config.Config
 import play.api.Play
 import Play.current
 
-import lidraughts.game.Game
+import lidraughts.game.{ Game, Pov }
+import lidraughts.user.User
 
 final class Env(
     config: Config,
     db: lidraughts.db.Env,
     getLightUser: lidraughts.common.LightUser.GetterSync,
     gameProxy: Game.ID => Fu[Option[Game]],
+    urgentGames: User.ID => Fu[List[Pov]],
     scheduler: lidraughts.common.Scheduler,
     system: ActorSystem
 ) {
@@ -74,6 +76,7 @@ final class Env(
     webPush,
     getLightUser,
     gameProxy,
+    urgentGames,
     bus = system.lidraughtsBus,
     scheduler = scheduler
   )
@@ -97,6 +100,7 @@ object Env {
     system = lidraughts.common.PlayApp.system,
     getLightUser = lidraughts.user.Env.current.lightUserSync,
     gameProxy = lidraughts.round.Env.current.proxy.game _,
+    urgentGames = lidraughts.round.Env.current.proxy.urgentGames _,
     scheduler = lidraughts.common.PlayApp.scheduler,
     config = lidraughts.common.PlayApp loadConfig "push"
   )
