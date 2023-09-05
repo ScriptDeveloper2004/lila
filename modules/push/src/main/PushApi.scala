@@ -8,6 +8,7 @@ import scala.concurrent.Promise
 import draughts.format.Forsyth
 import lidraughts.challenge.Challenge
 import lidraughts.common.LightUser
+import lidraughts.common.String.shorten
 import lidraughts.game.{ Game, Pov, Namer }
 import lidraughts.hub.actorApi.map.Tell
 import lidraughts.hub.actorApi.round.{ MoveEvent, IsOnGame }
@@ -153,7 +154,7 @@ private final class PushApi(
         case true => funit
         case _ => pushToAll(t receiverOf p, _.message, PushApi.Data(
           title = s"${sender.titleName}: ${t.name}",
-          body = p.text take 140,
+          body = shorten(p.text, 57 - 3, "..."),
           stacking = Stacking.NewMessage,
           payload = Json.obj(
             "userId" -> t.receiverOf(p),
