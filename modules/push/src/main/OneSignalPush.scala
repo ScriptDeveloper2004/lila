@@ -1,7 +1,7 @@
 package lidraughts.push
 
 import play.api.libs.json._
-import play.api.libs.ws.WS
+import play.api.libs.ws.{ WS, WSResponse }
 import play.api.Play.current
 
 private final class OneSignalPush(

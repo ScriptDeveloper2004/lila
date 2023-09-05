@@ -1,4 +1,4 @@
-package lila.push
+package lidraughts.push
 
 import akka.actor.ActorSystem
 import com.google.auth.oauth2.{ GoogleCredentials, AccessToken }
@@ -6,8 +6,9 @@ import play.api.libs.json._
 import play.api.libs.ws.WS
 import play.api.Play.current
 import scala.concurrent.duration._
+import scala.concurrent.{ blocking, Future }
 
-import lila.user.User
+import lidraughts.user.User
 
 private final class FirebasePush(
     credentialsOpt: Option[GoogleCredentials],
@@ -15,16 +16,24 @@ private final class FirebasePush(
     url: String
 )(implicit system: ActorSystem) {
 
-  private val sequentialBlock = new SequentialBlock[AccessToken](timeout = 10 seconds)
+  private val sequencer = new lidraughts.hub.DuctSequencer(
+    maxSize = 512,
+    timeout = 10 seconds,
+    name = "firebasePush"
+  )
 
   def apply(userId: User.ID)(data: => PushApi.Data): Funit =
     credentialsOpt ?? { creds =>
       getDevices(userId) flatMap {
         case Nil => funit
         // access token has 1h lifetime and is requested only if expired
-        case devices => sequentialBlock {
-          creds.refreshIfExpired()
-          creds.getAccessToken()
+        case devices => sequencer {
+          Future {
+            blocking {
+              creds.refreshIfExpired()
+              creds.getAccessToken()
+            }
+          }
         }.chronometer.mon(_.push.googleTokenTime).result flatMap { token =>
           // TODO http batch request is possible using a multipart/mixed content
           // unfortuntely it doesn't seem easily doable with play WS
@@ -63,22 +72,4 @@ private final class FirebasePush(
       case (k, v: JsString) => s"lichess.$k" -> v
       case (k, v: JsNumber) => s"lichess.$k" -> JsString(v.toString)
     })
-}
-
-private final class SequentialBlock[T](timeout: FiniteDuration)(implicit system: ActorSystem) {
-
-  import java.util.concurrent.atomic.AtomicReference
-  import scala.concurrent.Future
-
-  private val queue: AtomicReference[Option[Fu[T]]] = new AtomicReference(none)
-
-  private def run(blocking: => T) = Future(blocking) withTimeout timeout
-
-  def apply(blockingCall: => T): Fu[T] =
-    queue.updateAndGet((prev: Option[Fu[T]]) => some {
-      prev match {
-        case None => run(blockingCall)
-        case Some(previous) => previous >> run(blockingCall)
-      }
-    }).get
 }

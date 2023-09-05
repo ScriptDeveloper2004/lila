@@ -202,7 +202,7 @@ private final class PushApi(
       monitor(lidraughts.mon.push.send)("onesignal")
       data
     } >> firebasePush(userId) {
-      monitor(lila.mon.push.send)("firebase")
+      monitor(lidraughts.mon.push.send)("firebase")
       data
     }
 
