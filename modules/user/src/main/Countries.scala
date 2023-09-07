@@ -274,6 +274,7 @@ object Countries {
       C("_adygea", "Adygea"),
       C("_belarus-wrw", "Belarus White-red-white"),
       C("_east-turkestan", "East Turkestan"),
+      C("_lidraughts", "Lidraughts"),
       C("EU", "European Union"),
       C("_united-nations", "United Nations"),
       C("_rainbow", "Rainbow"),
