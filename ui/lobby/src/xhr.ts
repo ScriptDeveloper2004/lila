@@ -19,7 +19,7 @@ export function nowPlaying() {
 export function poolToHook(pool, rated) {
   return $.ajax({
     method: 'POST',
-    url: '/setup/hook/' + window.lidraughts.StrongSocket.sri,
+    url: '/setup/hook/' + window.lidraughts.StrongSocket.sri + '?pool=1',
     data: {
       variant: 1,
       timeMode: 1,

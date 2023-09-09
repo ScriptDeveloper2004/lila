@@ -276,14 +276,16 @@ module.exports = function(cfg, element) {
       }
       var ajaxSubmit = function(color) {
         const poolMember = false; // hookToPoolMember(color, $form.serializeArray());
-        const min = $ratingRangeInput.data("min");
-        const max = $ratingRangeInput.data("max");
         const rating = parseInt($modal.find('.ratings input').val()) || 1500;
         const form = $form[0];
-        form.ratingRange.value = [
-          Math.max(min, rating + parseInt(form.ratingRange_range_min.value)), 
-          Math.min(max, rating + parseInt(form.ratingRange_range_max.value))
-        ].join('-');
+        if (form.ratingRange !== undefined) {
+          const min = $ratingRangeInput.data("min") || 600;
+          const max = $ratingRangeInput.data("max") || 2900;
+          form.ratingRange.value = [
+            Math.max(min, rating + parseInt(form.ratingRange_range_min.value)), 
+            Math.min(max, rating + parseInt(form.ratingRange_range_max.value))
+          ].join('-');
+        }
         $.modal.close();
         var call = {
           url: $form.attr('action').replace(/uid-placeholder/, lidraughts.StrongSocket.sri),

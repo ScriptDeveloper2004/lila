@@ -161,16 +161,15 @@ export default class LobbyController {
   };
 
   clickPool = (id: string) => {
-    if (!this.data.me) {
-      xhr.poolToHook(this.pools.find(function(p) {
-        return p.id === id;
-      }), false);
-      this.setTab('real_time');
-    } else if (this.poolMember && this.poolMember.id === id) this.leavePool();
-    else {
-      this.enterPool({ id });
-      this.redraw();
-    }
+    xhr.poolToHook(this.pools.find(function(p) {
+      return p.id === id;
+    }), !!this.data.me);
+    this.setTab('real_time');
+    // } else if (this.poolMember && this.poolMember.id === id) this.leavePool();
+    // else {
+    //  this.enterPool({ id });
+    //  this.redraw();
+    // }
   };
 
   enterPool = (member: PoolMember) => {
@@ -195,7 +194,7 @@ export default class LobbyController {
     this.poolMember = undefined
     xhr.poolToHook(this.pools.find(function(p) {
       return p.id === poolId;
-    }), true);
+    }), !!this.data.me);
     this.setTab('real_time');
   };
 
