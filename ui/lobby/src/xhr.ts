@@ -16,7 +16,7 @@ export function nowPlaying() {
   }).then(o => o.nowPlaying);
 }
 
-export function anonPoolSeek(pool) {
+export function poolToHook(pool, rated) {
   return $.ajax({
     method: 'POST',
     url: '/setup/hook/' + window.lidraughts.StrongSocket.sri,
@@ -26,6 +26,7 @@ export function anonPoolSeek(pool) {
       time: pool.lim,
       increment: pool.inc,
       days: 1,
+      mode: rated ? 1 : 0,
       color: 'random'
     }
   });
