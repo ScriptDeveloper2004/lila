@@ -3,22 +3,35 @@ import { ForecastCtrl, ForecastData, ForecastStep } from './interfaces';
 import { AnalyseData } from '../interfaces';
 import { countGhosts } from 'draughtsground/fen';
 
+function setDisplayPlies(forecasts: ForecastStep[][]) {
+  for (const fc of forecasts) {
+    for (const node of fc) {
+      if (countGhosts(node.fen)) {
+        node.displayPly = node.ply + 1
+      }
+    }
+  }
+  return forecasts
+}
+
+function unmergedLength(fc: ForecastStep[]): number {
+  if (fc.length <= 1) return fc.length
+
+  let len = 1
+  for (let i = 1; i < fc.length; i++) {
+    const fc1 = fc[i].displayPly || fc[i].ply
+    const fc2 = fc[i - 1].displayPly || fc[i - 1].ply
+    if (fc1 && fc2 && fc1 > fc2)
+      len++
+  }
+  return len
+}
+
 export function make(cfg: ForecastData, data: AnalyseData, redraw: () => void): ForecastCtrl {
 
   const saveUrl = `/${data.game.id}${data.player.id}/forecasts`;
 
-  function setDisplayPlies(fc?: ForecastStep[][]) {
-    if (fc)
-      for (var f = 0; f < fc.length; f++) {
-        for (var i = 0; i < fc[f].length; i++) {
-          if (countGhosts(fc[f][i].fen) > 0)
-            fc[f][i].displayPly = fc[f][i].ply + 1;
-        }
-      }
-    return fc;
-  }
-
-  let forecasts = setDisplayPlies(cfg.steps) || [];
+  let forecasts = setDisplayPlies(cfg.steps || []);
   let skipSteps = 0;
   const loading = prop(false);
 
@@ -50,30 +63,13 @@ export function make(cfg: ForecastData, data: AnalyseData, redraw: () => void): 
     return true;
   }
 
-  function unmergedLength(fc: ForecastStep[]): number {
-    if (fc.length <= 1) return fc.length;
-
-    let len = 1;
-    for (let i = 1; i < fc.length; i++) {
-      const fc1 = (fc[i].displayPly ? fc[i].displayPly : fc[i].ply);
-      const fc2 = (fc[i - 1].displayPly ? fc[i - 1].displayPly : fc[i - 1].ply);
-      if (fc1 && fc2 && fc1 > fc2)
-        len++;
-    }
-    return len;
-  }
-
   function truncate(fc: ForecastStep[]): ForecastStep[] {
     let fc2 = fc;
+    const requiredPlyMod = cfg.onMyTurn ? 1 : 0
+
     // must end with player move
-    if (cfg.onMyTurn) {
-      while (fc2.length && unmergedLength(fc2) % 2 !== 1) {
-        fc2 = fc2.slice(0, -1);
-      }
-    } else {
-      while (fc2.length && unmergedLength(fc2) % 2 !== 0) {
-        fc2 = fc2.slice(0, -1);
-      }
+    while (fc2.length && unmergedLength(fc2) % 2 !== requiredPlyMod) {
+      fc2 = fc2.slice(0, -1);
     }
     return fc2.slice(0, 30);
   }
@@ -136,7 +132,7 @@ export function make(cfg: ForecastData, data: AnalyseData, redraw: () => void): 
       if (data.reload) reloadToLastPly();
       else {
         loading(false);
-        forecasts = setDisplayPlies(data.steps) || [];
+        forecasts = setDisplayPlies(data.steps || []);
       }
       redraw();
     });
@@ -159,7 +155,7 @@ export function make(cfg: ForecastData, data: AnalyseData, redraw: () => void): 
       if (data.reload) reloadToLastPly();
       else {
         loading(false);
-        forecasts = setDisplayPlies(data.steps) || [];
+        forecasts = setDisplayPlies(data.steps || []);
       }
       redraw();
     });

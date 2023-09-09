@@ -4,7 +4,7 @@ import { ForecastCtrl, ForecastStep } from './interfaces';
 import AnalyseCtrl from '../ctrl';
 import { renderNodesHtml } from '../pdnExport';
 import { bind, dataIcon, spinner } from '../util';
-import { read, write } from 'draughtsground/fen'
+import { read, write, countGhosts } from 'draughtsground/fen'
 import { key2pos } from 'draughtsground/util'
 import { calcCaptKey } from 'draughtsground/board'
 
@@ -69,11 +69,12 @@ function makeCandidateNodes(ctrl: AnalyseCtrl, fctrl: ForecastCtrl): ForecastSte
 
         skippedSteps++
         if (skippedSteps > fctrl.skipSteps) {
-          const done = uci.length === 4, fen = done ? node.fen : currentFen.slice(0, 2) + write(pieces)
+          const done = uci.length === 4 && !countGhosts(node.fen)
+          const ply = node.displayPly || node.ply
           expandedNodes.push({
-            ply: done ? node.ply : (node.ply - 1),
-            displayPly: node.ply,
-            fen: fen,
+            ply: done ? ply : (ply - 1),
+            displayPly: ply,
+            fen: uci.length === 4 ? node.fen : currentFen.slice(0, 2) + write(pieces),
             uci: uci.slice(0, 4),
             san: shortKey(orig) + 'x' + shortKey(dest)
           })
@@ -87,7 +88,7 @@ function makeCandidateNodes(ctrl: AnalyseCtrl, fctrl: ForecastCtrl): ForecastSte
       if (skippedSteps > fctrl.skipSteps)
         expandedNodes.push({
           ply: node.ply,
-          displayPly: node.displayPly,
+          displayPly: countGhosts(node.fen) ? node.ply + 1 : undefined,
           fen: node.fen,
           uci: node.uci!,
           san: node.san!
