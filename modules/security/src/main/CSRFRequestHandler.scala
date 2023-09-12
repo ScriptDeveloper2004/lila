@@ -26,33 +26,39 @@ final class CSRFRequestHandler(domain: String, enabled: Boolean) {
      */
     else if (isSafe(req) && !isSocket(req)) true
     /* The origin header is set to a known value used by the mobile app,
-     * so we accept it */
+     * so we accept it
+     */
     else if (appOrigin(req).isDefined) true
     else origin(req) match {
       case None =>
         /* The origin header is not set.
-           * This can only happen with very old browsers,
-           * which support was dropped a long time ago, and that are full of other vulnerabilities.
-           * These old browsers cannot load Lichess because Lichess only support modern TLS.
-           * All the browsers that can run Lichess nowadays set the origin header properly.
-           * The absence of the origin header usually indicates a programmatic call (API or scrapping),
-           * so we let these requests through.
-           */
+         * This can only happen with very old browsers,
+         * which support was dropped a long time ago, and that are full of other vulnerabilities.
+         * These old browsers cannot load Lidraughts because Lidraughts only support modern TLS.
+         * All the browsers that can run Lidraughts nowadays set the origin header properly.
+         * The absence of the origin header usually indicates a programmatic call (API or scrapping),
+         * so we let these requests through.
+         */
         lidraughts.mon.http.csrf.missingOrigin()
         logger.debug(print(req))
         true
       case Some(o) if isSubdomain(o) =>
-        /* The origin header is set to the lichess domain, or a subdomain of it.
-           * Since the request comes from Lichess, we accept it.
-           */
+        /* The origin header is set to the lidraughts domain, or a subdomain of it.
+         * Since the request comes from Lidraughts, we accept it.
+         */
+        true
+      case Some("null") if isSocket(req) =>
+        /* Websockets of old app versions connect with null origin.
+         * Accept until support is dropped.
+         */
         true
       case Some(_) =>
         /* The origin header is set to another value, like a domain or "null".
-           * We reject the request.
-           * Note that in the case of an HTTP 302 redirect,
-           * or when privacy requires it, then the origin header IS SET, and contains "null",
-           * causing the unsafe request to be rejected.
-           */
+         * We reject the request.
+         * Note that in the case of an HTTP 302 redirect,
+         * or when privacy requires it, then the origin header IS SET, and contains "null",
+         * causing the unsafe request to be rejected.
+         */
         if (isSocket(req)) {
           lidraughts.mon.http.csrf.websocket()
           logger.info(s"WS ${print(req)}")
