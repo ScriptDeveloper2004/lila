@@ -326,7 +326,6 @@
   <string name="whichTeamWillYouRepresent">Qual equipa você vai representar nesta batalha?</string>
   <string name="youMustJoinOneOfTheseTeams">Você deve juntar-se a uma destas equipas para participar!</string>
   <string name="location">Localização</string>
-  <string name="settings">Configurações</string>
   <string name="filterGames">Filtrar partidas</string>
   <string name="reset">Voltar ao original</string>
   <string name="apply">Aplicar</string>
@@ -565,10 +564,6 @@ Um URL por linha</string>
   <string name="gameDisplay">Exibição do jogo</string>
   <string name="pieceAnimation">Animação das peças</string>
   <string name="materialDifference">Diferença material</string>
-  <string name="closeAccount">Encerrar conta</string>
-  <string name="changedMindDoNotCloseAccount">Eu mudei de ideia, não encerre minha conta</string>
-  <string name="closeAccountExplanation">Você tem certeza de que deseja encerrar sua conta? Esta é uma decisão permanente. Você não será mais capaz de fazer login, e a página de seu perfil não será mais acessível.</string>
-  <string name="thisAccountIsClosed">Esta conta foi encerrada</string>
   <string name="invalidUsernameOrPassword">Nome de usuário ou senha incorretos</string>
   <string name="incorrectPassword">Contrassenha incorreta</string>
   <string name="invalidAuthenticationCode">Código de autenticação inválido</string>

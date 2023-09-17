@@ -258,7 +258,6 @@
   <string name="xStartedStreaming">%s стриминг эхлүүлсэн</string>
   <string name="averageElo">Дундаж чансаа</string>
   <string name="location">Таны хаяг</string>
-  <string name="settings">Тохиргоо</string>
   <string name="filterGames">Шүүлт хийх</string>
   <string name="reset">Тохиргоог анхны хэлбэрлүү буцаах</string>
   <string name="apply">Тоглолтыг шүү</string>
@@ -443,10 +442,6 @@
   <string name="gameDisplay">Өргийг үзүүлэх байдал</string>
   <string name="pieceAnimation">Хөлгийн хөдөлгөөнийг амилуулах</string>
   <string name="materialDifference">Талуудын хөлгийн зөрүүг үзүүлэх</string>
-  <string name="closeAccount">Гишүүний данс хаах</string>
-  <string name="changedMindDoNotCloseAccount">Би бодлоо өөрчиллөө. Миний гишүүнчлэлийн дансыг битгий хаа</string>
-  <string name="closeAccountExplanation">Та гишүүний дансаа үнэхээх хаамаар байна уу? Хаагдсан дансыг буцаан сэргээх боломжгүй байхгүй. Та энэ дансаар дахин нэвтрэх боломжгүй болох ба таны танилцуулга хуудас идэвхгүй болох болно.</string>
-  <string name="thisAccountIsClosed">Энэ гишүүний данс хаагдсан байна.</string>
   <string name="invalidUsernameOrPassword">Гишүүний нэр эсвэл нэвтрэх үг буруу байна</string>
   <string name="incorrectPassword">Нууц үг буруу</string>
   <string name="invalidAuthenticationCode">Баталгаажуулах код буруу байна</string>

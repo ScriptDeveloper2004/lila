@@ -298,7 +298,6 @@
   <string name="xStartedStreaming">%s ha avviato lo streaming</string>
   <string name="averageElo">Punteggio medio</string>
   <string name="location">Luogo</string>
-  <string name="settings">Impostazioni</string>
   <string name="filterGames">Filtra partite</string>
   <string name="reset">Azzera</string>
   <string name="apply">Applica</string>
@@ -484,10 +483,6 @@ analizzarla con il computer, commentarla in chat, e condividerla tramire indiriz
   <string name="gameDisplay">Schermata di gioco</string>
   <string name="pieceAnimation">Animazione dei pezzi</string>
   <string name="materialDifference">Differenza di materiale</string>
-  <string name="closeAccount">Chiudi account</string>
-  <string name="changedMindDoNotCloseAccount">Ho cambiato idea, non chiudere il mio account</string>
-  <string name="closeAccountExplanation">Sei sicuro di voler chiudere il tuo account? La chiusura del tuo account è un\'azione irreversibile. Non ti sarà più possibile effettuare il login, e la pagina del tuo profilo non sarà più accessibile.</string>
-  <string name="thisAccountIsClosed">Questo account è stato chiuso.</string>
   <string name="invalidUsernameOrPassword">Nome utente o password non validi</string>
   <string name="incorrectPassword">Password errata</string>
   <string name="invalidAuthenticationCode">Codice di autenticazione non valido</string>

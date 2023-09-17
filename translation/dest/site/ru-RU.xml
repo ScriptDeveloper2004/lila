@@ -436,7 +436,6 @@
   <string name="whichTeamWillYouRepresent">Какую команду вы будете представлять в этой битве?</string>
   <string name="youMustJoinOneOfTheseTeams">Вы должны присоединиться к одной из этих команд, чтобы участвовать!</string>
   <string name="location">Местоположение</string>
-  <string name="settings">Настройки</string>
   <string name="filterGames">Фильтр партий</string>
   <string name="reset">Сбросить</string>
   <string name="apply">Сохранить</string>
@@ -692,12 +691,6 @@
   <string name="pieceAnimation">Анимация фигур</string>
   <string name="materialDifference">Показывать разницу в материале</string>
   <string name="showKingMoves">Показывать количество перемещений дамки (фрисландские шашки)</string>
-  <string name="closeAccount">Удалить учётную запись</string>
-  <string name="changedMindDoNotCloseAccount">Я передумал, не удаляйте мою учётную запись</string>
-  <string name="closeAccountExplanation">Вы действительно желаете удалить свою учётную запись? Её удаление невозможно будет отменить. Вы больше не сможете зайти в эту учётную запись, и ваша страница станет недоступна.</string>
-  <string name="cantOpenSimilarAccount">Вы не сможете создать новый аккаунт с таким же именем, даже если регистр символов отличается.</string>
-  <string name="closingIsDefinitive">Закрытие невозможно будет отменить. Вы уверены?</string>
-  <string name="thisAccountIsClosed">Этот аккаунт закрыт.</string>
   <string name="invalidUsernameOrPassword">Неверное имя пользователя или пароль</string>
   <string name="incorrectPassword">Неверный пароль</string>
   <string name="invalidAuthenticationCode">Неверный код аутентификации</string>

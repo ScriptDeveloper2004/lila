@@ -388,7 +388,6 @@
   <string name="whichTeamWillYouRepresent">Ποια ομάδα θα αντιπροσωπεύσετε σε αυτή τη μάχη;</string>
   <string name="youMustJoinOneOfTheseTeams">Πρέπει να μπείτε σε μία από αυτές τις ομάδες για να συμμετάσχετε!</string>
   <string name="location">Τοποθεσία</string>
-  <string name="settings">Επιλογές</string>
   <string name="filterGames">Φίλτρο παιχνιδιών</string>
   <string name="reset">Επαναφορά</string>
   <string name="apply">Εφαρμογή</string>
@@ -629,12 +628,6 @@
   <string name="pieceAnimation">Κίνηση πιονιών</string>
   <string name="materialDifference">Διαφορά υλικού</string>
   <string name="showKingMoves">Εμφάνιση του πόσες φορές ένας βασιλιάς έχει μετακινηθεί (Frisian ντάμα)</string>
-  <string name="closeAccount">Κλείσιμο λογαριασμού</string>
-  <string name="changedMindDoNotCloseAccount">Άλλαξα γνώμη, μην κλείσετε τον λογαριασμό μου</string>
-  <string name="closeAccountExplanation">Είστε σίγουροι ότι θέλετε να κλείσετε το λογαριασμό σας; Το κλείσιμο του λογαριασμού σας είναι μη αναστρέψιμο. Δε θα μπορείτε πλέον να συνδεθείτε και η σελίδα του προφίλ σας δε θα είναι πια προσβάσιμη.</string>
-  <string name="cantOpenSimilarAccount">Δεν θα μπορείτε να δημιουργήσετε νέο λογαριασμό με το ίδιο όνομα, ακόμα κι αν μετατρέψετε έναν μικρό σε έναν κεφαλαίο ή το αντίστροφο.</string>
-  <string name="closingIsDefinitive">Η απενεργοποίηση είναι οριστική. Δεν υπάρχει τρόπος ανάκλησης. Είστε σίγουρος;</string>
-  <string name="thisAccountIsClosed">Αυτός ο λογαριασμός έχει κλείσει.</string>
   <string name="invalidUsernameOrPassword">Άκυρο όνομα χρήστη ή κωδικός</string>
   <string name="incorrectPassword">Εσφαλμένος κωδικός</string>
   <string name="invalidAuthenticationCode">Μη έγκυρος κωδικός επαλήθευσης</string>

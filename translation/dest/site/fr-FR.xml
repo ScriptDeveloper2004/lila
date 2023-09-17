@@ -388,7 +388,6 @@
   <string name="whichTeamWillYouRepresent">Quelle équipe représenterez-vous dans cette bataille ?</string>
   <string name="youMustJoinOneOfTheseTeams">Vous devez rejoindre l\'une de ces équipes pour participer !</string>
   <string name="location">Localisation</string>
-  <string name="settings">Paramètres</string>
   <string name="filterGames">Filtrer les parties</string>
   <string name="reset">Réinitialiser</string>
   <string name="apply">Appliquer</string>
@@ -629,12 +628,6 @@ Une URL par ligne</string>
   <string name="pieceAnimation">Animation des pièces</string>
   <string name="materialDifference">Différence de matériel</string>
   <string name="showKingMoves">Indiquer le nombre de fois qu\'une dame s\'est déplacé (jeu de dames frisonnes)</string>
-  <string name="closeAccount">Fermer votre compte</string>
-  <string name="changedMindDoNotCloseAccount">J\'ai changé d\'avis, ne fermez pas mon compte</string>
-  <string name="closeAccountExplanation">Voulez-vous vraiment fermer votre compte ? Fermer votre compte est une décision définitive. Vous ne pourrez plus vous connecter et votre profil ne sera plus accessible.</string>
-  <string name="cantOpenSimilarAccount">Vous ne pourrez pas créer un nouveau compte d\'utilisateur avec le même nom, même si la capitalisation est différente.</string>
-  <string name="closingIsDefinitive">La fermeture est définitive. Il n\'y a aucun retour possible. Êtes-vous sûr ?</string>
-  <string name="thisAccountIsClosed">Ce compte a été fermé.</string>
   <string name="invalidUsernameOrPassword">Nom d\'utilisateur ou mot de passe invalide</string>
   <string name="incorrectPassword">Mot de passe incorrect</string>
   <string name="invalidAuthenticationCode">Code d\'authentification non valide</string>

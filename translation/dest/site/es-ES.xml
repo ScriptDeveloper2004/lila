@@ -298,7 +298,6 @@
   <string name="xStartedStreaming">%s comenzó a emitir</string>
   <string name="averageElo">Puntuación promedio</string>
   <string name="location">Ubicación</string>
-  <string name="settings">Configuración</string>
   <string name="filterGames">Filtrar partidas</string>
   <string name="reset">Reiniciar</string>
   <string name="apply">Aplicar cambios</string>
@@ -489,10 +488,6 @@ un análisis por ordenador, un chat de juego y una URL para compartir.</string>
   <string name="gameDisplay">Configuración visual del juego</string>
   <string name="pieceAnimation">Animación de las piezas</string>
   <string name="materialDifference">Diferencia de material</string>
-  <string name="closeAccount">Cerrar cuenta</string>
-  <string name="changedMindDoNotCloseAccount">He cambiado de opinión, no cierren mi cuenta</string>
-  <string name="closeAccountExplanation">¿Estás seguro de que quieres cerrar tu cuenta?  Cerrar tu cuenta es una decisión permanente. No podrás iniciar sesión y tu perfil no volverá a estar disponible.</string>
-  <string name="thisAccountIsClosed">Esta cuenta está cerrada.</string>
   <string name="invalidUsernameOrPassword">Nombre de usuario o contraseña erróneo</string>
   <string name="incorrectPassword">Contraseña incorrecta</string>
   <string name="invalidAuthenticationCode">Código de autenticación inválido</string>

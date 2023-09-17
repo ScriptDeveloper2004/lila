@@ -388,7 +388,6 @@
   <string name="whichTeamWillYouRepresent">Welches Team wirst du im Kampf repräsentieren?</string>
   <string name="youMustJoinOneOfTheseTeams">Du musst einem dieser Teams beitreten um mitzumachen!</string>
   <string name="location">Ort</string>
-  <string name="settings">Einstellungen</string>
   <string name="filterGames">Partien filtern</string>
   <string name="reset">Zurücksetzen</string>
   <string name="apply">Anwenden</string>
@@ -625,12 +624,6 @@ Eine URL pro Zeile</string>
   <string name="pieceAnimation">Figurenanimation</string>
   <string name="materialDifference">Materialunterschied</string>
   <string name="showKingMoves">Zeige, wie oft eine Dame bewegt wurde (Frisian-Variation)</string>
-  <string name="closeAccount">Benutzerkonto schließen</string>
-  <string name="changedMindDoNotCloseAccount">Ich habe meine Meinung geändert, mein Benutzerkonto doch nicht schließen</string>
-  <string name="closeAccountExplanation">Möchtest du dein Benutzerkonto wirklich schließen? Diese Entscheidung ist endgültig. Ein Login ist danach nicht mehr möglich und die Profilseite nicht mehr verfügbar.</string>
-  <string name="cantOpenSimilarAccount">Du wirst keinen neues Benutzerkonto mit gleichem Namen erstellen können, selbst bei anderer Groß-/Kleinschreibung.</string>
-  <string name="closingIsDefinitive">Schließen ist endgültig. Es gibt dann kein Zurück mehr. Bist du sicher?</string>
-  <string name="thisAccountIsClosed">Dieses Benutzerkonto ist geschlossen.</string>
   <string name="invalidUsernameOrPassword">Ungültiger Benutzername oder Passwort</string>
   <string name="incorrectPassword">Falsches Passwort</string>
   <string name="invalidAuthenticationCode">Ungültiger Authentifizierungscode</string>

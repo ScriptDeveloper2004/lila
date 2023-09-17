@@ -290,7 +290,6 @@
   <string name="xStartedStreaming">%s が配信を開始</string>
   <string name="averageElo">平均レーティング</string>
   <string name="location">住所</string>
-  <string name="settings">設定</string>
   <string name="filterGames">条件で絞り込む</string>
   <string name="reset">リセット</string>
   <string name="apply">適用</string>
@@ -479,10 +478,6 @@
   <string name="gameDisplay">表示設定</string>
   <string name="pieceAnimation">駒のアニメーション速度</string>
   <string name="materialDifference">駒の損得</string>
-  <string name="closeAccount">アカウント停止</string>
-  <string name="changedMindDoNotCloseAccount">気が変わったのでアカウントを停止しない</string>
-  <string name="closeAccountExplanation">本当にアカウントを停止しますか？アカウント停止は永久で、ログインできなくなり、プロフィールページにアクセスできなくなります。</string>
-  <string name="thisAccountIsClosed">このアカウントは停止されました</string>
   <string name="invalidUsernameOrPassword">無効なユーザー名 または パスワード</string>
   <string name="incorrectPassword">パスワードが違います</string>
   <string name="invalidAuthenticationCode">無効な認証コード</string>

@@ -234,7 +234,7 @@
   <string name="gameAborted">Ván cờ đã bị hủy</string>
   <string name="standard">Bình thường</string>
   <string name="variantTitleStandard">Quy tắc tiêu chuẩn của cờ đam quốc tế (FMJD).</string>
-  <string name="variantTitleFrisian">Các quân cờ cũng có thể chụp theo chiều ngang và chiều dọc.</string>
+  <string name="variantTitleFrisian">Các quân cờ cũng có thể ăn theo chiều ngang và chiều dọc.</string>
   <string name="variantTitleFrysk">Cờ đam Frisian bắt đầu với 5 quân mỗi bên.</string>
   <string name="variantTitleAntidraughts">Để mất hết quân của bạn (hoặc bị hết nước đi) để giành chiến thắng.</string>
   <string name="variantTitleBreakthrough">Bên nào phong được vua trước sẽ chiến thắng.</string>
@@ -364,7 +364,6 @@
   <string name="whichTeamWillYouRepresent">Bạn sẽ đại diện cho đội nào trong trận chiến này?</string>
   <string name="youMustJoinOneOfTheseTeams">Bạn phải tham gia một trong những đội này để tham gia!</string>
   <string name="location">Vị trí</string>
-  <string name="settings">Cài đặt</string>
   <string name="filterGames">Lọc game</string>
   <string name="reset">Đặt lại từ đầu</string>
   <string name="apply">Áp dụng</string>
@@ -385,8 +384,8 @@ phân tích bằng máy tính, trò chuyện tong ván đấu và URL có thể 
   <string name="thisIsADraughtsCaptcha">Đây là mã CAPTCHA cờ đam.</string>
   <string name="clickOnTheBoardToMakeYourMove">Nhấn vào bàn cờ để di chuyển, và chứng minh bạn là con người.</string>
   <string name="captcha.fail">Hãy giải mã captcha cờ đam.</string>
-  <string name="notTheBestCapture">Đó không phải là nước chụp tốt nhất</string>
-  <string name="colorPlaysCapture">%s để di chuyển; chơi chuỗi chụp dài nhất</string>
+  <string name="notTheBestCapture">Đó không phải là nước ăn quân tốt nhất</string>
+  <string name="colorPlaysCapture">%s để di chuyển; chơi chuỗi ăn quân dài nhất</string>
   <string name="retry">Thử lại</string>
   <string name="reconnecting">Kết nối lại</string>
   <plurals name="nbFriendsOnline">
@@ -599,12 +598,6 @@ Một đường dẫn mỗi dòng</string>
   <string name="pieceAnimation">Tính linh hoạt của quân cờ</string>
   <string name="materialDifference">Chênh lệch giá trị quân cờ</string>
   <string name="showKingMoves">Hiển thị số lần vua đã di chuyển (cờ đam Frisian)</string>
-  <string name="closeAccount">Đóng tài khoản</string>
-  <string name="changedMindDoNotCloseAccount">Tôi đã đổi ý, đừng đóng tài khoản của tôi</string>
-  <string name="closeAccountExplanation">Bạn có chắc là mình muốn đóng tài khoản? Việc đóng tài khoản của bạn là một quyết định vĩnh viễn. Bạn sẽ không thể đăng nhập được, trang hồ sơ cá nhân của bạn sẽ không còn truy cập được nữa.</string>
-  <string name="cantOpenSimilarAccount">Bạn không được phép tạo tài khoản trùng tên, kể cả khác chữ hoa, thường.</string>
-  <string name="closingIsDefinitive">Việc đóng tài khoản là vĩnh viễn. Không có cách nào để có thể lấy lại. Bạn vẫn chắc chắn muốn đóng chứ?</string>
-  <string name="thisAccountIsClosed">Tài khoản này đã đóng.</string>
   <string name="invalidUsernameOrPassword">Tên tài khoản hoặc mật khẩu đăng nhập không đúng</string>
   <string name="incorrectPassword">Sai mật khẩu</string>
   <string name="invalidAuthenticationCode">Mã xác thực sai</string>
@@ -629,7 +622,7 @@ Một đường dẫn mỗi dòng</string>
   <string name="tenthsOfSeconds">Một phần mười giây</string>
   <string name="never">Không bao giờ</string>
   <string name="whenTimeRemainingLessThanTenSeconds">Khi thời gian còn lại &lt; 10 giây</string>
-  <string name="howDoYouPlayMultiCaptures">Làm cách nào để bạn chơi tính năng chụp nhiều quân trên bảng phân tích?</string>
+  <string name="howDoYouPlayMultiCaptures">Làm cách nào để bạn chơi tính năng ăn nhiều quân trên bảng phân tích?</string>
   <string name="stepByStep">Từng bước một</string>
   <string name="allAtOnce">Tất cả cùng một lúc</string>
   <string name="horizontalGreenProgressBars">Thanh tiến trình ngang màu xanh</string>
@@ -722,7 +715,7 @@ Một đường dẫn mỗi dòng</string>
   <string name="onlyFriends">Chỉ bạn bè</string>
   <string name="displayBoardResizeHandle">Hiện nút thay đổi kích cỡ bàn cờ</string>
   <string name="onlyOnInitialPosition">Chỉ ở thế cờ ban đầu</string>
-  <string name="menu">Menu</string>
+  <string name="menu">Mục lục</string>
   <plurals name="nbForumPosts">
     <item quantity="other">%s bài viết diễn đàn</item>
   </plurals>
@@ -835,7 +828,7 @@ Một đường dẫn mỗi dòng</string>
   <string name="alternativelyYouCanX">Ngoài ra, bạn có thể %s.</string>
   <string name="revokeAllSessions">xóa toàn bộ phiên đăng nhập</string>
   <string name="speedUpYourAnalysis">Tăng tốc độ phân tích của bạn!</string>
-  <string name="enableFullCaptureAtXPreferences">Chơi chụp nhiều quân một nước trên bảng phân tích. Chế độ chụp có thể được định cấu hình theo tùy chọn %s.</string>
+  <string name="enableFullCaptureAtXPreferences">Chơi ăn nhiều quân một trong nước trên bảng phân tích. Chế độ ăn quân có thể được định cấu hình theo tùy chọn %s.</string>
   <string name="playDraughtsEverywhere">Chơi cờ đam miễn phí ở mọi nơi</string>
   <string name="asFreeAsLidraughts">Miễn phí như cờ đam</string>
   <string name="builtForTheLoveOfDraughtsNotMoney">Xây dựng trên nền tảng tình yêu dành cho cờ đam, không phải vì tiền bạc</string>

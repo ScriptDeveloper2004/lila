@@ -375,7 +375,6 @@
   <string name="xStartedStreaming">%s sāka straumēt</string>
   <string name="averageElo">Vidējais reitings</string>
   <string name="location">Atrašanās vieta</string>
-  <string name="settings">Iestatījumi</string>
   <string name="filterGames">Atlasīt spēles</string>
   <string name="reset">Atstatīt nost</string>
   <string name="apply">Apstiprināt</string>
@@ -600,10 +599,6 @@ Vienā līnijā  - tikai vienu norādi.</string>
   <string name="pieceAnimation">Kauliņu animācija</string>
   <string name="materialDifference">Materiāla starpība</string>
   <string name="showKingMoves">Uzrādīt, cik reižu gājusi dāma (frīzu dambretē)</string>
-  <string name="closeAccount">Slēgt kontu</string>
-  <string name="changedMindDoNotCloseAccount">Es pārdomāju, neslēdziet manu kontu</string>
-  <string name="closeAccountExplanation">Vai esi pārliecināts, ka vēlies slēgt kontu? Konta slēgšanu nevar atsaukt. Tu vairs nevarēsi pieslēgties, un tavam profilam vairs nevarēs piekļūt.</string>
-  <string name="thisAccountIsClosed">Konts slēgts.</string>
   <string name="invalidUsernameOrPassword">Nepareizs lietotājvārds vai parole</string>
   <string name="incorrectPassword">Nepareiza parole</string>
   <string name="invalidAuthenticationCode">Nederīgs autentifikācijas kods</string>

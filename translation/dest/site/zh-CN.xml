@@ -364,7 +364,6 @@
   <string name="whichTeamWillYouRepresent">你将代表哪个团队出战？</string>
   <string name="youMustJoinOneOfTheseTeams">您必须加入这些团队之一才能参与！</string>
   <string name="location">地址</string>
-  <string name="settings">设置</string>
   <string name="filterGames">筛选棋局</string>
   <string name="reset">重置</string>
   <string name="apply">应用</string>
@@ -598,12 +597,6 @@
   <string name="pieceAnimation">棋子动画</string>
   <string name="materialDifference">子力差距</string>
   <string name="showKingMoves">显示王棋移动的次数(Frisian跳棋)</string>
-  <string name="closeAccount">关闭账户</string>
-  <string name="changedMindDoNotCloseAccount">我改主意了，不要关闭帐号</string>
-  <string name="closeAccountExplanation">您确定要关闭帐号吗？此操作不可逆。您将无法再登录，而您的个人资料也将不再可见。</string>
-  <string name="cantOpenSimilarAccount">不允许同名账户，包括大小写不同。</string>
-  <string name="closingIsDefinitive">确定要关闭账户吗？此操作将不可恢复！</string>
-  <string name="thisAccountIsClosed">此帐户已被关闭。</string>
   <string name="invalidUsernameOrPassword">用户名或密码错误</string>
   <string name="incorrectPassword">旧密码错误</string>
   <string name="invalidAuthenticationCode">无效验证码</string>

@@ -349,7 +349,6 @@
   <string name="xStartedStreaming">%s pradėjo transliaciją</string>
   <string name="averageElo">Reitingo vidurkis</string>
   <string name="location">Vietovė</string>
-  <string name="settings">Nuostatos</string>
   <string name="filterGames">Filtruoti partijas</string>
   <string name="reset">Atstatyti</string>
   <string name="apply">Pritaikyti</string>
@@ -556,10 +555,6 @@ kompiuterinę analizę, partijos pokalbį bei URL dalinimuisi.</string>
   <string name="gameDisplay">Žaidimo vaizdas</string>
   <string name="pieceAnimation">Figūrų animacija</string>
   <string name="materialDifference">Figūrų vertės skirtumas</string>
-  <string name="closeAccount">Uždaryti paskyrą</string>
-  <string name="changedMindDoNotCloseAccount">Persigalvojau, neuždarykite mano paskyros</string>
-  <string name="closeAccountExplanation">Ar tikrai norite uždaryti savo paskyrą? Po uždarymo paskyros nebus galima atkurti. Jūs nebegalėsite prisijungti ir jūsų profilis bus nebepasiekiamas.</string>
-  <string name="thisAccountIsClosed">Ši paskyra uždaryta.</string>
   <string name="invalidUsernameOrPassword">Neteisingas prisijungimo vardas arba slaptažodis</string>
   <string name="incorrectPassword">Neteisingas slaptažodis</string>
   <string name="invalidAuthenticationCode">Neteisingas patvirtinimo kodas</string>
