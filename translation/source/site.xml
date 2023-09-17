@@ -902,10 +902,6 @@ One URL per line</string>
   <string name="mustNotContainATitleThatIsNotVerified">Must not contain a title that is not verified for your account</string>
   <string name="custom">Custom</string>
   <string name="notifications">Notifications</string>
-  <string name="noChallenges">No challenges</string>
-  <string name="challengeSomeone">Challenge someone</string>
-  <string name="openChallenge">Open challenge</string>
-  <string name="startsAtX">Starts at %s</string>
   <string name="perfRatingX">Rating: %s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="one">%s second to play the first move</item>

@@ -297,7 +297,6 @@
   <string name="more">Дэлгэрэнгүй үзэх</string>
   <string name="memberSince">Гишүүнчлэлийн огноо:</string>
   <string name="lastSeenActive">Сүүлд холбогдсон огноо: %s</string>
-  <string name="challengeToPlay">Тоглолтод урих</string>
   <string name="player">Гишүүн</string>
   <string name="list">Жагсаалт</string>
   <string name="graph">Үзүүлэлтийн хүснэгт, диаграмм, график</string>
@@ -637,7 +636,6 @@
   <string name="error.unknown">Алдаа</string>
   <string name="custom">Өөрийнхөөр</string>
   <string name="notifications">Мэдэгдэлүүд</string>
-  <string name="challenges">Бодлогууд</string>
   <string name="perfRatingX">Чансаа:%s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="one">%s эхний нүүдлийг тоглуулна</item>

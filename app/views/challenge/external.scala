@@ -41,7 +41,7 @@ object external {
                 },
                 if (startsAt.isDefined) startsAt.map { dt =>
                   div(cls := "starts-at")(
-                    trans.startsAtX(absClientDateTime(dt)),
+                    trans.challenge.startsAtX(absClientDateTime(dt)),
                     ul(cls := "countdown")(
                       List("Days", "Hours", "Minutes", "Seconds") map { t =>
                         li(cls := t.toLowerCase)(span, t)

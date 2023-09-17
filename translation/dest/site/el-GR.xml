@@ -438,7 +438,6 @@
   <string name="more">Περισσότερα</string>
   <string name="memberSince">Μέλος από τις</string>
   <string name="lastSeenActive">Τελευταία είσοδος %s</string>
-  <string name="challengeToPlay">Προκαλέστε σε παιχνίδι</string>
   <string name="player">Παίκτης</string>
   <string name="list">Κατάλογος</string>
   <string name="sort">Ταξινόμηση</string>
@@ -901,16 +900,6 @@
   <string name="mustNotContainATitleThatIsNotVerified">Δεν πρέπει να περιέχει έναν τίτλο που δεν έχει επαληθευτεί για το λογαριασμό σας</string>
   <string name="custom">Προσαρμογή</string>
   <string name="notifications">Ειδοποιήσεις</string>
-  <string name="challenges">Προκλήσεις</string>
-  <string name="noChallenges">Καμία πρόκληση</string>
-  <string name="challengeSomeone">Προκαλέστε κάποιον</string>
-  <string name="openChallenge">Ανοιχτή πρόκληση</string>
-  <string name="startsAtX">Ξεκινάει στις %s</string>
-  <string name="challengeDeclined">Η πρόκληση απορρίφθηκε</string>
-  <string name="challengeAccepted">Η πρόκληση έγινε δεκτή!</string>
-  <string name="challengeCanceled">Η πρόκληση ακυρώθηκε</string>
-  <string name="challengeAcceptedAndWaiting">Η πρόκληση έγινε δεκτή! Αναμονή για τον αντίπαλό σας...</string>
-  <string name="youWillBeRedirectedToTheGame">Θα μεταφερθείτε στο παιχνίδι, όταν και οι δύο παίκτες έχουν αποδεχθεί την πρόκληση.</string>
   <string name="perfRatingX">Βαθμολογία: %s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="one">%s δευτερόλεπτο για την πρώτη κίνηση</item>
@@ -985,12 +974,6 @@
   <string name="middlegame">Μέση φάση παιχνιδιού</string>
   <string name="endgame">Φινάλε</string>
   <string name="randomOpeningFromX">Τυχαίο άνοιγμα από %s</string>
-  <string name="registerToSendChallenges">Παρακαλώ εγγραφείτε για να στείλετε προκλήσεις.</string>
-  <string name="youCannotChallengeX">Δεν μπορείτε να προκαλέσετε %s.</string>
-  <string name="xDoesNotAcceptChallenges">%s δεν δέχεται προκλήσεις.</string>
-  <string name="yourXRatingIsTooFarFromY">Η %1$s βαθμολογία σας απέχει πολύ από τον %2$s.</string>
-  <string name="cannotChallengeDueToProvisionalXRating">Δεν είναι δυνατή η πρόκληση λόγω της προσωρινής %s βαθμολογίας.</string>
-  <string name="xOnlyAcceptsChallengesFromFriends">%s δέχεται προκλήσεις μόνο από φίλους.</string>
   <string name="conditionalPremoves">Υποθετικές προκινήσεις</string>
   <string name="addCurrentVariation">Προσθέστε τρέχουσα παραλλαγή</string>
   <string name="playVariationToCreateConditionalPremoves">Παίξτε μια παραλλαγή για να δημιουργήσετε υποθετικές προκινήσεις</string>

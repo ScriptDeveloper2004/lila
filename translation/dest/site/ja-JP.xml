@@ -331,7 +331,6 @@
   <string name="more">さらに表示</string>
   <string name="memberSince">登録日</string>
   <string name="lastSeenActive">最後のログイン %s</string>
-  <string name="challengeToPlay">対戦を申し込む</string>
   <string name="player">プレイヤー</string>
   <string name="list">リスト</string>
   <string name="graph">グラフ</string>
@@ -686,7 +685,6 @@
   <string name="error.unknown">エラー</string>
   <string name="custom">自由設定</string>
   <string name="notifications">通知</string>
-  <string name="challenges">チャレンジ</string>
   <string name="perfRatingX">レーティング: %s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="other">あと %s 秒以内に初手を指してください</item>
@@ -731,12 +729,6 @@
   <string name="opening">序盤</string>
   <string name="middlegame">中盤</string>
   <string name="endgame">終盤</string>
-  <string name="registerToSendChallenges">チャレンジを送るには登録が必要です。</string>
-  <string name="youCannotChallengeX">%s にチャレンジできません。</string>
-  <string name="xDoesNotAcceptChallenges">%s はチャレンジを受け付けていません。</string>
-  <string name="yourXRatingIsTooFarFromY">%1$s レーティングが %2$s と離れすぎです。</string>
-  <string name="cannotChallengeDueToProvisionalXRating">%s が仮レーティングのためチャレンジできません。</string>
-  <string name="xOnlyAcceptsChallengesFromFriends">%s は友達からのチャレンジしか受け付けません。</string>
   <string name="conditionalPremoves">コンディショナルムーブ</string>
   <string name="addCurrentVariation">現在の変化を追加する</string>
   <string name="playVariationToCreateConditionalPremoves">駒を動かしてコンディショナルムーブを設定します</string>

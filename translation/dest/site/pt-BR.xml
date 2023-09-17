@@ -438,7 +438,6 @@ consultar uma análise de computador, utilizar o chat e compartilhar um link.</s
   <string name="more">Mais</string>
   <string name="memberSince">Membro desde</string>
   <string name="lastSeenActive">Última conexão %s</string>
-  <string name="challengeToPlay">Desafiar para jogar</string>
   <string name="player">Jogador</string>
   <string name="list">Lista</string>
   <string name="sort">Ordenar</string>
@@ -901,16 +900,6 @@ Uma URL por linha</string>
   <string name="mustNotContainATitleThatIsNotVerified">Não pode conter um título que não esteja verificado para a sua conta</string>
   <string name="custom">Personalizado</string>
   <string name="notifications">Notificações</string>
-  <string name="challenges">Desafios</string>
-  <string name="noChallenges">Sem desafios</string>
-  <string name="challengeSomeone">Desafie alguém</string>
-  <string name="openChallenge">Desafio aberto</string>
-  <string name="startsAtX">Começa em %s</string>
-  <string name="challengeDeclined">Desafio recusado</string>
-  <string name="challengeAccepted">Desafio aceito!</string>
-  <string name="challengeCanceled">Desafio cancelado</string>
-  <string name="challengeAcceptedAndWaiting">Desafio aceito! Esperando pelo seu oponente...</string>
-  <string name="youWillBeRedirectedToTheGame">Você será redirecionado para o jogo quando ambos os jogadores tiverem aceitado o desafio.</string>
   <string name="perfRatingX">Classificação: %s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="one">%s segundo para fazer o primeiro lance</item>
@@ -985,12 +974,6 @@ Uma URL por linha</string>
   <string name="middlegame">Meio-jogo</string>
   <string name="endgame">Finais</string>
   <string name="randomOpeningFromX">Tablita de %s</string>
-  <string name="registerToSendChallenges">Por favor, registre-se para enviar desafios.</string>
-  <string name="youCannotChallengeX">Você não pode desafiar %s.</string>
-  <string name="xDoesNotAcceptChallenges">%s não aceita desafios.</string>
-  <string name="yourXRatingIsTooFarFromY">A sua classificação %1$s é muito diferente de %2$s.</string>
-  <string name="cannotChallengeDueToProvisionalXRating">Não pode desafiar devido a pontuação provisória de %s.</string>
-  <string name="xOnlyAcceptsChallengesFromFriends">%s só aceita desafios de amigos.</string>
   <string name="conditionalPremoves">Pré-lances condicionais</string>
   <string name="addCurrentVariation">Adicionar a variação atual</string>
   <string name="playVariationToCreateConditionalPremoves">Jogar uma variação para criar pré-lances condicionais</string>

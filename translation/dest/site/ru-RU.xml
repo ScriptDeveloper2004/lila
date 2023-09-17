@@ -494,7 +494,6 @@
   <string name="more">Ещё</string>
   <string name="memberSince">Дата регистрации</string>
   <string name="lastSeenActive">Был онлайн %s</string>
-  <string name="challengeToPlay">Вызвать на игру</string>
   <string name="player">Игрок</string>
   <string name="list">Список</string>
   <string name="sort">Сортировать</string>
@@ -975,16 +974,6 @@
   <string name="mustNotContainATitleThatIsNotVerified">Не должно содержать названия, которое не подтверждено для вашей учетной записи</string>
   <string name="custom">Своя игра</string>
   <string name="notifications">Уведомления</string>
-  <string name="challenges">Вызовы</string>
-  <string name="noChallenges">Нет вызовов</string>
-  <string name="challengeSomeone">Вызвать кого-то на игру</string>
-  <string name="openChallenge">Откройте вызов</string>
-  <string name="startsAtX">Начать с %s</string>
-  <string name="challengeDeclined">Вызов отклонён</string>
-  <string name="challengeAccepted">Вызов принят!</string>
-  <string name="challengeCanceled">Вызов отменён</string>
-  <string name="challengeAcceptedAndWaiting">Вызов принят! Ожидание соперника...</string>
-  <string name="youWillBeRedirectedToTheGame">Вы будете перенаправлены на игру, когда оба игрока примут вызов.</string>
   <string name="perfRatingX">Рейтинг: %s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="one">%s секунда на первый ход</item>
@@ -1067,12 +1056,6 @@
   <string name="middlegame">Миттельшпиль</string>
   <string name="endgame">Эндшпиль</string>
   <string name="randomOpeningFromX">Случайный дебют %s</string>
-  <string name="registerToSendChallenges">Зарегистрируйтесь, чтобы вызывать соперников на игру.</string>
-  <string name="youCannotChallengeX">Вы не можете вызвать на игру %s.</string>
-  <string name="xDoesNotAcceptChallenges">%s не принимает вызовы.</string>
-  <string name="yourXRatingIsTooFarFromY">Ваш рейтинг в %1$s слишком отличается от рейтинга %2$s.</string>
-  <string name="cannotChallengeDueToProvisionalXRating">Невозможно из-за недостоверности рейтинга %s.</string>
-  <string name="xOnlyAcceptsChallengesFromFriends">%s принимает вызовы только от друзей.</string>
   <string name="conditionalPremoves">Условные предходы</string>
   <string name="addCurrentVariation">Добавить текущий вариант</string>
   <string name="playVariationToCreateConditionalPremoves">Выполните ходы на доске, чтобы задать условные предходы</string>

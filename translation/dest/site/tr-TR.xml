@@ -757,12 +757,6 @@
   <string name="opening">Açılış</string>
   <string name="middlegame">Oyunortası</string>
   <string name="endgame">Oyunsonu</string>
-  <string name="registerToSendChallenges">Oyun daveti göndermek için üye olun.</string>
-  <string name="youCannotChallengeX">%s adlı oyuncuya oyun daveti gönderemezsiniz.</string>
-  <string name="xDoesNotAcceptChallenges">%s oyun davetlerini kabul etmiyor.</string>
-  <string name="yourXRatingIsTooFarFromY">%1$s puanınız %2$s adlı oyuncudan çok uzak.</string>
-  <string name="cannotChallengeDueToProvisionalXRating">%s puanınız geçici olduğu için başka oyunculara meydan okuyamazsınız.</string>
-  <string name="xOnlyAcceptsChallengesFromFriends">%s sadece arkadaşlarından gelen meydan okumaları kabul ediyor.</string>
   <string name="conditionalPremoves">Şartlı ön hamle</string>
   <string name="addCurrentVariation">Mevcut varyantı ekle</string>
   <string name="playVariationToCreateConditionalPremoves">Koşullu ön hamleler yapmak için bir varyasyon oynayın</string>

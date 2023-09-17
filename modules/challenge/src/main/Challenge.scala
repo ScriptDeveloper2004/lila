@@ -121,7 +121,7 @@ object Challenge {
 
   object DeclineReason {
     case object Generic extends DeclineReason(I18nKeys.challenge.declineGeneric)
-    case object Later   extends DeclineReason(I18nKeys.challenge.declineLater)
+    case object Later extends DeclineReason(I18nKeys.challenge.declineLater)
   }
 
   case class Rating(int: Int, provisional: Boolean) {

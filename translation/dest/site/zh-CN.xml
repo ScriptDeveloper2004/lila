@@ -410,7 +410,6 @@
   <string name="more">更多</string>
   <string name="memberSince">注册日期: </string>
   <string name="lastSeenActive">最近登录: %s</string>
-  <string name="challengeToPlay">挑战</string>
   <string name="player">棋手</string>
   <string name="list">列表</string>
   <string name="sort">排序</string>
@@ -865,16 +864,6 @@
   <string name="mustNotContainATitleThatIsNotVerified">不能包含未经确认的等级称号</string>
   <string name="custom">自定义</string>
   <string name="notifications">通知</string>
-  <string name="challenges">挑战</string>
-  <string name="noChallenges">暂无挑战</string>
-  <string name="challengeSomeone">挑战其他棋手</string>
-  <string name="openChallenge">打开挑战</string>
-  <string name="startsAtX">开始于%s</string>
-  <string name="challengeDeclined">挑战已拒绝</string>
-  <string name="challengeAccepted">挑战已接受!</string>
-  <string name="challengeCanceled">挑战已取消</string>
-  <string name="challengeAcceptedAndWaiting">挑战已接受！等待对手...</string>
-  <string name="youWillBeRedirectedToTheGame">当两位玩家都接受挑战时，您将被重新导向到棋局中。</string>
   <string name="perfRatingX">积分：%s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="other">还剩%s秒走第一步</item>
@@ -945,12 +934,6 @@
   <string name="middlegame">中盘</string>
   <string name="endgame">残局</string>
   <string name="randomOpeningFromX">随机开局于%s</string>
-  <string name="registerToSendChallenges">发送挑战请注册。</string>
-  <string name="youCannotChallengeX">您不能挑战%s。</string>
-  <string name="xDoesNotAcceptChallenges">%s不接受挑战。</string>
-  <string name="yourXRatingIsTooFarFromY">您的%1$s积分与%2$s相差过远。</string>
-  <string name="cannotChallengeDueToProvisionalXRating">因为您的%s积分不够稳定您不能进行挑战。</string>
-  <string name="xOnlyAcceptsChallengesFromFriends">%s只接受朋友的挑战。</string>
   <string name="conditionalPremoves">条件预先走棋</string>
   <string name="addCurrentVariation">添加当前变着</string>
   <string name="playVariationToCreateConditionalPremoves">进入变着以创建条件预先走棋</string>

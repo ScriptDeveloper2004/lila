@@ -341,7 +341,6 @@ analizzarla con il computer, commentarla in chat, e condividerla tramire indiriz
   <string name="more">Altro</string>
   <string name="memberSince">Membro dal</string>
   <string name="lastSeenActive">Ultimo accesso %s</string>
-  <string name="challengeToPlay">Sfida a una partita</string>
   <string name="player">Giocatore</string>
   <string name="list">Lista</string>
   <string name="graph">Grafico</string>
@@ -681,7 +680,6 @@ analizzarla con il computer, commentarla in chat, e condividerla tramire indiriz
   <string name="error.unknown">Errore</string>
   <string name="custom">Altro/Personalizza</string>
   <string name="notifications">Notifiche</string>
-  <string name="challenges">Sfide</string>
   <string name="perfRatingX">Punteggio: %s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="one">%s secondi per giocare la prima mossa</item>
@@ -728,12 +726,6 @@ analizzarla con il computer, commentarla in chat, e condividerla tramire indiriz
   <string name="opening">Apertura</string>
   <string name="middlegame">Mediogioco</string>
   <string name="endgame">Finale</string>
-  <string name="registerToSendChallenges">Per favore, registrati per mandare sfide.</string>
-  <string name="youCannotChallengeX">Non puoi sfidare %s.</string>
-  <string name="xDoesNotAcceptChallenges">%s non accetta sfide.</string>
-  <string name="yourXRatingIsTooFarFromY">Il tuo %1$s rating è troppo diverso da %2$s.</string>
-  <string name="cannotChallengeDueToProvisionalXRating">Non puoi sfidare poiché hai ancora un %s rating provvisorio.</string>
-  <string name="xOnlyAcceptsChallengesFromFriends">%s accetta solo sfide da amici.</string>
   <string name="conditionalPremoves">Premosse condizionali</string>
   <string name="addCurrentVariation">Aggiungi variazione corrente</string>
   <string name="playVariationToCreateConditionalPremoves">Gioca una variazione per creare premosse condizionali</string>

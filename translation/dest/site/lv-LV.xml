@@ -427,7 +427,6 @@ spēles tērzētavu un URL saiti, kas dos pieeju citiem.</string>
   <string name="more">Vairāk</string>
   <string name="memberSince">Dalībnieks kopš</string>
   <string name="lastSeenActive">Pēdējā pieslēgšanās %s</string>
-  <string name="challengeToPlay">Izaicināt uz spēli</string>
   <string name="player">Spēlētājs</string>
   <string name="list">Saraksts</string>
   <string name="sort">Šķirot</string>
@@ -859,7 +858,6 @@ Vienā līnijā  - tikai vienu norādi.</string>
   <string name="error.unknown">Kļūda</string>
   <string name="custom">Pielāgota</string>
   <string name="notifications">Paziņojumi</string>
-  <string name="challenges">Izaicinājumi</string>
   <string name="perfRatingX">Reitings: %s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="zero">%s sekunžu lai izdarītu pirmo gājienu</item>
@@ -937,12 +935,6 @@ Vienā līnijā  - tikai vienu norādi.</string>
   <string name="opening">Atklātne</string>
   <string name="middlegame">Vidusspēle</string>
   <string name="endgame">Galotne</string>
-  <string name="registerToSendChallenges">Lai sūtītu izaicinājumu, vispirms jāreģistrējas.</string>
-  <string name="youCannotChallengeX">Tu nevari izaicināt %s.</string>
-  <string name="xDoesNotAcceptChallenges">%s nepieņem izaicinājumus.</string>
-  <string name="yourXRatingIsTooFarFromY">Tavs %1$s reitings ir pārāk tālu no %2$s.</string>
-  <string name="cannotChallengeDueToProvisionalXRating">Nevar izaicināt pagaidu %s reitinga dēļ.</string>
-  <string name="xOnlyAcceptsChallengesFromFriends">%s pieņem izaicinājumus tikai no draugiem.</string>
   <string name="conditionalPremoves">Ar nosacījumu uzstādītie priekšgājieni</string>
   <string name="addCurrentVariation">Pievienot pašreizējo variantu</string>
   <string name="playVariationToCreateConditionalPremoves">Izspēlē variantu lai izveidotu nosacījumu priekšgājienus</string>

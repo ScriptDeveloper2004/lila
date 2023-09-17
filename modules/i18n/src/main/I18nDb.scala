@@ -22,6 +22,7 @@ object I18nDb {
   case object PerfStat extends Ref
   case object Lag extends Ref
   case object Swiss extends Ref
+  case object Challenge extends Ref
 
   val site: Messages = lidraughts.i18n.db.site.Registry.load
   val arena: Messages = lidraughts.i18n.db.arena.Registry.load
@@ -40,6 +41,7 @@ object I18nDb {
   val perfStat: Messages = lidraughts.i18n.db.perfStat.Registry.load
   val lag: Messages = lidraughts.i18n.db.lag.Registry.load
   val swiss: Messages = lidraughts.i18n.db.swiss.Registry.load
+  val challenge: Messages = lidraughts.i18n.db.challenge.Registry.load
 
   def apply(ref: Ref): Messages = ref match {
     case Site => site
@@ -59,6 +61,7 @@ object I18nDb {
     case PerfStat => perfStat
     case Lag => lag
     case Swiss => swiss
+    case Challenge => challenge
   }
 
   val langs: Set[Lang] = site.keys.map(Lang.apply)(scala.collection.breakOut)

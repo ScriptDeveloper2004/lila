@@ -376,7 +376,6 @@ análise de computador, sala de conversação e link de partilha.</string>
   <string name="more">Mais</string>
   <string name="memberSince">Membro desde</string>
   <string name="lastSeenActive">Última conexão %s</string>
-  <string name="challengeToPlay">Desafiar para jogar</string>
   <string name="player">Jogador</string>
   <string name="list">Lista</string>
   <string name="sort">Ordenar</string>
@@ -776,7 +775,6 @@ Um URL por linha</string>
   <string name="error.unknown">Erro</string>
   <string name="custom">Personalizado</string>
   <string name="notifications">Notificações</string>
-  <string name="challenges">Desafios</string>
   <string name="perfRatingX">Pontuação: %s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="one">%s segundo para jogar o primeiro movimento</item>
@@ -823,12 +821,6 @@ Um URL por linha</string>
   <string name="opening">Abertura</string>
   <string name="middlegame">Meio jogo</string>
   <string name="endgame">Final de jogo</string>
-  <string name="registerToSendChallenges">Por favor regista-te para enviar desafios.</string>
-  <string name="youCannotChallengeX">Tu não podes desafiar %s.</string>
-  <string name="xDoesNotAcceptChallenges">%s não aceita o desafio.</string>
-  <string name="yourXRatingIsTooFarFromY">A tua pontuação em %1$s está muito longe de %2$s.</string>
-  <string name="cannotChallengeDueToProvisionalXRating">Tu não podes desafiar por causa do tua pontuação provisória %s.</string>
-  <string name="xOnlyAcceptsChallengesFromFriends">%s só aceita desafios de amigos.</string>
   <string name="conditionalPremoves">Pre-movimentos condicionais</string>
   <string name="addCurrentVariation">Adicionar variante actual</string>
   <string name="playVariationToCreateConditionalPremoves">Jogar uma variante para criar pre-movimentos condicionais</string>

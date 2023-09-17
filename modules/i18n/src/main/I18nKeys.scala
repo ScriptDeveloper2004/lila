@@ -764,10 +764,6 @@ val `mustNotContainLidraughts` = new Translated("mustNotContainLidraughts", Site
 val `mustNotContainATitleThatIsNotVerified` = new Translated("mustNotContainATitleThatIsNotVerified", Site)
 val `custom` = new Translated("custom", Site)
 val `notifications` = new Translated("notifications", Site)
-val `noChallenges` = new Translated("noChallenges", Site)
-val `challengeSomeone` = new Translated("challengeSomeone", Site)
-val `openChallenge` = new Translated("openChallenge", Site)
-val `startsAtX` = new Translated("startsAtX", Site)
 val `perfRatingX` = new Translated("perfRatingX", Site)
 val `practiceWithComputer` = new Translated("practiceWithComputer", Site)
 val `anotherWasX` = new Translated("anotherWasX", Site)
@@ -1505,6 +1501,10 @@ val `nbRounds` = new Translated("nbRounds", Swiss)
 
 object challenge {
 val `challenges` = new Translated("challenges", Challenge)
+val `noChallenges` = new Translated("noChallenges", Challenge)
+val `challengeSomeone` = new Translated("challengeSomeone", Challenge)
+val `openChallenge` = new Translated("openChallenge", Challenge)
+val `startsAtX` = new Translated("startsAtX", Challenge)
 val `challengeToPlay` = new Translated("challengeToPlay", Challenge)
 val `challengeDeclined` = new Translated("challengeDeclined", Challenge)
 val `challengeAccepted` = new Translated("challengeAccepted", Challenge)
@@ -1519,6 +1519,16 @@ val `cannotChallengeDueToProvisionalXRating` = new Translated("cannotChallengeDu
 val `xOnlyAcceptsChallengesFromFriends` = new Translated("xOnlyAcceptsChallengesFromFriends", Challenge)
 val `declineGeneric` = new Translated("declineGeneric", Challenge)
 val `declineLater` = new Translated("declineLater", Challenge)
+val `declineTooFast` = new Translated("declineTooFast", Challenge)
+val `declineTooSlow` = new Translated("declineTooSlow", Challenge)
+val `declineTimeControl` = new Translated("declineTimeControl", Challenge)
+val `declineRated` = new Translated("declineRated", Challenge)
+val `declineCasual` = new Translated("declineCasual", Challenge)
+val `declineStandard` = new Translated("declineStandard", Challenge)
+val `declineVariant` = new Translated("declineVariant", Challenge)
+val `declineNoBot` = new Translated("declineNoBot", Challenge)
+val `declineOnlyBot` = new Translated("declineOnlyBot", Challenge)
+val `inviteLidraughtsUser` = new Translated("inviteLidraughtsUser", Challenge)
 }
 
 }
