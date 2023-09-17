@@ -17,7 +17,7 @@
   <string name="moveListWhilePlaying">Move list while playing</string>
   <string name="onSlowGames">On slow games</string>
   <string name="notationGameResult">Notation game result (white win • draw • black win)</string>
-  <string name="zenMode">Zen mode</string>
+  <string name="zenMode" comment="zenMode&#10;&#10;This is not the religious meaning. Turning this option on takes away make elements of the user interface.&#10;&#10;Can also translate as 'Focus mode' as one example.">Zen mode</string>
   <string name="displayBoardResizeHandle">Show board resize handle</string>
   <string name="onlyOnInitialPosition">Only on initial position</string>
   <string name="blindfoldDraughts">Blindfold draughts (invisible pieces)</string>

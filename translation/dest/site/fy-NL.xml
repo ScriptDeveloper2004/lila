@@ -360,7 +360,6 @@ kompjûteranalyze, partijpetear en dielbere URL te krijen.</string>
   <string name="newPasswordsDontMatch">De nije wachtwurden komme net oerien</string>
   <string name="clockInitialTime">Klok begjintiid</string>
   <string name="clockIncrement">Tafoeging per set</string>
-  <string name="never">Nea</string>
   <string name="privacy">Privacy</string>
   <string name="letOtherPlayersFollowYou">Oare spilers meie dy folje</string>
   <string name="letOtherPlayersChallengeYou">Oare spilers meie dy útdaagje</string>
@@ -370,10 +369,8 @@ kompjûteranalyze, partijpetear en dielbere URL te krijen.</string>
   <string name="fast">Fluch</string>
   <string name="normal">Normaal</string>
   <string name="slow">Stadich</string>
-  <string name="insideTheBoard">Binnen it boerd</string>
-  <string name="outsideTheBoard">Bûten it boerd</string>
-  <string name="onSlowGames">Allinnich by stadige partijen</string>
   <string name="always">Altyd</string>
+  <string name="never">Nea</string>
   <string name="difficultyEasy">Maklik</string>
   <string name="difficultyNormal">Normaal</string>
   <string name="difficultyHard">Dreech</string>
