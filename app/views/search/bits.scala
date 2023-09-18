@@ -3,7 +3,6 @@ package views.html.search
 import play.api.data.Form
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
-import scala.util.chaining._
 
 import lidraughts.api.Context
 import lidraughts.app.templating.Environment._
@@ -36,7 +35,7 @@ private object bits {
         )
       }
 
-    def winner(hide: Boolean) = form("players")("winner") pipe { field =>
+    def winner(hide: Boolean) = form("players")("winner") |> { field =>
       tr(cls := List("winner user-row" -> true, "none" -> hide))(
         th(label(`for` := form3.id(field))(trans.winner())),
         td(cls := "single")(
@@ -47,7 +46,7 @@ private object bits {
       )
     }
 
-     def loser(hide: Boolean) = form("players")("loser") pipe { field =>
+    def loser(hide: Boolean) = form("players")("loser") |> { field =>
       tr(cls := List("loser user-row" -> true, "none" -> hide))(
         th(label(`for` := form3.id(field))(trans.search.loser())),
         td(cls := "single")(
@@ -59,7 +58,7 @@ private object bits {
     }
 
     def rating = tr(
-      th(label(trans.rating(), " ", span(cls := "help", title := trans.searchRatingsHelp.txt())("(?)"))),
+      th(label(trans.rating(), " ", span(cls := "help", title := ratingExplanation.txt())("(?)"))),
       td(
         div(cls := "half")(from(), " ", form3.select(form("ratingMin"), translatedAverageRatingChoices, "".some)),
         div(cls := "half")(to(), " ", form3.select(form("ratingMax"), translatedAverageRatingChoices, "".some))
@@ -95,7 +94,7 @@ private object bits {
     )
 
     def turns = tr(
-      th(trans.numberOfTurns()),
+      th(label(numberOfTurns(), " ", span(cls := "help", title := numberOfTurnsExplanation.txt())("(?)"))),
       td(
         div(cls := "half")(from(), " ", form3.select(form("turnsMin"), translatedTurnsChoices, "".some)),
         div(cls := "half")(to(), " ", form3.select(form("turnsMax"), translatedTurnsChoices, "".some))
@@ -157,7 +156,7 @@ private object bits {
     def analysed = {
       val field = form("analysed")
       tr(
-        th(label(`for` := form3.id(field))(trans.search.analysis(), " ", span(cls := "help", title := trans.onlyAnalysed.txt())("(?)"))),
+        th(label(`for` := form3.id(field))(trans.search.analysis(), " ", span(cls := "help", title := onlyAnalysed.txt())("(?)"))),
         td(cls := "single")(
           st.input(
             tpe := "checkbox",

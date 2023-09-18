@@ -43,7 +43,7 @@ object index {
               globalError(form),
               table(
                 tr(
-                  th(label(trans.players(), " ", span(cls := "help", title := trans.searchPlayersHelp.txt())("(?)"))),
+                  th(label(trans.players(), " ", span(cls := "help", title := searchPlayersExplanation.txt())("(?)"))),
                   td(cls := "usernames")(List("a", "b").map { p =>
                     div(cls := "half")(form3.input(form("players")(p))(tpe := "text"))
                   })

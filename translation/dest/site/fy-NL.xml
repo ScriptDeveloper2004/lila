@@ -184,7 +184,6 @@
   <string name="takebackPropositionCanceled">Weromset annulearre</string>
   <string name="yourOpponentProposesATakeback">Dyn tsjinstander stelt in weromset foar</string>
   <string name="bookmarkThisGame">Blêdwizerje dizze partij</string>
-  <string name="search">Sykje</string>
   <string name="tournament">Toernoai</string>
   <string name="tournaments">Toernoaien</string>
   <string name="tournamentPoints">Toernoai punten</string>
@@ -239,8 +238,6 @@ kompjûteranalyze, partijpetear en dielbere URL te krijen.</string>
   <string name="lastSeenActive">%s Foar it lêst sjoen</string>
   <string name="player">Spiler</string>
   <string name="list">List</string>
-  <string name="from">Fan</string>
-  <string name="to">Oant</string>
   <string name="graph">Grafyk</string>
   <string name="required">Fereaske.</string>
   <string name="openTournaments">Iepen toernoaien</string>

@@ -277,8 +277,6 @@
   <string name="takebackPropositionCanceled">Proposta de voltar jogada cancelada</string>
   <string name="yourOpponentProposesATakeback">Seu oponente propõe voltar jogada</string>
   <string name="bookmarkThisGame">Adicionar esta partida às favoritas</string>
-  <string name="search">Buscar</string>
-  <string name="advancedSearch">Busca avançada</string>
   <string name="tournament">Torneio</string>
   <string name="tournaments">Torneios</string>
   <string name="myTournaments">Meus torneios</string>
@@ -378,13 +376,6 @@ análise de computador, sala de conversação e link de partilha.</string>
   <string name="lastSeenActive">Última conexão %s</string>
   <string name="player">Jogador</string>
   <string name="list">Lista</string>
-  <string name="sort">Ordenar</string>
-  <string name="sortBy">Por</string>
-  <string name="from">De</string>
-  <string name="to">Para</string>
-  <string name="ascending">Ascendente</string>
-  <string name="descending">Descendente</string>
-  <string name="source">Fonte</string>
   <string name="graph">Gráfico</string>
   <plurals name="lessThanNbMinutes">
     <item quantity="one">Menos de %s minuto</item>
@@ -393,12 +384,7 @@ análise de computador, sala de conversação e link de partilha.</string>
   <string name="required">Requerido.</string>
   <string name="openTournaments">Torneios abertos</string>
   <string name="duration">Duração</string>
-  <string name="date">Data</string>
-  <string name="numberOfTurns">Número de turnos</string>
   <string name="winner">Vencedor</string>
-  <string name="loser">Vencido</string>
-  <string name="result">Resultado</string>
-  <string name="winnerColor">Cor dos vencedor</string>
   <string name="standing">Aguardando</string>
   <string name="createANewTournament">Criar novo torneio</string>
   <string name="tournamentCalendar">Calendário de torneios</string>

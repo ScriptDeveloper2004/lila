@@ -326,9 +326,6 @@
   <string name="takebackPropositionCanceled">Takeback canceled</string>
   <string name="yourOpponentProposesATakeback">Your opponent proposes a takeback</string>
   <string name="bookmarkThisGame">Bookmark this game</string>
-  <string name="search">Search</string>
-  <string name="advancedSearch">Advanced search</string>
-  <string name="searchPlayersHelp">The name(s) of the player(s) you wish to search for</string>
   <string name="tournament">Tournament</string>
   <string name="tournaments">Tournaments</string>
   <string name="tournamentPoints">Tournament points</string>
@@ -425,7 +422,6 @@ a computer analysis, a game chat and a shareable URL.</string>
   <string name="required">Required.</string>
   <string name="openTournaments">Open tournaments</string>
   <string name="duration">Duration</string>
-  <string name="numberOfTurns">Number of turns</string>
   <string name="winner">Winner</string>
   <string name="standing">Standing</string>
   <string name="createANewTournament">Create a new tournament</string>

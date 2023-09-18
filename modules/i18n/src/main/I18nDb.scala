@@ -61,7 +61,7 @@ object I18nDb {
     case Preferences => preferences
     case Team => team
     case PerfStat => perfStat
-    case Search      => search
+    case Search => search
     case Lag => lag
     case Swiss => swiss
     case Challenge => challenge
