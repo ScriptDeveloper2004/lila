@@ -813,7 +813,7 @@ Een URL per regel</string>
   <string name="kidMode">Kindvriendelijke modus</string>
   <string name="kidModeIsEnabled">Kindvriendelijke modus is ingeschakeld.</string>
   <string name="kidModeExplanation">Dit gaat over veiligheid. In kindvriendelijke modus worden alle communicatiemogelijkheden op de website uitgeschakeld. Activeer dit voor kinderen om hen te beschermen tegen andere internetgebruikers.</string>
-  <string name="inKidModeTheLidraughtsLogoGetsIconX">In kindvriendelijke modus krijgt het lidraughts logo een %s icoontje, zodat je weet dat je kinderen veilig zijn.</string>
+  <string name="inKidModeTheLidraughtsLogoGetsIconX">In kindvriendelijke modus krijgt het Lidraughts logo een %s icoontje, zodat je weet dat je kinderen veilig zijn.</string>
   <string name="enableKidMode">Activeer Kindermodus</string>
   <string name="disableKidMode">Deactiveer Kindermodus</string>
   <string name="security">Beveiliging</string>
@@ -854,7 +854,6 @@ Een URL per regel</string>
   <string name="dark">Donker</string>
   <string name="transparent">Transparant</string>
   <string name="backgroundImageUrl">Achtergrondafbeelding URL:</string>
-  <string name="boardGeometry">Bordgrootte</string>
   <string name="boardTheme">Bordthema</string>
   <string name="boardSize">Bordgrootte</string>
   <string name="pieceSet">Damschijven</string>

@@ -66,7 +66,7 @@
   <string name="analysis">Πίνακας ανάλυσης</string>
   <string name="depthX">%s βάθος</string>
   <string name="usingServerAnalysis">Ανάλυση διακομιστή</string>
-  <string name="loadingEngine">Εκκίνηση μηχανής ...</string>
+  <string name="loadingEngine">Εκκίνηση μηχανής...</string>
   <string name="cloudAnalysis">Ανάλυση σε νέφος</string>
   <string name="goDeeper">Βαθύτερα</string>
   <string name="showThreat">Εμφάνιση απειλής</string>
@@ -806,7 +806,7 @@
   <string name="youHaveAlreadyRegisteredTheEmail">Έχετε ήδη εγγραφεί με το ηλ.ταχυδρομείο: %s</string>
   <string name="kidMode">Λειτουργία παιδιού</string>
   <string name="kidModeExplanation">Αυτό έχει σχέση με την ασφάλεια. Στην λειτουργία για παιδιά, απενεργοποιούνται όλες οι επικοινωνίες της ιστοσελίδας. Ενεργοποιήστε το για τα παιδιά σας και τους μαθητές, για την προστασία τους από άλλους διαδικτυακούς χρήστες.</string>
-  <string name="inKidModeTheLidraughtsLogoGetsIconX">Στην λειτουργία για παιδιά, το λογότυπο του lidraughts παίρνει ένα εικονίδιο %s, έτσι ώστε να γνωρίζετε ότι τα παιδιά σας είναι ασφαλή.</string>
+  <string name="inKidModeTheLidraughtsLogoGetsIconX">Στην λειτουργία για παιδιά, το λογότυπο του Lidraughts παίρνει ένα εικονίδιο %s, έτσι ώστε να γνωρίζετε ότι τα παιδιά σας είναι ασφαλή.</string>
   <string name="enableKidMode">Ενεργοποίηση λειτουργίας παιδιού</string>
   <string name="disableKidMode">Απενεργοποίηση λειτουργίας παιδιού</string>
   <string name="security">Ασφάλεια</string>
@@ -847,7 +847,6 @@
   <string name="dark">Σκοτεινό</string>
   <string name="transparent">Διάφανο</string>
   <string name="backgroundImageUrl">Διεύθυνση εικόνας φόντου:</string>
-  <string name="boardGeometry">Μέγεθος σκακιέρας</string>
   <string name="boardTheme">Θέμα σκακιέρας</string>
   <string name="boardSize">Μέγεθος σκακιέρας</string>
   <string name="pieceSet">Επιλογή πιονιών</string>

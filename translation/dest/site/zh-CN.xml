@@ -771,7 +771,7 @@
   <string name="youHaveAlreadyRegisteredTheEmail">您已经使用电子邮箱%s注册了Lidraughts帐户</string>
   <string name="kidMode">儿童模式</string>
   <string name="kidModeExplanation">安全第一。在儿童模式下， 站内信无法使用。为了保护你的孩子和学生免受站内其他用户的伤害，请启用儿童模式。</string>
-  <string name="inKidModeTheLidraughtsLogoGetsIconX">在儿童模式下，lidraughts标志前有%s图标。出现该图标您就知道您的孩子是安全的。</string>
+  <string name="inKidModeTheLidraughtsLogoGetsIconX">在儿童模式下，Lidraughts标志前有%s图标。出现该图标您就知道您的孩子是安全的。</string>
   <string name="enableKidMode">打开儿童模式</string>
   <string name="disableKidMode">关闭儿童模式</string>
   <string name="security">安全</string>
@@ -811,9 +811,8 @@
   <string name="dark">灰暗</string>
   <string name="transparent">透明</string>
   <string name="backgroundImageUrl">背景图片链接:</string>
-  <string name="boardGeometry">棋盘尺寸</string>
   <string name="boardTheme">棋盘样式</string>
-  <string name="boardSize">棋盘大小</string>
+  <string name="boardSize">棋盘尺寸</string>
   <string name="pieceSet">棋子样式</string>
   <string name="embedInYourWebsite">嵌入到您的网站上</string>
   <string name="usernameAlreadyUsed">该用户名已被使用，请使用另一个。</string>

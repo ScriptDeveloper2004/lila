@@ -66,7 +66,7 @@
   <string name="analysis">Analysis board</string>
   <string name="depthX">Depth %s</string>
   <string name="usingServerAnalysis">Using server analysis</string>
-  <string name="loadingEngine">Loading engine ...</string>
+  <string name="loadingEngine">Loading engine...</string>
   <string name="cloudAnalysis">Cloud analysis</string>
   <string name="goDeeper">Go deeper</string>
   <string name="showThreat">Show threat</string>
@@ -813,7 +813,7 @@ One URL per line</string>
   <string name="kidMode">Kid mode</string>
   <string name="kidModeIsEnabled">Kid mode is enabled.</string>
   <string name="kidModeExplanation">This is about safety. In kid mode, all site communications are disabled. Enable this for your children and school students, to protect them from other internet users.</string>
-  <string name="inKidModeTheLidraughtsLogoGetsIconX">In kid mode, the lidraughts logo gets a %s icon, so you know your kids are safe.</string>
+  <string name="inKidModeTheLidraughtsLogoGetsIconX">In kid mode, the Lidraughts logo gets a %s icon, so you know your kids are safe.</string>
   <string name="enableKidMode">Enable Kid mode</string>
   <string name="disableKidMode">Disable Kid mode</string>
   <string name="security">Security</string>
@@ -854,7 +854,6 @@ One URL per line</string>
   <string name="dark">Dark</string>
   <string name="transparent">Transparent</string>
   <string name="backgroundImageUrl">Background image URL:</string>
-  <string name="boardGeometry">Board size</string>
   <string name="boardTheme">Board theme</string>
   <string name="boardSize">Board size</string>
   <string name="pieceSet">Piece set</string>

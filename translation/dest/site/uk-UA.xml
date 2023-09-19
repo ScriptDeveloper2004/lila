@@ -689,7 +689,7 @@
   <string name="youHaveAlreadyRegisteredTheEmail">Ви вже маєте зареєстровану поштову адресу: %s</string>
   <string name="kidMode">Режим для дітей</string>
   <string name="kidModeExplanation">Мова йде про безпеку. У дитячому режимі всі комунікації на сайті вимкнено. Увімкніть цю функцію для ваших дітей і школярів, щоб захистити їх від інших користувачів Інтернету.</string>
-  <string name="inKidModeTheLidraughtsLogoGetsIconX">В дитячому режимі логотип lidraughts отримує значок у вигляді %s, щоб Ви знали, що діти у безпеці.</string>
+  <string name="inKidModeTheLidraughtsLogoGetsIconX">В дитячому режимі логотип Lidraughts отримує значок у вигляді %s, щоб Ви знали, що діти у безпеці.</string>
   <string name="enableKidMode">Увімкнути дитячий режим</string>
   <string name="disableKidMode">Вимкнути дитячий режим</string>
   <string name="security">Безпека</string>
@@ -726,7 +726,6 @@
   <string name="dark">Темна</string>
   <string name="transparent">Прозора</string>
   <string name="backgroundImageUrl">URL зображення в тлі:</string>
-  <string name="boardGeometry">Геометрія дошки</string>
   <string name="boardTheme">Оформлення дошки</string>
   <string name="boardSize">Розмір дошки</string>
   <string name="pieceSet">Набір фігур</string>

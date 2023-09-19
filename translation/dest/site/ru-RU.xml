@@ -878,7 +878,7 @@
   <string name="kidMode">Детский режим</string>
   <string name="kidModeIsEnabled">Детский режим включен.</string>
   <string name="kidModeExplanation">Это для безопасности. В детском режиме отключены все коммуникации на сайте. Включите его для ваших детей и учеников, чтобы защитить их от других пользователей интернета.</string>
-  <string name="inKidModeTheLidraughtsLogoGetsIconX">В детском режиме к логотипу lidraughts добавляется значок в виде %s, чтобы вы знали, что ваши дети находятся в безопасности.</string>
+  <string name="inKidModeTheLidraughtsLogoGetsIconX">В детском режиме к логотипу Lidraughts добавляется значок в виде %s, чтобы вы знали, что ваши дети находятся в безопасности.</string>
   <string name="enableKidMode">Включить детский режим</string>
   <string name="disableKidMode">Отключить детский режим</string>
   <string name="security">Безопасность</string>
@@ -921,7 +921,6 @@
   <string name="dark">Тёмный</string>
   <string name="transparent">Прозрачный</string>
   <string name="backgroundImageUrl">URL фонового изображения:</string>
-  <string name="boardGeometry">Вид и размер доски</string>
   <string name="boardTheme">Оформление доски</string>
   <string name="boardSize">Размер доски</string>
   <string name="pieceSet">Оформление фигур</string>

@@ -57,7 +57,7 @@
   <string name="analysis">Analýza</string>
   <string name="depthX">Hloubka %s</string>
   <string name="usingServerAnalysis">Používání analýzy serveru</string>
-  <string name="loadingEngine">Načítání motoru ...</string>
+  <string name="loadingEngine">Načítání motoru...</string>
   <string name="cloudAnalysis">Cloudová analýza</string>
   <string name="goDeeper">Hlouběji</string>
   <string name="showThreat">Zobrazit hrozbu</string>

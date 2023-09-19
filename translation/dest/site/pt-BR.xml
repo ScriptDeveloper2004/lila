@@ -66,7 +66,7 @@
   <string name="analysis">Análise</string>
   <string name="depthX">Profundidade %s</string>
   <string name="usingServerAnalysis">Análise de servidor em uso</string>
-  <string name="loadingEngine">Carregando ...</string>
+  <string name="loadingEngine">Carregando...</string>
   <string name="cloudAnalysis">Análise na nuvem</string>
   <string name="goDeeper">Detalhar</string>
   <string name="showThreat">Mostrar ameaça</string>
@@ -806,7 +806,7 @@ Uma URL por linha</string>
   <string name="youHaveAlreadyRegisteredTheEmail">Você já registrou o e-mail: %s</string>
   <string name="kidMode">Modo infantil</string>
   <string name="kidModeExplanation">Isto diz respeito à segurança. No modo infantil, todas as comunicações do site são desabilitadas. Habilite isso para seus filhos e alunos, para protegê-los de outros usuários da Internet.</string>
-  <string name="inKidModeTheLidraughtsLogoGetsIconX">No modo infantil, a logo do lidraughts tem um ícone %s, para que você saiba que suas crianças estão seguras.</string>
+  <string name="inKidModeTheLidraughtsLogoGetsIconX">No modo infantil, a logo do Lidraughts tem um ícone %s, para que você saiba que suas crianças estão seguras.</string>
   <string name="enableKidMode">Habilitar o modo infantil</string>
   <string name="disableKidMode">Desabilitar o modo infantil</string>
   <string name="security">Segurança</string>
@@ -847,7 +847,6 @@ Uma URL por linha</string>
   <string name="dark">Escuro</string>
   <string name="transparent">Transparente</string>
   <string name="backgroundImageUrl">URL da imagem de fundo:</string>
-  <string name="boardGeometry">Geometria do tabuleiro</string>
   <string name="boardTheme">Estilo do tabuleiro</string>
   <string name="boardSize">Tamanho do tabuleiro</string>
   <string name="pieceSet">Estilo das peças</string>

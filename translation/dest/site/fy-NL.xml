@@ -43,7 +43,7 @@
   <string name="analysis">Analyzeboerd</string>
   <string name="depthX">Djipte %s</string>
   <string name="usingServerAnalysis">Serveranalyze yn gebrûk</string>
-  <string name="loadingEngine">\'Engine\' wurdt laden ...</string>
+  <string name="loadingEngine">\'Engine\' wurdt laden...</string>
   <string name="cloudAnalysis">\'Cloud\'-analyze</string>
   <string name="goDeeper">Djipper gean</string>
   <string name="showThreat">Toan driging</string>
@@ -425,7 +425,6 @@ kompjûteranalyze, partijpetear en dielbere URL te krijen.</string>
   <string name="dark">Donker</string>
   <string name="transparent">Trochsichtich</string>
   <string name="backgroundImageUrl">URL fan de achtergrûnôfbylding:</string>
-  <string name="boardGeometry">Foarm fan it boerd</string>
   <string name="boardTheme">Tema fan it boerd</string>
   <string name="boardSize">Ofmjitting fan it boerd</string>
   <string name="pieceSet">Ynstelle fan it soarte stik</string>

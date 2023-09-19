@@ -876,7 +876,7 @@ jeden adres URL na linię</string>
   <string name="youHaveAlreadyRegisteredTheEmail">Już zarejestrowałeś/aś adres %s</string>
   <string name="kidMode">Tryb dla dzieci</string>
   <string name="kidModeExplanation">W trybie dla dzieci możliwość komunikacji z innymi jest wyłączona. Włącz ten tryb dla swoich dzieci aby chronić je przed możliwymi zagrożeniami ze strony innych użytkowników.</string>
-  <string name="inKidModeTheLidraughtsLogoGetsIconX">W trybie dla dzieci logo lidraughts ma dodatkową ikonę %s, wiesz wtedy, że Twoje dziecko jest chronione.</string>
+  <string name="inKidModeTheLidraughtsLogoGetsIconX">W trybie dla dzieci logo Lidraughts ma dodatkową ikonę %s, wiesz wtedy, że Twoje dziecko jest chronione.</string>
   <string name="enableKidMode">Włącz tryb dla dzieci</string>
   <string name="disableKidMode">Wyłącz tryb dla dzieci</string>
   <string name="security">Bezpieczeństwo</string>
@@ -919,7 +919,6 @@ jeden adres URL na linię</string>
   <string name="dark">Ciemne</string>
   <string name="transparent">Przezroczyste</string>
   <string name="backgroundImageUrl">Link do obrazka w tle:</string>
-  <string name="boardGeometry">Rozmiar warcabnicy</string>
   <string name="boardTheme">Kolory pól</string>
   <string name="boardSize">Rozmiar warcabnicy</string>
   <string name="pieceSet">Zestaw figur</string>

@@ -539,7 +539,7 @@ Một đường dẫn mỗi dòng</string>
   <string name="description">Mô tả</string>
   <string name="no">Không chọn</string>
   <string name="yes">Chọn</string>
-  <string name="help">Hỗ trợ:</string>
+  <string name="help">Hỗ trợ</string>
   <string name="createANewTopic">Tạo một chủ đề mới</string>
   <string name="topics">Các chủ đề</string>
   <string name="posts">Số bài đăng</string>
@@ -767,7 +767,7 @@ Một đường dẫn mỗi dòng</string>
   <string name="kidMode">Chế độ trẻ em</string>
   <string name="kidModeIsEnabled">Chế độ trẻ em đã được bật.</string>
   <string name="kidModeExplanation">Điều này là để an toàn. Trong chế độ trẻ em, tất cả mọi giao tiếp trên trang web đều bị vô hiệu. Kích hoạt điều này cho con của bạn và học sinh trong lớp để bảo vệ chúng khỏi những người dùng khác trên internet.</string>
-  <string name="inKidModeTheLidraughtsLogoGetsIconX">Trong chế độ trẻ em, biểu tượng lidraughts được một biểu tượng %s để bạn biết con bạn được an toàn.</string>
+  <string name="inKidModeTheLidraughtsLogoGetsIconX">Trong chế độ trẻ em, biểu tượng Lidraughts được một biểu tượng %s để bạn biết con bạn được an toàn.</string>
   <string name="enableKidMode">Kích hoạt chế độ Trẻ Em</string>
   <string name="disableKidMode">Tắt chế độ Trẻ Em</string>
   <string name="security">Bảo mật</string>
@@ -807,7 +807,6 @@ Một đường dẫn mỗi dòng</string>
   <string name="dark">Tối</string>
   <string name="transparent">Trong suốt</string>
   <string name="backgroundImageUrl">URL ảnh nền:</string>
-  <string name="boardGeometry">Kích cỡ bàn cờ</string>
   <string name="boardTheme">Chủ đề bàn cờ</string>
   <string name="boardSize">Kích cỡ bàn cờ</string>
   <string name="pieceSet">Bộ cờ</string>

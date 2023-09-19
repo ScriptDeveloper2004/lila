@@ -776,7 +776,7 @@ Vienā līnijā  - tikai vienu norādi.</string>
   <string name="youHaveAlreadyRegisteredTheEmail">Tu jau esi reģistrējis e-pastu: %s</string>
   <string name="kidMode">Bērnu režīms</string>
   <string name="kidModeExplanation">Runa ir par drošību. Bērnu režīmā jebkāda saziņa ir atspējota. Iespējojiet šo režīmu lai pasargātu savus bērnus un skolēnus no citiem interneta lietotājiem.</string>
-  <string name="inKidModeTheLidraughtsLogoGetsIconX">Bērnu režīmā pie «lidraughts» logotipa tiek pievienota %s ikona, lai jūs zinātu, ka jūsu bērni ir drošībā.</string>
+  <string name="inKidModeTheLidraughtsLogoGetsIconX">Bērnu režīmā pie «Lidraughts» logotipa tiek pievienota %s ikona, lai jūs zinātu, ka jūsu bērni ir drošībā.</string>
   <string name="enableKidMode">Iespējot Bērnu režīmu</string>
   <string name="disableKidMode">Atspējot Bērnu režīmu</string>
   <string name="security">Drošība</string>
@@ -815,7 +815,6 @@ Vienā līnijā  - tikai vienu norādi.</string>
   <string name="dark">Tumšs</string>
   <string name="transparent">Caurspīdīgs</string>
   <string name="backgroundImageUrl">Fona bildes URL:</string>
-  <string name="boardGeometry">Galdiņa ģeometrija</string>
   <string name="boardTheme">Galdiņa dizains</string>
   <string name="boardSize">Galdiņa izmērs</string>
   <string name="pieceSet">Kauliņu komplekts</string>

@@ -519,7 +519,7 @@ kompiuterinę analizę, partijos pokalbį bei URL dalinimuisi.</string>
   <string name="description">Aprašymas</string>
   <string name="no">Ne</string>
   <string name="yes">Taip</string>
-  <string name="help">Pagalba:</string>
+  <string name="help">Pagalba</string>
   <string name="createANewTopic">Sukurti naują temą</string>
   <string name="topics">Temos</string>
   <string name="posts">Pranešimai</string>
@@ -668,7 +668,7 @@ kompiuterinę analizę, partijos pokalbį bei URL dalinimuisi.</string>
   <string name="simulClockHint">Fišerio laikrodžio nustatymas. Prieš kuo daugiau žaidėjų rungsitės, tuo daugiau laiko jums gali prireikti.</string>
   <string name="simulAddExtraTime">Galite pridėti papildomo laiko savo laikrodžiui, kad būtų lengviau žaisti simule.</string>
   <string name="simulHostExtraTime">Papildomas laikas šeimininkui</string>
-  <string name="lidraughtsTournaments">„lidraughts“ turnyrai</string>
+  <string name="lidraughtsTournaments">„Lidraughts“ turnyrai</string>
   <string name="tournamentFAQ">Arenos turnyrų DUK</string>
   <string name="tournamentOfficial">Oficialūs</string>
   <string name="timeBeforeTournamentStarts">Laikas iki turnyro pradžios</string>
@@ -700,8 +700,8 @@ kompiuterinę analizę, partijos pokalbį bei URL dalinimuisi.</string>
   <string name="ifYouDoNotSeeTheEmailCheckOtherPlaces">Jei nematote laiško, patikrinkite kitas galimas vietas: šlamšto, šiukšlių, socialinius ar kitus aplankus.</string>
   <string name="weHaveSentYouAnEmailTo">Išsiuntėme laišką į %s. Spustelėję jame esančią nurodą galėsite atstatyti savo slaptažodį.</string>
   <string name="byRegisteringYouAgreeToBeBoundByOur">Registruodamiesi sutinkate su mūsų %s.</string>
-  <string name="networkLagBetweenYouAndLidraughts">Tinklo delsa tarp jūsų ir „lidraughts“</string>
-  <string name="timeToProcessAMoveOnLidraughtsServer">Laikas, per kurį „lidraughts“ serveris apdoroja ėjimą</string>
+  <string name="networkLagBetweenYouAndLidraughts">Tinklo delsa tarp jūsų ir „Lidraughts“</string>
+  <string name="timeToProcessAMoveOnLidraughtsServer">Laikas, per kurį „Lidraughts“ serveris apdoroja ėjimą</string>
   <string name="downloadAnnotated">Siųstis anotuotą</string>
   <string name="downloadRaw">Siųstis neapdorotą</string>
   <string name="downloadImported">Siųstis importuotą</string>
@@ -717,7 +717,7 @@ kompiuterinę analizę, partijos pokalbį bei URL dalinimuisi.</string>
   <string name="youHaveAlreadyRegisteredTheEmail">Jūs jau esate susieję šį el. pašto adresą: %s</string>
   <string name="kidMode">Vaiko veiksena</string>
   <string name="kidModeExplanation">Tai yra dėl saugumo. Vaiko veiksenoje išjungiamas visas bendravimas svetainėje. Įjunkite tai savo vaikams bei moksleiviams, norėdami juos apsaugoti nuo kitų interneto naudotojų.</string>
-  <string name="inKidModeTheLidraughtsLogoGetsIconX">Vaiko veiksenoje „lidraughts“ logotipas gauna %s piktogramą tam, kad žinotumėte, jog jūsų vaikai yra saugūs.</string>
+  <string name="inKidModeTheLidraughtsLogoGetsIconX">Vaiko veiksenoje „Lidraughts“ logotipas gauna %s piktogramą tam, kad žinotumėte, jog jūsų vaikai yra saugūs.</string>
   <string name="enableKidMode">Įjungti vaiko veikseną</string>
   <string name="disableKidMode">Išjungti vaiko veikseną</string>
   <string name="security">Saugumas</string>
@@ -755,7 +755,6 @@ kompiuterinę analizę, partijos pokalbį bei URL dalinimuisi.</string>
   <string name="dark">Tamsus</string>
   <string name="transparent">Permatomas</string>
   <string name="backgroundImageUrl">Fono paveikslo URL:</string>
-  <string name="boardGeometry">Lentos geometrija</string>
   <string name="boardTheme">Lentos stilius</string>
   <string name="boardSize">Lentos dydis</string>
   <string name="pieceSet">Figūrų rinkinys</string>
