@@ -9,7 +9,7 @@ private sealed trait I18nQuantity
  * https://github.com/populov/android-i18n-plurals/tree/master/library/src/main/java/com/seppius/i18n/plurals
  *
  * Removed: boilerplate, lag, shi
- * Added: type safety, tp, io, ia
+ * Added: type safety and more languages
  */
 private object I18nQuantity {
 
@@ -137,7 +137,7 @@ private object I18nQuantity {
 
       case "cs" | "sk" => czech _
 
-      case "hr" | "ru" | "sr" | "uk" | "be" | "bs" | "sh" => balkan _
+      case "hr" | "ru" | "sr" | "uk" | "be" | "bs" | "sh" | "ry" => balkan _
 
       case "lv" => latvian _
 

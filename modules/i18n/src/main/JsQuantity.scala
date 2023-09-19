@@ -13,7 +13,7 @@ if (c == 1) return 'one';
 else if (c >= 2 && c <= 4) return 'few';
 else return 'other';
       """
-    case "hr" | "ru" | "sr" | "uk" | "be" | "bs" | "sh" => // balkan
+    case "hr" | "ru" | "sr" | "uk" | "be" | "bs" | "sh" | "ry" => // balkan
       """
 var rem100 = c % 100;
 var rem10 = c % 10;
