@@ -27,7 +27,7 @@ object form {
       main(cls := "page-small")(
         div(cls := "tour__form box box-pad")(
           h1(
-            if (isTeamBattle) "New Team Battle"
+            if (isTeamBattle) trans.arena.newTeamBattle()
             else trans.createANewTournament()
           ),
           postForm(cls := "form3", action := routes.Tournament.create)(
@@ -162,11 +162,11 @@ object form {
         }
       ),
       form3.split(
-        form3.checkbox(form("berserkable"), frag("Allow berserk"), help = frag("Let players halve their clock time to gain an extra point").some, half = true),
-        form3.checkbox(form("streakable"), frag("Arena streaks"), help = frag("After 2 wins, consecutive wins grant 4 points instead of 2").some, half = true)
+        form3.checkbox(form("berserkable"), trans.arena.allowBerserk(), help = trans.arena.allowBerserkHelp().some, half = true),
+        form3.checkbox(form("streakable"), trans.arena.arenaStreaks(), help = trans.arena.arenaStreaksHelp().some, half = true)
       ),
       form3.split(
-        form3.checkbox(form("hasChat"), trans.chatRoom(), help = frag("Let players discuss in a chat room").some, half = true)
+        form3.checkbox(form("hasChat"), trans.chatRoom(), help = trans.arena.allowChatHelp().some, half = true)
       )
     )
   }
@@ -265,8 +265,8 @@ final private class TourFields(me: User, form: Form[_])(implicit ctx: Context) {
   def startDate(withHelp: Boolean = true) =
     form3.group(
       form("startDate"),
-      frag("Custom start date"),
-      help = withHelp option frag("""This overrides the "Time before tournament starts" setting""")
+      frag(trans.arena.customStartDate()),
+      help = withHelp option trans.arena.customStartDateHelp()
     )(form3.flatpickr(_))
   def advancedSettings = frag(
     legend(trans.advancedSettings()),

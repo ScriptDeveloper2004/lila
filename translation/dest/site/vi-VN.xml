@@ -348,8 +348,6 @@
   <string name="xCreatedTeamY">%1$s tạo đội %2$s</string>
   <string name="xStartedStreaming">%s đã bắt đầu phát trực tuyến</string>
   <string name="averageElo">Hệ số Elo bình quân</string>
-  <string name="averagePerformance">Hiệu suất trung bình</string>
-  <string name="averageScore">Điểm trung bình</string>
   <string name="teamPage">Trang đội</string>
   <string name="viewAllTeams">Xem tất cả đội</string>
   <string name="pickYourTeam">Chọn đội của bạn</string>

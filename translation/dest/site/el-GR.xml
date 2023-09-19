@@ -329,7 +329,6 @@
   <string name="tournament">Πρωτάθλημα</string>
   <string name="tournaments">Πρωταθλήματα</string>
   <string name="xTournaments">%s πρωταθλήματα</string>
-  <string name="myTournaments">Τα πρωταθλήματά μου</string>
   <string name="createdTournaments">Δημιουργήθηκε</string>
   <string name="recentlyPlayed">Παίχτηκαν πρόσφατα</string>
   <string name="bestResults">Καλύτερα αποτελέσματα</string>
@@ -372,8 +371,6 @@
   <string name="xCreatedTeamY">Ο %1$s δημιούργησε την ομάδα %2$s</string>
   <string name="xStartedStreaming">%s ξεκίνησε να μεταδίδει</string>
   <string name="averageElo">Μέσος όρος βαθμολογίας</string>
-  <string name="averagePerformance">Μέση επίδοση</string>
-  <string name="averageScore">Μέση βαθμολογία</string>
   <string name="teamPage">Σελίδα ομάδας</string>
   <string name="viewAllTeams">Δείτε όλες τις ομάδες</string>
   <string name="pickYourTeam">Διαλέξτε την ομάδα σας</string>

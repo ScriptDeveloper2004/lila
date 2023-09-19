@@ -329,7 +329,6 @@
   <string name="tournament">Tournament</string>
   <string name="tournaments">Tournaments</string>
   <string name="xTournaments">%s tournaments</string>
-  <string name="myTournaments">My tournaments</string>
   <string name="createdTournaments">Created</string>
   <string name="recentlyPlayed">Recently played</string>
   <string name="bestResults">Best results</string>
@@ -372,10 +371,7 @@
   <string name="xCreatedTeamY">%1$s created team %2$s</string>
   <string name="xStartedStreaming">%s started streaming</string>
   <string name="averageElo">Average rating</string>
-  <string name="averagePerformance">Average performance</string>
-  <string name="averageScore">Average score</string>
   <string name="teamPage">Team page</string>
-  <string name="viewAllTeams">View all teams</string>
   <string name="pickYourTeam">Pick your team</string>
   <string name="whichTeamWillYouRepresent">Which team will you represent in this battle?</string>
   <string name="youMustJoinOneOfTheseTeams">You must join one of these teams to participate!</string>
@@ -488,7 +484,6 @@ computer analysis, game chat and shareable URL.</string>
   <string name="savePosition">Save position</string>
   <string name="loadPosition">Load position</string>
   <string name="isPrivate">Private</string>
-  <string name="noBerserkAllowed">No berserk allowed</string>
   <string name="editTournament">Edit tournament</string>
   <string name="tournamentDescription">Tournament description</string>
   <string name="tournamentDescriptionHelp">Anything special you want to tell the participants? Try to keep it short. Markdown links are available: [text](https://url)</string>

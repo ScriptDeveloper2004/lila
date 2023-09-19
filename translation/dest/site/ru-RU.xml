@@ -420,8 +420,6 @@
   <string name="xCreatedTeamY">%1$s организовал клуб %2$s</string>
   <string name="xStartedStreaming">%s запустил стрим</string>
   <string name="averageElo">Средний рейтинг участников</string>
-  <string name="averagePerformance">Средняя результативность</string>
-  <string name="averageScore">Средний балл</string>
   <string name="teamPage">Страница клуба</string>
   <string name="viewAllTeams">Посмотреть все клубы</string>
   <string name="pickYourTeam">Выберите команду</string>

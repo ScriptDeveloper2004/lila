@@ -420,8 +420,6 @@
   <string name="xCreatedTeamY">%1$s stworzył klub %2$s</string>
   <string name="xStartedStreaming">%s rozpoczął streaming</string>
   <string name="averageElo">Średni ranking</string>
-  <string name="averagePerformance">Średnia skuteczność</string>
-  <string name="averageScore">Średni wynik</string>
   <string name="teamPage">Strona zespołu</string>
   <string name="viewAllTeams">Zobacz wszystkie zespoły</string>
   <string name="pickYourTeam">Wybierz twój zespół</string>

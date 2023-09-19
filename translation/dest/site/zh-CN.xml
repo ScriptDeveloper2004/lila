@@ -310,7 +310,6 @@
   <string name="tournament">锦标赛</string>
   <string name="tournaments">锦标赛</string>
   <string name="xTournaments">%s锦标赛</string>
-  <string name="myTournaments">我的锦标赛</string>
   <string name="createdTournaments">已创建</string>
   <string name="recentlyPlayed">近期参加</string>
   <string name="bestResults">最佳成绩</string>
@@ -348,8 +347,6 @@
   <string name="xCreatedTeamY">%1$s组建%2$s队</string>
   <string name="xStartedStreaming">%s 开始直播</string>
   <string name="averageElo">平均积分</string>
-  <string name="averagePerformance">平均表现</string>
-  <string name="averageScore">平均得分</string>
   <string name="teamPage">团队页面</string>
   <string name="viewAllTeams">查看所有团队</string>
   <string name="pickYourTeam">选择您的团队</string>
@@ -459,7 +456,6 @@
   <string name="savePosition">保存局面</string>
   <string name="loadPosition">载入局面</string>
   <string name="isPrivate">私人锦标赛</string>
-  <string name="noBerserkAllowed">不允许快棋</string>
   <string name="editTournament">编辑锦标赛</string>
   <string name="tournamentDescription">锦标赛描述</string>
   <string name="tournamentDescriptionHelp">您有其它信息要告知参赛者？请尽量保持此信息简明扼要。可以使用标记语言链接：[text](https://url)</string>
