@@ -21,7 +21,7 @@
   <string name="variantEnding">Fine variante</string>
   <string name="important">Importante</string>
   <string name="yourQuestionMayHaveBeenAnswered">La tua domanda potrebbe già avere una risposta %1$s</string>
-  <string name="inTheFAQ">nelle F.A.Q.</string>
+  <string name="inTheFAQ">nelle FAQ</string>
   <string name="toReportSomeoneForCheatingOrBadBehavior">Per segnalare un utente per imbrogli o comportamenti errati, %1$s</string>
   <string name="useTheReportForm">usa il modulo di rapporto</string>
   <string name="toRequestSupport">Per richiedere supporto, %1$s</string>

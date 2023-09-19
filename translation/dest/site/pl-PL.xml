@@ -31,7 +31,7 @@
   <string name="variantEnding">Wariant zakończony</string>
   <string name="important">Ważne</string>
   <string name="yourQuestionMayHaveBeenAnswered">Twoje pytanie może już mieć odpowiedź %1$s</string>
-  <string name="inTheFAQ">w F.A.Q.</string>
+  <string name="inTheFAQ">w FAQ</string>
   <string name="toReportSomeoneForCheatingOrBadBehavior">Aby zgłosić użytkownika za oszustwo lub złe zachowanie, %1$s</string>
   <string name="useTheReportForm">użyj formularza raportu</string>
   <string name="toRequestSupport">Aby poprosić o pomoc, %1$s</string>
@@ -499,7 +499,7 @@ poproszenia o analizę komputerową, omówienia jej z innymi oraz udostępnienia
   <string name="standing">Pozycja</string>
   <string name="createANewTournament">Nowy turniej</string>
   <string name="tournamentCalendar">Kalendarz turniejowy</string>
-  <string name="conditionOfEntry">Warunki wstępu:</string>
+  <string name="conditionOfEntry">Warunki przystąpienia:</string>
   <string name="advancedSettings">Ustawienia zaawansowane</string>
   <string name="safeTournamentName">Nadaj turniejowi neutralną nazwę.</string>
   <string name="safeSimulName">Nadaj symultanie neutralną nazwę.</string>

@@ -31,7 +31,7 @@
   <string name="variantEnding">Fim da variante</string>
   <string name="important">Importante</string>
   <string name="yourQuestionMayHaveBeenAnswered">A sua pergunta pode já ter sido respondida %1$s</string>
-  <string name="inTheFAQ">no F.A.Q.</string>
+  <string name="inTheFAQ">no FAQ</string>
   <string name="toReportSomeoneForCheatingOrBadBehavior">Para denunciar um usuário por trapaças ou mau comportamento, %1$s</string>
   <string name="useTheReportForm">use o formulário de denúncia</string>
   <string name="toRequestSupport">Para solicitar ajuda, %1$s</string>
@@ -441,7 +441,7 @@ consultar uma análise de computador, utilizar o chat e compartilhar um link.</s
   <string name="standing">Aguardando</string>
   <string name="createANewTournament">Criar novo torneio</string>
   <string name="tournamentCalendar">Calendário do torneio</string>
-  <string name="conditionOfEntry">Condição de participação:</string>
+  <string name="conditionOfEntry">Condições de participação:</string>
   <string name="advancedSettings">Configurações avançadas</string>
   <string name="safeTournamentName">Escolha um nome seguro para o torneio.</string>
   <string name="safeSimulName">Escolha um nome bem seguro para a simultânea.</string>
@@ -449,7 +449,7 @@ consultar uma análise de computador, utilizar o chat e compartilhar um link.</s
   <string name="emptyTournamentName">Deixe em branco para dar ao torneio o nome de um grande mestre aleatório.</string>
   <string name="emptySimulName">Deixe em branco para dar à simultânea o nome de um elemento químico aleatório.</string>
   <string name="recommendNotTouching">Recomendamos não mexer nisso.</string>
-  <string name="fewerPlayers">Se você definir as condições de participação, haverá menos jogadores no torneio.</string>
+  <string name="fewerPlayers">Se você restringir as condições de participação, haverá menos jogadores no torneio.</string>
   <string name="showAdvancedSettings">Exibir configurações avançadas</string>
   <string name="makePrivateTournament">Faça o torneio privado e restrinja o acesso com uma senha</string>
   <string name="join">Entrar</string>

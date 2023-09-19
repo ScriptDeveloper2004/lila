@@ -31,7 +31,7 @@
   <string name="variantEnding">Fim da variante</string>
   <string name="important">Importante</string>
   <string name="yourQuestionMayHaveBeenAnswered">A tua pergunta pode já ter uma resposta %1$s</string>
-  <string name="inTheFAQ">no F.A.Q. (perguntas frequentes).</string>
+  <string name="inTheFAQ">no FAQ (perguntas frequentes)</string>
   <string name="toReportSomeoneForCheatingOrBadBehavior">Para reportares um utilizador por fazer batota ou por mau comportamento, %1$s.</string>
   <string name="useTheReportForm">usa a ficha própria para o fazeres</string>
   <string name="toRequestSupport">Para solicitares suporte, %1$s.</string>
@@ -308,8 +308,8 @@
   <string name="yourPerfRatingIsTooHigh">A tua pontuação em %1$s (%2$s) é demasiado alta</string>
   <string name="yourTopWeeklyPerfRatingIsTooHigh">A tua pontuação máxima desta semana em %1$s (%2$s) é demasiado alta</string>
   <string name="yourPerfRatingIsTooLow">A tua pontuação em %1$s (%2$s) é demasiado baixa</string>
-  <string name="ratedMoreThanInPerf">Qualificação ≥ %1$s em %2$s</string>
-  <string name="ratedLessThanInPerf">Qualificação ≤ %1$s em %2$s</string>
+  <string name="ratedMoreThanInPerf">Pontuação ≥ %1$s em %2$s</string>
+  <string name="ratedLessThanInPerf">Pontuação ≤ %1$s em %2$s</string>
   <string name="mustBeInTeam">Deves pertencer à equipa %s</string>
   <string name="youAreNotInTeam">Tu não estás na equipa %s</string>
   <string name="backToGame">Retorne à partida</string>
@@ -394,7 +394,7 @@ análise de computador, sala de conversação e link de partilha.</string>
   <string name="emptyTournamentName">Deixe em branco e o torneiro terá o nome aleatório de um Grande Mestre.</string>
   <string name="emptySimulName">Deixe em branco para nomear a simul como um elemento químico ao acaso.</string>
   <string name="recommendNotTouching">Nós recomendamos que não toque nestas opções.</string>
-  <string name="fewerPlayers">Se definires condições de participação, o teu torneio terá menos participantes.</string>
+  <string name="fewerPlayers">Se definies condições de participação, o teu torneio terá menos jogadores.</string>
   <string name="showAdvancedSettings">Mostrar configurações avançadas</string>
   <string name="makePrivateTournament">Torna o torneio privado e restrinje o acesso com uma palavra-passe</string>
   <string name="join">Entrar</string>
@@ -440,7 +440,7 @@ análise de computador, sala de conversação e link de partilha.</string>
   <string name="gameCompletionRate">Percentagem de partidas terminadas: %s</string>
   <string name="profile">Perfil</string>
   <string name="editProfile">Editar perfil</string>
-  <string name="firstName">Primeiro nome</string>
+  <string name="firstName">Nome próprio</string>
   <string name="lastName">Último nome</string>
   <string name="biography">Biografia</string>
   <string name="country">País</string>
@@ -683,7 +683,7 @@ Um URL por linha</string>
   <string name="weHaveSentYouAnEmailClickTheLink">Enviamos um e-mail. Clique no link do e-mail para ativar sua conta.</string>
   <string name="ifYouDoNotSeeTheEmailCheckOtherPlaces">Se você não vir o e-mail, verifique outros locais onde possa estar, como lixeira, spam ou outras pastas.</string>
   <string name="weHaveSentYouAnEmailTo">Enviamos um e-mail para %s. Clique no link do e-mail para redefinir sua senha.</string>
-  <string name="byRegisteringYouAgreeToBeBoundByOur">Ao registrar, você concorda em se comprometer com nossa %s.</string>
+  <string name="byRegisteringYouAgreeToBeBoundByOur">Ao criares uma conta, concordas comprometeres-te com os nossos %s.</string>
   <string name="networkLagBetweenYouAndLidraughts">Atraso na rede</string>
   <string name="timeToProcessAMoveOnLidraughtsServer">Tempo para processar um movimento no servidor do Lidraughts</string>
   <string name="downloadAnnotated">Baixar anotação</string>
@@ -743,7 +743,7 @@ Um URL por linha</string>
   <string name="usernameAlreadyUsed">Este usuário já está em uso, por favor escolhe outro.</string>
   <string name="usernamePrefixInvalid">O nome do usuário deve começar por uma letra.</string>
   <string name="usernameSuffixInvalid">O nome do usuário deve acabar numa letra ou número.</string>
-  <string name="usernameCharsInvalid">O nome do usuário deve conter apenas letras, números, barra baixa y hifens.</string>
+  <string name="usernameCharsInvalid">O nome do usuário só pode conter letras, números, underscores ou hífenes.</string>
   <string name="usernameUnacceptable">O nome de usuário não é aceitável.</string>
   <string name="directlySupportLidraughts">Apoie o Lidraughts</string>
   <string name="playDraughtsInStyle">Jogue com estilo</string>

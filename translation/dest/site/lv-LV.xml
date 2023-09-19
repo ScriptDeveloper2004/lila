@@ -24,7 +24,7 @@
   <string name="variantEnding">Beigas saskaņā ar speciālajiem noteikumiem</string>
   <string name="important">Svarīgi</string>
   <string name="yourQuestionMayHaveBeenAnswered">Jūsu jautājums, iespējams, jau ir atbildēts %1$s</string>
-  <string name="inTheFAQ">bieži uzdoto jautājumu sadāļā.</string>
+  <string name="inTheFAQ">bieži uzdoto jautājumu sadaļā</string>
   <string name="toReportSomeoneForCheatingOrBadBehavior">Lai ziņotu par negodīgu vai sliktu uzvesšanos, %1$s</string>
   <string name="useTheReportForm">izmantojiet ziņošanas veidni</string>
   <string name="toRequestSupport">Lai lūgtu atbalstu, %1$s</string>
@@ -435,13 +435,13 @@ spēles tērzētavu un URL saiti, kas dos pieeju citiem.</string>
   <string name="standing">Pozīcija</string>
   <string name="createANewTournament">Izveidot jaunu turnīru</string>
   <string name="tournamentCalendar">Turnīru kalendārs</string>
-  <string name="conditionOfEntry">Dalības noteikumi:</string>
+  <string name="conditionOfEntry">Dalības prasības:</string>
   <string name="advancedSettings">Uzstādījumi lietpratējiem</string>
   <string name="safeTournamentName">Izvēlies drošu turnīra nosaukumu.</string>
   <string name="inappropriateNameWarning">Ja atklāsies nepiedienīgas darbības, tavs  konts tiks slēgts.</string>
   <string name="emptyTournamentName">Atstāj turnīra nosaukumu tukšu, lai nosaukumu veidotu ar nejauši izvēlēta lielmeistara vārdu.</string>
   <string name="recommendNotTouching">Mēs neiesakām šeit patvaļīgi kaut ko manīt.</string>
-  <string name="fewerPlayers">Ja uzstādīsi dalības nosacījumus, tavā turnīrā piedalīsies mazāk spēlētāju.</string>
+  <string name="fewerPlayers">Ja uzstādīsiet dalības noteikumus, jūsu turnīrā piedalīsies mazāk spēlētāju.</string>
   <string name="showAdvancedSettings">Parādīt lietpratēju uzstādījumus</string>
   <string name="makePrivateTournament">Padarīt turnīru privātu, un ierobežot piekļuvi ar paroli</string>
   <string name="join">Pievienoties</string>
@@ -758,7 +758,7 @@ Vienā līnijā  - tikai vienu norādi.</string>
   <string name="weHaveSentYouAnEmailClickTheLink">Mēs tev aizsūtījām e-pastu. Uzklikšķini uz saņemtās saites lai aktivizētu savu kontu.</string>
   <string name="ifYouDoNotSeeTheEmailCheckOtherPlaces">Ja nevari atrast e-pastu, pārbaudi citās vietās, kur tas varētu būt, piemēram, mēstules, draza, spam, junk, sociālie tīkli vai citās mapēs.</string>
   <string name="weHaveSentYouAnEmailTo">Mēs aizsūtījām e-pastu uz %s. Noklikšķini uz saites e-pastā lai atjaunotu savu paroli.</string>
-  <string name="byRegisteringYouAgreeToBeBoundByOur">Reģistrējoties, tev jāpiekrīt saistībām atbilstoši mūsu %s.</string>
+  <string name="byRegisteringYouAgreeToBeBoundByOur">Reģistrējoties, jums jāpiekrīt saistībām atbilstoši mūsu %s.</string>
   <string name="networkLagBetweenYouAndLidraughts">Tīkla aizture starp tevi un Lidraughts</string>
   <string name="timeToProcessAMoveOnLidraughtsServer">Gājiena apstrādei nepieciešamais laiks Lidraughts serverī</string>
   <string name="downloadAnnotated">Lejupielādēt anotētu</string>

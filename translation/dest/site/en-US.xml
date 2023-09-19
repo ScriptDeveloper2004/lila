@@ -31,7 +31,7 @@
   <string name="variantEnding">Variant ending</string>
   <string name="important">Important</string>
   <string name="yourQuestionMayHaveBeenAnswered">Your question may already have an answer %1$s</string>
-  <string name="inTheFAQ">in the F.A.Q.</string>
+  <string name="inTheFAQ">in the FAQ</string>
   <string name="toReportSomeoneForCheatingOrBadBehavior">To report a user for cheating or bad behavior, %1$s</string>
   <string name="useTheReportForm">use the report form</string>
   <string name="toRequestSupport">To request support, %1$s</string>
@@ -357,7 +357,7 @@
   <string name="yourTopWeeklyPerfRatingIsTooHigh">Your top weekly %1$s rating (%2$s) is too high</string>
   <string name="yourPerfRatingIsTooLow">Your %1$s rating (%2$s) is too low</string>
   <string name="ratedMoreThanInPerf">Rated ≥ %1$s in %2$s</string>
-  <string name="ratedLessThanInPerf">Rated ≤ %1$s in %2$s</string>
+  <string name="ratedLessThanInPerf">Rated ≤ %1$s in %2$s for the last week</string>
   <string name="mustBeInTeam">Must be in team %s</string>
   <string name="youAreNotInTeam">You are not in the team %s</string>
   <string name="backToGame">Back to game</string>
@@ -426,13 +426,13 @@ a computer analysis, a game chat and a shareable URL.</string>
   <string name="standing">Standing</string>
   <string name="createANewTournament">Create a new tournament</string>
   <string name="tournamentCalendar">Tournament calendar</string>
-  <string name="conditionOfEntry">Condition of entry:</string>
+  <string name="conditionOfEntry">Entry requirements:</string>
   <string name="advancedSettings">Advanced settings</string>
   <string name="safeTournamentName">Pick a very safe name for the tournament.</string>
   <string name="inappropriateNameWarning">Anything even slightly inappropriate could get your account closed.</string>
   <string name="emptyTournamentName">Leave empty to name the tournament after a random Grandmaster.</string>
   <string name="recommendNotTouching">We recommend not touching these.</string>
-  <string name="fewerPlayers">If you set conditions of entry, your tournament will have fewer players.</string>
+  <string name="fewerPlayers">If you set entry requirements, your tournament will have fewer players.</string>
   <string name="showAdvancedSettings">Show advanced settings</string>
   <string name="makePrivateTournament">Make the tournament private, and restrict access with a password</string>
   <string name="join">Join</string>
@@ -472,7 +472,7 @@ a computer analysis, a game chat and a shareable URL.</string>
   <string name="gameCompletionRate">Game completion rate: %s</string>
   <string name="profile">Profile</string>
   <string name="editProfile">Edit profile</string>
-  <string name="firstName">Given name</string>
+  <string name="firstName">First name</string>
   <string name="lastName">Last name</string>
   <string name="biography">Biography</string>
   <string name="country">Country</string>
@@ -718,7 +718,7 @@ a computer analysis, a game chat and a shareable URL.</string>
   <string name="weHaveSentYouAnEmailClickTheLink">We\'ve sent you an email. Click the link in the email to activate your account.</string>
   <string name="ifYouDoNotSeeTheEmailCheckOtherPlaces">If you don\'t see the email, check other places it might be, like your junk, spam, social, or other folders.</string>
   <string name="weHaveSentYouAnEmailTo">We\'ve sent an email to %s. Click the link in the email to reset your password.</string>
-  <string name="byRegisteringYouAgreeToBeBoundByOur">By registering, you agree to be bound by our %s.</string>
+  <string name="byRegisteringYouAgreeToBeBoundByOur">By registering, you agree to the %s.</string>
   <string name="networkLagBetweenYouAndLidraughts">Network lag between you and Lidraughts</string>
   <string name="timeToProcessAMoveOnLidraughtsServer">Time to process a move on Lidraughts server</string>
   <string name="downloadAnnotated">Download annotated</string>
@@ -784,7 +784,7 @@ a computer analysis, a game chat and a shareable URL.</string>
   <string name="usernameAlreadyUsed">This username is already in use, please try another one.</string>
   <string name="usernamePrefixInvalid">The username must start with a letter.</string>
   <string name="usernameSuffixInvalid">The username must end with a letter or a number.</string>
-  <string name="usernameCharsInvalid">The username must only contain letters, numbers, underscores, and hyphens.</string>
+  <string name="usernameCharsInvalid">The username must only contain letters, numbers, underscores, and hyphens. Consecutive underscores and hyphens are not allowed.</string>
   <string name="usernameUnacceptable">This username is not acceptable.</string>
   <string name="directlySupportLidraughts">Directly support Lidraughts</string>
   <string name="playDraughtsInStyle">Play draughts in style</string>

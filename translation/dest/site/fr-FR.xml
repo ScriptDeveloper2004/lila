@@ -31,7 +31,7 @@
   <string name="variantEnding">Fin par variante</string>
   <string name="important">Important</string>
   <string name="yourQuestionMayHaveBeenAnswered">Votre question a peut-être déjà une réponse %1$s</string>
-  <string name="inTheFAQ">dans la F.A.Q.</string>
+  <string name="inTheFAQ">dans la FAQ</string>
   <string name="toReportSomeoneForCheatingOrBadBehavior">Pour signaler un utilisateur pour triche ou mauvais comportement, %1$s</string>
   <string name="useTheReportForm">utilisez le formulaire de signalement</string>
   <string name="toRequestSupport">Pour demander de l\'aide, %1$s</string>

@@ -31,7 +31,7 @@
   <string name="variantEnding">Einde van de variant</string>
   <string name="important">Belangrijk</string>
   <string name="yourQuestionMayHaveBeenAnswered">Je vraag heeft mogelijk al een antwoord %1$s</string>
-  <string name="inTheFAQ">in de veelgestelde vragen</string>
+  <string name="inTheFAQ">in de FAQ</string>
   <string name="toReportSomeoneForCheatingOrBadBehavior">Om een gebruiker te rapporteren voor vals spelen of slecht gedrag, %1$s</string>
   <string name="useTheReportForm">gebruik het meldingsformulier</string>
   <string name="toRequestSupport">Om ondersteuning aan te vragen, %1$s</string>
@@ -362,7 +362,7 @@
   <string name="yourTopWeeklyPerfRatingIsTooHigh">Je beste hoogste rating deze week %1$s (%2$s) is te hoog</string>
   <string name="yourPerfRatingIsTooLow">Je rating %1$s (%2$s) is te laag</string>
   <string name="ratedMoreThanInPerf">Met rating ≥ %1$s in %2$s</string>
-  <string name="ratedLessThanInPerf">Met rating ≤ %1$s in %2$s</string>
+  <string name="ratedLessThanInPerf">Met rating ≤ %1$s in %2$s in de laatste week</string>
   <string name="mustBeInTeam">Moet lid zijn van team %s</string>
   <string name="youAreNotInTeam">Je bent geen lid van team %s</string>
   <string name="backToGame">Terug naar partij</string>
@@ -449,7 +449,7 @@ een computeranalyse, een chatbox bij de partij en een deelbare URL.</string>
   <string name="emptyTournamentName">Laat leeg om het toernooi naar een bekende dammer te vernoemen.</string>
   <string name="emptySimulName">Laat leeg om de simultaan naar een willekeurig scheikundig element te vernoemen.</string>
   <string name="recommendNotTouching">We raden aan deze niet in te stellen.</string>
-  <string name="fewerPlayers">Als je voorwaarden voor deelname instelt zal je toernooi minder deelnemers hebben.</string>
+  <string name="fewerPlayers">Als je voorwaarden voor deelname instelt, zullen er minder spelers meedoen.</string>
   <string name="showAdvancedSettings">Toon geavanceerde instellingen</string>
   <string name="makePrivateTournament">Maak het toernooi privé en beperk de toegang met een wachtwoord</string>
   <string name="join">Neem deel</string>
@@ -794,7 +794,7 @@ Een URL per regel</string>
   <string name="weHaveSentYouAnEmailClickTheLink">We hebben je een email gestuurd. Klik op de link in de email om je account te activeren.</string>
   <string name="ifYouDoNotSeeTheEmailCheckOtherPlaces">Als je de email niet ziet, kijk dan op andere plaatsen, zoals je spam of andere mappen.</string>
   <string name="weHaveSentYouAnEmailTo">We hebben een email verstuurd naar %s. Klik op de link in de email om je wachtwoord te resetten.</string>
-  <string name="byRegisteringYouAgreeToBeBoundByOur">Door je registratie ben je gebonden aan onze %s.</string>
+  <string name="byRegisteringYouAgreeToBeBoundByOur">Door te registreren ga je akkoord met onze %s.</string>
   <string name="networkLagBetweenYouAndLidraughts">Netwerkvertraging tussen jou en Lidraughts</string>
   <string name="timeToProcessAMoveOnLidraughtsServer">Tijd om een zet te verwerken op de Lidraughts server</string>
   <string name="downloadAnnotated">Download geannoteerde PDN</string>
@@ -861,7 +861,7 @@ Een URL per regel</string>
   <string name="usernameAlreadyUsed">Deze naam is al in gebruik, probeer a.u.b. een andere naam.</string>
   <string name="usernamePrefixInvalid">De gebruikersnaam moet beginnen met een letter.</string>
   <string name="usernameSuffixInvalid">De gebruikersnaam moet eindigen met een letter of een cijfer.</string>
-  <string name="usernameCharsInvalid">Ongeldige gebruikersnaam. Gelieve enkel letters, cijfers, underscores en koppeltekens te gebruiken.</string>
+  <string name="usernameCharsInvalid">De gebruikersnaam mag alleen letters, cijfers, underscores, en koppeltekens bevatten. Opeenvolgende underscores en koppeltekens zijn niet toegestaan.</string>
   <string name="usernameUnacceptable">Deze gebruikersnaam is niet acceptabel.</string>
   <string name="directlySupportLidraughts">Lidraughts direct ondersteunen</string>
   <string name="playDraughtsInStyle">Speel dammen in stijl</string>
