@@ -530,7 +530,7 @@ získáte počítačovou analýzu, chat ke hře a URL ke sdílení hry.</string>
   <string name="aboutSimul">Simultánka je boj jednoho hráče proti několika ostatním.</string>
   <string name="aboutSimulImage">Z 169 soupeřů, Sijbrands vyhrál 115, remízoval 43 a prohrál 11.</string>
   <string name="aboutSimulRealLife">Koncept je převzat z realných v akcí, kde se host pohybuje po kruhu a vždy odehraje jeden tah.</string>
-  <string name="aboutSimulRules">Když simultánka začne, každý hráč začne hrát s hostem, který dostane bílé figurky. Simultánka končí, když jsou všechny hry ukončeny.</string>
+  <string name="aboutSimulRules">Když simultánka začne, každý hráč začne hrát s hostem. Simultánka končí, když jsou všechny hry ukončeny.</string>
   <string name="aboutSimulSettings">Simultánka je vždy neformální. Je nemožné nabízet odvety, vracení tahu a přidávat čas.</string>
   <string name="create">Vytvořte</string>
   <string name="whenCreateSimul">Když vytvoříte simultánku, budete hrát proti více hráčům najednou.</string>

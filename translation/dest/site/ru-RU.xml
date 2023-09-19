@@ -755,7 +755,7 @@
   </plurals>
   <string name="tpTimeSpentPlaying">Проведённое за игрой время: %s</string>
   <string name="watchGames">Смотреть игры</string>
-  <string name="tpTimeSpentOnTV">Времени за просмотром TV: %s</string>
+  <string name="tpTimeSpentOnTV">Времени на TV: %s</string>
   <string name="watch">Просмотр</string>
   <string name="videoLibrary">Видеотека</string>
   <string name="streamersMenu">Стримеры</string>
@@ -806,7 +806,7 @@
   <string name="aboutSimul">Сеансы подразумевают сражение одного игрока с несколькими противниками одновременно.</string>
   <string name="aboutSimulImage">Из 169 игр Сейбрандс выиграл 115, сыграл вничью 43 и проиграл 11.</string>
   <string name="aboutSimulRealLife">Идея повторяет принятую в живых шашках концепцию, когда дающий сеанс одновременной игры перемещается от стола к столу, чтобы совершить один ход.</string>
-  <string name="aboutSimulRules">Когда начинается сеанс одновременной игры, каждый игрок начинает игру с сеансёром, который играет белыми. Сеанс закончится, когда все партии будут сыграны.</string>
+  <string name="aboutSimulRules">Когда начинается сеанс одновременной игры, каждый игрок начинает игру с сеансёром. Сеанс закончится, когда все партии будут сыграны.</string>
   <string name="aboutSimulSettings">Сеансы одновременной игры не предполагают партий на рейтинг. Переигровки, отмены ходов и добавки времени запрещены.</string>
   <string name="create">Создать</string>
   <string name="whenCreateSimul">Если вы создадите сеанс одновременной игры, вам придётся сыграть против нескольких игроков одновременно.</string>

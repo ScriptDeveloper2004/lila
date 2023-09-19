@@ -737,7 +737,7 @@ Uma URL por linha</string>
   <string name="aboutSimul">A simultânea envolve um único jogador contra vários oponentes ao mesmo tempo.</string>
   <string name="aboutSimulImage">Contra 169 oponentes, Sijbrands ganhou 115 jogos, empatou 43 e perdeu 11.</string>
   <string name="aboutSimulRealLife">O conceito provém de eventos reais, nos quais o simultanista se move de mesa em mesa, executando um movimento por vez.</string>
-  <string name="aboutSimulRules">Quando a simultânea começa, cada jogador começa sua partida contra o simultanista, o qual sempre tem as brancas. A simultânea termina quando todas as partidas são finalizadas.</string>
+  <string name="aboutSimulRules">Quando a simultânea começa, cada jogador começa sua partida contra o simultanista. A simultânea termina quando todas as partidas são finalizadas.</string>
   <string name="aboutSimulSettings">As simultâneas sempre são partidas amigáveis. Revanches, voltar jogadas e tempo adicional estão desativados.</string>
   <string name="create">Criar</string>
   <string name="whenCreateSimul">Quando cria uma simultânea, você joga com vários adversários ao mesmo tempo.</string>

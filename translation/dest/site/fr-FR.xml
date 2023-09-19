@@ -736,7 +736,7 @@ Une URL par ligne</string>
   <string name="aboutSimul">Une simultanée est une rencontre entre un joueur et plusieurs adversaires chacun sur un damier séparé.</string>
   <string name="aboutSimulImage">Sur 169 adversaires, Sijbrands a gagné 115 parties, fait 43 nulles et perdu 11 partie.</string>
   <string name="aboutSimulRealLife">Le concept est inspiré de la vie réelle, où le joueur passe d\'un damier à l\'autre pour jouer chaque coup.</string>
-  <string name="aboutSimulRules">Quand la simultanée commence, chaque joueur débute une partie contre l\'hôte, qui joue avec les Blancs. La simultanée prend fin lorsque toutes les parties sont terminées.</string>
+  <string name="aboutSimulRules">Quand la simultanée commence, chaque joueur débute une partie contre l\'hôte. La simultanée prend fin lorsque toutes les parties sont terminées.</string>
   <string name="aboutSimulSettings">Les parties simultanées sont toujours amicales. Les revanches, l\'annulation de coups et la possibilité de donner du temps sont désactivées.</string>
   <string name="create">Créer</string>
   <string name="whenCreateSimul">Lorsque vous créez une simultanée, vous affrontez plusieurs adversaires à la fois.</string>

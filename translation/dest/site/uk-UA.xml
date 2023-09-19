@@ -620,7 +620,7 @@
   </plurals>
   <string name="tpTimeSpentPlaying">Проведено часу у грі: %s</string>
   <string name="watchGames">Перегляд партій</string>
-  <string name="tpTimeSpentOnTV">Час на ТБ: %s</string>
+  <string name="tpTimeSpentOnTV">Час на TV: %s</string>
   <string name="watch">Перегляд</string>
   <string name="videoLibrary">Відеоархів</string>
   <string name="streamersMenu">Стрімери</string>
@@ -645,7 +645,7 @@
   <string name="whenCreateSimul">Коли ви створюєте сеанс, ви збираєтесь одночасно грати проти кількох суперників.</string>
   <string name="simulClockHint">Налаштування Фішера. Більша кількість учасників – більше часу для сеансера.</string>
   <string name="simulAddExtraTime">Ви можете додати собі час, щоб упоратися з сеансом.</string>
-  <string name="simulHostExtraTime">Додатковий час для сеансера</string>
+  <string name="simulHostExtraTime">Додатковий час організатора</string>
   <string name="everyone">Кожний</string>
   <string name="lidraughtsTournaments">Турніри Lidraughts</string>
   <string name="tournamentFAQ">FAQ сторінки турнірів</string>
@@ -680,7 +680,7 @@
   <string name="downloadImported">Завантажити імпортоване</string>
   <string name="printFriendlyPDF">PDF-версія для друку</string>
   <string name="crosstable">Рахунок</string>
-  <string name="youCanAlsoScrollOverTheBoardToMoveInTheGame">Також Ви можете використовувати коліщатко миші над дошкою для зміни ходів у грі.</string>
+  <string name="youCanAlsoScrollOverTheBoardToMoveInTheGame">Прокручуйте коліщатко миші над шахівницею для перегляду ходів у грі.</string>
   <string name="analysisShapesHowTo">Натисніть shift+лкм або пкм, щоб намалювати кола та стрілки на дошці.</string>
   <string name="letOtherPlayersMessageYou">Дозволити іншим гравцям надсилати вам повідомлення</string>
   <string name="withNobody">Ні з ким</string>

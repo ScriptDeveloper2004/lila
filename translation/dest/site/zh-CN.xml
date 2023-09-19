@@ -652,7 +652,7 @@
   </plurals>
   <string name="tpTimeSpentPlaying">下棋时间：%s</string>
   <string name="watchGames">观看对局</string>
-  <string name="tpTimeSpentOnTV">观看直播：%s</string>
+  <string name="tpTimeSpentOnTV">在 Lidraughts TV 出现的时长：%s</string>
   <string name="watch">观看</string>
   <string name="videoLibrary">视频库</string>
   <string name="streamersMenu">主播</string>
@@ -703,7 +703,7 @@
   <string name="aboutSimul">车轮赛涉及到一个人（擂主）同时和几位棋手下棋。</string>
   <string name="aboutSimulImage">在169个对手中，荷兰著名国际跳棋世界冠军Ton Sijbrands曾经贏了115局，和了43局，输了11局。</string>
   <string name="aboutSimulRealLife">这个概念来自线下比赛。在线下这涉及到擂主在棋桌与棋桌之间來回穿梭走棋。</string>
-  <string name="aboutSimulRules">当车轮赛开始时，每位棋手都与擂主同时开始下棋，而擂主使用白棋。当所有的对局都结束时，车轮赛就结束了。</string>
+  <string name="aboutSimulRules">当车轮赛开始时，每位棋手都与擂主同时开始下棋。当所有的对局都结束时，车轮赛就结束了。</string>
   <string name="aboutSimulSettings">车轮赛总是无积分的。重赛、悔棋和\"加时\"功能被禁用。</string>
   <string name="create">创建</string>
   <string name="whenCreateSimul">当您创建一个车轮赛时，您要同时与多位棋手一起下棋。</string>

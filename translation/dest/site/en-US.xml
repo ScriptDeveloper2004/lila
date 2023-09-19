@@ -654,7 +654,7 @@ a computer analysis, a game chat and a shareable URL.</string>
   </plurals>
   <string name="tpTimeSpentPlaying">Time spent playing: %s</string>
   <string name="watchGames">Watch games</string>
-  <string name="tpTimeSpentOnTV">Time on TV: %s</string>
+  <string name="tpTimeSpentOnTV">Time featured on TV: %s</string>
   <string name="watch">Watch</string>
   <string name="videoLibrary">Video library</string>
   <string name="streamersMenu">Streamers</string>
@@ -680,14 +680,14 @@ a computer analysis, a game chat and a shareable URL.</string>
   <string name="aboutSimul">Simuls involve a single player facing several players at once.</string>
   <string name="aboutSimulImage">Out of 169 opponents, Sijbrands won 115 games, drew 43 and lost 11.</string>
   <string name="aboutSimulRealLife">The concept is taken from real world events. In real life, this involves the simul host moving from table to table to play a single move.</string>
-  <string name="aboutSimulRules">When the simul starts, every player starts a game with the host, who gets to play the white pieces. The simul ends when all games are complete.</string>
+  <string name="aboutSimulRules">When the simul starts, every player starts a game with the host. The simul ends when all games are complete.</string>
   <string name="aboutSimulSettings">Simuls are always casual. Rematches, takebacks and adding time are disabled.</string>
   <string name="create">Create</string>
   <string name="whenCreateSimul">When you create a Simul, you get to play several players at once.</string>
   <string name="simulVariantsHint">If you select several variants, each player gets to choose which one to play.</string>
   <string name="simulClockHint">Fischer Clock setup. The more players you take on, the more time you may need.</string>
-  <string name="simulAddExtraTime">You may add extra time to your clock to help cope with the simul.</string>
-  <string name="simulHostExtraTime">Host extra clock time</string>
+  <string name="simulAddExtraTime">You may add extra initial time to your clock to help cope with the simul.</string>
+  <string name="simulHostExtraTime">Host extra initial clock time</string>
   <string name="simulHostColor">Host color for each game</string>
   <string name="lidraughtsTournaments">Lidraughts tournaments</string>
   <string name="tournamentFAQ">Arena tournament FAQ</string>
@@ -726,7 +726,7 @@ a computer analysis, a game chat and a shareable URL.</string>
   <string name="downloadImported">Download imported</string>
   <string name="printFriendlyPDF">Print-friendly PDF</string>
   <string name="crosstable">Crosstable</string>
-  <string name="youCanAlsoScrollOverTheBoardToMoveInTheGame">You can also scroll over the board to move in the game.</string>
+  <string name="youCanAlsoScrollOverTheBoardToMoveInTheGame">Scroll over the board to move in the game.</string>
   <string name="analysisShapesHowTo">Press shift+click or right-click to draw circles and arrows on the board.</string>
   <string name="letOtherPlayersMessageYou">Let other players message you</string>
   <string name="shareYourInsightsData">Share your draughts insights data</string>

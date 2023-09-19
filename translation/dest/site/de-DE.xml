@@ -733,7 +733,7 @@ Eine URL pro Zeile</string>
   <string name="aboutSimul">Beim Simultan spielt ein Spieler gleichzeitig gegen mehrere Gegner.</string>
   <string name="aboutSimulImage">Gegen 169 Gegner gewann Sijbrands 115 Partien, remisierte 43 und verlor 11.</string>
   <string name="aboutSimulRealLife">Das Konzept ähnelt dem bei echten Simultanveranstaltungen, wo sich der Alleinspieler von Brett zu Brett bewegt.</string>
-  <string name="aboutSimulRules">Beim Start des Simultan beginnt der Alleinspieler mit Weiß und spielt so lange mit wechselnden Gegnern, bis alle Partien beendet sind.</string>
+  <string name="aboutSimulRules">Beim Start des Simultan, spielt der Alleinspieler so lange mit wechselnden Gegnern, bis alle Partien beendet sind.</string>
   <string name="aboutSimulSettings">Simultane sind immer ungewertet. Revanchen, Zugrücknahme und zusätzliche Zeit sind deaktiviert.</string>
   <string name="create">Erstellen</string>
   <string name="whenCreateSimul">Wenn du ein Simultan erstellst, spielst du mit mehreren Gegnern gleichzeitig.</string>

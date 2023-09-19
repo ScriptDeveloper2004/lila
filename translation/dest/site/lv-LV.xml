@@ -709,14 +709,14 @@ Vienā līnijā  - tikai vienu norādi.</string>
   <string name="aboutSimul">Simultānturnīri notiek, vienam spēlētājam spēlējot ar vairākiem citiem vienlaicīgi.</string>
   <string name="aboutSimulImage">Spēlējot pret 169 pretiniekiem, Sijbrands uzvarēja 115, nospēlēja neizšķirti 43 un zaudēja 11 partijās.</string>
   <string name="aboutSimulRealLife">Princips ir aizgūts no reāliem pasākumiem. Reālajā dzīvē simultānturnīra vadītājs staigā no galdiņa pie galdiņa un veic pa vienam gājienam.</string>
-  <string name="aboutSimulRules">Simultānturnīram sākoties, katrs spēlētājs sāk spēli ar simultānistu, kurš spēlē ar baltajiem. Turnīrs beidzas, kad visas spēles ir beigušās.</string>
+  <string name="aboutSimulRules">Simultānseansam sākoties, katrs spēlētājs sāk spēli ar vadītāju. Seanss beidzas, kad visas spēles ir beigušās.</string>
   <string name="aboutSimulSettings">Simultānturnīri vienmēr ir gadījuma rakstura. Revanši, gājiena atcelšana un \"vairāklaika\" iespējas ir atspējotas.</string>
   <string name="create">Izveidot</string>
   <string name="whenCreateSimul">Izveidojot simultānturnīru, tu spēlēsi viens pats pret vairākiem pretiniekiem vienlaikus.</string>
   <string name="simulVariantsHint">Ja tu izvēlies variantus, tad katrs spēlētājs var izvēlēties, kuru spēlēt.</string>
   <string name="simulClockHint">Fišera pulksteņa uzstādīšana. Jo vairāk spēlētāji ir pretiniekos, jo vairāk laika tev varētu vajadzēt.</string>
-  <string name="simulAddExtraTime">Tu vari pievienot papildlaiku uz sava pulksteņa, lai pietiktu laika visam simultānturnīram.</string>
-  <string name="simulHostExtraTime">Rīkotāja papildus pulksteņa laiks</string>
+  <string name="simulAddExtraTime">Varat pievienot papildus laiku savam pulkstenim, lai vieglāk tiktu galā ar simultānseansu.</string>
+  <string name="simulHostExtraTime">Papildu laiks vadītājam</string>
   <string name="simulHostColor">Rīkotāja kauliņu krāsa katrā spēlē</string>
   <string name="simulChatRestrictionsHint">Tērzētavas ierobežojumi darbojas tikai simultānturnīra norises laikā.</string>
   <string name="simulTargetPercentageHint">Pastāv iespēja norādīt uzvaru īpatsvaru, ko izaicinātājam jāsasniedz un ko aprēķina pēc formulas (uzvaras + 0.5 * neizšķirti) / (gājienu skaits). Ieraksti īpatsvaru procentos no 50 līdz 100, vai atstāj tukšu, ja neizvirzi tādu mērķi.</string>
@@ -766,7 +766,7 @@ Vienā līnijā  - tikai vienu norādi.</string>
   <string name="downloadImported">Lejupielādēt importēto</string>
   <string name="printFriendlyPDF">Drukājams PDF</string>
   <string name="crosstable">Rezultātu tabula</string>
-  <string name="youCanAlsoScrollOverTheBoardToMoveInTheGame">Vari arī izripināt gājienus uz spēles laukuma.</string>
+  <string name="youCanAlsoScrollOverTheBoardToMoveInTheGame">Varat arī ritināt virs galdiņa, lai pārvietotos spēlē.</string>
   <string name="analysisShapesHowTo">Nospied uz dēlīša lauciņa “Shift” kopā ar peles kreiso vai labo taustiņu, lai zīmētu riņķus un bultas.</string>
   <string name="letOtherPlayersMessageYou">Atļaut, lai citi spēlētāji sūta tev ziņas</string>
   <string name="shareYourInsightsData">Dalīties ar saviem insights datiem</string>
