@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="arenaTournaments">Arena tournaments</string>
   <string name="isItRated">Is it rated?</string>
@@ -44,6 +44,10 @@ Play fast and return to the lobby to play more games and win more points.</strin
   <string name="variant">Variant</string>
   <string name="minimumGameLength">Minimum game length</string>
   <string name="history">Arena History</string>
+  <plurals name="viewAllXTeams" comment="viewAllXTeams [one] [other]&#10;&#10;%s is the number of teams that can be viewed">
+    <item quantity="one">View the team</item>
+    <item quantity="other">View all %s teams</item>
+  </plurals>
   <string name="newTeamBattle">New Team Battle</string>
   <string name="customStartDate">Custom start date</string>
   <string name="customStartDateHelp">In your own local timezone. This overrides the \"Time before tournament starts\" setting</string>
@@ -57,8 +61,4 @@ Play fast and return to the lobby to play more games and win more points.</strin
   <string name="averagePerformance">Average performance</string>
   <string name="averageScore">Average score</string>
   <string name="myTournaments">My tournaments</string>
-  <plurals name="viewAllXTeams" comment="viewAllXTeams [one] [other]&#xA;&#xA;%s is the number of teams that can be viewed">
-    <item quantity="one">View the team</item>
-    <item quantity="other">View all %s teams</item>
-  </plurals>
 </resources>

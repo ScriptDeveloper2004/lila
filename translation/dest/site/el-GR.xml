@@ -372,7 +372,6 @@
   <string name="xStartedStreaming">%s ξεκίνησε να μεταδίδει</string>
   <string name="averageElo">Μέσος όρος βαθμολογίας</string>
   <string name="teamPage">Σελίδα ομάδας</string>
-  <string name="viewAllTeams">Δείτε όλες τις ομάδες</string>
   <string name="pickYourTeam">Διαλέξτε την ομάδα σας</string>
   <string name="whichTeamWillYouRepresent">Ποια ομάδα θα αντιπροσωπεύσετε σε αυτή τη μάχη;</string>
   <string name="youMustJoinOneOfTheseTeams">Πρέπει να μπείτε σε μία από αυτές τις ομάδες για να συμμετάσχετε!</string>
@@ -485,11 +484,10 @@
   <string name="savePosition">Αποθηκεύστε τη θέση</string>
   <string name="loadPosition">Φορτώστε θέση</string>
   <string name="isPrivate">Ιδιωτικό</string>
-  <string name="noBerserkAllowed">Δεν επιτρέπεται το berserk</string>
   <string name="editTournament">Επεξεργασία πρωταθλήματος</string>
-  <string name="tournamentDescription">Περιγραφή τουρνουά</string>
-  <string name="tournamentDescriptionHelp">Θέλετε να πείτε κάτι ιδιαίτερο στους παίκτες; Προσπαθήστε να κρατήσετε το μήνυμά σας σύντομο. Μπορείτε να χρησιμοποιείτε συνδέσμους σε Markdown: [text](https://url)</string>
-  <string name="cancelTheTournament">Ακύρωση τουρνουά</string>
+  <string name="tournDescription">Περιγραφή τουρνουά</string>
+  <string name="tournDescriptionHelp">Θέλετε να πείτε κάτι ιδιαίτερο στους παίκτες; Προσπαθήστε να κρατήσετε το μήνυμά σας σύντομο. Μπορείτε να χρησιμοποιείτε συνδέσμους σε Markdown: [text](https://url)</string>
+  <string name="cancelTournament">Ακύρωση τουρνουά</string>
   <string name="reportXToModerators">Αναφέρετε τον %s στο προσωπικό</string>
   <string name="profileCompletion">Ολοκλήρωση προφίλ: %s</string>
   <string name="xRating">Βαθμολογία %s</string>

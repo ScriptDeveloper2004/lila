@@ -348,7 +348,6 @@
   <string name="xStartedStreaming">%s 开始直播</string>
   <string name="averageElo">平均积分</string>
   <string name="teamPage">团队页面</string>
-  <string name="viewAllTeams">查看所有团队</string>
   <string name="pickYourTeam">选择您的团队</string>
   <string name="whichTeamWillYouRepresent">你将代表哪个团队出战？</string>
   <string name="youMustJoinOneOfTheseTeams">您必须加入这些团队之一才能参与！</string>
@@ -457,9 +456,9 @@
   <string name="loadPosition">载入局面</string>
   <string name="isPrivate">私人锦标赛</string>
   <string name="editTournament">编辑锦标赛</string>
-  <string name="tournamentDescription">锦标赛描述</string>
-  <string name="tournamentDescriptionHelp">您有其它信息要告知参赛者？请尽量保持此信息简明扼要。可以使用标记语言链接：[text](https://url)</string>
-  <string name="cancelTheTournament">取消锦标赛</string>
+  <string name="tournDescription">锦标赛描述</string>
+  <string name="tournDescriptionHelp">您有其它信息要告知参赛者？请尽量保持此信息简明扼要。可以使用标记语言链接：[text](https://url)</string>
+  <string name="cancelTournament">取消锦标赛</string>
   <string name="reportXToModerators">举报%s</string>
   <string name="profileCompletion">资料完善: %s</string>
   <string name="xRating">%s分</string>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="arenaTournaments">Arena-Turniere</string>
   <string name="isItRated">Sind die Partien gewertet?</string>
@@ -46,6 +46,10 @@ Laufende Spiele müssen beendet werden, zählen aber nicht mehr für das Turnier
   <string name="variant">Variante</string>
   <string name="minimumGameLength">Minimale Partielänge</string>
   <string name="history">Arena-Historie</string>
+  <plurals name="viewAllXTeams" comment="viewAllXTeams [one] [other]&#10;&#10;%s is the number of teams that can be viewed">
+    <item quantity="one">Das Team ansehen</item>
+    <item quantity="other">Alle %s Teams ansehen</item>
+  </plurals>
   <string name="newTeamBattle">Neuer Teamkampf</string>
   <string name="customStartDate">Benutzerdefiniertes Startdatum</string>
   <string name="customStartDateHelp">In deiner eigenen, lokalen Zeitzone. Dies wird die Einstellung \"Zeit bevor das Turnier beginnt\" überschreiben</string>
@@ -59,8 +63,4 @@ Laufende Spiele müssen beendet werden, zählen aber nicht mehr für das Turnier
   <string name="averagePerformance">Durchschnittliche Leistung</string>
   <string name="averageScore">Durchschnittliche Punktzahl</string>
   <string name="myTournaments">Meine Turniere</string>
-  <plurals name="viewAllXTeams" comment="viewAllXTeams [one] [other]&#xA;&#xA;%s is the number of teams that can be viewed">
-    <item quantity="one">Das Team ansehen</item>
-    <item quantity="other">Alle %s Teams ansehen</item>
-  </plurals>
 </resources>

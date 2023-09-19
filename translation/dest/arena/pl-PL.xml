@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="arenaTournaments">Arena turniejowa</string>
   <string name="isItRated">Czy partie na arenie są rankingowe?</string>
@@ -44,6 +44,12 @@ Graj szybko i wracaj do poczekalni aby rozegrać jak najwięcej partii i zdobyć
   <string name="variant">Wariant</string>
   <string name="minimumGameLength">Minimalna liczba posunięć</string>
   <string name="history">Historyczne areny</string>
+  <plurals name="viewAllXTeams" comment="viewAllXTeams [one] [other]&#10;&#10;%s is the number of teams that can be viewed">
+    <item quantity="one">Zobacz zespół</item>
+    <item quantity="few">Zobacz wszystkie %s zespoły</item>
+    <item quantity="many">Zobacz wszystkie %s zespołów</item>
+    <item quantity="other">Zobacz wszystkie %s zespołów</item>
+  </plurals>
   <string name="newTeamBattle">Nowa bitwa klubów</string>
   <string name="customStartDate">Niestandardowa data rozpoczęcia</string>
   <string name="customStartDateHelp">W Twojej lokalnej strefie czasowej. Nadpisuje ustawienie \"Czas przed rozpoczęciem turnieju\"</string>
@@ -57,10 +63,4 @@ Graj szybko i wracaj do poczekalni aby rozegrać jak najwięcej partii i zdobyć
   <string name="averagePerformance">Średnia skuteczność</string>
   <string name="averageScore">Średni wynik</string>
   <string name="myTournaments">Moje turnieje</string>
-  <plurals name="viewAllXTeams" comment="viewAllXTeams [one] [other]&#xA;&#xA;%s is the number of teams that can be viewed">
-    <item quantity="one">Zobacz zespół</item>
-    <item quantity="few">Zobacz wszystkie %s zespoły</item>
-    <item quantity="many">Zobacz wszystkie %s zespołów</item>
-    <item quantity="other">Zobacz wszystkie %s zespołów</item>
-  </plurals>
 </resources>

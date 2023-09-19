@@ -367,7 +367,6 @@
   <string name="tournament">Турнир</string>
   <string name="tournaments">Турниры</string>
   <string name="xTournaments">Турниров: %s</string>
-  <string name="myTournaments">Мои турниры</string>
   <string name="createdTournaments">Создано</string>
   <string name="recentlyPlayed">Недавние</string>
   <string name="bestResults">Лучшие результаты</string>
@@ -421,7 +420,6 @@
   <string name="xStartedStreaming">%s запустил стрим</string>
   <string name="averageElo">Средний рейтинг участников</string>
   <string name="teamPage">Страница клуба</string>
-  <string name="viewAllTeams">Посмотреть все клубы</string>
   <string name="pickYourTeam">Выберите команду</string>
   <string name="whichTeamWillYouRepresent">Какую команду вы будете представлять в этой битве?</string>
   <string name="youMustJoinOneOfTheseTeams">Вы должны присоединиться к одной из этих команд, чтобы участвовать!</string>
@@ -544,11 +542,10 @@
   <string name="savePosition">Сохранить позицию</string>
   <string name="loadPosition">Загрузить позицию</string>
   <string name="isPrivate">Закрытый</string>
-  <string name="noBerserkAllowed">Берсерк не разрешён</string>
   <string name="editTournament">Править турнир</string>
-  <string name="tournamentDescription">Описание турнира</string>
-  <string name="tournamentDescriptionHelp">Вы хотели бы сказать участникам что-нибудь особенное? Постарайтесь сделать это кратко. Доступны ссылки [text](https://url)</string>
-  <string name="cancelTheTournament">Отменить турнир</string>
+  <string name="tournDescription">Описание турнира</string>
+  <string name="tournDescriptionHelp">Вы хотели бы сказать участникам что-нибудь особенное? Постарайтесь сделать это кратко. Доступны ссылки [text](https://url)</string>
+  <string name="cancelTournament">Отменить турнир</string>
   <string name="reportXToModerators">Сообщить о %s модераторам</string>
   <string name="profileCompletion">Профиль заполнен на %s</string>
   <string name="xRating">Рейтинг %s</string>

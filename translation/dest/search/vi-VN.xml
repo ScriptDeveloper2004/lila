@@ -2,6 +2,15 @@
 <resources>
   <string name="search">Tìm kiếm</string>
   <string name="advancedSearch">Tìm kiếm nâng cao</string>
+  <plurals name="searchInXGames">
+    <item quantity="other">Tìm trong %s ván cờ đam</item>
+  </plurals>
+  <plurals name="searchInXGamesDescription">
+    <item quantity="other">Tìm kiếm trong %s ván cờ đam bằng tiêu chí nâng cao</item>
+  </plurals>
+  <plurals name="xGamesFound">
+    <item quantity="other">Đã tìm được %s ván cờ</item>
+  </plurals>
   <string name="searchPlayersExplanation">(Các) Tên kì thủ bạn muốn tìm kiếm</string>
   <string name="opponentName">Tên đối thủ</string>
   <string name="loser">Người thua cuộc</string>
@@ -11,7 +20,7 @@
   <string name="aiLevel">Trình độ máy tính</string>
   <string name="source">Nguồn</string>
   <string name="numberOfTurns">Số nước đi</string>
-  <string name="numberOfTurnsExplanation">Số lượt chơi (cả hai người chơi đều di chuyển)</string>
+  <string name="numberOfTurnsExplanation">Số lượt chơi đầy đủ (cả hai người chơi đều di chuyển)</string>
   <string name="result">Kết quả</string>
   <string name="winnerColor">Màu quân người thắng cuộc</string>
   <string name="date">Ngày</string>

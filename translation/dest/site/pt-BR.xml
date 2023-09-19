@@ -329,7 +329,6 @@
   <string name="tournament">Torneio</string>
   <string name="tournaments">Torneios</string>
   <string name="xTournaments">%s torneios</string>
-  <string name="myTournaments">Meus torneios</string>
   <string name="createdTournaments">Criados</string>
   <string name="recentlyPlayed">Jogados recentemente</string>
   <string name="bestResults">Melhores resultados</string>
@@ -372,10 +371,7 @@
   <string name="xCreatedTeamY">%1$s criou a equipe %2$s</string>
   <string name="xStartedStreaming">%s começou a transmitir</string>
   <string name="averageElo">Média de classificação</string>
-  <string name="averagePerformance">Desempenho médio</string>
-  <string name="averageScore">Pontuação média</string>
   <string name="teamPage">Página de equipes</string>
-  <string name="viewAllTeams">Ver todas equipes</string>
   <string name="pickYourTeam">Escolha a sua equipe</string>
   <string name="whichTeamWillYouRepresent">Qual equipe você representará nesta batalha?</string>
   <string name="youMustJoinOneOfTheseTeams">Você deve se juntar a uma destas equipes para participar!</string>
@@ -488,11 +484,10 @@ consultar uma análise de computador, utilizar o chat e compartilhar um link.</s
   <string name="savePosition">Guardar posição</string>
   <string name="loadPosition">Carregar posição</string>
   <string name="isPrivate">Privado</string>
-  <string name="noBerserkAllowed">Berserk não permitido</string>
   <string name="editTournament">Editar o torneio</string>
-  <string name="tournamentDescription">Descrição do torneio</string>
-  <string name="tournamentDescriptionHelp">Algo especial que você deseja dizer aos participantes? Tente ser breve. Os links em Markdown estão disponíveis: [text](https://url)</string>
-  <string name="cancelTheTournament">Cancelar o torneio</string>
+  <string name="tournDescription">Descrição do torneio</string>
+  <string name="tournDescriptionHelp">Algo especial que você deseja dizer aos participantes? Tente ser breve. Os links em Markdown estão disponíveis: [text](https://url)</string>
+  <string name="cancelTournament">Cancelar o torneio</string>
   <string name="reportXToModerators">Reportar %s aos moderadores</string>
   <string name="profileCompletion">Conclusão do perfil: %s</string>
   <string name="xRating">Classificação %s</string>

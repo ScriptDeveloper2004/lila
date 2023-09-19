@@ -328,7 +328,7 @@
   <string name="bookmarkThisGame">Als Lesezeichen speichern</string>
   <string name="tournament">Turnier</string>
   <string name="tournaments">Turniere</string>
-  <string name="xTournaments">%s Turnier</string>
+  <string name="xTournaments">%s Turniere</string>
   <string name="createdTournaments">Erstellt</string>
   <string name="recentlyPlayed">Zuletzt gespielt</string>
   <string name="bestResults">Beste Ergebnisse</string>
@@ -371,10 +371,7 @@
   <string name="xCreatedTeamY">%1$s hat das Team %2$s gegründet</string>
   <string name="xStartedStreaming">%s hat einen Stream gestartet</string>
   <string name="averageElo">Durchschnittswertung</string>
-  <string name="averagePerformance">Durchschnittliche Leistung</string>
-  <string name="averageScore">Durchschnittliches Ergebnis</string>
   <string name="teamPage">Teamseite</string>
-  <string name="viewAllTeams">Zeig alle Teams</string>
   <string name="pickYourTeam">Wähle dein Team</string>
   <string name="whichTeamWillYouRepresent">Welches Team wirst du im Kampf repräsentieren?</string>
   <string name="youMustJoinOneOfTheseTeams">Du musst einem dieser Teams beitreten um mitzumachen!</string>
@@ -483,11 +480,10 @@ eine Computeranalyse, einen Spielchat und eine teilbare URL.</string>
   <string name="savePosition">Stellung speichern</string>
   <string name="loadPosition">Stellung laden</string>
   <string name="isPrivate">Privat</string>
-  <string name="noBerserkAllowed">kein Berserk erlaubt</string>
   <string name="editTournament">Turnier bearbeiten</string>
-  <string name="tournamentDescription">Turnier Beschreibung</string>
-  <string name="tournamentDescriptionHelp">Möchtest du den Teilnehmen etwas bestimmtes mitteilen? Versuch dich kurz zu fassen. Markdown-Links können verwendet werden: [Text](https://url/)</string>
-  <string name="cancelTheTournament">Turnier abbrechen</string>
+  <string name="tournDescription">Turnier Beschreibung</string>
+  <string name="tournDescriptionHelp">Möchtest du den Teilnehmen etwas bestimmtes mitteilen? Versuch dich kurz zu fassen. Markdown-Links können verwendet werden: [Text](https://url/)</string>
+  <string name="cancelTournament">Turnier abbrechen</string>
   <string name="reportXToModerators">Melde %s den Moderatoren</string>
   <string name="profileCompletion">Profil vollständig zu %s</string>
   <string name="xRating">%s Wertungszahl</string>

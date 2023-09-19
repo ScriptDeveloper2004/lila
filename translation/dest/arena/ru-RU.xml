@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="arenaTournaments">Турниры «Арена»</string>
   <string name="isItRated">Что будет с рейтингом?</string>
@@ -38,6 +38,12 @@
   <string name="variant">Вариант</string>
   <string name="minimumGameLength">Минимальное число ходов</string>
   <string name="history">История «Арены»</string>
+  <plurals name="viewAllXTeams" comment="viewAllXTeams [one] [other]&#10;&#10;%s is the number of teams that can be viewed">
+    <item quantity="one">Посмотреть клуб</item>
+    <item quantity="few">Посмотреть все %s клуба</item>
+    <item quantity="many">Посмотреть все %s клубов</item>
+    <item quantity="other">Посмотреть все %s клубов</item>
+  </plurals>
   <string name="newTeamBattle">Новый межклубный турнир</string>
   <string name="customStartDate">Особая дата начала</string>
   <string name="customStartDateHelp">В вашем часовом поясе. Это переопределяет настройку «Время до начала турнира»</string>
@@ -51,10 +57,4 @@
   <string name="averagePerformance">Средняя результативность</string>
   <string name="averageScore">Средний балл</string>
   <string name="myTournaments">Мои турниры</string>
-  <plurals name="viewAllXTeams" comment="viewAllXTeams [one] [other]&#xA;&#xA;%s is the number of teams that can be viewed">
-    <item quantity="one">Посмотреть клуб</item>
-    <item quantity="few">Посмотреть все %s клуба</item>
-    <item quantity="many">Посмотреть все %s клубов</item>
-    <item quantity="other">Посмотреть все %s клубов</item>
-  </plurals>
 </resources>

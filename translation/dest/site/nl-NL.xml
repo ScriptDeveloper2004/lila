@@ -329,7 +329,6 @@
   <string name="tournament">Toernooi</string>
   <string name="tournaments">Toernooien</string>
   <string name="xTournaments">%s toernooien</string>
-  <string name="myTournaments">Mijn toernooien</string>
   <string name="createdTournaments">Zelf aangemaakt</string>
   <string name="recentlyPlayed">Onlangs gespeeld</string>
   <string name="bestResults">Beste resultaten</string>
@@ -372,10 +371,7 @@
   <string name="xCreatedTeamY">%1$s heeft team %2$s opgericht</string>
   <string name="xStartedStreaming">%s is begonnen met streamen</string>
   <string name="averageElo">Gemiddelde rating</string>
-  <string name="averagePerformance">Gemiddelde prestatie</string>
-  <string name="averageScore">Gemiddelde score</string>
   <string name="teamPage">Team pagina</string>
-  <string name="viewAllTeams">Bekijk alle teams</string>
   <string name="pickYourTeam">Kies je team</string>
   <string name="whichTeamWillYouRepresent">Met welk team wil je deelnemen aan deze battle?</string>
   <string name="youMustJoinOneOfTheseTeams">Je moet je bij een van deze teams aansluiten om mee te doen!</string>
@@ -488,11 +484,10 @@ een computeranalyse, een chatbox bij de partij en een deelbare URL.</string>
   <string name="savePosition">Sla de stand op</string>
   <string name="loadPosition">Laad een stand</string>
   <string name="isPrivate">Privé</string>
-  <string name="noBerserkAllowed">Berserk niet toegestaan</string>
   <string name="editTournament">Toernooi bewerken</string>
-  <string name="tournamentDescription">Toernooi omschrijving</string>
-  <string name="tournamentDescriptionHelp">Iets bijzonders dat je aan de deelnemers kwijt wil? Probeer het kort te houden. Je kunt Markdown links gebruiken: [tekst](https://url)</string>
-  <string name="cancelTheTournament">Toernooi afgelasten</string>
+  <string name="tournDescription">Toernooi omschrijving</string>
+  <string name="tournDescriptionHelp">Iets bijzonders dat je aan de deelnemers kwijt wil? Probeer het kort te houden. Je kunt Markdown links gebruiken: [tekst](https://url)</string>
+  <string name="cancelTournament">Toernooi afgelasten</string>
   <string name="reportXToModerators">Rapporteer %s aan de toezichthouders</string>
   <string name="profileCompletion">Voltooiing profiel: %s</string>
   <string name="xRating">%s-rating</string>
@@ -615,6 +610,11 @@ Een URL per regel</string>
   <string name="clockIncrement">Extra tijd</string>
   <string name="onlyMembersOfTeam">Alleen leden van team</string>
   <string name="noRestriction">Geen beperking</string>
+  <string name="minimumRatedGames">Minimumaantal partijen met rating</string>
+  <string name="minimumRating">Minimumrating</string>
+  <string name="maximumWeeklyRating">Maximale wekelijkse rating</string>
+  <string name="onlyTitled">Alleen titelhouders</string>
+  <string name="onlyTitledHelp">Officiële titel vereist voor deelname aan het toernooi</string>
   <string name="privacy">Privacy</string>
   <string name="letOtherPlayersFollowYou">Andere spelers mogen je volgen</string>
   <string name="letOtherPlayersChallengeYou">Andere spelers mogen je uitdagen</string>

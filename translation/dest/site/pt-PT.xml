@@ -279,7 +279,6 @@
   <string name="bookmarkThisGame">Adicionar esta partida às favoritas</string>
   <string name="tournament">Torneio</string>
   <string name="tournaments">Torneios</string>
-  <string name="myTournaments">Meus torneios</string>
   <string name="createdTournaments">Criado</string>
   <string name="tournamentPoints">Pontos de torneios</string>
   <plurals name="nbTournamentPoints">
@@ -318,7 +317,6 @@
   <string name="xCreatedTeamY">%1$s criou a equipa %2$s</string>
   <string name="xStartedStreaming">%s começou uma stream</string>
   <string name="averageElo">Média de rating</string>
-  <string name="viewAllTeams">Ver todas as equipas</string>
   <string name="pickYourTeam">Escolha a sua equipa</string>
   <string name="whichTeamWillYouRepresent">Qual equipa você vai representar nesta batalha?</string>
   <string name="youMustJoinOneOfTheseTeams">Você deve juntar-se a uma destas equipas para participar!</string>
@@ -431,11 +429,10 @@ análise de computador, sala de conversação e link de partilha.</string>
   <string name="savePosition">Guardar posição</string>
   <string name="loadPosition">Carregar posição</string>
   <string name="isPrivate">Privado</string>
-  <string name="noBerserkAllowed">Nenhum berserk permitido</string>
   <string name="editTournament">Editar torneio</string>
-  <string name="tournamentDescription">Descrição do torneio</string>
-  <string name="tournamentDescriptionHelp">Quer dizer algo aos participantes? Seja breve. Estão disponíveis ligações de Markdown: [text](https://url)</string>
-  <string name="cancelTheTournament">Cancelar o torneio</string>
+  <string name="tournDescription">Descrição do torneio</string>
+  <string name="tournDescriptionHelp">Quer dizer algo aos participantes? Seja breve. Estão disponíveis ligações de Markdown: [text](https://url)</string>
+  <string name="cancelTournament">Cancelar o torneio</string>
   <string name="reportXToModerators">Reportar %s aos moderadores</string>
   <string name="profileCompletion">Perfil completo: %s</string>
   <string name="xRating">Pontuação %s</string>

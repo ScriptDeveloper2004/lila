@@ -367,7 +367,6 @@
   <string name="tournament">Turniej</string>
   <string name="tournaments">Turnieje</string>
   <string name="xTournaments">%s turniejów</string>
-  <string name="myTournaments">Moje turnieje</string>
   <string name="createdTournaments">Stworzone</string>
   <string name="recentlyPlayed">Ostatnio grane</string>
   <string name="bestResults">Najlepsze wyniki</string>
@@ -421,7 +420,6 @@
   <string name="xStartedStreaming">%s rozpoczął streaming</string>
   <string name="averageElo">Średni ranking</string>
   <string name="teamPage">Strona zespołu</string>
-  <string name="viewAllTeams">Zobacz wszystkie zespoły</string>
   <string name="pickYourTeam">Wybierz twój zespół</string>
   <string name="whichTeamWillYouRepresent">Który zespół będziesz reprezentował w tej bitwie?</string>
   <string name="youMustJoinOneOfTheseTeams">Musisz dołączyć do jednego z tych zespołów aby wziąć udział!</string>
@@ -544,11 +542,10 @@ poproszenia o analizę komputerową, omówienia jej z innymi oraz udostępnienia
   <string name="savePosition">Zapisz pozycję</string>
   <string name="loadPosition">Wczytaj pozycję (FEN)</string>
   <string name="isPrivate">Prywatny</string>
-  <string name="noBerserkAllowed">Uzywanie agresji jest niedozwolone</string>
   <string name="editTournament">Edytuj turniej</string>
-  <string name="tournamentDescription">Opis turnieju</string>
-  <string name="tournamentDescriptionHelp">Czy chcesz powiedzieć coś szczególnego uczestnikom? Pisz krótko i na temat. Istnieje możliwość dodania odnośników: [text](https://url)</string>
-  <string name="cancelTheTournament">Anuluj turniej</string>
+  <string name="tournDescription">Opis turnieju</string>
+  <string name="tournDescriptionHelp">Czy chcesz powiedzieć coś szczególnego uczestnikom? Pisz krótko i na temat. Istnieje możliwość dodania odnośników: [text](https://url)</string>
+  <string name="cancelTournament">Anuluj turniej</string>
   <string name="reportXToModerators">Zgłoś %s do moderatora</string>
   <string name="profileCompletion">Kompletność profilu: %s</string>
   <string name="xRating">ranking %s</string>

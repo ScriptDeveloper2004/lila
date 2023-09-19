@@ -24,7 +24,7 @@
   <string name="source">Bron</string>
   <string name="numberOfTurns">Aantal beurten</string>
   <string name="numberOfTurnsExplanation">Aantal volledige beurten gespeeld (beide spelers gezet)</string>
-  <string name="result">Uitslag</string>
+  <string name="result">Uitkomst</string>
   <string name="winnerColor">Kleur winnaar</string>
   <string name="date">Datum</string>
   <string name="sortBy">Sorteren op</string>

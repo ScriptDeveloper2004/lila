@@ -310,7 +310,6 @@
   <string name="tournament">Giải đấu</string>
   <string name="tournaments">Giải đấu</string>
   <string name="xTournaments">%s giải đấu</string>
-  <string name="myTournaments">Giải đấu của tôi</string>
   <string name="createdTournaments">Đã tạo</string>
   <string name="recentlyPlayed">Đã chơi gần đây</string>
   <string name="bestResults">Kết quả tốt nhất</string>
@@ -349,7 +348,6 @@
   <string name="xStartedStreaming">%s đã bắt đầu phát trực tuyến</string>
   <string name="averageElo">Hệ số Elo bình quân</string>
   <string name="teamPage">Trang đội</string>
-  <string name="viewAllTeams">Xem tất cả đội</string>
   <string name="pickYourTeam">Chọn đội của bạn</string>
   <string name="whichTeamWillYouRepresent">Bạn sẽ đại diện cho đội nào trong trận chiến này?</string>
   <string name="youMustJoinOneOfTheseTeams">Bạn phải tham gia một trong những đội này để tham gia!</string>
@@ -457,11 +455,10 @@ phân tích bằng máy tính, trò chuyện tong ván đấu và URL có thể 
   <string name="savePosition">Lưu thế trận</string>
   <string name="loadPosition">Tải thế trận</string>
   <string name="isPrivate">Riêng tư</string>
-  <string name="noBerserkAllowed">Không cho phép Berserk</string>
   <string name="editTournament">Sửa giải đấu</string>
-  <string name="tournamentDescription">Mô tả giải đấu</string>
-  <string name="tournamentDescriptionHelp">Có điều gì đặc biệt bạn muốn nói với những người tham gia không? Cố gắng viết ngắn gọn. Các liên kết Markdown có sẵn: [text](https://url)</string>
-  <string name="cancelTheTournament">Hủy giải đấu</string>
+  <string name="tournDescription">Mô tả giải đấu</string>
+  <string name="tournDescriptionHelp">Có điều gì đặc biệt bạn muốn nói với những người tham gia không? Cố gắng viết ngắn gọn. Các liên kết Markdown có sẵn: [text](https://url)</string>
+  <string name="cancelTournament">Hủy giải đấu</string>
   <string name="reportXToModerators">Báo cáo %s tới quản trị viên</string>
   <string name="profileCompletion">Hoàn thành hồ sơ: %s</string>
   <string name="xRating">Xếp hạng %s</string>

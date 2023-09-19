@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="arenaTournaments">Arena toernooien</string>
   <string name="isItRated">Is dit met rating?</string>
@@ -45,6 +45,10 @@ Partijen die nog aan de gang zijn, moeten uitgespeeld worden, maar ze tellen nie
   <string name="variant">Variant</string>
   <string name="minimumGameLength">Minimale spellengte</string>
   <string name="history">Arena geschiedenis</string>
+  <plurals name="viewAllXTeams" comment="viewAllXTeams [one] [other]&#10;&#10;%s is the number of teams that can be viewed">
+    <item quantity="one">Bekijk het team</item>
+    <item quantity="other">Bekijk alle %s teams</item>
+  </plurals>
   <string name="newTeamBattle">Nieuwe teamwedstrijd</string>
   <string name="customStartDate">Aangepaste startdatum</string>
   <string name="customStartDateHelp">In je eigen lokale tijdzone. Dit overschrijft de instelling \"Tijd voordat het toernooi begint\"</string>
@@ -58,8 +62,4 @@ Partijen die nog aan de gang zijn, moeten uitgespeeld worden, maar ze tellen nie
   <string name="averagePerformance">Gemiddelde prestatie</string>
   <string name="averageScore">Gemiddelde score</string>
   <string name="myTournaments">Mijn toernooien</string>
-  <plurals name="viewAllXTeams" comment="viewAllXTeams [one] [other]&#xA;&#xA;%s is the number of teams that can be viewed">
-    <item quantity="one">Bekijk het team</item>
-    <item quantity="other">Bekijk alle %s teams</item>
-  </plurals>
 </resources>

@@ -329,7 +329,6 @@
   <string name="tournament">Tournoi</string>
   <string name="tournaments">Tournois</string>
   <string name="xTournaments">%s tournois</string>
-  <string name="myTournaments">Mes tournois</string>
   <string name="createdTournaments">Créé</string>
   <string name="recentlyPlayed">Joués récemment</string>
   <string name="bestResults">Meilleurs résultats</string>
@@ -372,10 +371,7 @@
   <string name="xCreatedTeamY">%1$s a créé l\'équipe %2$s</string>
   <string name="xStartedStreaming">%s a commencé une diffusion en direct</string>
   <string name="averageElo">Classement moyen</string>
-  <string name="averagePerformance">Performance moyenne</string>
-  <string name="averageScore">Score moyen</string>
   <string name="teamPage">Page de l\'équipe</string>
-  <string name="viewAllTeams">Voir toutes les équipes</string>
   <string name="pickYourTeam">Choisissez votre équipe</string>
   <string name="whichTeamWillYouRepresent">Quelle équipe représenterez-vous dans cette bataille ?</string>
   <string name="youMustJoinOneOfTheseTeams">Vous devez rejoindre l\'une de ces équipes pour participer !</string>
@@ -488,11 +484,10 @@ consulter l\'analyse de l\'ordinateur, utiliser le tchat et partager le lien.</s
   <string name="savePosition">Enregistrer la position</string>
   <string name="loadPosition">Charger une position</string>
   <string name="isPrivate">Privé</string>
-  <string name="noBerserkAllowed">Aucune partie Berserk autorisée</string>
   <string name="editTournament">Modifier le tournoi</string>
-  <string name="tournamentDescription">Description du tournoi</string>
-  <string name="tournamentDescriptionHelp">Avez-vous quelque chose de spécial à dire aux participants ? Essayez d\'être bref. Les liens Markdown sont disponibles : [text](https://url)[</string>
-  <string name="cancelTheTournament">Annuler le tournoi</string>
+  <string name="tournDescription">Description du tournoi</string>
+  <string name="tournDescriptionHelp">Avez-vous quelque chose de spécial à dire aux participants ? Essayez d\'être bref. Les liens Markdown sont disponibles : [text](https://url)[</string>
+  <string name="cancelTournament">Annuler le tournoi</string>
   <string name="reportXToModerators">Signaler %s aux modérateurs</string>
   <string name="profileCompletion">Profil rempli à %s</string>
   <string name="xRating">Classement %s</string>
