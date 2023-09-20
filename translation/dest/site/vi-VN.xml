@@ -537,8 +537,8 @@ Một đường dẫn mỗi dòng</string>
   <string name="tournamentWinners">Các nhà vô địch giải đấu</string>
   <string name="name">Tên</string>
   <string name="description">Mô tả</string>
-  <string name="no">Không chọn</string>
-  <string name="yes">Chọn</string>
+  <string name="no">Không</string>
+  <string name="yes">Có</string>
   <string name="help">Hỗ trợ</string>
   <string name="createANewTopic">Tạo một chủ đề mới</string>
   <string name="topics">Các chủ đề</string>

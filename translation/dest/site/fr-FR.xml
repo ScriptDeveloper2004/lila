@@ -563,6 +563,7 @@ Une URL par ligne</string>
   <string name="sequentialSwitch">Ordre déterminé</string>
   <string name="puzzles">Problèmes</string>
   <string name="variantPuzzles">%s problèmes</string>
+  <string name="variantPractice">%s S\'entraîner</string>
   <string name="latestUpdates">Dernières mises à jour</string>
   <string name="tournamentWinners">Vainqueurs du tournois</string>
   <string name="name">Nom</string>
@@ -674,6 +675,7 @@ Une URL par ligne</string>
   <string name="tools">Outils</string>
   <string name="increment">Incrément</string>
   <string name="sharePDN">Partager le PDN</string>
+  <string name="shareFEN">Partager le FEN</string>
   <string name="allowAnalytics">Autoriser l\'envoi de statistiques anonymes</string>
   <string name="shareGameURL">Partager l\'URL de la partie</string>
   <string name="error.required">Ce champ est requis</string>
@@ -809,6 +811,7 @@ Une URL par ligne</string>
   <string name="withEverybody">Avec tout le monde</string>
   <string name="youHaveAlreadyRegisteredTheEmail">Ce courriel est déjà associé à un compte existant : %s</string>
   <string name="kidMode">Mode enfant</string>
+  <string name="kidModeIsEnabled">Mode enfant est activé.</string>
   <string name="kidModeExplanation">Cela concerne la sécurité. Dans le mode enfants, toutes les communications du site sont désactivées. Activez ce mode pour vos enfants et pour les étudiants, afin de les protéger des autres utilisateurs.</string>
   <string name="inKidModeTheLidraughtsLogoGetsIconX">Dans le mode enfants, l\'icône %s se rajoute au logo Lidraughts pour que vous sachiez que les enfants sont en sécurité.</string>
   <string name="enableKidMode">Activer le mode enfant</string>
@@ -978,4 +981,15 @@ Une URL par ligne</string>
   <string name="thankYouForReading">Merci d\'avoir pris le temps de lire !</string>
   <string name="lifetimeScore">Meilleur résultat</string>
   <string name="currentMatchScore">Score actuel de la partie</string>
+  <string name="welcomeToLidraughts">Bienvenue sur lidraughts.org!</string>
+  <string name="thisIsYourProfilePage">Voici votre profil.</string>
+  <string name="wouldYouLikeToX">Voulez-vous %s?</string>
+  <string name="enabledKidModeSuggestion">Est-ce qu\'un enfant va utiliser ce compte? Vous voudriez peut-être activer %s.</string>
+  <string name="improveWithDraughtsTacticsPuzzles">S\'entraîner avec des problèmes tactiques de dames</string>
+  <string name="playTheAI">Jouer contre l\'intelligence artificielle</string>
+  <string name="playOpponentsWorldwide">Jouer contre des adversaires du monde entier</string>
+  <string name="followFriends">Suivez vos amis sur lidraughts</string>
+  <string name="playInTournaments">Participez à des tournois</string>
+  <string name="configureLidraughts">Configurez lidraughts selon votre goût</string>
+  <string name="exploreTheSiteAndHaveFun">Explorez le site et amusez-vous :)</string>
 </resources>

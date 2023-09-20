@@ -10,6 +10,7 @@
   <string name="aiNameLevelAiLevel">%1$s safon %2$s</string>
   <string name="level">Safon</string>
   <string name="toggleTheChat" comment="Setting to enable/disable the chat">Toglo sgwrs</string>
+  <string name="toggleSound" comment="Setting to enable/disable sound">Toglo sain</string>
   <string name="chat">Sgwrsio</string>
   <string name="resign">Ildio</string>
   <string name="white">Gwyn</string>
@@ -417,6 +418,9 @@
   <string name="community">Cymdeithas</string>
   <string name="tools">Offer</string>
   <string name="increment">Cynyddiad</string>
+  <string name="sharePDN">Rhannu PDN</string>
+  <string name="shareFEN">Rhannu FEN</string>
+  <string name="shareGameURL">Rhannu URL gêm</string>
   <string name="error.required">Maes gofynnol</string>
   <string name="error.email">Nid yw\'r cyfeiriad ebost yma\'n ddilys</string>
   <string name="ifRatingIsPlusMinusX">Os ydy\'r raddfa ± %s</string>
