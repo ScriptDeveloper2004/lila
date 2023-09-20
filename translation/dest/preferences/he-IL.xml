@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="preferences">העדפות</string>
+  <string name="display">תצוגה</string>
   <string name="pieceAnimation">אנימציית הכלים</string>
   <string name="materialDifference">הבדל בחומר</string>
   <string name="pieceDestinations">יעדי הכלים: מהלכים וקדם-מהלכים מותרים</string>
