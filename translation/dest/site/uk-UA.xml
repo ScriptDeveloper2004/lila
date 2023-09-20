@@ -642,8 +642,8 @@
   <string name="shareGameURL">Поділитись посиланням на гру</string>
   <string name="error.required">Це поле обов\'язкове</string>
   <string name="error.email">Ця адреса email помилкова</string>
-  <string name="error.email_acceptable">Ця адреса email неприйнятна</string>
-  <string name="error.email_unique">Цю адресу email уже задіяно</string>
+  <string name="error.email_acceptable">Ця адреса електронної пошти неприйнятна. Будь ласка, перевірте її та спробуйте знову.</string>
+  <string name="error.email_unique">Електронна адреса недійсна або вже використана</string>
   <string name="error.email_different">Це ваша поточна адреса пошти</string>
   <string name="ifRatingIsPlusMinusX">Якщо рейтинг ± %s</string>
   <string name="onlyFriends">Тільки друзі</string>
@@ -780,11 +780,11 @@
   <string name="coaches">Тренери</string>
   <string name="invalidPdn">Неприпустимий PDN</string>
   <string name="invalidFen">Неприпустимий FEN</string>
-  <string name="error.minLength">Мінімальна довжина-%s</string>
-  <string name="error.maxLength">Максимальна довжина-%s</string>
-  <string name="error.min">Має бути більше або дорівнювати %s</string>
-  <string name="error.max">Має бути менше або дорівнювати %s</string>
-  <string name="error.unknown">Помилка</string>
+  <string name="error.minLength">Має бути принаймні %s символів</string>
+  <string name="error.maxLength">Повинно бути не більше %s символів</string>
+  <string name="error.min">Має бути принаймні %s</string>
+  <string name="error.max">Має бути щонайбільше %s</string>
+  <string name="error.unknown">Неприпустиме значення</string>
   <string name="custom">Користувацька гра</string>
   <string name="notifications">Сповіщення</string>
   <string name="perfRatingX">Рейтинг: %s</string>

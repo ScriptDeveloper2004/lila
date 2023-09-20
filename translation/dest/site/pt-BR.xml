@@ -679,8 +679,8 @@ Uma URL por linha</string>
   <string name="shareGameURL">Compartilhar URL do Jogo</string>
   <string name="error.required">Este campo deve ser preenchido</string>
   <string name="error.email">Este endereço de email é inválido</string>
-  <string name="error.email_acceptable">Este endereço de email não é aceitável</string>
-  <string name="error.email_unique">Este endereço de email já existe</string>
+  <string name="error.email_acceptable">Este endereço de e-mail não é válido. Verifique e tente novamente.</string>
+  <string name="error.email_unique">Endereço de e-mail é inválido ou já está sendo utilizado</string>
   <string name="error.email_different">Este já é o seu endereço de e-mail</string>
   <string name="ifRatingIsPlusMinusX">Se a classificação for ± %s</string>
   <string name="onlyFriends">Apenas amigos</string>
@@ -873,7 +873,7 @@ Uma URL por linha</string>
   <string name="error.maxLength">O máximo de caracteres é %s</string>
   <string name="error.min">Deve ser maior ou igual a %s</string>
   <string name="error.max">Deve ser menor ou igual a %s</string>
-  <string name="error.unknown">Erro</string>
+  <string name="error.unknown">Valor inválido</string>
   <string name="error.pattern">Contém caracteres inválidos</string>
   <string name="error.eventName">Contém caracteres inválidos. Apenas letras, números e sinais de pontuação comuns são aceitos.</string>
   <string name="mustNotContainLidraughts">Não pode conter \"lidraughts\"</string>

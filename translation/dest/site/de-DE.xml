@@ -675,8 +675,8 @@ Eine URL pro Zeile</string>
   <string name="shareGameURL">Partie-URL teilen</string>
   <string name="error.required">Dieses Feld muss ausgefüllt werden</string>
   <string name="error.email">Diese E-Mail-Adresse ist ungültig</string>
-  <string name="error.email_acceptable">Diese E-Mail-Adresse wird nicht akzeptiert</string>
-  <string name="error.email_unique">Diese E-Mail-Adresse ist schon vergeben</string>
+  <string name="error.email_acceptable">Diese E-Mail-Adresse wird nicht akzeptiert. Bitte überprüfe sie und versuche es erneut.</string>
+  <string name="error.email_unique">E-Mail-Adresse ungültig oder bereits vergeben</string>
   <string name="error.email_different">Dies ist bereits deine E-Mail Adresse</string>
   <string name="ifRatingIsPlusMinusX">Nur, wenn die Wertungszahl ± %s ist</string>
   <string name="onlyFriends">Nur Freunde</string>
@@ -865,11 +865,11 @@ Eine URL pro Zeile</string>
   <string name="invalidFen">FEN ungültig</string>
   <string name="invalidPosition">Ungültige Position</string>
   <string name="tooManyKings">Du kannst nicht gegen Scan mit mehr als 30 Damen auf dem Brett spielen.</string>
-  <string name="error.minLength">Mindestens %s Zeichen</string>
-  <string name="error.maxLength">Höchstens %s Zeichen</string>
+  <string name="error.minLength">Mindestlänge beträgt %s Zeichen</string>
+  <string name="error.maxLength">Maximallänge beträgt %s Zeichen</string>
   <string name="error.min">Muss mindestens %s sein</string>
   <string name="error.max">Darf höchstens %s sein</string>
-  <string name="error.unknown">Fehler</string>
+  <string name="error.unknown">Ungültiger Wert</string>
   <string name="error.pattern">Enthält ungültige Zeichen</string>
   <string name="error.eventName">Enthält ungültige Zeichen. Nur Buchstaben, Zahlen und übliche Satzzeichen werden akzeptiert.</string>
   <string name="mustNotContainLidraughts">Darf kein \"lidraughts\" enthalten</string>

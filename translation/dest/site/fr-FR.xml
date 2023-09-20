@@ -680,8 +680,8 @@ Une URL par ligne</string>
   <string name="shareGameURL">Partager l\'URL de la partie</string>
   <string name="error.required">Ce champ est requis</string>
   <string name="error.email">Ce courriel n\'est pas valide</string>
-  <string name="error.email_acceptable">Ce courriel n\'est pas acceptable</string>
-  <string name="error.email_unique">Ce courriel est déjà utilisé</string>
+  <string name="error.email_acceptable">Cette adresse courriel est refusée. Double-cliquez dessus et réessayez.</string>
+  <string name="error.email_unique">Adresse courriel invalide ou déjà utilisée</string>
   <string name="error.email_different">C’est déjà votre courriel</string>
   <string name="ifRatingIsPlusMinusX">Si son rang est ± %s</string>
   <string name="onlyFriends">Seulement les amis</string>
@@ -871,11 +871,11 @@ Une URL par ligne</string>
   <string name="invalidFen">FEN non valide</string>
   <string name="invalidPosition">Position invalide</string>
   <string name="tooManyKings">Vous ne pouvez pas jouer contre Scan avec plus de 30 dames sur le damier.</string>
-  <string name="error.minLength">Vous devez écrire au moins %s caractères</string>
-  <string name="error.maxLength">Vous pouvez écrire un maximum de %s caractères</string>
-  <string name="error.min">Doit être supérieur ou égal à %s</string>
-  <string name="error.max">Doit être inférieur ou égal à %s</string>
-  <string name="error.unknown">Erreur</string>
+  <string name="error.minLength">La longueur minimale est %s</string>
+  <string name="error.maxLength">La longueur maximale est %s</string>
+  <string name="error.min">Doit être supérieur(e) ou égal(e) à %s</string>
+  <string name="error.max">Doit être inférieur(e) ou égal(e) à %s</string>
+  <string name="error.unknown">Valeur invalide</string>
   <string name="error.pattern">Contient des caractères invalides</string>
   <string name="error.eventName">Contient des caractères invalides. Seuls les lettres, les chiffres et les signes de ponctuation courants sont acceptés.</string>
   <string name="mustNotContainLidraughts">Ne doit pas contenir «lidraughts»</string>

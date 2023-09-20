@@ -679,8 +679,8 @@
   <string name="shareGameURL">Κοινοποιήστε URL παιχνιδιού</string>
   <string name="error.required">Αυτό το πεδίο είναι υποχρεωτικό</string>
   <string name="error.email">Αυτή η διεύθυνση ηλ. ταχυδρομείου δεν ισχύει</string>
-  <string name="error.email_acceptable">Αυτή η διεύθυνση ηλ. ταχυδρομείου δεν είναι αποδεκτή</string>
-  <string name="error.email_unique">Αυτή η διεύθυνση ηλ. ταχυδρομείου χρησιμοποιείται ήδη</string>
+  <string name="error.email_acceptable">Αυτή η διεύθυνση ηλ. ταχυδρομείου δεν είναι αποδεκτή. Ελέγξτε την και προσπαθήστε ξανά.</string>
+  <string name="error.email_unique">Η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι άκυρη ή υπάρχει ήδη</string>
   <string name="error.email_different">Έχετε αυτήν την διεύθυνση ήδη</string>
   <string name="ifRatingIsPlusMinusX">Εάν η βαθμολογία είναι ± %s</string>
   <string name="onlyFriends">Μόνο φίλοι</string>
@@ -869,11 +869,11 @@
   <string name="invalidFen">Μη έγκυρο FEN</string>
   <string name="invalidPosition">Μη έγκυρη θέση</string>
   <string name="tooManyKings">Δεν μπορείτε να παίξετε εναντίον του Scan με περισσότερες από 30 βασίλισσες στη σκακιέρα.</string>
-  <string name="error.minLength">Ελάχιστο μήκος είναι %s</string>
-  <string name="error.maxLength">Μέγιστο μήκος είναι %s</string>
-  <string name="error.min">Πρέπει να είναι μεγαλύτερος ή ίσος με %s</string>
-  <string name="error.max">Πρέπει να είναι μικρότερος ή ίσος με %s</string>
-  <string name="error.unknown">Σφάλμα</string>
+  <string name="error.minLength">Πρέπει να περιέχει τουλάχιστον %s χαρακτήρες</string>
+  <string name="error.maxLength">Πρέπει να περιέχει το πολύ %s χαρακτήρες</string>
+  <string name="error.min">Πρέπει να είναι τουλάχιστον %s</string>
+  <string name="error.max">Πρέπει να είναι το πολύ %s</string>
+  <string name="error.unknown">Άκυρη τιμή</string>
   <string name="error.pattern">Περιέχει μη έγκυρους χαρακτήρες</string>
   <string name="error.eventName">Περιέχει μη έγκυρους χαρακτήρες. Μόνο γράμματα, αριθμοί και συχνά σημεία στίξης γίνονται αποδεκτά.</string>
   <string name="mustNotContainLidraughts">Δεν πρέπει να περιέχει το \"lidraughts\"</string>

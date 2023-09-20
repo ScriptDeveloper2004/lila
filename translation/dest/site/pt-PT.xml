@@ -634,8 +634,8 @@ Um URL por linha</string>
   <string name="shareGameURL">Compartilhar URL do Jogo</string>
   <string name="error.required">Este campo deve ser preenchido</string>
   <string name="error.email">Este endereço de email é inválido</string>
-  <string name="error.email_acceptable">Este endereço de email não é aceitável</string>
-  <string name="error.email_unique">Este endereço de email já existe</string>
+  <string name="error.email_acceptable">Este endereço de e-mail não é aceitável. Por favor verifica-o e tenta outra vez.</string>
+  <string name="error.email_unique">Endereço de e-mail inválido ou já utilizado</string>
   <string name="error.email_different">Este já é o teu e-mail</string>
   <string name="ifRatingIsPlusMinusX">Se o rating for ± %s</string>
   <string name="onlyFriends">Apenas amigos</string>
@@ -776,11 +776,11 @@ Um URL por linha</string>
   <string name="coaches">Treinadores</string>
   <string name="invalidPdn">PDN inválido</string>
   <string name="invalidFen">FEN inválido</string>
-  <string name="error.minLength">O tamanho mínimo é %s</string>
-  <string name="error.maxLength">O tamanho máximo é %s</string>
-  <string name="error.min">Deve ser maior ou igual a %s</string>
-  <string name="error.max">Deve ser menor ou igual a %s</string>
-  <string name="error.unknown">Erro</string>
+  <string name="error.minLength">Deve conter pelo menos %s caracteres</string>
+  <string name="error.maxLength">Deve conter no máximo %s caracteres</string>
+  <string name="error.min">Deve ser pelo menos %s</string>
+  <string name="error.max">Deve ser no máximo %s</string>
+  <string name="error.unknown">Valor inválido</string>
   <string name="custom">Personalizado</string>
   <string name="notifications">Notificações</string>
   <string name="perfRatingX">Pontuação: %s</string>

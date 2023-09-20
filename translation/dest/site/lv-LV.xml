@@ -670,8 +670,8 @@ Vienā līnijā  - tikai vienu norādi.</string>
   <string name="shareGameURL">Dalīties ar spēles URL</string>
   <string name="error.required">Šis lauks ir obligāts</string>
   <string name="error.email">Šī e-pasta adrese ir nepareiza</string>
-  <string name="error.email_acceptable">Šī e-pasta adrese nav pieņemama</string>
-  <string name="error.email_unique">Šī e-pasta adrese jau ir aizņemta</string>
+  <string name="error.email_acceptable">Šī e-pasta adrese nav pieņemama. Lūdzu pārbaudiet to un mēģiniet vēlreiz.</string>
+  <string name="error.email_unique">E-pasta adrese jau ir aizņemta vai nav derīga</string>
   <string name="error.email_different">Šī jau ir tava e-pasta adrese</string>
   <string name="ifRatingIsPlusMinusX">Ja reitings ir ± %s</string>
   <string name="onlyFriends">Tikai draugi</string>
@@ -858,9 +858,9 @@ Vienā līnijā  - tikai vienu norādi.</string>
   <string name="tooManyKings">Tu nevari spēlēt pret «Scan», ja uz dēlīša uzlikts vairāk nekā 30 dāmu.</string>
   <string name="error.minLength">Minimālais garums ir %s</string>
   <string name="error.maxLength">Maksimālais garums ir %s</string>
-  <string name="error.min">Jābūt lielākam vai vienādam ar %s</string>
-  <string name="error.max">Jābūt mazākam vai vienādam ar %s</string>
-  <string name="error.unknown">Kļūda</string>
+  <string name="error.min">Jābūt vismaz %s</string>
+  <string name="error.max">Nedrīkst būt lielāks par %s</string>
+  <string name="error.unknown">Nederīga vērtība</string>
   <string name="custom">Pielāgota</string>
   <string name="notifications">Paziņojumi</string>
   <string name="perfRatingX">Reitings: %s</string>

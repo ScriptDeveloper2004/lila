@@ -646,8 +646,8 @@
   <string name="shareGameURL">分享棋局链接</string>
   <string name="error.required">本项必填</string>
   <string name="error.email">该电子邮件地址无效。</string>
-  <string name="error.email_acceptable">该电子邮件地址不被接受。</string>
-  <string name="error.email_unique">该电子邮件地址已被使用。</string>
+  <string name="error.email_acceptable">该电子邮件地址是不可用。请重新检查后重试。</string>
+  <string name="error.email_unique">电子邮件地址无效或已被使用</string>
   <string name="error.email_different">这已经是你的电子邮件地址</string>
   <string name="ifRatingIsPlusMinusX">允许积分范围±%s</string>
   <string name="onlyFriends">只允许朋友</string>
@@ -837,7 +837,7 @@
   <string name="error.maxLength">最大长度：%s</string>
   <string name="error.min">大于或等于%s</string>
   <string name="error.max">小于或等于%s</string>
-  <string name="error.unknown">错误</string>
+  <string name="error.unknown">无效值</string>
   <string name="error.pattern">包含无效字符</string>
   <string name="error.eventName">包含无效字符。只可使用字母、数字和常见标点符号。</string>
   <string name="mustNotContainLidraughts">不能包含 \"lidraughts\"</string>

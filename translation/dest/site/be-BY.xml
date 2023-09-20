@@ -637,8 +637,8 @@
   <string name="shareGameURL">Падзяліцца спасылкай на гульню</string>
   <string name="error.required">Абавязковае поле</string>
   <string name="error.email">Памылковы адрас электроннай пошты</string>
-  <string name="error.email_acceptable">Недапушчальны адрас электроннай пошты</string>
-  <string name="error.email_unique">Гэты адрас ужо заняты</string>
+  <string name="error.email_acceptable">Гэты адрас электроннай пошты непрымальны. Калі ласка, пераправерце і паспрабуйце зноўку.</string>
+  <string name="error.email_unique">Адрас электронай пошты немагчымы або ўжо заняты</string>
   <string name="error.email_different">Гэты адрас ужо пазначаны як ваш бягучы</string>
   <string name="ifRatingIsPlusMinusX">Калі рэйтынг ± %s</string>
   <string name="onlyFriends">Толькі з сябрамі</string>
@@ -780,11 +780,11 @@
   <string name="coaches">Трэнеры</string>
   <string name="invalidPdn">Некарэктны PDN</string>
   <string name="invalidFen">Некарэктны FEN</string>
-  <string name="error.minLength">Мінімальная даўжыня — %s</string>
-  <string name="error.maxLength">Максімальная даўжыня — %s</string>
-  <string name="error.min">Значэнне павінна быць больш або роўным да %s</string>
-  <string name="error.max">Значэнне павінна быць менш або роўным да %s</string>
-  <string name="error.unknown">Памылка</string>
+  <string name="error.minLength">Павінна быць не менш за %s сімвалаў</string>
+  <string name="error.maxLength">Павінна быць не больш за %s сімвалаў</string>
+  <string name="error.min">Павінна быць не менш за %s</string>
+  <string name="error.max">Павінна быць не больш за %s</string>
+  <string name="error.unknown">Недапушчальнае значэнне</string>
   <string name="custom">Свая гульня</string>
   <string name="notifications">Апавяшчэнні</string>
   <string name="perfRatingX">Рэйтынг: %s</string>
