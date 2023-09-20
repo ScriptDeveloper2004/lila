@@ -4,7 +4,6 @@
   <string name="gameDisplay">Zobrazení hry</string>
   <string name="pieceAnimation">Animace figur</string>
   <string name="materialDifference">Materiální rozdíl</string>
-  <string name="boardHighlights">Zvýraznění na šachovnici (poslední tah)</string>
   <string name="pieceDestinations">Možnosti figur (možné tahy a předtahy)</string>
   <string name="moveListWhilePlaying">Seznam tahů během hry</string>
   <string name="onSlowGames">Při pomalých hrách</string>

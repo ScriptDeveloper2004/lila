@@ -236,8 +236,8 @@
   <string name="yourOpponentOffersADraw">Ο αντίπαλος σας προτείνει ισοπαλία</string>
   <string name="accept">Αποδοχή</string>
   <string name="decline">Άρνηση</string>
-  <string name="startingIn">Εκκίνηση σε</string>
-  <string name="startingSoon"> - Αρχίζουμε σύντομα - </string>
+  <string name="startingIn" comment="Displayed above a timer">Εκκίνηση σε</string>
+  <string name="startingSoon">Αρχίζουμε σύντομα</string>
   <string name="playingRightNow">Παιχνίδια σε εξέλιξη τώρα</string>
   <string name="eventInProgress">Παιχνίδια σε εξέλιξη τώρα</string>
   <string name="finished">Ολοκληρωμένα</string>
@@ -486,7 +486,7 @@
   <string name="isPrivate">Ιδιωτικό</string>
   <string name="editTournament">Επεξεργασία πρωταθλήματος</string>
   <string name="tournDescription">Περιγραφή τουρνουά</string>
-  <string name="tournDescriptionHelp">Θέλετε να πείτε κάτι ιδιαίτερο στους παίκτες; Προσπαθήστε να κρατήσετε το μήνυμά σας σύντομο. Μπορείτε να χρησιμοποιείτε συνδέσμους σε Markdown: [text](https://url)</string>
+  <string name="tournDescriptionHelp">Θέλετε να πείτε κάτι ιδιαίτερο στους παίκτες; Προσπαθήστε να κρατήσετε το μήνυμά σας σύντομο. Μπορείτε να χρησιμοποιείτε συνδέσμους σε Markdown: [name](https://url)</string>
   <string name="cancelTournament">Ακύρωση τουρνουά</string>
   <string name="reportXToModerators">Αναφέρετε τον %s στο προσωπικό</string>
   <string name="profileCompletion">Ολοκλήρωση προφίλ: %s</string>
@@ -528,7 +528,7 @@
   <string name="findTheBestMoveForWhite">Βρείτε την καλύτερη κίνηση για τα λευκά.</string>
   <string name="findTheBestMoveForBlack">Βρείτε την καλύτερη κίνηση για τα μαύρα.</string>
   <string name="toTrackYourProgress">Για να παρακολουθήσετε τη πρόοδό σας:</string>
-  <string name="trainingSignupExplanation">Το lidraughts θα σας προσφέρει γρίφους που αντιστοιχούν με την ικανότητα σας, με αποτέλεσμα μια καλύτερη εμπειρία εξάσκησης στο σκάκι.</string>
+  <string name="trainingSignupExplanation">Το lidraughts θα σας προσφέρει γρίφους που αντιστοιχούν με την ικανότητα σας, με αποτέλεσμα μια καλύτερη εμπειρία εξάσκησης.</string>
   <string name="puzzleId">Γρίφος %s</string>
   <string name="puzzleOfTheDay">Γρίφος της ημέρας</string>
   <string name="clickToSolve">Κάνετε κλικ για να τον λύσετε</string>
@@ -609,6 +609,11 @@
   <string name="clockIncrement">Ρολόι προσαύξηση</string>
   <string name="onlyMembersOfTeam">Μόνο μέλη της ομάδας</string>
   <string name="noRestriction">Χωρίς περιορισμό</string>
+  <string name="minimumRatedGames">Ελάχιστος αριθμός βαθμολογημένων παιχνιδιών</string>
+  <string name="minimumRating">Ελάχιστη βαθμολογία</string>
+  <string name="maximumWeeklyRating">Μέγιστη εβδομαδιαία βαθμολογία</string>
+  <string name="onlyTitled">Μόνο τιτλούχοι παίκτες</string>
+  <string name="onlyTitledHelp">Να απαιτείται επίσημος τίτλος για τη συμμετοχή στο τουρνουά</string>
   <string name="privacy">Απόρρητο</string>
   <string name="letOtherPlayersFollowYou">Επιτρέψτε σε άλλους παίκτες να σας ακολουθούν</string>
   <string name="letOtherPlayersChallengeYou">Επιτρέψτε σε άλλους παίκτες να σας προκαλούν σε παιχνίδι</string>

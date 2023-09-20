@@ -121,6 +121,7 @@
   <string name="forum">Fforwm</string>
   <string name="xPostedInForumY">%1$s bostiodd yn nhopic %2$s</string>
   <string name="latestForumPosts">Postiau diwethaf</string>
+  <string name="players">Chwaraewyr</string>
   <string name="minutesPerSide">Munudau i bob ochr</string>
   <string name="variant">Amrywiad</string>
   <string name="variants">Amrywiadau</string>
@@ -455,6 +456,7 @@
   <string name="simulAddExtraTime">Gellwch ychwanegu amser at dy gloc i\'ch helpu ymdopi â\'r cystadleuaeth simul.</string>
   <string name="simulHostExtraTime">Amser ychwanegol i gloc y gweinydd</string>
   <string name="lidraughtsTournaments">Cystadleuaethau Lidraughts</string>
+  <string name="tournamentFAQ">C&amp;A am gystadleuaethau</string>
   <string name="timeBeforeTournamentStarts">Amser cyn i\'r cystadleuaeth gychwyn</string>
   <string name="keyboardShortcuts">Llwybrau byrion bysellfwrdd</string>
   <string name="keyMoveBackwardOrForward">symud yn ôl/i flaen</string>
@@ -486,6 +488,7 @@
   <string name="youCanAlsoScrollOverTheBoardToMoveInTheGame">Gellwch rholio dros y bwrdd i symud yn y gêm.</string>
   <string name="analysisShapesHowTo">Gwasgwch shift a chliciwch neu dde-gliciwch i dynnu cylchau a saithau ar y bwrdd.</string>
   <string name="letOtherPlayersMessageYou">Cael negeseuon gan chwaraewyr arall</string>
+  <string name="shareYourInsightsData">Cyfrannu data mewnwelediadau</string>
   <string name="withNobody">Gyda neb</string>
   <string name="withFriends">Gyda ffrindiau</string>
   <string name="withEverybody">Gyda pawb</string>

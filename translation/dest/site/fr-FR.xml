@@ -236,8 +236,8 @@
   <string name="yourOpponentOffersADraw">Votre adversaire propose la nulle</string>
   <string name="accept">Accepter</string>
   <string name="decline">Refuser</string>
-  <string name="startingIn">Commence dans</string>
-  <string name="startingSoon"> - Démarrage imminent - </string>
+  <string name="startingIn" comment="Displayed above a timer">Commence dans</string>
+  <string name="startingSoon">Démarrage imminent</string>
   <string name="playingRightNow">Parties en cours</string>
   <string name="eventInProgress">En train de jouer</string>
   <string name="finished">Terminé</string>
@@ -486,7 +486,7 @@ consulter l\'analyse de l\'ordinateur, utiliser le tchat et partager le lien.</s
   <string name="isPrivate">Privé</string>
   <string name="editTournament">Modifier le tournoi</string>
   <string name="tournDescription">Description du tournoi</string>
-  <string name="tournDescriptionHelp">Avez-vous quelque chose de spécial à dire aux participants ? Essayez d\'être bref. Les liens Markdown sont disponibles : [text](https://url)[</string>
+  <string name="tournDescriptionHelp">Avez-vous quelque chose de spécial à dire aux participants ? Essayez d\'être bref. Les liens Markdown sont disponibles : [name](https://url)[</string>
   <string name="cancelTournament">Annuler le tournoi</string>
   <string name="reportXToModerators">Signaler %s aux modérateurs</string>
   <string name="profileCompletion">Profil rempli à %s</string>
@@ -609,6 +609,11 @@ Une URL par ligne</string>
   <string name="clockIncrement">Incrémentation de la pendule</string>
   <string name="onlyMembersOfTeam">Seulement les membres de l\'équipe</string>
   <string name="noRestriction">Aucune restriction</string>
+  <string name="minimumRatedGames">Nombre minimum de parties classées</string>
+  <string name="minimumRating">Classement minimal</string>
+  <string name="maximumWeeklyRating">Classement hebdomadaire maximal</string>
+  <string name="onlyTitled">Joueurs titrés seulement</string>
+  <string name="onlyTitledHelp">Titre officiel requis pour participer à un tournoi</string>
   <string name="privacy">Confidentialité</string>
   <string name="letOtherPlayersFollowYou">Autoriser les autres joueurs à vous suivre</string>
   <string name="letOtherPlayersChallengeYou">Autoriser les autres joueurs à vous défier</string>

@@ -90,7 +90,7 @@
   <string name="averageRatingX">Average rating: %s</string>
   <string name="recentGames">Recent games</string>
   <string name="topGames">Top games</string>
-  <string name="masterDbExplanation">Real life games of %1$s+ master players rated from %2$s to %3$s</string>
+  <string name="masterDbExplanation">OTB games of %1$s+ master players rated from %2$s to %3$s</string>
   <plurals name="winInXHalfMoves">
     <item quantity="one">Win in %s half-move</item>
     <item quantity="other">Win in %s half-moves</item>
@@ -236,8 +236,8 @@
   <string name="yourOpponentOffersADraw">Your opponent offers a draw</string>
   <string name="accept">Accept</string>
   <string name="decline">Decline</string>
-  <string name="startingIn">Starting in</string>
-  <string name="startingSoon"> - Starting soon - </string>
+  <string name="startingIn" comment="Displayed above a timer">Starting in</string>
+  <string name="startingSoon">Starting soon</string>
   <string name="playingRightNow">Playing right now</string>
   <string name="eventInProgress">Playing right now</string>
   <string name="finished">Finished</string>
@@ -486,7 +486,7 @@ computer analysis, game chat and shareable URL.</string>
   <string name="isPrivate">Private</string>
   <string name="editTournament">Edit tournament</string>
   <string name="tournDescription">Tournament description</string>
-  <string name="tournDescriptionHelp">Anything special you want to tell the participants? Try to keep it short. Markdown links are available: [text](https://url)</string>
+  <string name="tournDescriptionHelp">Anything special you want to tell the participants? Try to keep it short. Markdown links are available: [name](https://url)</string>
   <string name="cancelTournament">Cancel the tournament</string>
   <string name="reportXToModerators">Report %s to moderators</string>
   <string name="profileCompletion">Profile completion: %s</string>

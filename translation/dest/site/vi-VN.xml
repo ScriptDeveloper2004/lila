@@ -224,8 +224,8 @@
   <string name="yourOpponentOffersADraw">Đối phương xin hoà</string>
   <string name="accept">Đồng ý</string>
   <string name="decline">Từ chối</string>
-  <string name="startingIn">Bắt đầu trong</string>
-  <string name="startingSoon"> - Bắt đầu trong - </string>
+  <string name="startingIn" comment="Displayed above a timer">Bắt đầu trong</string>
+  <string name="startingSoon">Bắt đầu trong</string>
   <string name="playingRightNow">Ván đấu đang đánh</string>
   <string name="eventInProgress">Đang diễn ra</string>
   <string name="finished">Hoàn thành</string>
@@ -457,7 +457,7 @@ phân tích bằng máy tính, trò chuyện tong ván đấu và URL có thể 
   <string name="isPrivate">Riêng tư</string>
   <string name="editTournament">Sửa giải đấu</string>
   <string name="tournDescription">Mô tả giải đấu</string>
-  <string name="tournDescriptionHelp">Có điều gì đặc biệt bạn muốn nói với những người tham gia không? Cố gắng viết ngắn gọn. Các liên kết Markdown có sẵn: [text](https://url)</string>
+  <string name="tournDescriptionHelp">Có điều gì đặc biệt bạn muốn nói với những người tham gia không? Cố gắng viết ngắn gọn. Các liên kết Markdown có sẵn: [name](https://url)</string>
   <string name="cancelTournament">Hủy giải đấu</string>
   <string name="reportXToModerators">Báo cáo %s tới quản trị viên</string>
   <string name="profileCompletion">Hoàn thành hồ sơ: %s</string>
@@ -579,6 +579,11 @@ Một đường dẫn mỗi dòng</string>
   <string name="clockIncrement">Thời gian được cho thêm</string>
   <string name="onlyMembersOfTeam">Chỉ dành cho thành viên trong đội</string>
   <string name="noRestriction">Không giới hạn</string>
+  <string name="minimumRatedGames">Số ván đã tính Elo tối thiểu</string>
+  <string name="minimumRating">Elo tối thiểu</string>
+  <string name="maximumWeeklyRating">Elo cao nhất trong tuần</string>
+  <string name="onlyTitled">Chỉ những kỳ thủ có tiêu đề</string>
+  <string name="onlyTitledHelp">Bắt buộc có một danh hiệu/tiêu đề chính thức để tham gia giải đấu</string>
   <string name="privacy">Bảo mật</string>
   <string name="letOtherPlayersFollowYou">Cho phép người khác theo dõi bạn</string>
   <string name="letOtherPlayersChallengeYou">Cho phép người khác thách đấu bạn</string>

@@ -224,8 +224,8 @@
   <string name="yourOpponentOffersADraw">你的对手提出和棋</string>
   <string name="accept">接受</string>
   <string name="decline">拒绝</string>
-  <string name="startingIn">开始于</string>
-  <string name="startingSoon"> - 即将开始 - </string>
+  <string name="startingIn" comment="Displayed above a timer">开始于</string>
+  <string name="startingSoon">即将开始</string>
   <string name="playingRightNow">正在对局</string>
   <string name="eventInProgress">正在进行</string>
   <string name="finished">已结束</string>
@@ -457,7 +457,7 @@
   <string name="isPrivate">私人锦标赛</string>
   <string name="editTournament">编辑锦标赛</string>
   <string name="tournDescription">锦标赛描述</string>
-  <string name="tournDescriptionHelp">您有其它信息要告知参赛者？请尽量保持此信息简明扼要。可以使用标记语言链接：[text](https://url)</string>
+  <string name="tournDescriptionHelp">您有其它信息要告知参赛者？请尽量保持此信息简明扼要。可以使用标记语言链接：[name](https://url)</string>
   <string name="cancelTournament">取消锦标赛</string>
   <string name="reportXToModerators">举报%s</string>
   <string name="profileCompletion">资料完善: %s</string>
@@ -578,6 +578,11 @@
   <string name="clockIncrement">加秒</string>
   <string name="onlyMembersOfTeam">仅团队成员</string>
   <string name="noRestriction">没有限制</string>
+  <string name="minimumRatedGames">最少排位赛局数</string>
+  <string name="minimumRating">最低等级分</string>
+  <string name="maximumWeeklyRating">本周最高等级分</string>
+  <string name="onlyTitled">仅限有头衔玩家</string>
+  <string name="onlyTitledHelp">需要官方头衔才能加入比赛</string>
   <string name="privacy">隐私</string>
   <string name="letOtherPlayersFollowYou">允许其他棋手关注</string>
   <string name="letOtherPlayersChallengeYou">允许其他棋手挑战</string>

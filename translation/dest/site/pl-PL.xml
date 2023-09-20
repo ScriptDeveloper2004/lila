@@ -260,8 +260,8 @@
   <string name="yourOpponentOffersADraw">Przeciwnik proponuje remis</string>
   <string name="accept">Akceptuję</string>
   <string name="decline">Odrzuć</string>
-  <string name="startingIn">Zaczynamy za</string>
-  <string name="startingSoon"> - Zaczynamy wkrótce -</string>
+  <string name="startingIn" comment="Displayed above a timer">Zaczynamy za</string>
+  <string name="startingSoon">Zaczynamy wkrótce</string>
   <string name="playingRightNow">W toku</string>
   <string name="eventInProgress">W toku</string>
   <string name="finished">Zakończone</string>
@@ -544,7 +544,7 @@ poproszenia o analizę komputerową, omówienia jej z innymi oraz udostępnienia
   <string name="isPrivate">Prywatny</string>
   <string name="editTournament">Edytuj turniej</string>
   <string name="tournDescription">Opis turnieju</string>
-  <string name="tournDescriptionHelp">Czy chcesz powiedzieć coś szczególnego uczestnikom? Pisz krótko i na temat. Istnieje możliwość dodania odnośników: [text](https://url)</string>
+  <string name="tournDescriptionHelp">Czy chcesz powiedzieć coś szczególnego uczestnikom? Pisz krótko i na temat. Istnieje możliwość dodania odnośników: [name](https://url)</string>
   <string name="cancelTournament">Anuluj turniej</string>
   <string name="reportXToModerators">Zgłoś %s do moderatora</string>
   <string name="profileCompletion">Kompletność profilu: %s</string>
@@ -671,6 +671,11 @@ jeden adres URL na linię</string>
   <string name="clockIncrement">Przyrost czasu</string>
   <string name="onlyMembersOfTeam">Tylko członkowie zespołu</string>
   <string name="noRestriction">Bez ograniczeń</string>
+  <string name="minimumRatedGames">Minimalna liczba partii rankingowych</string>
+  <string name="minimumRating">Minimalny ranking</string>
+  <string name="maximumWeeklyRating">Maksymalny tygodniowy ranking</string>
+  <string name="onlyTitled">Tylko gracze z tytułem</string>
+  <string name="onlyTitledHelp">Wymagaj oficjalnego tytułu, aby dołączyć do turnieju</string>
   <string name="privacy">Prywatność</string>
   <string name="letOtherPlayersFollowYou">Zezwól na obserwowanie przez innych graczy</string>
   <string name="letOtherPlayersChallengeYou">Zezwól na zaproszenia od innych graczy</string>

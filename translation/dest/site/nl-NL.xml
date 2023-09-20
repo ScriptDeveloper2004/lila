@@ -90,7 +90,7 @@
   <string name="averageRatingX">Gemiddelde rating: %s</string>
   <string name="recentGames">Recente partijen</string>
   <string name="topGames">Toppartijen</string>
-  <string name="masterDbExplanation">Partijen van %1$s+ meesters met een rating tussen %2$s en %3$s</string>
+  <string name="masterDbExplanation">OTB-partijen van %1$s+ meesters met een rating tussen %2$s en %3$s</string>
   <plurals name="winInXHalfMoves">
     <item quantity="one">Win in %s halfzet</item>
     <item quantity="other">Win in %s halfzetten</item>
@@ -236,8 +236,8 @@
   <string name="yourOpponentOffersADraw">Je tegenstander biedt remise aan</string>
   <string name="accept">Accepteren</string>
   <string name="decline">Afwijzen</string>
-  <string name="startingIn">Begint over</string>
-  <string name="startingSoon"> - Binnenkort van start - </string>
+  <string name="startingIn" comment="Displayed above a timer">Begint over</string>
+  <string name="startingSoon">Binnenkort van start</string>
   <string name="playingRightNow">Nu aan het spelen</string>
   <string name="eventInProgress">Nu aan het spelen</string>
   <string name="finished">Afgelopen</string>
@@ -486,7 +486,7 @@ een computeranalyse, een chatbox bij de partij en een deelbare URL.</string>
   <string name="isPrivate">Privé</string>
   <string name="editTournament">Toernooi bewerken</string>
   <string name="tournDescription">Toernooi omschrijving</string>
-  <string name="tournDescriptionHelp">Iets bijzonders dat je aan de deelnemers kwijt wil? Probeer het kort te houden. Je kunt Markdown links gebruiken: [tekst](https://url)</string>
+  <string name="tournDescriptionHelp">Iets bijzonders dat je aan de deelnemers kwijt wil? Probeer het kort te houden. Je kunt Markdown links gebruiken: [naam](https://url)</string>
   <string name="cancelTournament">Toernooi afgelasten</string>
   <string name="reportXToModerators">Rapporteer %s aan de toezichthouders</string>
   <string name="profileCompletion">Voltooiing profiel: %s</string>
