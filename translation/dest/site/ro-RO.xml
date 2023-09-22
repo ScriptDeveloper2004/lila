@@ -536,13 +536,13 @@
   <string name="youPlayTheBlackPieces">Joci cu negrele</string>
   <string name="itsYourTurn">E rândul tău!</string>
   <string name="opponent">Adversar</string>
-  <string name="learnMenu">Învață</string>
-  <string name="studyMenu">Studiază</string>
+  <string name="learnMenu" comment="This appears in the top menu, so try to keep it as short as possible.">Învață</string>
+  <string name="studyMenu" comment="This appears in the top menu, so try to keep it as short as possible.">Studiază</string>
   <string name="practice">Antrenează-te</string>
   <string name="community">Comunitate</string>
   <string name="tools">Unelte</string>
   <string name="increment">Suplimentar</string>
-  <string name="sharePDN">Distribuie PGN</string>
+  <string name="sharePDN">Distribuie PDN</string>
   <string name="shareFEN">Distribuie FEN</string>
   <string name="shareGameURL">Distribuie URL-ul jocului</string>
   <string name="error.required">Acest camp este necesar</string>
@@ -563,7 +563,7 @@
   <string name="tpTimeSpentOnTV">Timp la TV: %s</string>
   <string name="watch">Privește</string>
   <string name="videoLibrary">Librărie video</string>
-  <string name="streamersMenu">Streameri</string>
+  <string name="streamersMenu" comment="This appears in the top menu, so try to keep it as short as possible.">Streameri</string>
   <string name="mobileApp">Aplicația mobilă</string>
   <string name="webmasters">Webmasteri</string>
   <string name="about">Despre</string>

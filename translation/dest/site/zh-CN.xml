@@ -635,8 +635,8 @@
   <string name="signedOut">您已登出</string>
   <string name="loginSuccessful">您已登录</string>
   <string name="opponent">对手</string>
-  <string name="learnMenu">学习</string>
-  <string name="studyMenu">专题课程</string>
+  <string name="learnMenu" comment="This appears in the top menu, so try to keep it as short as possible.">学习</string>
+  <string name="studyMenu" comment="This appears in the top menu, so try to keep it as short as possible.">专题课程</string>
   <string name="practice">练习</string>
   <string name="community">社区</string>
   <string name="tools">工具</string>
@@ -661,7 +661,7 @@
   <string name="tpTimeSpentOnTV">在 Lidraughts TV 出现的时长：%s</string>
   <string name="watch">观看</string>
   <string name="videoLibrary">视频库</string>
-  <string name="streamersMenu">主播</string>
+  <string name="streamersMenu" comment="This appears in the top menu, so try to keep it as short as possible.">主播</string>
   <string name="mobileApp">手机应用</string>
   <string name="webmasters">网站管理员</string>
   <string name="about">关于</string>
