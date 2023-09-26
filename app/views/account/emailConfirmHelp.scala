@@ -12,22 +12,20 @@ import controllers.routes
 
 object emailConfirmHelp {
 
-  private val title = "Help with email confirmation"
-
   def apply(form: Form[_], status: Option[Status])(implicit ctx: Context) = views.html.base.layout(
-    title = title,
+    title = trans.emailConfirmHelp.txt(),
     moreCss = cssTag("email-confirm"),
     moreJs = jsTag("emailConfirmHelp.js")
   )(frag(
       main(cls := "page-small box box-pad email-confirm-help")(
-        h1(title),
-        p("You signed up, but didn't receive your confirmation email?"),
+        h1(trans.emailConfirmHelp()),
+        p(trans.emailConfirmNotReceived()),
         st.form(cls := "form3", action := routes.Account.emailConfirmHelp, method := "get")(
           form3.split(
             form3.group(
               form("username"),
               trans.username(),
-              help = raw("What username did you create?").some
+              help = trans.whatSignupUsername().some
             ) { f =>
                 form3.input(f)(pattern := lidraughts.user.User.newUsernameRegex.regex)
               },
