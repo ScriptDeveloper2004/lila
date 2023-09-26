@@ -37,35 +37,42 @@ object emailConfirmHelp {
         div(cls := "replies")(
           status map {
             case NoSuchUser(name) => frag(
-              p("We couldn't find any user by this name: ", strong(name), "."),
+              p(trans.usernameNotFound(strong(name))),
               p(
-                "You can use it to ",
-                a(href := routes.Auth.signup)("create a new account"), "."
+                a(href := routes.Auth.signup)(
+                  trans.usernameCanBeUsedForNewAccount()
+                )
               )
             )
             case EmailSent(name, email) => frag(
-              p("We have sent an email to ", email.conceal, "."),
+              p(trans.emailSent(email.conceal)),
               p(
-                "It can take some time to arrive.", br,
-                strong("Wait 5 minutes and refresh your email inbox.")
+                trans.emailCanTakeSomeTime(), br,
+                strong(trans.refreshInboxAfterFiveMinutes())
               ),
-              p("Also check your spam folder, it might end up there. If so, mark it as NOT spam."),
-              p("If everything else fails, then send us this email:"),
+              p(trans.checkSpamFolder()),
+              p(trans.emailForSignupHelp()),
               hr,
               p(i(s"Hello, please confirm my account: $name")),
               hr,
-              p("Copy and paste the above text and send it to ", contactEmail),
-              p("We will come back to you shortly to help you complete your signup.")
+              p(
+                trans.copyTextToEmail(
+                  a(href := s"mailto:$contactEmail?subject=Confirm account $name")(
+                    contactEmail
+                  )
+                )
+              ),
+              p(trans.waitForSignupHelp())
             )
             case Confirmed(name) => frag(
-              p("The user ", strong(name), " is successfully confirmed."),
-              p("You can ", a(href := routes.Auth.login)("login right now as ", name), "."),
-              p("You do not need a confirmation email.")
+              p(trans.accountConfirmed(strong(name))),
+              p(trans.accountCanLogin(a(href := routes.Auth.login)(name))),
+              p(trans.accountConfirmationEmailNotNeeded())
             )
             case Closed(name) =>
-              p("The account ", strong(name), " is closed.")
+              p(trans.accountClosed(strong(name)))
             case NoEmail(name) =>
-              p("The account ", strong(name), " was registered without an email.")
+              p(trans.accountRegisteredWithoutEmail(strong(name)))
           }
         )
       )

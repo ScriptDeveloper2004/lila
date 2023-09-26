@@ -53,11 +53,12 @@ email.setCustomValidity(email.validity.patternMismatch ? currentError : "");
             },
             li(
               h3(trans.waitUpToFiveMinutes()), br,
-              trans.itCanTakeAWhileToArrive()
-            ),
-            userEmail.exists(_.email.isHotmail) option li(
-              h3(trans.hotmailIsNotoriouslyUnreliable()), br,
-              trans.yourConfirmationEmailMayNeverArrive()
+              trans.itCanTakeAWhileToArrive(),
+              userEmail.exists(_.email.isHotmail) option frag(
+                br,
+                trans.hotmailIsNotoriouslyBad(), br,
+                trans.considerUsingADifferentOne()
+              )
             ),
             li(
               h3(trans.stillNotGettingIt()), br,

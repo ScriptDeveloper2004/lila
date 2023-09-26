@@ -116,7 +116,7 @@
   <string name="cpus">CPU</string>
   <string name="memory">Bộ nhớ</string>
   <string name="infiniteAnalysis">Phân tích vô hạn</string>
-  <string name="removesTheDepthLimit">Bỏ giới hạn độ sâu, và làm máy tính của bạn ấm hơn</string>
+  <string name="removesTheDepthLimit">Bỏ giới hạn độ sâu và giữ máy tính của bạn mượt hơn</string>
   <string name="blunder">Sai lầm nghiêm trọng</string>
   <string name="blunders">Sai lầm nghiêm trọng</string>
   <string name="mistake">Lỗi</string>
@@ -159,7 +159,7 @@
   <string name="youNeedAnAccountToDoThat">Bạn cần một tài khoản để thực hiện điều này</string>
   <string name="signUp">Đăng kí</string>
   <string name="signupEmailHint">Chúng tôi chỉ sử dụng nó cho việc khôi phục mật khẩu.</string>
-  <string name="computersAreNotAllowedToPlay">Máy tính và chơi với sự trợ giúp của máy tính không được chấp nhận. Đừng nhờ sự trợ giúp của máy chơi cờ đam, các dữ liệu, hoặc từ những người chơi khác khi chơi.</string>
+  <string name="computersAreNotAllowedToPlay">Máy tính và chơi với sự trợ giúp của máy tính không được chấp nhận. Đừng nhờ sự trợ giúp của máy chơi cờ đam, các dữ liệu hoặc từ những người chơi khác khi chơi.</string>
   <string name="gameByUsername">Ván cờ theo tên người dùng</string>
   <string name="gameByUrlOrId">Ván cờ theo URL hoặc ID</string>
   <string name="games">Các ván đấu</string>
@@ -363,14 +363,14 @@
   <string name="toStudy">Nghiên cứu</string>
   <string name="pdnImportBy">PDN nhập bởi %s</string>
   <string name="importGame">Nhập ván cờ</string>
-  <string name="importGameExplanation">Dán PDN trò chơi để có bản phát lại có thể xem được,
-phân tích bằng máy tính, trò chuyện tong ván đấu và URL có thể chia sẻ.</string>
+  <string name="importGameExplanation">Dán PDN của ván đấu để xem lại trên trình duyệt,
+phân tích bằng máy tính, trò chuyện trong ván đấu và có một URL có thể chia sẻ được.</string>
   <string name="orUploadAPdnFile">Hoặc tải tệp PDN lên</string>
   <plurals name="nbImportedGames">
     <item quantity="other">%s ván cờ đã nhập</item>
   </plurals>
   <string name="thisIsADraughtsCaptcha">Đây là mã CAPTCHA cờ đam.</string>
-  <string name="clickOnTheBoardToMakeYourMove">Nhấn vào bàn cờ để di chuyển, và chứng minh bạn là con người.</string>
+  <string name="clickOnTheBoardToMakeYourMove">Nhấn vào bàn cờ để di chuyển và chứng minh bạn là con người.</string>
   <string name="captcha.fail">Hãy giải mã captcha cờ đam.</string>
   <string name="notTheBestCapture">Đó không phải là nước ăn quân tốt nhất</string>
   <string name="colorPlaysCapture">%s để di chuyển; chơi chuỗi ăn quân dài nhất</string>
@@ -500,8 +500,8 @@ Một đường dẫn mỗi dòng</string>
   <string name="findTheBestMoveForBlack">Tìm nước tối ưu cho Đen.</string>
   <string name="toTrackYourProgress">Theo dõi tiến trình của bạn:</string>
   <string name="trainingSignupExplanation">Lidraughts sẽ cung cấp những câu đố phù hợp với kỹ năng của bạn, tạo nên hiệu quả đào tạo tốt hơn.</string>
-  <string name="puzzleId">Câu đố %s</string>
-  <string name="puzzleOfTheDay">Thế cờ của ngày</string>
+  <string name="puzzleId">Câu đố số %s</string>
+  <string name="puzzleOfTheDay">Câu đố của ngày</string>
   <string name="clickToSolve">Nhấn để giải</string>
   <string name="goodMove">Nước đi tốt</string>
   <string name="butYouCanDoBetter">Nhưng bạn không thể làm hơn được.</string>
@@ -710,7 +710,7 @@ Một đường dẫn mỗi dòng</string>
   <string name="aboutSimulSettings">Cờ đồng loạt luôn không tính elo. Việc tái đấu, đi lại và thêm thời gian sẽ bị vô hiệu hoá.</string>
   <string name="create">Tạo</string>
   <string name="whenCreateSimul">Khi bạn tạo một sự kiện đồng loạt, bạn sẽ chơi với nhiều người cùng một lúc.</string>
-  <string name="simulVariantsHint">Nếu bạn chọn nhiều thể loại, mỗi người tham gia sẽ được lựa chọn chơi thể loại nào.</string>
+  <string name="simulVariantsHint">Nếu bạn chọn nhiều biến thể, mỗi người chơi sẽ được lựa chọn chơi biến thể nào.</string>
   <string name="simulClockHint">Thiết lập Đồng hồ Fischer. Bạn càng chơi với nhiều người thì càng có thể cần nhiều thời gian.</string>
   <string name="simulAddExtraTime">Bạn có thể thêm thời gian cho đồng hồ của bạn để đấu cờ đồng loạt dễ hơn.</string>
   <string name="simulHostExtraTime">Thời gian thêm cho người chủ trì</string>

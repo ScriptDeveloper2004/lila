@@ -195,14 +195,14 @@
   <string name="rating">Rating</string>
   <string name="ratingStats">Ratingsstatistieken</string>
   <string name="username">Gebruikersnaam</string>
-  <string name="usernameOrEmail">Gebruikersnaam of email</string>
+  <string name="usernameOrEmail">Gebruikersnaam of e-mail</string>
   <string name="changeUsername">Wijzig gebruikersnaam</string>
   <string name="changeUsernameAlreadyChanged">Je hebt je gebruikersnaam al een keer veranderd!</string>
   <string name="changeUsernameNotSame">Je kan alleen het hoofdlettergebruik veranderen. Bijvoorbeeld van \"klaas\" naar \"Klaas\".</string>
   <string name="changeUsernameDescription">Wijzig je gebruikersnaam. Dit kan slechts eenmaal worden gedaan, en je kan alleen het hoofdlettergebruik van je gebruikersnaam veranderen.</string>
   <string name="password">Wachtwoord</string>
   <string name="changePassword">Wijzig wachtwoord</string>
-  <string name="changeEmail">Verander email</string>
+  <string name="changeEmail">Verander e-mail</string>
   <string name="email">E-mail</string>
   <string name="passwordReset">Nieuw wachtwoord</string>
   <string name="forgotPassword">Wachtwoord vergeten?</string>
@@ -601,7 +601,7 @@ Een URL per regel</string>
   <string name="invalidUsernameOrPassword">Ongeldige gebruikersnaam of wachtwoord</string>
   <string name="incorrectPassword">Onjuist wachtwoord</string>
   <string name="invalidAuthenticationCode">Onjuiste authenticatie code</string>
-  <string name="emailMeALink">Email me een link</string>
+  <string name="emailMeALink">E-mail me een link</string>
   <string name="currentPassword">Huidig wachtwoord</string>
   <string name="newPassword">Nieuw wachtwoord</string>
   <string name="newPasswordAgain">Nieuw wachtwoord (opnieuw)</string>
@@ -790,10 +790,26 @@ Een URL per regel</string>
   <string name="yourRating">Jouw rating</string>
   <string name="cumulative">Cumulatief</string>
   <string name="glicko2Rating">Glicko-2 rating</string>
-  <string name="checkYourEmail">Controleer je email</string>
-  <string name="weHaveSentYouAnEmailClickTheLink">We hebben je een email gestuurd. Klik op de link in de email om je account te activeren.</string>
-  <string name="ifYouDoNotSeeTheEmailCheckOtherPlaces">Als je de email niet ziet, kijk dan op andere plaatsen, zoals je spam of andere mappen.</string>
-  <string name="weHaveSentYouAnEmailTo">We hebben een email verstuurd naar %s. Klik op de link in de email om je wachtwoord te resetten.</string>
+  <string name="checkYourEmail">Controleer je e-mail</string>
+  <string name="almostThereX">Bijna klaar, %s!</string>
+  <string name="nowCheckYourEmailX">Controleer nu je e-mail (%s) om je registratie te bevestigen.</string>
+  <string name="weHaveSentYouAnEmailClickTheLink">We hebben je een bevestigingsmail gestuurd. Klik op de link in de e-mail om je account te activeren.</string>
+  <string name="ifYouDoNotSeeTheEmailCheckOtherPlaces">Als je de e-mail niet ziet, controleer dan alle plaatsen waar deze kan zijn, zoals je spam, social, of andere mappen.</string>
+  <string name="weHaveSentYouAnEmailTo">We hebben een e-mail verstuurd naar %s. Klik op de link in de e-mail om je wachtwoord te resetten.</string>
+  <string name="notReceivingIt" comment="As in: not receiving the email?">Geen e-mail ontvangen?</string>
+  <string name="makeSureYourEmailAddressIsCorrect">Controleer of je het juiste e-mailadres hebt gebruikt:</string>
+  <string name="waitUpToFiveMinutes">Wacht 5 minuten.</string>
+  <string name="itCanTakeAWhileToArrive">Afhankelijk van je provider kan het even duren voordat deze aankomt.</string>
+  <string name="hotmailIsNotoriouslyBad">Vooral Hotmail is onbetrouwbaar, mogelijk komt je bevestigingsmail nooit aan op dit adres.</string>
+  <string name="considerUsingADifferentOne">Overweeg een ander e-mailadres te gebruiken.</string>
+  <string name="stillNotGettingIt" comment="As in: still not receiving the email?">Nog steeds geen e-mail ontvangen?</string>
+  <string name="didYoumakeSureYourEmailAddressIsCorrect">Heb je het e-mailadres gecontroleerd?</string>
+  <string name="didYouWaitFiveMinutes">Heb je 5 minuten gewacht?</string>
+  <string name="changeIt">Wijzigen</string>
+  <string name="thisIsAlreadyYourCurrentEmail">Dit is al je huidige e-mailadres.</string>
+  <string name="ifSoX">Zo ja, %s.</string>
+  <string name="proceedToThisPage">ga dan naar deze pagina om het probleem op te lossen</string>
+  <string name="clickHereForHelp">Klik hier voor hulp</string>
   <string name="byRegisteringYouAgreeToBeBoundByOur">Door te registreren ga je akkoord met onze %s.</string>
   <string name="networkLagBetweenYouAndLidraughts">Netwerkvertraging tussen jou en Lidraughts</string>
   <string name="timeToProcessAMoveOnLidraughtsServer">Tijd om een zet te verwerken op de Lidraughts server</string>
