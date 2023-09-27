@@ -555,7 +555,8 @@ object JsonView {
 
   private[tournament] def openingTableJson(t: draughts.OpeningTable) = Json.obj(
     "key" -> t.key,
-    "name" -> t.name
+    "name" -> t.name,
+    "url" -> t.url
   )
 
   private[tournament] implicit val spotlightWrites: OWrites[Spotlight] = OWrites { s =>
@@ -564,6 +565,7 @@ object JsonView {
       "description" -> s.description
     ).add("iconImg" -> s.iconImg)
       .add("iconFont" -> s.iconFont)
+      .add("drawLimit" -> s.drawLimit)
   }
 
   private[tournament] implicit val perfTypeWrites: OWrites[PerfType] = OWrites { pt =>
