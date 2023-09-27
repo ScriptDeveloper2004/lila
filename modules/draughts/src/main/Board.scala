@@ -184,4 +184,12 @@ object Board {
     width = 8,
     height = 8
   )
+
+  def san2alg(move: String, boardPos: BoardPos) = {
+    val sep = if (move.contains('x')) "x" else "-"
+    val algebraicFields = move.split(sep).flatMap {
+      boardPos.algebraic(_)
+    }
+    algebraicFields mkString sep
+  }
 }

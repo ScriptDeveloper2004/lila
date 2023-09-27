@@ -2,7 +2,7 @@ package lidraughts.game
 
 import draughts.format.pdn.{ Pdn, Tag, Tags, TagType, Parser, ParsedPdn }
 import draughts.format.{ FEN, Forsyth, pdn => draughtsPdn }
-import draughts.{ Centis, Color }
+import draughts.{ Board, Centis, Color }
 
 import lidraughts.common.LightUser
 
@@ -65,13 +65,8 @@ final class PdnDump(
     }
   }
 
-  private def san2alg(moves: Seq[String], boardPos: draughts.BoardPos) = moves map { move =>
-    val capture = move.contains('x')
-    val fields = if (capture) move.split("x") else move.split("-")
-    val algebraicFields = fields.flatMap { boardPos.algebraic(_) }
-    val sep = if (capture) "x" else "-"
-    algebraicFields mkString sep
-  }
+  private def san2alg(moves: Seq[String], boardPos: draughts.BoardPos) =
+    moves map { Board.san2alg(_, boardPos) }
 
   private def gameUrl(id: String) = s"$netBaseUrl/$id"
 

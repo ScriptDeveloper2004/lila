@@ -5,7 +5,7 @@ import play.api.libs.json._
 import scala.concurrent.duration._
 import scala.concurrent.Promise
 
-import draughts.format.Forsyth
+import draughts.Board
 import lidraughts.challenge.Challenge
 import lidraughts.common.LightUser
 import lidraughts.common.String.shorten
@@ -20,6 +20,7 @@ private final class PushApi(
     oneSignalPush: OneSignalPush,
     webPush: WebPush,
     implicit val lightUser: LightUser.GetterSync,
+    prefApi: lidraughts.pref.PrefApi,
     gameProxy: Game.ID => Fu[Option[Game]],
     urgentGames: User.ID => Fu[List[Pov]],
     bus: lidraughts.common.Bus,
@@ -57,22 +58,27 @@ private final class PushApi(
 
   def move(move: MoveEvent): Funit = scheduler.after(2 seconds) {
     gameProxy(move.gameId) flatMap {
-      _.filter(_.playable) ?? { game =>
+      _.filter(g => g.playable && g.board.ghosts == 0) ?? { game =>
         val pov = Pov(game, game.player.color)
         game.player.userId ?? { userId =>
           IfAway(pov) {
             urgentGames(userId) flatMap { urgent =>
               game.pdnMoves.lastOption ?? { sanMove =>
-                pushToAll(userId, _.move, PushApi.Data(
-                  title = "It's your turn!",
-                  body = s"${opponentName(pov)} played $sanMove",
-                  stacking = Stacking.GameMove,
-                  payload = Json.obj(
-                    "userId" -> userId,
-                    "userData" -> corresGameJson(pov, "gameMove")
-                  ),
-                  iosBadge = Option(urgent.filter(_.isMyTurn).length)
-                ))
+                val boardPos = game.variant.boardSize.pos
+                val prefIfAlgebraic = if (boardPos.hasAlgebraic) prefApi.getPrefById(userId).dmap(some) else fuccess(None)
+                prefIfAlgebraic.flatMap { pref =>
+                  val move = if (pref.exists(_.isAlgebraic(game.variant))) Board.san2alg(sanMove, boardPos) else sanMove
+                  pushToAll(userId, _.move, PushApi.Data(
+                    title = "It's your turn!",
+                    body = s"${opponentName(pov)} played $move",
+                    stacking = Stacking.GameMove,
+                    payload = Json.obj(
+                      "userId" -> userId,
+                      "userData" -> corresGameJson(pov, "gameMove")
+                    ),
+                    iosBadge = Option(urgent.count(_.isMyTurn))
+                  ))
+                }
               }
             }
           }
