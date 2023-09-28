@@ -56,28 +56,31 @@ private final class PushApi(
       }
     }.sequenceFu.void
 
-  def move(move: MoveEvent): Funit = scheduler.after(2 seconds) {
-    gameProxy(move.gameId) flatMap {
-      _.filter(g => g.playable && g.board.ghosts == 0) ?? { game =>
-        val pov = Pov(game, game.player.color)
-        game.player.userId ?? { userId =>
-          IfAway(pov) {
-            urgentGames(userId) flatMap { urgent =>
-              game.pdnMoves.lastOption ?? { sanMove =>
-                val boardPos = game.variant.boardSize.pos
-                val prefIfAlgebraic = if (boardPos.hasAlgebraic) prefApi.getPrefById(userId).dmap(some) else fuccess(None)
-                prefIfAlgebraic.flatMap { pref =>
-                  val move = if (pref.exists(_.isAlgebraic(game.variant))) Board.san2alg(sanMove, boardPos) else sanMove
-                  pushToAll(userId, _.move, PushApi.Data(
-                    title = "It's your turn!",
-                    body = s"${opponentName(pov)} played $move",
-                    stacking = Stacking.GameMove,
-                    payload = Json.obj(
-                      "userId" -> userId,
-                      "userData" -> corresGameJson(pov, "gameMove")
-                    ),
-                    iosBadge = Option(urgent.count(_.isMyTurn))
-                  ))
+  def move(move: MoveEvent): Funit = {
+    if (draughts.format.Forsyth.countGhosts(move.fen) != 0) funit
+    else scheduler.after(2 seconds) {
+      gameProxy(move.gameId) flatMap {
+        _.filter(g => g.playable && g.board.ghosts == 0) ?? { game =>
+          val pov = Pov(game, game.player.color)
+          game.player.userId ?? { userId =>
+            IfAway(pov) {
+              urgentGames(userId) flatMap { urgent =>
+                game.pdnMovesConcat(false, true).lastOption ?? { sanMove =>
+                  val boardPos = game.variant.boardSize.pos
+                  val prefIfAlgebraic = if (boardPos.hasAlgebraic) prefApi.getPrefById(userId).dmap(some) else fuccess(None)
+                  prefIfAlgebraic.flatMap { pref =>
+                    val move = if (pref.exists(_.isAlgebraic(game.variant))) Board.san2alg(sanMove, boardPos) else sanMove
+                    pushToAll(userId, _.move, PushApi.Data(
+                      title = "It's your turn!",
+                      body = s"${opponentName(pov)} played $move",
+                      stacking = Stacking.GameMove,
+                      payload = Json.obj(
+                        "userId" -> userId,
+                        "userData" -> corresGameJson(pov, "gameMove")
+                      ),
+                      iosBadge = Option(urgent.count(_.isMyTurn))
+                    ))
+                  }
                 }
               }
             }

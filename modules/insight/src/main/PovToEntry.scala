@@ -78,7 +78,7 @@ object PovToEntry {
       }
     }
     val movetimes = from.movetimes.toList
-    val roles = from.pov.game.pdnMoves(from.pov.color) map pdnMoveToRole
+    val roles = from.pov.game.pdnMovesConcat(from.pov.color) map pdnMoveToRole
     val boards = {
       val pivot = if (from.pov.color == from.pov.game.startColor) 0 else 1
       from.boards.toList.zipWithIndex.collect {
@@ -134,10 +134,10 @@ object PovToEntry {
       eco =
         if (game.playable || game.turns < 4 || game.fromPosition || game.variant.exotic) none
         else draughts.opening.Ecopening fromGame game.pdnMoves.toList,
-      myCastling = Castling.fromMoves(game pdnMoves pov.color),
+      myCastling = Castling.fromMoves(game pdnMovesConcat pov.color),
       opponentRating = opRating,
       opponentStrength = RelativeStrength(opRating - myRating),
-      opponentCastling = Castling.fromMoves(game pdnMoves !pov.color),
+      opponentCastling = Castling.fromMoves(game pdnMovesConcat !pov.color),
       moves = makeMoves(from),
       result = game.winnerUserId match {
         case None => Result.Draw

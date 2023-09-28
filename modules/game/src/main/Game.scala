@@ -221,7 +221,7 @@ case class Game(
   def pdnMovesConcat(fullCaptures: Boolean = false, dropGhosts: Boolean = false): PdnMoves =
     draughts.pdnMovesConcat(fullCaptures, dropGhosts)
 
-  def pdnMoves(color: Color): PdnMoves = {
+  def pdnMovesConcat(color: Color): PdnMoves = {
     val pivot = if (color == startColor) 0 else 1
     pdnMovesConcat().zipWithIndex.collect {
       case (e, i) if (i % 2) == pivot => e
