@@ -373,7 +373,7 @@ phân tích bằng máy tính, trò chuyện trong ván đấu và có một URL
   <string name="clickOnTheBoardToMakeYourMove">Nhấn vào bàn cờ để di chuyển và chứng minh bạn là con người.</string>
   <string name="captcha.fail">Hãy giải mã captcha cờ đam.</string>
   <string name="notTheBestCapture">Đó không phải là nước ăn quân tốt nhất</string>
-  <string name="colorPlaysCapture">%s để di chuyển; chơi chuỗi ăn quân dài nhất</string>
+  <string name="colorPlaysCapture">Đến %s di chuyển; chơi chuỗi ăn quân dài nhất</string>
   <string name="retry">Thử lại</string>
   <string name="reconnecting">Kết nối lại</string>
   <plurals name="nbFriendsOnline">
