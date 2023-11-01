@@ -17,7 +17,7 @@ It features [live games](https://lidraughts.org/?any#hook),
 
 Computer opposition and analysis is made possible by Fabien Letouzey's great engine [Scan 3.1](https://github.com/rhalbersma/scan) for all 10x10 draughts variants.
 
-The UI is currently available in 26 languages, translated from English (GB and US) with a varying degree of completeness: Belarusian, Chinese, Czech, Dutch, German, Greek, French, Hebrew, Hungarian, Italian, Japanese, Latvian, Lithuanian, Mongolian, Polish, Romanian, Russian, Brazilian Portuguese, European Portuguese, Spanish, Turkish, Ukrainian, Vietnamese and Welsh; and out of respect for Frisian draughts of course also in Frisian!
+The UI is currently available in 27 languages, translated from English (GB and US) with a varying degree of completeness: Belarusian, Chinese, Czech, Dutch, German, Greek, French, Hebrew, Hungarian, Italian, Japanese, Latvian, Lithuanian, Mongolian, Polish, Romanian, Russian, Brazilian Portuguese, European Portuguese, Spanish, Taiwanese, Turkish, Ukrainian, Vietnamese and Welsh; and out of respect for Frisian draughts of course also in Frisian!
 
 Please help us translate Lidraughts [with Crowdin](https://crowdin.com/project/lidraughts). If your language isn't in the list, send us an email and we can add it.
 

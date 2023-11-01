@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="swissTournaments">積分循環制錦標賽</string>
+  <plurals name="nbRounds">
+    <item quantity="other">%s 輪</item>
+  </plurals>
+  <string name="nextRound">下一輪</string>
+  <string name="numberOfRounds">回合數</string>
+</resources>

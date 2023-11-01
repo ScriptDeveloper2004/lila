@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="arenaTournaments">錦標賽</string>
+  <string name="isRated">這場錦標賽將會評分，並且影響到您的評分</string>
+  <string name="isNotRated">這場錦標賽不會評分，並且它不會影響到您的評分</string>
+  <string name="someRated">一些錦標賽將會評分，並且影響到您的評分</string>
+  <string name="howAreScoresCalculated">分數是如何計算的?</string>
+  <string name="berserk">狂暴選項</string>
+  <string name="howIsTheWinnerDecided">名次是怎麼排名的?</string>
+  <string name="howIsTheWinnerDecidedAnswer">在錦標賽中獲得最多積分的人將獲勝，當兩位(或以上)玩家擁有相同積分時，這場錦標賽將會被視為平手</string>
+  <string name="howDoesPairingWork">對手是如何配對的?</string>
+  <string name="howDoesItEnd">錦標賽何時會結束?</string>
+  <string name="howDoesItEndAnswer">每場錦標賽都會有一個倒數計時器，當它歸零時，錦標賽的排名就會固定，排名將會被顯示。如果有比賽在錦標賽結束後還沒完成，您還是得完成它，但是積分將不會被算進錦標賽的積分裡。</string>
+  <string name="otherRules">其他重要的規則</string>
+  <string name="thisIsPrivate">這是一個非公開的錦標賽</string>
+  <string name="shareUrl">分享這個網址讓其他人加入這場錦標賽:%s</string>
+  <string name="variant">變體</string>
+  <string name="minimumGameLength">最少對局步數</string>
+  <string name="history">先前的重要錦標賽</string>
+  <plurals name="viewAllXTeams" comment="viewAllXTeams [one] [other]&#xA;&#xA;%s is the number of teams that can be viewed">
+    <item quantity="other">查看所有 %s 團隊</item>
+  </plurals>
+  <string name="newTeamBattle">新團隊戰</string>
+  <string name="customStartDate">自定義開始日期</string>
+  <string name="customStartDateHelp">在您的當地時區，這將會覆蓋在 \"比賽準備時間\" 選項</string>
+  <string name="allowBerserk">允許啟用狂暴模式</string>
+  <string name="allowBerserkHelp">讓玩家將時間減半以獲得額外積分</string>
+  <string name="allowChatHelp">讓玩家在聊天室討論</string>
+  <string name="arenaStreaks">競技場連勝</string>
+  <string name="arenaStreaksHelp">2次勝利後，連勝將會取得4分，而不是2分。</string>
+  <string name="noBerserkAllowed">禁止「神速」模式</string>
+  <string name="noArenaStreaks">無競技場連勝</string>
+  <string name="averagePerformance">平均表現</string>
+  <string name="averageScore">平均分數</string>
+  <string name="myTournaments">我的錦標賽</string>
+</resources>
