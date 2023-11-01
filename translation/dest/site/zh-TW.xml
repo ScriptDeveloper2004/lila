@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="gameOver">遊戲結束</string>
   <string name="waitingForOpponent">等待對手</string>
@@ -7,6 +7,7 @@
   <string name="aiNameLevelAiLevel">%1$s等級 %2$s</string>
   <string name="level">難度</string>
   <string name="toggleTheChat" comment="Setting to enable/disable the chat">聊天開關</string>
+  <string name="toggleSound" comment="Setting to enable/disable sound">聲音開關</string>
   <string name="chat">聊天</string>
   <string name="resign">認輸</string>
   <string name="white">白方</string>
@@ -395,6 +396,8 @@
   <string name="community">社區</string>
   <string name="tools">工具</string>
   <string name="increment">加秒</string>
+  <string name="sharePDN">分享PDN</string>
+  <string name="shareGameURL">分享對局網址</string>
   <string name="error.required">本项必填</string>
   <string name="error.email">這個電子郵件地址無效</string>
   <string name="error.email_acceptable">該電子郵件地址是不可用。請重新檢查後重試。</string>

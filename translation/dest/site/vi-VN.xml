@@ -11,7 +11,7 @@
   <string name="yourTurn">Đến lượt bạn</string>
   <string name="aiNameLevelAiLevel">%1$s cấp độ %2$s</string>
   <string name="level">Cấp độ</string>
-  <string name="toggleTheChat" comment="Setting to enable/disable the chat">Bật/tắt chat</string>
+  <string name="toggleTheChat" comment="Setting to enable/disable the chat">Bật/Tắt trò chuyện</string>
   <string name="toggleSound" comment="Setting to enable/disable sound">Bật/Tắt âm thanh</string>
   <string name="chat">Trò chuyện</string>
   <string name="resign">Bỏ cuộc</string>
@@ -260,7 +260,7 @@
   <string name="viewRematch">Xem đấu lại</string>
   <string name="play">Chơi</string>
   <string name="inbox">Hộp thư</string>
-  <string name="chatRoom">Phòng chat</string>
+  <string name="chatRoom">Phòng Trò Chuyện</string>
   <string name="loginToChat">Đăng nhập để trò chuyện</string>
   <string name="youHaveBeenTimedOut">Bạn đã bị tạm dừng trò chuyện.</string>
   <string name="spectatorRoom">Phòng theo dõi</string>
@@ -683,6 +683,7 @@ Một đường dẫn mỗi dòng</string>
   <string name="arbiter">Trọng tài</string>
   <string name="createdSimuls">Cờ đồng loạt mới tạo</string>
   <string name="hostANewSimul">Chủ trì một sự kiện cờ đồng loạt mới</string>
+  <string name="followSimulHostTv">Theo quan điểm của người chủ trì</string>
   <string name="shareSimulUrl">Chia sẻ URL trang này để mọi người tham gia sự kiện nhé!</string>
   <string name="candidatePlayers"> kì thủ ứng cử viên</string>
   <string name="allowedPlayers">Sự tham gia bị giới hạn ở những điều sau đây </string>
@@ -695,6 +696,7 @@ Một đường dẫn mỗi dòng</string>
   <string name="winningPercentage">Tỷ lệ chiến thắng</string>
   <string name="targetPercentage">Phần trăm mục tiêu</string>
   <string name="toReachTarget">Để đạt được mục tiêu:</string>
+  <string name="relativeScoreRequired">Yêu cầu điểm tương đối: %s</string>
   <string name="targetWinningPercentage">Tỷ lệ chiến thắng mục tiêu: %s</string>
   <string name="currentWinningPercentage">Tỷ lệ chiến thắng hiện tại: %s</string>
   <string name="succeeded">đã thành công!</string>
@@ -718,7 +720,7 @@ Một đường dẫn mỗi dòng</string>
   <string name="simulHostExtraTime">Thời gian thêm cho người chủ trì</string>
   <string name="simulHostColor">Màu cờ của người chủ trì cho mỗi ván đấu</string>
   <string name="simulChatRestrictionsHint">Hạn chế trò chuyện chỉ áp dụng trong khi sự kiện cờ đồng loạt đang diễn ra.</string>
-  <string name="simulTargetPercentageHint">Tùy chọn, bạn có thể đặt tỷ lệ phần trăm chiến thắng mục tiêu mà bạn sẽ ghi được, được tính bằng (thắng + 0,5 * hòa) / (số trận). Nhập tỷ lệ phần trăm từ 50 đến 100 hoặc để trống để không đặt mục tiêu.</string>
+  <string name="simulTargetPercentageHint">Tùy chọn, bạn có thể đặt tỷ lệ phần trăm chiến thắng mục tiêu mà bạn sẽ ghi được, được tính bằng (thắng + 0,5 × hòa) / (số ván). Nhập tỷ lệ phần trăm từ 50 đến 100 hoặc để trống để không đặt mục tiêu.</string>
   <string name="simulParticipationLimited">Sự tham gia được giới hạn ở %s người chơi được chọn trước.</string>
   <string name="chatAvailableFor">Trò chuyện được phép cho</string>
   <string name="chatAvailableForX">Hạn chế trò chuyện trong khi chơi: %s</string>
@@ -731,10 +733,12 @@ Một đường dẫn mỗi dòng</string>
   <string name="tournamentFAQ">Các câu hỏi thường gặp về giải đấu đấu trường</string>
   <string name="tournamentOfficial">Chính thức</string>
   <string name="timeBeforeTournamentStarts">Thời gian trước khi giải đấu bắt đầu</string>
+  <string name="averageCentipieceLoss">Phần trăm mất quân trung bình mỗi nước</string>
   <string name="keyboardShortcuts">Phím tắt bàn phím</string>
   <string name="keyMoveBackwardOrForward">tiến tiếp/lùi lại</string>
   <string name="keyGoToStartOrEnd">chuyển đến đầu/cuối</string>
   <string name="keyShowOrHideComments">hiện/ẩn bình luận</string>
+  <string name="keyEnterOrExitVariation">vào/thoát thế cờ</string>
   <string name="newTournament">Giải đấu mới</string>
   <string name="tournamentHomeTitle">Giải đấu cờ đam với nhiều thiết lập thời gian và thể loại phong phú</string>
   <string name="tournamentHomeDescription">Chơi các giải đấu cờ đam tốc độ! Tham gia một giải đấu chính thức, hoặc tự tạo giải đấu của bạn. Cờ Chớp, cờ Nhanh, cờ Chậm, và nhiều lựa chọn khác cho niềm vui đánh cờ vô tận.</string>

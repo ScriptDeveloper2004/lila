@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="perfStats" comment="Statistics for a specific draughts variant or game speed %s.">%s戰績</string>
   <string name="viewTheGames">查看遊戲紀錄</string>

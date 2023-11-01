@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="twoFactorAuth">兩步驟驗證</string>
   <string name="twoFactorHelp">兩步驟驗證為您的帳戶多增加了一道防線</string>
